@@ -1,0 +1,32 @@
+{
+  "name": "puzzle-social-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
+    "@nuxtjs/supabase": "^1.4.2",
+    "@supabase/supabase-js": "^2.46.1",
+    "is-mobile": "^5.0.0",
+    "nuxt": "npm:nuxt-nightly@latest",
+    "radix-vue": "^1.9.9",
+    "ufo": "^1.5.4",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vue": "latest",
+    "vue-i18n": "10",
+    "vue-router": "latest"
+  },
+  "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228",
+  "devDependencies": {
+    "@unocss/nuxt": "^0.64.0",
+    "supabase": "^1.219.2",
+    "unocss": "^0.64.0"
+  }
+}
