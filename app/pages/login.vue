@@ -6,7 +6,7 @@ const signInWithOtp = async () => {
   const { error } = await supabase.auth.signInWithOtp({
     email: email.value,
     options: {
-      emailRedirectTo: 'http://puzzle.codes/confirm',
+      emailRedirectTo: 'https://puzzle.codes/confirm',
     }
   })
   if (error) console.log(error)
