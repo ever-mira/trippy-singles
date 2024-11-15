@@ -28,8 +28,8 @@
       </div>
 
       <div class="mt-10">
-        <img src="../assets/pp.jpg" class="mt-13 md:mt-2 w-70">
-        <img src="../assets/p.png" class="md:mt-13 w-70">
+        <!-- <img src="../assets/pp.jpg" class="mt-13 md:mt-2 w-70">
+        <img src="../assets/p.png" class="md:mt-13 w-70"> -->
       </div>
     </div>
 
