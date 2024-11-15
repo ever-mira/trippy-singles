@@ -49,7 +49,7 @@ const loading = ref(false)
 const user: Ref<User | null> = useSupabaseUser()
 
 if (user.value) {
-  const { data, error, status } = await useFetch<ProfileData>(`/api/profile?userId=${user.value.id}`, {
+  const { data, error, status } = await useLazyFetch<ProfileData>(`/api/profile?userId=${user.value.id}`, {
     method: 'GET',
     headers: useRequestHeaders(['cookie']),
   })
