@@ -3,11 +3,11 @@
   <div>
 
     <!-- two columns that are full width with justify between and that are stacked in mobile -->
-    <div class="flex flex-col md:flex-row justify-between m-40 mx-auto">
+    <div class="flex flex-col md:flex-row max-w-screen-xl justify-between m-40 mx-auto">
       <div class="flex-1">
-        <img src="../assets/entry2.png">
-        <div class="ml-11 mt-2 text-lg">Finde neue Freunde und erforsche das Universum.</div>
-        <div class="ml-11 mt-8">
+        <img src="../assets/entry2.png" class="w-120">
+        <div class="ml-7 mt-2 text-lg">Finde neue Freunde und erforsche das Universum.</div>
+        <div class="ml-7 mt-8">
           <div v-if="!user">
             <Button color="red" to="/login" class="!px-8">
               {{ $t('app.start') }}
@@ -27,9 +27,9 @@
 
       </div>
 
-      <div class="flex">
-        <img src="../assets/pp.jpg" class="mt-13 md:mt-2 w-100">
-        <img src="../assets/p.png" class="mt-13 md:mt-2 w-100">
+      <div class="mt-10">
+        <img src="../assets/pp.jpg" class="mt-13 md:mt-2 w-70">
+        <img src="../assets/p.png" class="md:mt-13 w-70">
       </div>
     </div>
 
