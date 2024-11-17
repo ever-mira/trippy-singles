@@ -3,7 +3,7 @@
   <div class="flex flex-wrap justify-between items-center mx-auto">
 
     <div class="flex items-center cursor-pointer">
-      <NuxtLink to="/" class="text-indigo-700 dark:text-orange-300 text-[1.6rem] font-semibold">
+      <NuxtLink to="/" class="text-sky-600 dark:text-orange-300 text-[1.6rem] font-semibold">
         {{ $t('app.title') }}
       </NuxtLink>
     </div>
@@ -33,6 +33,26 @@
       <ToggleDark class="mr-5 md:mr-6" />
 
       <LanguageDropdown />
+
+      <!-- <DropdownMenuRoot :open="false">
+        <DropdownMenuTrigger
+          class="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-grass11 bg-white shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-green3 focus:shadow-[0_0_0_2px] focus:shadow-black"
+          aria-label="Customise options">
+          Menu
+        </DropdownMenuTrigger>
+
+        <DropdownMenuPortal>
+          <DropdownMenuContent
+            class="min-w-[220px] outline-none bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+            :side-offset="5">
+            <DropdownMenuItem value="New Tab"
+              class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-gray-100 cursor-pointer"
+              @click="">
+              New Tab
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenuPortal>
+      </DropdownMenuRoot> -->
 
       <div class="hidden lg:flex items-center" v-if="user">
 
@@ -82,10 +102,12 @@ import ToggleDark from './DarkToggle.vue'
 const router = useRouter()
 
 const user: Ref = useSupabaseUser()
+const supabase = useSupabaseClient()
 
 const { showMobileMenu } = useApp()
 
-const logout = () => {
+const logout = async () => {
+  await supabase.auth.signOut()
   router.push({ path: '/' })
 }
 </script>

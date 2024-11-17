@@ -1,3 +1,5 @@
 body {
   @apply overflow-y-scroll bg-white dark:bg-[#121212] text-black dark:text-[#f9f9f9];
+  background-image: url("rainbow.avif");
+  background-repeat: no-repeat;
 }

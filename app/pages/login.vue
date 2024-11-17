@@ -25,8 +25,7 @@ const signInWithOtp = async () => {
     <p class="description">Sign in via magic link with your email below.</p>
 
     <div class="mt-10">
-      <input v-model="email" type="email"
-        class="px-3 py-2 w-[200px] border-2 border-indigo-200 focus:border-indigo-300 rounded-lg outline-none" />
+      <Input v-model="email" type="email" />
 
       <Button color="indigo" @click="signInWithOtp" class="ml-4">
         Send link
