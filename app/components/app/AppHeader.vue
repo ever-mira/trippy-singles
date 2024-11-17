@@ -3,7 +3,8 @@
   <div class="flex flex-wrap justify-between items-center mx-auto">
 
     <div class="flex items-center cursor-pointer">
-      <NuxtLink to="/" class="text-sky-600 dark:text-orange-300 text-[1.6rem] font-semibold">
+      <NuxtLink to="/" class="text-sky-600 dark:text-orange-300 text-[1.6rem] font-semibold"
+        @click="setStepComponent(Puzzle)">
         {{ $t('app.title') }}
       </NuxtLink>
     </div>
@@ -71,7 +72,7 @@
 
       <div class="hidden lg:flex" v-if="!user">
 
-        <Button to="/login" color="transparent">
+        <Button color="transparent" @click="login">
           {{ $t('app.login') }}
         </Button>
 
@@ -99,6 +100,12 @@ import useApp from './../../service/app'
 import LanguageDropdown from '../language/LanguageDropdown.vue'
 import ToggleDark from './DarkToggle.vue'
 
+import useAuth from '../../service/auth'
+import Puzzle from "../auth/Puzzle.vue";
+import Login from "../auth/Login.vue";
+
+const { setStepComponent } = useAuth()
+
 const router = useRouter()
 
 const user: Ref = useSupabaseUser()
@@ -109,5 +116,11 @@ const { showMobileMenu } = useApp()
 const logout = async () => {
   await supabase.auth.signOut()
   router.push({ path: '/' })
+  setStepComponent(Puzzle)
+}
+
+const login = async () => {
+  router.push({ path: '/' })
+  setStepComponent(Login)
 }
 </script>

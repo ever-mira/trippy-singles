@@ -2,7 +2,7 @@
 
   <div>
 
-    <div class="flex flex-col md:flex-row max-w-340 justify-between mt-30 lg:mt-40 -ml-3 md:mx-auto">
+    <div class="flex flex-col md:flex-row max-w-340 justify-between mt-30 lg:mt-40 -ml-3 md:mx-auto min-h-74">
       <div class="">
         <img src="../assets/entry.png" class="dark:hidden w-120">
         <img src="../assets/entry_dark.png" class="hidden dark:block w-124">
@@ -10,7 +10,7 @@
           <div class="mt-2 text-lg">
             {{ $t('app.subtitle') }}
           </div>
-          <div class="mt-8">
+          <div class="mt-9">
             <div v-if="!user">
               <Button color="red" @click="startClick" class="!px-8">
                 {{ $t('app.start') }}
@@ -21,7 +21,7 @@
               </Button>
             </div>
             <div v-if="user">
-              <Button color="indigo" to="/account/" class="!px-6.5">
+              <Button color="indigo" to="/account/" class="!px-6">
                 {{ $t('app.your_profile') }}
               </Button>
             </div>
@@ -37,7 +37,10 @@
       </div>
     </div>
 
-    <!-- <UserList /> -->
+    <div class="mt-20 max-w-340 mx-auto">
+      <UserList class="ml-5 md:ml-7" />
+    </div>
+
 
   </div>
 </template>
@@ -49,6 +52,8 @@ import useAuth from '../service/auth'
 import Login from '../components/auth/Login.vue'
 import Signup from '../components/auth/Signup.vue'
 import UserList from '../components/user/UserList.vue'
+import Loggedin from '~/components/auth/Loggedin.vue';
+import Puzzle from '~/components/auth/Puzzle.vue';
 
 const { stepComponent, setStepComponent } = useAuth()
 
@@ -58,9 +63,11 @@ definePageMeta({
 
 const user: Ref = useSupabaseUser()
 
-const email = ref('')
-const password = ref('')
-
+if (user.value) {
+  setStepComponent(Loggedin)
+} else {
+  setStepComponent(Puzzle)
+}
 
 const startClick = () => {
   setStepComponent(Signup)
