@@ -6,17 +6,14 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 
-// Props für die Komponente
 defineProps({
     modelValue: {
         type: String,
     }
 })
 
-// Events der Komponente
 const emit = defineEmits(['update:modelValue', 'focus', 'blur', 'keydown'])
 
-// Funktionen für Events
 const onInput = (event: Event) => {
     const target = event.target as HTMLInputElement
     emit('update:modelValue', target.value)

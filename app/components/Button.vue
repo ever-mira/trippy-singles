@@ -24,7 +24,6 @@ interface Props {
 
 const props = defineProps<Props>()
 const emit = defineEmits<{ (e: 'click'): void }>()
-const slots = useSlots();
 
 
 const baseClasses = 'text-white font-medium focus:outline-none rounded-xl rounded-lg cursor-pointer font-semibold text-center shadow-xs transition-all duration-100'
