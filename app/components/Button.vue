@@ -44,7 +44,7 @@ const colorClasses = computed(() => {
     case 'indigo':
       return 'bg-indigo-200 !text-indigo-800 dark:!text-indigo-200 hover:bg-indigo-300 dark:bg-indigo-800 dark:hover:bg-indigo-700'
     case 'red':
-      return 'bg-red-100 !text-red-600 dark:!text-red-200 hover:bg-red-200 dark:bg-red-900 dark:hover:bg-red-800'
+      return 'bg-rose-100 !text-rose-600 dark:!text-red-200 hover:bg-rose-200 dark:bg-red-900 dark:hover:bg-red-800'
     case 'transparent':
       return '!text-gray-800 !dark:text-gray-300'
     default:
