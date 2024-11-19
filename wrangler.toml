@@ -1,3 +1,9 @@
+name = "puzzle-social-nuxt"
+main = "./.output/server/index.mjs"
+compatibility_date = "2024-11-19"
+
+account_id = "ee50af5f0ede14687642ce149194c8c4"
+
 [observability]
 enabled = true
 head_sampling_rate = 1
