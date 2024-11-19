@@ -11,8 +11,6 @@ export default defineNuxtConfig({
   runtimeConfig: {},
   app: {
     pageTransition: { name: "page", mode: "out-in" },
-    baseURL: "/",
-    buildAssetsDir: "/_nuxt/",
   },
   css: ["@unocss/reset/tailwind.css", "~/assets/global.css"],
   supabase: {
