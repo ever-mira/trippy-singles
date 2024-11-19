@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@nuxthub/core':
+        specifier: ^0.8.7
+        version: 0.8.7(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(webpack-sources@3.2.3)
       '@nuxtjs/i18n':
         specifier: npm:@nuxtjs/i18n-edge
         version: '@nuxtjs/i18n-edge@9.0.0-28851211.5363e90(@vue/compiler-dom@3.5.12)(eslint@9.14.0(jiti@2.4.0))(magicast@0.3.5)(rollup@4.25.0)(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3))(webpack-sources@3.2.3)'
@@ -50,22 +53,22 @@ importers:
       vue-router:
         specifier: latest
         version: 4.4.5(vue@3.5.12(typescript@5.6.3))
-      wrangler:
-        specifier: ^3.87.0
-        version: 3.87.0
     devDependencies:
       '@types/mime-types':
         specifier: ^2.1.4
         version: 2.1.4
       '@unocss/nuxt':
         specifier: ^0.64.0
-        version: 0.64.0(magicast@0.3.5)(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))(webpack-sources@3.2.3)(webpack@5.96.1(esbuild@0.23.1))
+        version: 0.64.0(magicast@0.3.5)(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))(webpack-sources@3.2.3)(webpack@5.96.1(esbuild@0.17.19))
       supabase:
         specifier: ^1.219.2
         version: 1.219.2
       unocss:
         specifier: ^0.64.0
-        version: 0.64.0(@unocss/webpack@0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.23.1)))(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))
+        version: 0.64.0(@unocss/webpack@0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.17.19)))(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))
+      wrangler:
+        specifier: ^3.87.0
+        version: 3.87.0(@cloudflare/workers-types@4.20241112.0)
 
 packages:
 
@@ -256,6 +259,9 @@ packages:
   '@cloudflare/workers-shared@0.7.1':
     resolution: {integrity: sha512-46cP5FCrl3TrvHeoHLb5SRuiDMKH5kc9Yvo36SAfzt8dqJI/qJRoY1GP3ioHn/gP7v2QIoUOTAzIl7Ml7MnfrA==}
     engines: {node: '>=16.7.0'}
+
+  '@cloudflare/workers-types@4.20241112.0':
+    resolution: {integrity: sha512-Q4p9bAWZrX14bSCKY9to19xl0KMU7nsO5sJ2cTVspHoypsjPUMeQCsjHjmsO2C4Myo8/LPeDvmqFmkyNAPPYZw==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1104,6 +1110,9 @@ packages:
     peerDependencies:
       vue: ^3.3.4
 
+  '@nuxthub/core@0.8.7':
+    resolution: {integrity: sha512-XPP+H/pdr3ubWY/V+EkAdqnBeNAP97Q0TtOXFebksP9yZ1LfMCXX/vjxdh747SWxMQVzY8HyandllJ3+6BNrkg==}
+
   '@nuxtjs/i18n-edge@9.0.0-28851211.5363e90':
     resolution: {integrity: sha512-5a/JlyunCsymdDdZaDsfYveu9L34AHXPN3TSH+3oKd0Trd6WOP5gNBdfOkt4TewQd8iypq1Oad2RnlSqP8Ztkw==}
     engines: {node: ^14.16.0 || >=16.11.0}
@@ -1613,6 +1622,9 @@ packages:
     resolution: {integrity: sha512-ckESME64McIvV/UA6P6zv+BVALgWeWtyE07WBASNUFOyA9heK+kLGziS4XlxcefwPqQKBFuVSCFt6wNiVfFWXQ==}
     peerDependencies:
       webpack: ^4 || ^5
+
+  '@uploadthing/mime-types@0.3.2':
+    resolution: {integrity: sha512-WP/K75S/649lM0GUcd9jq4RjeTIc/0bO2UmLx4+usTSNy/x0K8gV0JdLWeUUbmTQtJoHd4ZTSvAdG7ZQgcmXvA==}
 
   '@vercel/nft@0.27.6':
     resolution: {integrity: sha512-mwuyUxskdcV8dd7N7JnxBgvFEz1D9UOePI/WyLLzktv6HSCwgPNQGit/UJ2IykAWGlypKw4pBQjOKWvIbXITSg==}
@@ -3198,6 +3210,9 @@ packages:
 
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  nitro-cloudflare-dev@0.2.1:
+    resolution: {integrity: sha512-zHAN21dp+As0ldkAr5tWTop/I721j7MssZG6qb7a7EMorFwdRIhyTUwltr2L6v4qT4209S4eb2S9rszP1fxS7A==}
 
   nitro-nightly@3.0.0-beta-28796231.359af68d:
     resolution: {integrity: sha512-/wD/WAhYsH866aRDuJ+dK73HLST2s2BNHaLAoNDhkNpTgHQbr1+5gVDwTnJFUHClUEt1PIir3QLDeb2O9r59xA==}
@@ -4803,6 +4818,8 @@ snapshots:
       mime: 3.0.0
       zod: 3.23.8
 
+  '@cloudflare/workers-types@4.20241112.0': {}
+
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
@@ -5628,6 +5645,47 @@ snapshots:
       - vue-tsc
       - webpack-sources
 
+  '@nuxthub/core@0.8.7(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(webpack-sources@3.2.3)':
+    dependencies:
+      '@cloudflare/workers-types': 4.20241112.0
+      '@nuxt/devtools-kit': 1.6.0(magicast@0.3.5)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(webpack-sources@3.2.3)
+      '@nuxt/kit': 3.14.159(magicast@0.3.5)(rollup@4.25.0)(webpack-sources@3.2.3)
+      '@uploadthing/mime-types': 0.3.2
+      citty: 0.1.6
+      confbox: 0.1.8
+      defu: 6.1.4
+      destr: 2.0.3
+      h3: 1.13.0
+      mime: 4.0.4
+      nitro-cloudflare-dev: 0.2.1
+      ofetch: 1.4.1
+      pathe: 1.1.2
+      pkg-types: 1.2.1
+      std-env: 3.8.0
+      ufo: 1.5.4
+      uncrypto: 0.1.3
+      unstorage: 1.13.1(ioredis@5.4.1)
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@upstash/redis'
+      - '@vercel/kv'
+      - idb-keyval
+      - ioredis
+      - magicast
+      - rollup
+      - supports-color
+      - vite
+      - webpack-sources
+
   '@nuxtjs/i18n-edge@9.0.0-28851211.5363e90(@vue/compiler-dom@3.5.12)(eslint@9.14.0(jiti@2.4.0))(magicast@0.3.5)(rollup@4.25.0)(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3))(webpack-sources@3.2.3)':
     dependencies:
       '@intlify/h3': 0.6.0
@@ -6119,7 +6177,7 @@ snapshots:
     transitivePeerDependencies:
       - vue
 
-  '@unocss/nuxt@0.64.0(magicast@0.3.5)(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))(webpack-sources@3.2.3)(webpack@5.96.1(esbuild@0.23.1))':
+  '@unocss/nuxt@0.64.0(magicast@0.3.5)(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))(webpack-sources@3.2.3)(webpack@5.96.1(esbuild@0.17.19))':
     dependencies:
       '@nuxt/kit': 3.14.159(magicast@0.3.5)(rollup@4.25.0)(webpack-sources@3.2.3)
       '@unocss/config': 0.64.0
@@ -6133,8 +6191,8 @@ snapshots:
       '@unocss/preset-wind': 0.64.0
       '@unocss/reset': 0.64.0
       '@unocss/vite': 0.64.0(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))
-      '@unocss/webpack': 0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.23.1))
-      unocss: 0.64.0(@unocss/webpack@0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.23.1)))(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))
+      '@unocss/webpack': 0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.17.19))
+      unocss: 0.64.0(@unocss/webpack@0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.17.19)))(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))
     transitivePeerDependencies:
       - magicast
       - postcss
@@ -6242,7 +6300,7 @@ snapshots:
       - supports-color
       - vue
 
-  '@unocss/webpack@0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.23.1))':
+  '@unocss/webpack@0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.17.19))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@rollup/pluginutils': 5.1.3(rollup@4.25.0)
@@ -6252,11 +6310,13 @@ snapshots:
       magic-string: 0.30.12
       tinyglobby: 0.2.10
       unplugin: 1.15.0(webpack-sources@3.2.3)
-      webpack: 5.96.1(esbuild@0.23.1)
+      webpack: 5.96.1(esbuild@0.17.19)
       webpack-sources: 3.2.3
     transitivePeerDependencies:
       - rollup
       - supports-color
+
+  '@uploadthing/mime-types@0.3.2': {}
 
   '@vercel/nft@0.27.6':
     dependencies:
@@ -8027,6 +8087,12 @@ snapshots:
 
   neo-async@2.6.2: {}
 
+  nitro-cloudflare-dev@0.2.1:
+    dependencies:
+      consola: 3.2.3
+      mlly: 1.7.2
+      pkg-types: 1.2.1
+
   nitro-nightly@3.0.0-beta-28796231.359af68d(typescript@5.6.3)(webpack-sources@3.2.3):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
@@ -9022,16 +9088,16 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
-  terser-webpack-plugin@5.3.10(esbuild@0.23.1)(webpack@5.96.1(esbuild@0.23.1)):
+  terser-webpack-plugin@5.3.10(esbuild@0.17.19)(webpack@5.96.1(esbuild@0.17.19)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.36.0
-      webpack: 5.96.1(esbuild@0.23.1)
+      webpack: 5.96.1(esbuild@0.17.19)
     optionalDependencies:
-      esbuild: 0.23.1
+      esbuild: 0.17.19
 
   terser@5.36.0:
     dependencies:
@@ -9179,7 +9245,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss@0.64.0(@unocss/webpack@0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.23.1)))(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3)):
+  unocss@0.64.0(@unocss/webpack@0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.17.19)))(postcss@8.4.47)(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3)):
     dependencies:
       '@unocss/astro': 0.64.0(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))
       '@unocss/cli': 0.64.0(rollup@4.25.0)
@@ -9199,7 +9265,7 @@ snapshots:
       '@unocss/transformer-variant-group': 0.64.0
       '@unocss/vite': 0.64.0(rollup@4.25.0)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))
     optionalDependencies:
-      '@unocss/webpack': 0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.23.1))
+      '@unocss/webpack': 0.64.0(rollup@4.25.0)(webpack@5.96.1(esbuild@0.17.19))
       vite: 5.4.10(@types/node@22.9.0)(terser@5.36.0)
     transitivePeerDependencies:
       - postcss
@@ -9495,7 +9561,7 @@ snapshots:
 
   webpack-virtual-modules@0.6.2: {}
 
-  webpack@5.96.1(esbuild@0.23.1):
+  webpack@5.96.1(esbuild@0.17.19):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.6
@@ -9517,7 +9583,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(esbuild@0.23.1)(webpack@5.96.1(esbuild@0.23.1))
+      terser-webpack-plugin: 5.3.10(esbuild@0.17.19)(webpack@5.96.1(esbuild@0.17.19))
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -9552,7 +9618,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20241106.1
       '@cloudflare/workerd-windows-64': 1.20241106.1
 
-  wrangler@3.87.0:
+  wrangler@3.87.0(@cloudflare/workers-types@4.20241112.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@cloudflare/workers-shared': 0.7.1
@@ -9574,6 +9640,7 @@ snapshots:
       workerd: 1.20241106.1
       xxhash-wasm: 1.0.2
     optionalDependencies:
+      '@cloudflare/workers-types': 4.20241112.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil

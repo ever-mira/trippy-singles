@@ -7,7 +7,13 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  modules: ["@unocss/nuxt", "@nuxtjs/supabase", "radix-vue/nuxt", "@nuxtjs/i18n"],
+  modules: [
+    "@unocss/nuxt",
+    "@nuxtjs/supabase",
+    "radix-vue/nuxt",
+    "@nuxtjs/i18n",
+    "@nuxthub/core",
+  ],
   runtimeConfig: {},
   app: {
     pageTransition: { name: "page", mode: "out-in" },
