@@ -1,6 +1,7 @@
 import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server";
 import type { Database } from "../../../types/database.types";
 import { lookup, extension } from "mime-types";
+import { fileTypeFromBuffer } from "file-type";
 
 export default defineEventHandler(async (event) => {
   const multipartData = await readMultipartFormData(event);
@@ -33,7 +34,11 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: "Ungültiges Dateiformat" });
   }
 
+  console.log("filname:", originalFilename);
   const mimeType = lookup(originalFilename) || "application/octet-stream";
+  const fileType = await fileTypeFromBuffer(file).then((result: any) => result?.mime);
+  console.log("mime type:", mimeType);
+  console.log("file type:", fileType);
 
   const fileName = `user_${userId}/${Date.now()}_${Math.random()
     .toString(36)
@@ -46,7 +51,7 @@ export default defineEventHandler(async (event) => {
     .upload(fileName, file, {
       cacheControl: "3600",
       upsert: true,
-      contentType: mimeType,
+      contentType: fileType,
     });
 
   if (uploadError) {
