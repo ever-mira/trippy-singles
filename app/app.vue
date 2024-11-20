@@ -24,10 +24,10 @@
 </template>
 
 <script setup lang="ts">
-import AppHeader from './components/app/AppHeader.vue';
-import AppFooter from './components/app/AppFooter.vue';
-import MobileMenu from './components/app/MobileMenu.vue';
-import Modal from './components/app/Modal.vue';
+import AppHeader from './components/app/AppHeader.vue'
+import AppFooter from './components/app/AppFooter.vue'
+import MobileMenu from './components/app/MobileMenu.vue'
+import Modal from './components/app/Modal.vue'
 
 useHead({
   title: 'Puzzle Social',

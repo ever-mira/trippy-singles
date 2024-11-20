@@ -1,18 +1,3 @@
-<script setup lang="ts">
-const supabase = useSupabaseClient()
-const email = ref('')
-
-const signInWithOtp = async () => {
-  const { error } = await supabase.auth.signInWithOtp({
-    email: email.value,
-    options: {
-      emailRedirectTo: 'https://puzzle.codes/confirm',
-    }
-  })
-  if (error) console.log(error)
-}
-</script>
-
 <template>
   <div class="text-center mt-40">
 
@@ -35,3 +20,18 @@ const signInWithOtp = async () => {
 
   </div>
 </template>
+
+<script setup lang="ts">
+const supabase = useSupabaseClient()
+const email = ref('')
+
+const signInWithOtp = async () => {
+  const { error } = await supabase.auth.signInWithOtp({
+    email: email.value,
+    options: {
+      emailRedirectTo: 'https://puzzle.codes/confirm',
+    }
+  })
+  if (error) console.log(error)
+}
+</script>

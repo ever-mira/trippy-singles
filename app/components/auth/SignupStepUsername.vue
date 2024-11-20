@@ -48,12 +48,12 @@ const checkAvailability = debounce(async (name: string) => {
   }
 
   try {
-    const result = await $fetch<{ available: boolean }>(`/api/check-username?username=${encodeURIComponent(username.value)}`);
+    const result = await $fetch<{ available: boolean }>(`/api/check-username?username=${encodeURIComponent(username.value)}`)
 
-    available.value = result.available;
+    available.value = result.available
 
   } catch (error: any) {
-    message.value = error.statusMessage || 'Es gab ein Problem mit der Anfrage';
+    message.value = error.statusMessage || 'Es gab ein Problem mit der Anfrage'
   }
 }, 300)
 

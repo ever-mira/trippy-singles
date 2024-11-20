@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import useAuth from '../../service/auth'
-import Picture from './Picture.vue';
+import Picture from './Picture.vue'
 
 const { setStepComponent, username } = useAuth()
 const supabase = useSupabaseClient()
@@ -51,7 +51,7 @@ const signUp = async () => {
     const result = await $fetch<{ success: boolean }>('/api/signup', {
       method: 'POST',
       body: signupData
-    });
+    })
 
     if (result.success) {
       await supabase.auth.signInWithPassword(credentials)
@@ -60,7 +60,7 @@ const signUp = async () => {
     }
 
   } catch (error: any) {
-    message.value = error.statusMessage;
+    message.value = error.statusMessage
   }
 }
 </script>

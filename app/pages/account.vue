@@ -41,7 +41,7 @@
 import type { User } from '@supabase/supabase-js'
 import type { Database } from '../../types/database.types'
 type ProfileData = Database['public']['Tables']['profiles']['Row']
-import PhotoUpload from '~/components/user/PhotoUpload.vue';
+import PhotoUpload from '~/components/user/PhotoUpload.vue'
 
 const loading = ref(false)
 

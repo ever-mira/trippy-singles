@@ -1,3 +1,13 @@
+<template>
+  <div class="text-center mt-30">
+    <p class="description">Eingeloggt.</p>
+    <p class="description">{{ email }}</p>
+    <div class="mt-10">
+
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 definePageMeta({
   auth: false,
@@ -14,13 +24,3 @@ watch(user, () => {
 }, { immediate: true })
 
 </script>
-
-<template>
-  <div class="text-center mt-30">
-    <p class="description">Eingeloggt.</p>
-    <p class="description">{{ email }}</p>
-    <div class="mt-10">
-
-    </div>
-  </div>
-</template>

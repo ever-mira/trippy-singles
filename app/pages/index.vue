@@ -52,14 +52,14 @@ import useAuth from '../service/auth'
 import Login from '../components/auth/Login.vue'
 import SignupStepUsername from '../components/auth/SignupStepUsername.vue'
 import UserList from '../components/user/UserList.vue'
-import Loggedin from '~/components/auth/Loggedin.vue';
-import Puzzle from '~/components/auth/Puzzle.vue';
+import Loggedin from '~/components/auth/Loggedin.vue'
+import Puzzle from '~/components/auth/Puzzle.vue'
 
 const { stepComponent, setStepComponent, reset } = useAuth()
 
 definePageMeta({
   auth: false,
-});
+})
 
 const user: Ref = useSupabaseUser()
 

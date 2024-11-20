@@ -21,7 +21,7 @@
 
 
 <script setup lang="ts">
-import PhotoUpload from '~/components/user/PhotoUpload.vue';
+import PhotoUpload from '~/components/user/PhotoUpload.vue'
 
 const supabase = useSupabaseClient()
 

@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import useAuth from '../../service/auth'
-import Loggedin from "./Loggedin.vue";
+import Loggedin from "./Loggedin.vue"
 
 const { setStepComponent } = useAuth()
 
