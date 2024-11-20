@@ -6,8 +6,9 @@
 
       <div class="mt-12 relative">
         <Input ref="mailInputRef" placeholder="@Universum_123" v-model="username" autofocus />
-        <div class="inline ml-2" v-if="available">✅</div>
-        <div class="inline ml-2" v-if="available === false">❌</div>
+        <div class="inline ml-3 text-green-600" v-if="available">frei</div>
+        <div class="inline ml-3 text-red-700" v-if="available === false">vergeben
+        </div>
 
         <p class="mt-3.5 text-gray-500 dark:text-gray-300">https://puzzle.social/@{{ username }}</p>
       </div>

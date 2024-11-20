@@ -11,6 +11,7 @@
         </AvatarRoot>
       </div>
     </div>
+    <div class="h-80"></div>
   </div>
 </template>
 
