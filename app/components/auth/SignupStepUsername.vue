@@ -1,0 +1,70 @@
+<template>
+  <div class="w-full text-lg">
+    <div class="w-full mt-5 px-2 md:w-[360px]">
+      <div class="mt-5 relative text-3xl font-bold text-heading">Account erstellen</div>
+      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-300">Wähle einen Benutzernamen</div>
+
+      <div class="mt-12 relative">
+        <Input ref="mailInputRef" placeholder="@Universum_123" v-model="username" autofocus />
+        <div class="inline ml-2" v-if="available">✅</div>
+        <div class="inline ml-2" v-if="available === false">❌</div>
+
+        <p class="mt-3.5 text-gray-500 dark:text-gray-300">https://puzzle.social/@{{ username }}</p>
+      </div>
+
+
+      <div class="mt-6 h-8" v-if="message">
+        <span class="text-gray-700">{{ message }}</span>
+      </div>
+      <div class="mt-7">
+        <Button @click="next" class="!px-7" :disabled="!available">Weiter</button>
+      </div>
+    </div>
+  </div>
+
+</template>
+
+<script setup lang="ts">
+import useAuth from '../../service/auth'
+import SignupStepTwo from './SignupStepLogin.vue'
+import debounce from 'lodash.debounce'
+import { validateUsername } from '@utils/usernameValidation'
+
+const { setStepComponent, username } = useAuth()
+
+const message = ref<string>('')
+const available = ref<boolean | null>(null)
+
+const checkAvailability = debounce(async (name: string) => {
+  if (!name) {
+    available.value = null
+    return
+  }
+
+  const { valid, errors } = validateUsername(name)
+  if (!valid) {
+    message.value = errors[0] || ''
+    return
+  }
+
+  try {
+    const result = await $fetch<{ available: boolean }>(`/api/check-username?username=${encodeURIComponent(username.value)}`);
+
+    available.value = result.available;
+
+  } catch (error: any) {
+    message.value = error.statusMessage || 'Es gab ein Problem mit der Anfrage';
+  }
+}, 300)
+
+watch(username, (newVal) => {
+  available.value = null
+  message.value = ''
+
+  checkAvailability(newVal)
+})
+
+const next = async () => {
+  setStepComponent(SignupStepTwo)
+}
+</script>

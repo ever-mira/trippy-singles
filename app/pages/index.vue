@@ -50,12 +50,12 @@
 import useAuth from '../service/auth'
 
 import Login from '../components/auth/Login.vue'
-import Signup from '../components/auth/Signup.vue'
+import SignupStepUsername from '../components/auth/SignupStepUsername.vue'
 import UserList from '../components/user/UserList.vue'
 import Loggedin from '~/components/auth/Loggedin.vue';
 import Puzzle from '~/components/auth/Puzzle.vue';
 
-const { stepComponent, setStepComponent } = useAuth()
+const { stepComponent, setStepComponent, reset } = useAuth()
 
 definePageMeta({
   auth: false,
@@ -70,7 +70,8 @@ if (user.value) {
 }
 
 const startClick = () => {
-  setStepComponent(Signup)
+  reset()
+  setStepComponent(SignupStepUsername)
 }
 
 const loginClick = () => {
@@ -81,20 +82,20 @@ const loginClick = () => {
 
 <style>
 .stepChange-leave-active {
-  transition: all 0.19s ease;
+  transition: all 0.2s ease;
 }
 
 .stepChange-enter-active {
-  transition: all 0.19s ease;
+  transition: all 0.2s ease;
 }
 
 .stepChange-leave-to {
   opacity: 0;
-  transform: translateX(-10px);
+  transform: translateX(-4px);
 }
 
 .stepChange-enter-from {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateX(4px);
 }
 </style>

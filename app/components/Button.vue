@@ -26,7 +26,7 @@ const props = defineProps<Props>()
 const emit = defineEmits<{ (e: 'click'): void }>()
 
 
-const baseClasses = 'text-white focus:outline-none rounded-xl rounded-lg !text-[.9rem] font-medium cursor-pointer text-center shadow-xs transition-all duration-100'
+const baseClasses = 'text-white focus:outline-none rounded-xl rounded-lg !text-[.9rem] font-medium disabled:cursor-default cursor-pointer text-center shadow-xs transition-all duration-100'
 
 const sizeClasses = computed(() => {
   switch (props.size) {
@@ -48,7 +48,7 @@ const colorClasses = computed(() => {
     case 'transparent':
       return '!text-gray-800 !dark:text-gray-300'
     default:
-      return 'bg-indigo-200 !text-indigo-800 dark:!text-indigo-200 hover:bg-indigo-300 dark:bg-indigo-800 dark:hover:bg-indigo-700'
+      return 'bg-indigo-200 disabled:bg-gray-200 !text-indigo-800 disabled:!text-gray-600 dark:!text-indigo-200 disabled:dark:!text-gray-400 enabled:hover:bg-indigo-300 dark:bg-indigo-800 disabled:dark:bg-gray-700 enabled:dark:hover:bg-indigo-700'
   }
 })
 

@@ -13,7 +13,7 @@
             <img src="../../assets/avatar.jpg" class="w-44 rounded-full" />
           </AvatarFallback>
         </AvatarRoot>
-        <photo-upload @uploaded="onPhotoUploaded" class="mt-5"></photo-upload>
+        <photo-upload @uploaded="onPhotoUploaded" class="mt-6.5"></photo-upload>
       </div>
     </div>
   </div>

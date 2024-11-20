@@ -2,13 +2,15 @@
   <div class="w-full text-lg -mt-5">
     <div class="w-full px-2 md:w-[360px]">
       <div class="mt-9 relative text-3xl font-bold text-heading">{{ $t('login.title') }}</div>
-      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">Welcome at Puzzle</div>
+      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">Willkommen</div>
       <div class="mt-9 relative">
-        <Input type="email" ref="mailInputRef" placeholder="Email" v-model="credentials.email" autofocus />
+        E-Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Input type="email" ref="mailInputRef" placeholder="Email"
+          v-model="credentials.email" autofocus />
       </div>
 
-      <div class="mt-4 relative">
-        <Input type="password" placeholder="Passwort" v-model="credentials.password" @keydown.enter="signIn" />
+      <div class="mt-3.5 relative">
+        Passwort: &nbsp;&nbsp;<Input type="password" placeholder="Passwort" v-model="credentials.password"
+          @keydown.enter="signIn" />
       </div>
 
       <div class="mt-6 h-8" v-if="message">

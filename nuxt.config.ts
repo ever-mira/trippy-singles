@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from "nuxt/config";
+import { fileURLToPath } from "url";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -8,9 +9,11 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   modules: ["@unocss/nuxt", "@nuxtjs/supabase", "radix-vue/nuxt", "@nuxtjs/i18n", "@nuxthub/core"],
-  runtimeConfig: {},
   app: {
     pageTransition: { name: "page", mode: "out-in" },
+  },
+  alias: {
+    "@utils": fileURLToPath(new URL("./utils", import.meta.url)),
   },
   css: ["@unocss/reset/tailwind.css", "~/assets/global.css"],
   supabase: {
