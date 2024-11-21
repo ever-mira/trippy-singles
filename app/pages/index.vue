@@ -2,7 +2,7 @@
 
   <div>
 
-    <div class="flex flex-col md:flex-row max-w-340 justify-between mt-30 lg:mt-40 -ml-3 md:mx-auto min-h-74">
+    <div class="flex flex-col md:flex-row max-w-340 justify-between mt-25 lg:mt-40 -ml-3 md:mx-auto min-h-74">
       <div class="">
         <img src="../assets/entry.png" class="dark:hidden w-120">
         <img src="../assets/entry_dark.png" class="hidden dark:block w-124">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="ml-4 md:ml-0 w-60% mt-14 md:mt-0">
+      <div class="ml-4 md:ml-0 md:w-60% mt-14 md:mt-0">
         <transition name="stepChange" mode="out-in">
           <component :is="stepComponent"></component>
         </transition>
