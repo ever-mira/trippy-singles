@@ -4,7 +4,9 @@
     <button type="button"
       class="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-gray-800 shadow-sm pl-5 pr-4 py-2 bg-white dark:bg-black text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500"
       id="language-menu" aria-expanded="true" aria-haspopup="true" @click.stop="menuClicked">
-      {{ selectedLocale }}
+
+      <span class="hidden md:inline">{{ selectedLocale.name }}</span>
+      <span class="inline md:hidden">{{ selectedLocale.code }}</span>
       <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
         aria-hidden="true">
         <path fill-rule="evenodd"
@@ -35,7 +37,7 @@ import { ref, onMounted } from "vue"
 const { setLocale, locales, locale } = useI18n()
 
 const selectedLocale = computed(() => {
-  return locales.value.find((l) => l.code === locale.value).name
+  return locales.value.find((l) => l.code === locale.value)
 })
 
 let open = ref(false)

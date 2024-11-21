@@ -14,10 +14,10 @@
     </div>
 
     <div class="mt-9">
-      <Button @click="goBack">Zurück</Button>
+      <Button @click="goBack" class="!px-8">Zurück</Button>
     </div>
 
-    <div class="h-90"></div>
+    <div class="h-60"></div>
   </div>
 </template>
 

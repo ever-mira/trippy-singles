@@ -9,45 +9,6 @@
         <button class="text-white text-3xl" @click="hideMobileMenu">&times;</button>
       </div>
 
-      <nav class="grid grid-col my-4 p-5 space-y-4">
-        <Link to="/people">
-        {{ $t('app.menu.people') }}
-        </Link>
-        <Link to="/events">
-        {{ $t('app.menu.events') }}
-        </Link>
-        <Link to="/locations">
-        {{ $t('app.menu.locations') }}
-        </Link>
-      </nav>
-
-      <div class="border-t-2 border-gray-300 p-5">
-        <Button color="transparent" to="/login" class="!text-[1rem] !px-2 mr-4" v-if="!loggedin">
-          {{ $t('app.login') }}
-        </Button>
-
-        <Button color="indigo" to="/signup" class="!text-[1rem] !px-5 mr-4" v-if="!loggedin">
-          {{ $t('app.signup') }}
-        </Button>
-
-        <Button to="/user" color="transparent" class="!px-1 !text-[1rem]" v-if="loggedin">
-          Username
-        </Button>
-
-        <Button color="indigo" @click="logoutClicked" class="!px-6.5 ml-6 mr-2" v-if="loggedin">
-          {{ $t('app.logout') }}
-        </Button>
-
-        <nav class="grid grid-col space-y-4 mt-12">
-          <Link to="/user" class="" v-if="loggedin">
-          {{ $t('app.your_profile') }}
-          </Link>
-
-          <Link to="/settings" class="mt-12" v-if="loggedin">
-          {{ $t('app.settings') }}
-          </Link>
-        </nav>
-      </div>
     </div>
   </div>
 </template>

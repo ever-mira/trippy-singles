@@ -2,22 +2,22 @@
   <div class="w-full text-lg -mt-5">
     <div class="w-full px-2 md:w-[360px]">
       <div class="mt-9 relative text-3xl font-bold text-heading">{{ $t('login.title') }}</div>
-      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">Willkommen</div>
+      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">{{ $t('login.subtitle') }}</div>
       <div class="mt-9 relative">
-        E-Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Input type="email" ref="mailInputRef" placeholder="Email"
-          v-model="credentials.email" autofocus />
+        <span class="hidden md:inline">{{ $t('login.email') }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><Input
+          type="email" ref="mailInputRef" :placeholder="$t('signup.email')" v-model="credentials.email" autofocus />
       </div>
 
       <div class="mt-3.5 relative">
-        Passwort: &nbsp;&nbsp;<Input type="password" placeholder="Passwort" v-model="credentials.password"
-          @keydown.enter="signIn" />
+        <span class="hidden md:inline">{{ $t('login.password') }} &nbsp;&nbsp;</span><Input type="password"
+          :placeholder="$t('signup.password')" v-model="credentials.password" @keydown.enter="signIn" />
       </div>
 
       <div class="mt-6 h-8" v-if="message">
         <span class="text-gray-700">{{ message }}</span>
       </div>
       <div class="mt-7">
-        <Button @click="signIn" class="!px-8">Login</button>
+        <Button @click="signIn" class="!px-8">{{ $t('login.button') }}</button>
       </div>
     </div>
   </div>

@@ -1,11 +1,12 @@
 <template>
   <div class="w-full text-lg">
     <div class="w-full mt-5 px-2 md:w-[360px]">
-      <div class="mt-5 relative text-3xl font-bold text-heading">Account erstellen</div>
-      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-300">Wähle einen Benutzernamen</div>
+      <div class="mt-5 relative text-3xl font-bold text-heading">{{ $t('signup.title') }}</div>
+      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-300">{{ $t('signup.subtitle') }}</div>
 
       <div class="mt-12 relative">
-        <Input ref="mailInputRef" placeholder="@Universum_123" v-model="username" autofocus />
+        <Input ref="mailInputRef" placeholder="@Universum_123" v-model="username" autofocus
+          class="!w-[230px] md:!w-[220px]" />
         <div class="inline ml-3 text-green-600" v-if="available">frei</div>
         <div class="inline ml-3 text-red-700" v-if="available === false">vergeben
         </div>
@@ -18,7 +19,7 @@
         <span class="text-gray-700">{{ message }}</span>
       </div>
       <div class="mt-7">
-        <Button @click="next" class="!px-7" :disabled="!available">Weiter</button>
+        <Button @click="next" class="!px-7" :disabled="!available">{{ $t('signup.next') }}</button>
       </div>
     </div>
   </div>

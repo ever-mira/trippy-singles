@@ -18,6 +18,7 @@
     "no": "Nein",
     "ok": "Ok",
     "cancel": "Abbrechen",
+    "new_users": "Neue Mitglieder",
     "footer": {
       "copyright": "© 2024 Puzzle Social",
       "terms": "Nutzungsbedingungen",
@@ -26,13 +27,18 @@
   },
   "login": {
     "title": "Login",
+    "subtitle": "Willkommen",
     "email": "E-Mail",
     "password": "Passwort",
     "button": "Login",
     "error": "Login nicht erfolgreich"
   },
   "signup": {
-    "name_question": "Wie willst du auf Puzzle heißen?",
+    "title": "Account erstellen",
+    "subtitle": "Wähle einen Benutzernamen",
+    "second_step_title": "Letzter Schritt",
+    "second_step_subtitle": "Login-Daten festlegen",
+    "next": "Weiter",
     "name": "Name",
     "name_confirm_button": "Ok",
     "email_password": "Email und Passwort festlegen.",
