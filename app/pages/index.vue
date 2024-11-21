@@ -21,7 +21,7 @@
               </Button>
             </div>
             <div v-if="user">
-              <Button color="indigo" to="/account/" class="!px-6">
+              <Button color="indigo" :to="`/@${username}`" class="!px-6">
                 {{ $t('app.your_profile') }}
               </Button>
             </div>
@@ -56,6 +56,7 @@ import Loggedin from '~/components/auth/Loggedin.vue'
 import Puzzle from '~/components/auth/Puzzle.vue'
 
 const { stepComponent, setStepComponent, reset } = useAuth()
+const { username } = useUser()
 
 definePageMeta({
   auth: false,

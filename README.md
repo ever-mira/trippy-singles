@@ -3,7 +3,7 @@
 New version of Puzzle Social, temporarily hosted at:<br>
 https://puzzle.codes/
 
-Serverless architecture, hosted "on the edge" with: https://netlify.com/
+Serverless architecture, hosted "on the edge" with Cloudflare.
 
 Database and authentication with: https://supabase.com/
 

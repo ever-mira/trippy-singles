@@ -61,8 +61,8 @@
           ⚙️
         </Button>
 
-        <Button :to="'/account/'" color="transparent" class="!text-[1rem]">
-          {{ user?.email }}
+        <Button :to="`/@${username}`" color="transparent" class="!text-[1rem]">
+          {{ username }}
         </Button>
 
         <Button color="indigo" @click="logout" class="!px-6.5">
@@ -105,6 +105,7 @@ import Puzzle from "../auth/Puzzle.vue";
 import Login from "../auth/Login.vue";
 
 const { setStepComponent } = useAuth()
+const { username } = useUser()
 
 const router = useRouter()
 

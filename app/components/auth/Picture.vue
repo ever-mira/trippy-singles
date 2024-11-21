@@ -41,7 +41,6 @@ const signIn = async () => {
 }
 
 const onPhotoUploaded = (fileName: string) => {
-  console.log('uploaded', fileName)
   photoUrl.value = fileName
 }
 </script>
