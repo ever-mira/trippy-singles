@@ -34,13 +34,4 @@ useHead({
 })
 </script>
 
-<style>
-.page-enter-active {
-  transition: opacity 0.27s ease;
-}
-
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-}
-</style>
+<style></style>
