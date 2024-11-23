@@ -6,7 +6,7 @@
 
       <div class="mt-12 relative">
         <Input :placeholder="$t('signup.displayname')" v-model="displayname" autofocus
-          class="!w-[230px] md:!w-[220px]" />
+          class="!w-[230px] md:!w-[240px]" />
       </div>
 
       <div class="mt-8.5">

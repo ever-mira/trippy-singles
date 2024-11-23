@@ -31,7 +31,9 @@
       </div>
 
       <div class="ml-4 md:ml-0 w-90% md:w-60% mt-14 md:mt-0">
-        <component :is="stepComponent"></component>
+        <transition name="stepChange" mode="out-in">
+          <component :is="stepComponent"></component>
+        </transition>
       </div>
     </div>
 
@@ -78,4 +80,22 @@ const loginClick = () => {
 
 </script>
 
-<style></style>
+<style>
+.stepChange-leave-active {
+  transition: all 0.2s ease;
+}
+
+.stepChange-enter-active {
+  transition: all 0.2s ease;
+}
+
+.stepChange-leave-to {
+  opacity: 0;
+  transform: translateX(-4px);
+}
+
+.stepChange-enter-from {
+  opacity: 0;
+  transform: translateX(4px);
+}
+</style>
