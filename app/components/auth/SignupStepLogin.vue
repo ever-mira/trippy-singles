@@ -1,7 +1,7 @@
 <template>
   <div class="w-full text-lg">
     <div class="w-full mt-5 px-2 md:w-[360px]">
-      <div class="mt-5 relative text-3xl font-bold text-heading">{{ $t('signup.last_step_title') }}</div>
+      <div class="mt-5 relative text-3xl font-bold text-heading">{{ displayname }}</div>
 
       <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">{{ $t('signup.last_step_subtitle') }}</div>
 
