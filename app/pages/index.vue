@@ -55,7 +55,7 @@ import UserList from '../components/user/UserList.vue'
 import Loggedin from '~/components/auth/Loggedin.vue'
 import Puzzle from '~/components/auth/Puzzle.vue'
 
-const { stepComponent, setStepComponent, reset } = useAuth()
+const { stepComponent, setStepComponent } = useAuth()
 const { username } = useUser()
 
 definePageMeta({

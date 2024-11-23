@@ -104,7 +104,7 @@ import useAuth from '../../service/auth'
 import Puzzle from "../auth/Puzzle.vue";
 import Login from "../auth/Login.vue";
 
-const { setStepComponent } = useAuth()
+const { setStepComponent, reset } = useAuth()
 const { username } = useUser()
 
 const router = useRouter()
@@ -116,6 +116,7 @@ const { showMobileMenu } = useApp()
 
 const logout = async () => {
   await supabase.auth.signOut()
+  reset()
   router.push({ path: '/' })
   setStepComponent(Puzzle)
 }
