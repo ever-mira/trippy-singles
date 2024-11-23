@@ -1,9 +1,9 @@
 <template>
   <div class="w-full text-lg">
     <div class="w-full mt-5 px-2 md:w-[360px]">
-      <div class="mt-5 relative text-3xl font-bold text-heading">{{ $t('signup.second_step_title') }}</div>
+      <div class="mt-5 relative text-3xl font-bold text-heading">{{ $t('signup.last_step_title') }}</div>
 
-      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">{{ $t('signup.second_step_subtitle') }}</div>
+      <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">{{ $t('signup.last_step_subtitle') }}</div>
 
       <div class="mt-7 relative">
         <span class="hidden md:inline">{{ $t('signup.email') }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><Input
@@ -31,7 +31,7 @@
 import useAuth from '../../service/auth'
 import Picture from './Picture.vue'
 
-const { setStepComponent, username } = useAuth()
+const { setStepComponent, username, displayname } = useAuth()
 const supabase = useSupabaseClient()
 
 const credentials = reactive({
@@ -47,7 +47,8 @@ const signUp = async () => {
   try {
     const signupData = {
       ...credentials,
-      username: username.value
+      username: username.value,
+      displayname: displayname.value
     }
 
     const result = await $fetch<{ success: boolean }>('/api/signup', {

@@ -69,7 +69,6 @@ if (user.value) {
 }
 
 const startClick = () => {
-  reset()
   setStepComponent(SignupStepUsername)
 }
 

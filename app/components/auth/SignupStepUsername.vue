@@ -5,7 +5,7 @@
       <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-300">{{ $t('signup.subtitle') }}</div>
 
       <div class="mt-12 relative">
-        <Input ref="mailInputRef" placeholder="@Universum_123" v-model="username" autofocus
+        <Input ref="mailInputRef" placeholder="@Username_123" v-model="username" autofocus
           class="!w-[230px] md:!w-[220px]" />
         <div class="inline ml-3 text-green-600" v-if="available">frei</div>
         <div class="inline ml-3 text-red-700" v-if="available === false">vergeben
@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import useAuth from '../../service/auth'
-import SignupStepTwo from './SignupStepLogin.vue'
+import SignupStepDisplayname from './SignupStepDisplayname.vue'
 import debounce from 'lodash.debounce'
 import { validateUsername } from '@utils/usernameValidation'
 
@@ -64,9 +64,10 @@ watch(username, (newVal) => {
   message.value = ''
 
   checkAvailability(newVal)
-})
+},
+  { immediate: true })
 
 const next = async () => {
-  setStepComponent(SignupStepTwo)
+  setStepComponent(SignupStepDisplayname)
 }
 </script>

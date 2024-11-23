@@ -36,8 +36,11 @@
   "signup": {
     "title": "Create Account",
     "subtitle": "Select a Username on Puzzle",
-    "second_step_title": "Last step",
-    "second_step_subtitle": "Set login data",
+    "second_step_title": "Second step",
+    "second_step_subtitle": "Set your Displayname",
+    "displayname": "Displayname",
+    "last_step_title": "Last step",
+    "last_step_subtitle": "Set login data",
     "next": "Next",
     "name": "Name",
     "name_confirm_button": "Ok",

@@ -21,18 +21,8 @@
 <script setup lang="ts">
 import { AvatarImage, AvatarRoot } from 'radix-vue'
 
-const supabase = useSupabaseClient()
+const { users, fetchUsers } = useUserList()
 
-const { data: users } = await useAsyncData('users', async () => {
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('id, username, avatar_url')
-
-  if (error) {
-    throw new Error('Fehler beim Laden der User: ' + error.message)
-  }
-
-  return data
-})
+await fetchUsers()
 
 </script>

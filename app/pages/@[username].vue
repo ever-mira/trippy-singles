@@ -1,7 +1,7 @@
 <template>
   <div class="mt-20 max-w-screen-lg mx-auto">
     <h1 class="text-4xl tracking-tight" v-if="profile">
-      {{ profile.username }}
+      {{ profile.displayname }}
     </h1>
     <h1 class="text-4xl tracking-tight" v-else>
       User nicht gefunden.

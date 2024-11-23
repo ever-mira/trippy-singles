@@ -36,8 +36,11 @@
   "signup": {
     "title": "Account erstellen",
     "subtitle": "Wähle einen Benutzernamen",
-    "second_step_title": "Letzter Schritt",
-    "second_step_subtitle": "Login-Daten festlegen",
+    "second_step_title": "Zweiter Schritt",
+    "second_step_subtitle": "Anzeigename festlegen",
+    "displayname": "Dein Anzeigename",
+    "last_step_title": "Letzter Schritt",
+    "last_step_subtitle": "Login-Daten festlegen",
     "next": "Weiter",
     "name": "Name",
     "name_confirm_button": "Ok",
