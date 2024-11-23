@@ -1,9 +1,9 @@
 <template>
   <Page>
     <Heading>
-      Postfach
+      {{ $t('pages.locations.title') }}
       <template v-slot:subtitle>
-        Keine neuen Nachrichten.
+        {{ $t('pages.locations.subtitle') }}
       </template>
     </Heading>
   </Page>

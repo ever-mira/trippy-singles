@@ -1,9 +1,9 @@
 <template>
   <Page>
     <Heading>
-      Postfach
+      Chat
       <template v-slot:subtitle>
-        Keine neuen Nachrichten.
+        Chat-Spiele - Spontan und unüberlegt.
       </template>
     </Heading>
   </Page>

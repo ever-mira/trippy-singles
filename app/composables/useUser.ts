@@ -1,5 +1,10 @@
+import type { Database } from "../../types/database.types";
+type Profile = Database["public"]["Tables"]["profiles"]["Row"];
+
 export function useUser() {
   const username = useState<string | null>("username", () => null);
+  const displayname = useState<string | null>("displayname", () => null);
+  const avatar_url = useState<string | null>("avatar_url", () => null);
 
   const supabase = useSupabaseClient();
   const supabaseUser = useSupabaseUser();
@@ -13,12 +18,14 @@ export function useUser() {
     try {
       const { data, error } = await supabase
         .from("profiles")
-        .select("username")
+        .select("id, username, displayname, avatar_url")
         .eq("id", supabaseUser.value.id)
         .single();
 
       if (error) throw error;
       username.value = data?.username || null;
+      displayname.value = data?.displayname || null;
+      avatar_url.value = data?.avatar_url || null;
     } catch (err) {
       username.value = null;
     }
@@ -30,6 +37,8 @@ export function useUser() {
 
   return {
     username,
+    displayname,
+    avatar_url,
     fetchUsername,
     clearUsername,
   };

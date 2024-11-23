@@ -1,9 +1,9 @@
 <template>
   <Page>
     <Heading>
-      Postfach
+      Favorites
       <template v-slot:subtitle>
-        Keine neuen Nachrichten.
+        Tausche mit Anderen deine lieblings- Youtube-Videos und TikToks.
       </template>
     </Heading>
   </Page>

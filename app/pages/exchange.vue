@@ -1,9 +1,10 @@
 <template>
   <Page>
     <Heading>
-      Postfach
+      Tauschen und Verleihen
       <template v-slot:subtitle>
-        Keine neuen Nachrichten.
+        Gebrauchte Fahrräder, selbstgemachte Marmelade, Werzeug, Gemüse, Hecke schneiden, Dinge Reparieren, Yoga &
+        Healing
       </template>
     </Heading>
   </Page>

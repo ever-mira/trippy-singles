@@ -20,9 +20,12 @@
 
 <script setup lang="ts">
 import { AvatarImage, AvatarRoot } from 'radix-vue'
+import type { Database } from '../../../types/database.types'
+type ProfileData = Database['public']['Tables']['profiles']['Row']
 
-const { users, fetchUsers } = useUserList()
-
-await fetchUsers()
+const { data: users } = await useFetch<ProfileData>(`/api/users/`, {
+  method: 'GET',
+  headers: useRequestHeaders(['cookie']),
+})
 
 </script>

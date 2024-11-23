@@ -1,26 +1,31 @@
 <template>
-  <div class="py-10 lg:py-15 max-w-screen-lg mx-auto">
-    <h1 class="text-4xl font-bold tracking-tight">
+  <Page>
+    <Heading>
       {{ $t('settings.title') }}
-    </h1>
-    <p class="mt-6 text-lg leading-8 text-sub dark:text-sub-dark">
-      {{ $t('settings.subtitle') }}
-    </p>
+      <template v-slot:subtitle>
+        {{ $t('settings.subtitle') }}
+      </template>
+    </Heading>
 
-    <p class="block mt-22 text-2xl leading-8">
-      {{ $t('settings.delete_account.title') }}
-    </p>
 
-    <Button color="red" @click="deleteAccountClick" class="mt-4 !px-6.5">
-      {{ $t('settings.delete_account.button') }}
-    </Button>
+    <div class="py-10 lg:py-15 max-w-screen-xl mx-auto">
 
-    <p class="block mt-22 text-2xl leading-8">
-      {{ $t('settings.language') }}
-    </p>
-    <LanguageDropdown class="mt-3" />
+      <p class="block mt-19 text-2xl leading-8">
+        {{ $t('settings.delete_account.title') }}
+      </p>
 
-  </div>
+      <Button color="red" @click="deleteAccountClick" class="mt-4 !px-6.5">
+        {{ $t('settings.delete_account.button') }}
+      </Button>
+
+      <p class="block mt-22 text-2xl leading-8">
+        {{ $t('settings.language') }}
+      </p>
+      <LanguageDropdown class="mt-3" />
+
+    </div>
+  </Page>
+
 </template>
 
 
