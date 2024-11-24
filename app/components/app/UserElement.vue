@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink :to="`/@${username}`">
+    <NuxtLink :to="`/@${username}`" @click="delayHideSidebar">
       <div class="flex mt-5.5">
         <div class="flex-1">
 
@@ -28,4 +28,5 @@
 
 <script setup lang="ts">
 const { username, displayname, avatar_url } = useUser()
+const { delayHideSidebar } = useApp()
 </script>

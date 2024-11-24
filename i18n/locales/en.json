@@ -88,17 +88,17 @@
   },
   "pages": {
     "people": {
-      "title": "People.",
+      "title": "People",
       "subtitle": "Profiles and Visions.",
       "coming_soon": "Coming soon."
     },
     "events": {
-      "title": "Events.",
+      "title": "Events",
       "subtitle": "Dance parties and barbecues.",
       "coming_soon": "Coming soon."
     },
     "locations": {
-      "title": "Places.",
+      "title": "Places",
       "subtitle": "Communities, farms and gardens.",
       "coming_soon": "Coming soon."
     }

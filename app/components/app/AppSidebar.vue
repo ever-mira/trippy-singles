@@ -1,5 +1,5 @@
 <template>
-  <div class="p-5">
+  <div class="px-5 py-3.5">
     <div>
       <AppTitle />
 
@@ -11,7 +11,7 @@
         </Button>
       </div>
 
-      <NavLink to="/" class="mt-5">
+      <NavLink to="/" class="mt-6">
         Startseite
       </NavLink>
 
@@ -33,10 +33,6 @@
 
       <NavLink to="/chat">
         Chat
-      </NavLink>
-
-      <NavLink to="/favorites">
-        Favorites
       </NavLink>
 
     </div>
@@ -72,10 +68,8 @@ import UserElement from './UserElement.vue'
 import NavLink from './NavLink.vue'
 import LanguageDropdown from '../language/LanguageDropdown.vue'
 import ToggleDark from './DarkToggle.vue'
-
 import Puzzle from "../auth/Puzzle.vue";
 import Login from "../auth/Login.vue";
-
 
 const user: Ref = useSupabaseUser()
 const supabase = useSupabaseClient()

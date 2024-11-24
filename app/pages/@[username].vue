@@ -1,11 +1,19 @@
 <template>
-  <div class="mt-20 max-w-screen-lg mx-auto">
-    <h1 class="text-4xl tracking-tight" v-if="profile">
+  <Page>
+    <Heading v-if="profile">
       {{ profile.displayname }}
-    </h1>
-    <h1 class="text-4xl tracking-tight" v-else>
-      User nicht gefunden.
-    </h1>
+      <template v-slot:subtitle>
+        Profil auf Puzzle
+      </template>
+    </Heading>
+    <Heading v-else>
+      User nicht gefunden
+      <template v-slot:subtitle>
+        404
+        <div class="h-20"></div>
+      </template>
+    </Heading>
+
     <div class="mt-11" v-if="profile">
       <img :src="profile.avatar_url || undefined" class="rounded-lg md:max-w-69 mt-10" v-if="profile.avatar_url">
       <img src="../assets/avatar.jpg" class="rounded-lg md:max-w-69 mt-10" v-else>
@@ -18,7 +26,7 @@
     </div>
 
     <div class="h-60"></div>
-  </div>
+  </Page>
 </template>
 
 <script setup lang="ts">

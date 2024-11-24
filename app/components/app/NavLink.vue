@@ -1,6 +1,7 @@
 <template>
-  <NuxtLink :to="to" class="block w-full px-5 py-3.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-950 leading-none"
-    activeClass="bg-gray-50 dark:bg-gray-950">
+  <NuxtLink :to="to"
+    class="block w-full px-3 lg:px-4 py-3.4 md:py-3.5 rounded-xl hover:bg-[#f6f6f6] dark:hover:bg-[#0b0b19] leading-none"
+    activeClass="bg-[#f6f6f6] dark:bg-[#0a0a16] font-medium" @click="delayHideSidebar">
     <slot></slot>
   </NuxtLink>
 </template>
@@ -12,4 +13,6 @@ defineProps({
     required: true,
   }
 })
+
+const { delayHideSidebar } = useApp()
 </script>

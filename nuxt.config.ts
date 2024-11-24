@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
   modules: ["@unocss/nuxt", "@nuxtjs/supabase", "radix-vue/nuxt", "@nuxtjs/i18n", "@nuxthub/core"],
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
+    pageTransition: { name: "page", mode: "default" },
   },
   alias: {
     "@utils": fileURLToPath(new URL("./utils", import.meta.url)),

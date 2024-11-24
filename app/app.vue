@@ -1,26 +1,31 @@
 <template>
   <div class="relative min-h-screen h-auto overflow-hidden">
     <NuxtLoadingIndicator />
-    <aside class="fixed top-0 left-0 z-40 w-64 h-screen bg-white dark:bg-black bg-opacity-97">
+    <aside
+      class="hidden lg:block fixed top-0 left-0 z-40 w-70 md:w-64 h-screen bg-white dark:bg-black border-r border-gray-500 lg:border-r-0"
+      :class="{ '!block': isSidebarVisible }">
       <AppSidebar />
     </aside>
-    <main class="sm:ml-64">
-      <header>
+    <main class="lg:ml-64">
+      <!-- <header>
         <nav class="px-4 lg:px-6 py-1.5">
           <AppHeader />
         </nav>
-      </header>
+      </header> -->
 
-      <main class="w-full pt-12 px-4 lg:px-6 mx-auto">
-        <NuxtPage />
+      <main class="">
+        <!-- pt-12 pl-4 lg:pl-6 -->
+
+        <!--  -->
+        <div class="relative h-full w-full">
+          <NuxtPage />
+        </div>
       </main>
 
       <footer class="absolute bottom-0 px-4 lg:px-6 py-1">
         <AppFooter />
       </footer>
     </main>
-
-    <MobileMenu />
 
     <Modal />
 
@@ -31,20 +36,29 @@
 import AppHeader from './components/app/AppHeader.vue'
 import AppFooter from './components/app/AppFooter.vue'
 import AppSidebar from './components/app/AppSidebar.vue'
-import MobileMenu from './components/app/MobileMenu.vue'
+
 import Modal from './components/app/Modal.vue'
 
 useHead({
   title: 'Puzzle Social',
 })
+
+const { isSidebarVisible } = useApp()
 </script>
 
 <style>
-.page-enter-active {
-  transition: opacity 0.27s ease;
+.page-enter-active,
+.page-leave-active {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.17s ease;
 }
 
-.page-enter-from,
+.page-enter-from {
+  opacity: 0;
+}
+
 .page-leave-to {
   opacity: 0;
 }

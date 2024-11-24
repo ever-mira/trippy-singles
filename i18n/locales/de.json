@@ -88,17 +88,17 @@
   },
   "pages": {
     "people": {
-      "title": "Menschen.",
+      "title": "Menschen",
       "subtitle": "Profile und Visionen.",
       "coming_soon": "Coming soon."
     },
     "events": {
-      "title": "Events.",
+      "title": "Events",
       "subtitle": "Tanz-Parties und Grillabende.",
       "coming_soon": "Coming soon."
     },
     "locations": {
-      "title": "Orte.",
+      "title": "Orte",
       "subtitle": "Kommunen, Höfe und Gärten.",
       "coming_soon": "Coming soon."
     }

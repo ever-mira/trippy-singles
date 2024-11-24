@@ -3,7 +3,7 @@
     <Heading>
       Chat
       <template v-slot:subtitle>
-        Chat-Spiele - Spontan und unüberlegt.
+        Chat-Spiele
       </template>
     </Heading>
   </Page>

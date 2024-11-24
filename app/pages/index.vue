@@ -1,6 +1,6 @@
 <template>
 
-  <div>
+  <Page>
 
     <div class="flex flex-col lg:flex-row max-w-340 justify-between mt-30 lg:mt-37 -ml-3 md:mx-auto min-h-74">
       <div class="">
@@ -41,8 +41,7 @@
       <UserList class="ml-5 md:ml-7" />
     </div>
 
-
-  </div>
+    </ Page>
 </template>
 
 

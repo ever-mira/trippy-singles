@@ -3,7 +3,7 @@
     <Heading>
       Tauschen und Verleihen
       <template v-slot:subtitle>
-        Gebrauchte Fahrräder, selbstgemachte Marmelade, Werzeug, Gemüse, Hecke schneiden, Dinge Reparieren, Yoga &
+        Gebrauchte Fahrräder, selbstgemachte Marmelade, Werkzeug, Gemüse, Hecke schneiden, Dinge Reparieren, Yoga &
         Healing
       </template>
     </Heading>

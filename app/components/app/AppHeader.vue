@@ -1,9 +1,9 @@
 <template>
 
-  <div class="flex flex-wrap justify-between items-center mx-auto">
+  <div class="flex h-5 flex-wrap justify-between items-center mx-auto">
 
     <div class="flex items-center cursor-pointer">
-
+      <AppTitle class="md:hidden" />
     </div>
 
     <div class="hidden lg:flex w-full lg:w-auto justify-between items-center">
@@ -34,7 +34,7 @@
         </DropdownMenuPortal>
       </DropdownMenuRoot> -->
 
-      <Button color="transparent" @click="showMobileMenu" class="block lg:hidden !px-6 -mr-4">
+      <Button color="transparent" @click="toggleSidebar" class="block lg:hidden !px-6 -mr-4">
         <svg class="w-6 h-6 text-gray-500 dark:text-gray-300 -mt-.5" fill="currentColor" viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"
@@ -52,21 +52,12 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import useApp from './../../service/app'
-
-
 import useAuth from '../../service/auth'
 import Puzzle from "../auth/Puzzle.vue";
 import Login from "../auth/Login.vue";
 
-
 const { username } = useUser()
 
-
-
-
-
-const { showMobileMenu } = useApp()
-
+const { toggleSidebar } = useApp()
 
 </script>
