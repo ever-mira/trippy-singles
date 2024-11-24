@@ -11,8 +11,10 @@ import useAuth from '../../service/auth'
 import Puzzle from '../auth/Puzzle.vue'
 
 const { setStepComponent, displayname } = useAuth()
+const { delayHideSidebar } = useApp()
 
 const onClick = () => {
   setStepComponent(Puzzle)
+  delayHideSidebar()
 }
 </script>

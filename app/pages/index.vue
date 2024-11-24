@@ -2,7 +2,7 @@
 
   <Page>
 
-    <div class="flex flex-col lg:flex-row max-w-340 justify-between mt-30 lg:mt-37 -ml-3 md:mx-auto min-h-74">
+    <div class="flex flex-col lg:flex-row max-w-340 justify-between mt-34 lg:mt-59 -ml-3 md:mx-auto min-h-74">
       <div class="">
         <img src="../assets/entry.png" class="dark:hidden w-120">
         <img src="../assets/entry_dark.png" class="hidden dark:block w-124">

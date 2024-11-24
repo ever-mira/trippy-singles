@@ -7,11 +7,11 @@
       <AppSidebar />
     </aside>
     <main class="lg:ml-64">
-      <!-- <header>
-        <nav class="px-4 lg:px-6 py-1.5">
+      <header>
+        <nav class="absolute px-4 lg:px-6 py-1.5 z-10 w-full">
           <AppHeader />
         </nav>
-      </header> -->
+      </header>
 
       <main class="">
         <!-- pt-12 pl-4 lg:pl-6 -->
