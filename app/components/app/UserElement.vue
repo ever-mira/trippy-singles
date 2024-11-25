@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <NuxtLink :to="`/@${username}`" @click="delayHideSidebar">
-      <div class="flex mt-5.5">
-        <div class="flex-1">
+  <div class="p-2 mt-3 border-gray-200 border-1.5 dark:border-gray-800 rounded-xl bg-[#f6f6f6] dark:bg-[#0a0a16]">
+    <NuxtLink :to="`/@${username}`" @click="hideSidebar">
+      <div class="flex  gap-2.5">
+        <div>
 
           <AvatarRoot>
             <AvatarImage :src="avatar_url || ''" class="w-11 rounded-full" />
@@ -12,11 +12,11 @@
           </AvatarRoot>
 
         </div>
-        <div class="flex flex-col flex-grow">
-          <div class="text-md font-medium leading-none">
+        <div class="flex flex-col flex-grow pt-1">
+          <div class="font-medium leading-none">
             {{ displayname }}
           </div>
-          <div>
+          <div class="text-gray-700 dark:text-gray-300 text-sm">
             @{{ username }}
           </div>
         </div>
@@ -28,5 +28,5 @@
 
 <script setup lang="ts">
 const { username, displayname, avatar_url } = useUser()
-const { delayHideSidebar } = useApp()
+const { hideSidebar } = useApp()
 </script>

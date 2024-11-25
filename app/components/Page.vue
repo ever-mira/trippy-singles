@@ -1,7 +1,7 @@
 <template>
   <div class="absolute top-0 left-0 h-full w-full">
-    <div class="h-screen overflow-y-auto py-17 px-4 md:px-7 lg:py-10" ref="scrollContainer">
-      <div class="max-w-340 mx-auto">
+    <div class="h-screen overflow-y-auto py-17 px-4 md:px-7 lg:px-11 lg:py-19" ref="scrollContainer">
+      <div class="max-w-340 xl:max-w-350 mx-auto">
         <slot></slot>
       </div>
     </div>

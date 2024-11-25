@@ -8,7 +8,7 @@
     </Heading>
 
 
-    <div class="py-10 lg:py-15 max-w-screen-xl mx-auto">
+    <div class="py-10 lg:py-15 mx-auto">
 
       <p class="block mt-19 text-2xl leading-8">
         {{ $t('settings.delete_account.title') }}

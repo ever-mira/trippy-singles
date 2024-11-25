@@ -16,12 +16,6 @@ export function useApp() {
     isSidebarVisible.value = false;
   };
 
-  const delayHideSidebar = async () => {
-    setTimeout(() => {
-      hideSidebar();
-    }, 200);
-  };
-
   const toggleSidebar = async () => {
     isSidebarVisible.value = !isSidebarVisible.value;
   };
@@ -43,7 +37,6 @@ export function useApp() {
     showSidebar,
     hideSidebar,
     toggleSidebar,
-    delayHideSidebar,
     saveScrollPosition,
     getScrollPosition,
   };

@@ -2,15 +2,15 @@
 
   <Page>
 
-    <div class="flex flex-col lg:flex-row max-w-340 justify-between mt-34 lg:mt-59 -ml-3 md:mx-auto min-h-74">
-      <div class="">
-        <img src="../assets/entry.png" class="dark:hidden w-120">
-        <img src="../assets/entry_dark.png" class="hidden dark:block w-124">
-        <div class="ml-5 md:ml-7">
+    <div class="flex flex-col lg:flex-row justify-between mt-24 lg:mt-47 md:mx-auto min-h-74">
+      <div class="-ml.5">
+        <img src="../assets/entry.png" class="dark:hidden w-120 scale-107 lg:scale-100">
+        <img src="../assets/entry_dark.png" class="hidden dark:block w-120 scale-107 lg:scale-100">
+        <div class="ml-3 md:ml-7">
           <div class="mt-2 text-lg">
             {{ $t('app.subtitle') }}
           </div>
-          <div class="mt-9">
+          <div class="mt-8 lg:mt-9">
             <div v-if="!user">
               <Button color="red" @click="startClick" class="!px-8">
                 {{ $t('app.start') }}
@@ -30,14 +30,14 @@
         </div>
       </div>
 
-      <div class="ml-4 md:ml-0 w-90% md:w-60% mt-14 lg:mt-0">
+      <div class="md:ml-0 w-80% md:w-60% mt-10 lg:mt-0">
         <transition name="stepChange" mode="out-in">
           <component :is="stepComponent"></component>
         </transition>
       </div>
     </div>
 
-    <div class="mt-20 max-w-340 mx-auto">
+    <div class="mt-20 mx-auto">
       <UserList class="ml-5 md:ml-7" />
     </div>
 
@@ -63,11 +63,11 @@ definePageMeta({
 
 const user: Ref = useSupabaseUser()
 
-if (user.value) {
-  setStepComponent(Loggedin)
-} else {
-  setStepComponent(Puzzle)
-}
+// if (user.value) {
+//   setStepComponent(Loggedin)
+// } else {
+//   setStepComponent(Puzzle)
+// }
 
 const startClick = () => {
   setStepComponent(SignupStepUsername)

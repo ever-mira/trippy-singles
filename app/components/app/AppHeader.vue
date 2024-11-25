@@ -34,8 +34,8 @@
         </DropdownMenuPortal>
       </DropdownMenuRoot> -->
 
-      <Button color="transparent" @click="toggleSidebar" class="block lg:hidden !px-6 -mr-4">
-        <svg class="w-6 h-6 text-gray-500 dark:text-gray-300 -mt-.5" fill="currentColor" viewBox="0 0 20 20"
+      <Button color="transparent" @click="toggleSidebar" class="block !px-6 -mr-4 z-30">
+        <svg class="w-6.5 h-6.5 text-gray-600 dark:text-gray-300 -mt-.5" fill="currentColor" viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"
             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"

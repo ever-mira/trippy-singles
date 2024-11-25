@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Puzzle.",
-    "subtitle": "Finde neue Freunde im Universum.",
+    "subtitle": "Das soziale Netzwerk für eine neue Realität.",
     "menu": {
       "people": "Menschen",
       "events": "Veranstaltungen",
@@ -18,7 +18,7 @@
     "no": "Nein",
     "ok": "Ok",
     "cancel": "Abbrechen",
-    "new_users": "Neue Mitglieder",
+    "new_users": "Mitglieder",
     "footer": {
       "copyright": "© 2024 Puzzle Social",
       "terms": "Nutzungsbedingungen",

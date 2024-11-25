@@ -15,7 +15,11 @@ export default defineNuxtConfig({
   alias: {
     "@utils": fileURLToPath(new URL("./utils", import.meta.url)),
   },
-  css: ["@unocss/reset/tailwind.css", "~/assets/global.css"],
+  css: [
+    "@unocss/reset/tailwind.css",
+    "~/assets/global.css",
+    "@fortawesome/fontawesome-free/css/all.min.css",
+  ],
   supabase: {
     redirect: false,
   },
