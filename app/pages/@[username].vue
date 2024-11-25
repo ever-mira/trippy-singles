@@ -3,11 +3,11 @@
     <Heading v-if="profile">
       {{ profile.displayname }}
       <template v-slot:subtitle>
-        Profil auf Puzzle
+        {{ $t('profile.subtitle') }}
       </template>
     </Heading>
     <Heading v-else>
-      User nicht gefunden
+      {{ $t('profile.not_found') }}
       <template v-slot:subtitle>
         404
         <div class="h-20"></div>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="mt-9">
-      <Button @click="goBack" class="!px-8">Zurück</Button>
+      <Button @click="goBack" class="!px-8">{{ $t('profile.back') }}</Button>
     </div>
 
     <div class="h-60"></div>

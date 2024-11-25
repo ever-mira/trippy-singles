@@ -2,11 +2,6 @@
   "app": {
     "title": "Puzzle.",
     "subtitle": "Find new friends and explore the universe.",
-    "menu": {
-      "people": "People",
-      "events": "Events",
-      "locations": "Locations"
-    },
     "login": "Login",
     "logout": "Logout",
     "start": "Start",
@@ -25,6 +20,14 @@
       "privacy": "Privacy Policy"
     }
   },
+  "menu": {
+    "start": "Startpage",
+    "people": "People",
+    "places": "Places",
+    "events": "Events",
+    "exchange": "Exchange",
+    "chat": "Chat"
+  },
   "login": {
     "title": "Login",
     "subtitle": "Welcome",
@@ -36,6 +39,8 @@
   "signup": {
     "title": "Create Account",
     "subtitle": "Select a Username on Puzzle",
+    "username_free": "available",
+    "username_taken": "taken",
     "second_step_title": "Second step",
     "second_step_subtitle": "Set your Displayname",
     "displayname": "Displayname",
@@ -47,7 +52,9 @@
     "email_password": "Set email and password.",
     "email": "E-Mail",
     "password": "Password",
-    "create_account": "Create Account"
+    "create_account": "Create Account",
+    "logged_in": "You are logged in.",
+    "set_picture_hint": "Set a picture, if you want."
   },
   "profile": {
     "subtitle": "Profile on Puzzle.",
@@ -56,6 +63,8 @@
     "social_media": "Social Media",
     "coming_soon": "Coming soon.",
     "change_image": "Change Picture",
+    "select_image": "Select Picture",
+    "not_found": "User not found.",
     "location": {
       "title": "Location",
       "set": "set",
@@ -97,9 +106,19 @@
       "subtitle": "Dance parties and barbecues.",
       "coming_soon": "Coming soon."
     },
-    "locations": {
+    "places": {
       "title": "Places",
       "subtitle": "Communities, farms and gardens.",
+      "coming_soon": "Coming soon."
+    },
+    "exchange": {
+      "title": "Exchange and lend",
+      "subtitle": "Used bicycles, homemade jam, tools, vegetables, hedge trimming, repairing things, yoga & healing",
+      "coming_soon": "Coming soon."
+    },
+    "chat": {
+      "title": "Chat",
+      "subtitle": "Chat-Games",
       "coming_soon": "Coming soon."
     }
   }

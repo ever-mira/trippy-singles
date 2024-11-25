@@ -1,10 +1,9 @@
 <template>
   <Page>
     <Heading>
-      Tauschen und Verleihen
+      {{ $t('pages.exchange.title') }}
       <template v-slot:subtitle>
-        Gebrauchte Fahrräder, selbstgemachte Marmelade, Werkzeug, Gemüse, Hecke schneiden, Dinge Reparieren, Yoga &
-        Healing
+        {{ $t('pages.exchange.subtitle') }}
       </template>
     </Heading>
   </Page>

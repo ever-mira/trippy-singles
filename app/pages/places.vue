@@ -1,9 +1,9 @@
 <template>
   <Page>
     <Heading>
-      {{ $t('pages.locations.title') }}
+      {{ $t('pages.places.title') }}
       <template v-slot:subtitle>
-        {{ $t('pages.locations.subtitle') }}
+        {{ $t('pages.places.subtitle') }}
       </template>
     </Heading>
   </Page>

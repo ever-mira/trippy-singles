@@ -14,27 +14,27 @@
       </div>
 
       <NavLink to="/" class="mt-6">
-        <i class="fa-solid fa-house text-sky-600 mr-4" style=""></i>Startseite
+        <i class="fa-solid fa-house text-sky-600 mr-4"></i>{{ $t('menu.start') }}
       </NavLink>
 
       <NavLink to="/people">
-        <i class="fa-solid fa-user-group text-sky-600 mr-4"></i>Menschen
+        <i class="fa-solid fa-user-group text-sky-600 mr-4"></i>{{ $t('menu.people') }}
       </NavLink>
 
       <NavLink to="/places">
-        <i class="fa-solid fa-map-location-dot text-sky-600 mr-4"></i>Orte
+        <i class="fa-solid fa-map-location-dot text-sky-600 mr-4"></i>{{ $t('menu.places') }}
       </NavLink>
 
       <NavLink to="/events">
-        <i class="fa-solid fa-calendar text-sky-600 mr-4"></i>Veranstaltungen
+        <i class="fa-solid fa-calendar text-sky-600 mr-4"></i>{{ $t('menu.events') }}
       </NavLink>
 
       <NavLink to="/exchange">
-        <i class="fa-solid fa-share-nodes text-sky-600 mr-4"></i>Tauschen
+        <i class="fa-solid fa-share-nodes text-sky-600 mr-4"></i>{{ $t('menu.exchange') }}
       </NavLink>
 
       <NavLink to="/chat">
-        <i class="fa-solid fa-comments text-sky-600 mr-4"></i>Chat
+        <i class="fa-solid fa-comments text-sky-600 mr-4"></i>{{ $t('menu.chat') }}
       </NavLink>
 
     </div>
@@ -42,7 +42,7 @@
     <div class="border-t border-gray-200 dark:border-gray-700 mt-7 pt-1.5">
       <div v-if="user">
         <NavLink to="/settings">
-          <i class="fa-solid fa-gear text-sky-600 mr-4"></i>Einstellungen
+          <i class="fa-solid fa-gear text-sky-600 mr-4"></i>{{ $t('app.settings') }}
         </NavLink>
         <Button color="indigo" @click="logout" class="!px-6.5 mt-4">
           {{ $t('app.logout') }}

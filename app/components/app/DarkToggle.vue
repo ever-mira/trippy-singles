@@ -1,8 +1,9 @@
 <template>
 
-  <div class="flex select-none" @click="toggleDark">
+  <div class="flex select-none">
     <div
-      class="relative w-13 h-6.4 flex items-center bg-gray-200 dark:bg-gray-800 border-1 border-gray-300 dark:border-gray-700 rounded-full p-1 cursor-pointer transition-colors duration-200">
+      class="relative w-13 h-6.3 flex items-center bg-gray-200 dark:bg-gray-800 border-1 border-gray-300 dark:border-gray-700 rounded-full p-1 cursor-pointer transition-colors duration-200"
+      @click="toggleDark">
       <div
         class="absolute right-.4 dark:right-initial dark:left-.4 w-5 h-5 bg-white dark:bg-black rounded-full shadow-md transform transition-transform duration-200">
       </div>

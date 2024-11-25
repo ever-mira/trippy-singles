@@ -2,11 +2,6 @@
   "app": {
     "title": "Puzzle.",
     "subtitle": "Das soziale Netzwerk für eine neue Realität.",
-    "menu": {
-      "people": "Menschen",
-      "events": "Veranstaltungen",
-      "locations": "Treffpunkte"
-    },
     "login": "Login",
     "logout": "Logout",
     "start": "Start",
@@ -25,6 +20,14 @@
       "privacy": "Datenschutzerklärung"
     }
   },
+  "menu": {
+    "start": "Startseite",
+    "people": "Menschen",
+    "places": "Orte",
+    "events": "Veranstaltungen",
+    "exchange": "Tauschen",
+    "chat": "Chat"
+  },
   "login": {
     "title": "Login",
     "subtitle": "Willkommen",
@@ -36,6 +39,8 @@
   "signup": {
     "title": "Account erstellen",
     "subtitle": "Wähle einen Benutzernamen",
+    "username_free": "verfügbar",
+    "username_taken": "vergeben",
     "second_step_title": "Zweiter Schritt",
     "second_step_subtitle": "Anzeigename festlegen",
     "displayname": "Dein Anzeigename",
@@ -47,7 +52,9 @@
     "email_password": "Email und Passwort festlegen.",
     "email": "E-Mail",
     "password": "Passwort",
-    "create_account": "Account erstellen"
+    "create_account": "Account erstellen",
+    "logged_in": "Du bist eingeloggt.",
+    "set_picture_hint": "Setze ein Profilbild, wenn du möchtest."
   },
   "profile": {
     "subtitle": "Profil auf Puzzle.",
@@ -56,6 +63,8 @@
     "social_media": "Social Media",
     "coming_soon": "Coming soon.",
     "change_image": "Bild ändern",
+    "select_image": "Bild auswählen",
+    "not_found": "User nicht gefunden.",
     "location": {
       "title": "Standort",
       "set": "festlegen",
@@ -97,9 +106,19 @@
       "subtitle": "Tanz-Parties und Grillabende.",
       "coming_soon": "Coming soon."
     },
-    "locations": {
+    "places": {
       "title": "Orte",
       "subtitle": "Kommunen, Höfe und Gärten.",
+      "coming_soon": "Coming soon."
+    },
+    "exchange": {
+      "title": "Tauschen und Verleihen",
+      "subtitle": "Gebrauchte Fahrräder, selbstgemachte Marmelade, Werkzeug, Gemüse, Hecke schneiden, Dinge Reparieren, Yoga & Healing",
+      "coming_soon": "Coming soon."
+    },
+    "chat": {
+      "title": "Chat",
+      "subtitle": "Chat-Spiele",
       "coming_soon": "Coming soon."
     }
   }

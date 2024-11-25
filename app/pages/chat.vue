@@ -1,9 +1,9 @@
 <template>
   <Page>
     <Heading>
-      Chat
+      {{ $t('pages.chat.title') }}
       <template v-slot:subtitle>
-        Chat-Spiele
+        {{ $t('pages.chat.subtitle') }}
       </template>
     </Heading>
   </Page>

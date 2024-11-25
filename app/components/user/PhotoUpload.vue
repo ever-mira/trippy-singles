@@ -3,10 +3,10 @@
     <label class="mt-9 py-2 px-4 bg-gray-100 dark:bg-gray-900 cursor-pointer text-center rounded-md">
       <input id="file-input" ref="fileInput" class="hidden" type="file" @change="imageSelected($event)" />
       <span v-if="change">
-        Bild ändern
+        {{ $t('profile.change_image') }}
       </span>
       <span v-else>
-        Bild auswählen
+        {{ $t('profile.select_image') }}
       </span>
     </label>
     <span class="block mt-4" v-if="message">{{ message }}</span>

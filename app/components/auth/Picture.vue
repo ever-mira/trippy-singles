@@ -1,9 +1,9 @@
 <template>
   <div class="w-full text-lg -mt-5">
     <div class="w-full px-2 md:w-[360px]">
-      <div class="mt-9 relative text-3xl font-bold text-heading">Eingeloggt</div>
+      <div class="mt-9 relative text-3xl font-bold text-heading">{{ $t('signup.logged_in') }}</div>
       <div class="mt-9 relative">
-        Setze ein Profilbild, wenn du möchtest.
+        {{ $t('signup.set_picture_hint') }}
       </div>
 
       <div class="mt-7">
