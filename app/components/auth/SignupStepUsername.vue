@@ -1,6 +1,8 @@
 <template>
   <div class="w-full text-lg">
+
     <div class="w-full mt-5 px-2 md:w-[360px]">
+
       <div class="mt-5 relative text-3xl font-bold text-heading">{{ $t('signup.title') }}</div>
       <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-300">{{ $t('signup.subtitle') }}</div>
 
@@ -14,7 +16,6 @@
         <p class="mt-3.5 text-gray-500 dark:text-gray-300">https://puzzle.social/@{{ username }}</p>
       </div>
 
-
       <div class="mt-6 h-8" v-if="message">
         <span class="text-gray-700">{{ message }}</span>
       </div>
@@ -23,16 +24,14 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">
-import useAuth from '../../service/auth'
 import SignupStepDisplayname from './SignupStepDisplayname.vue'
 import debounce from 'lodash.debounce'
 import { validateUsername } from '@utils/usernameValidation'
 
-const { setStepComponent, username } = useAuth()
+const { setStepComponent, username } = useSignup()
 
 const message = ref<string>('')
 const available = ref<boolean | null>(null)

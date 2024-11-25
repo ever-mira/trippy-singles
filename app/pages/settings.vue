@@ -7,7 +7,6 @@
       </template>
     </Heading>
 
-
     <div class="py-10 lg:py-15 mx-auto">
 
       <p class="block mt-19 text-2xl leading-8">
@@ -31,10 +30,9 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import useApp from '~/service/app'
 const { t } = useI18n()
 
-const { showModal } = useApp()
+const { showModal } = useModal()
 
 const deleteAccountClick = () => {
   showModal(t('settings.delete_account.confirm'), true, yesClicked)

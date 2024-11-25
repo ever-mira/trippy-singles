@@ -1,5 +1,4 @@
 <template>
-
   <div class="flex select-none">
     <div
       class="relative w-13 h-6.3 flex items-center bg-gray-200 dark:bg-gray-800 border-1 border-gray-300 dark:border-gray-700 rounded-full p-1 cursor-pointer transition-colors duration-200"
@@ -13,15 +12,10 @@
         class="absolute right-.3 text-gray-300 dark:text-yellow-200 dark:opacity-0 transition-opacity duration-200">🌙</span>
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">
-import useApp from '../../service/app'
-
 const { toggleDark } = useApp()
-
 </script>
-
 
 <style></style>

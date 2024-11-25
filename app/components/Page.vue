@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
+const { saveScrollPosition, getScrollPosition, showHeader, hideHeader } = useApp()
 const routePath = useRoute().path
-const { saveScrollPosition, getScrollPosition } = useApp()
 
 const scrollContainer = ref<HTMLElement | null>(null)
 
@@ -26,5 +26,29 @@ onMounted(() => {
   if (savedPosition && scrollContainer.value) {
     scrollContainer.value.scrollTop = getScrollPosition(routePath) || 0
   }
+})
+
+const lastScrollY = ref(0)
+
+const handleScroll = () => {
+  if (!scrollContainer.value) return
+
+  const currentScrollY = scrollContainer.value.scrollTop
+
+  if (currentScrollY > lastScrollY.value) {
+    hideHeader()
+  } else {
+    showHeader()
+  }
+
+  lastScrollY.value = currentScrollY
+}
+
+onMounted(() => {
+  scrollContainer.value?.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  scrollContainer.value?.removeEventListener('scroll', handleScroll)
 })
 </script>

@@ -2,7 +2,7 @@
   <div class="text-left">
     <label class="mt-9 py-2 px-4 bg-gray-100 dark:bg-gray-900 cursor-pointer text-center rounded-md">
       <input id="file-input" ref="fileInput" class="hidden" type="file" @change="imageSelected($event)" />
-      <span v-if="change">
+      <span v-if="props.change">
         {{ $t('profile.change_image') }}
       </span>
       <span v-else>
@@ -43,8 +43,11 @@ let imageSelected = (event: any) => {
         save()
       }
     }
-
   }
+}
+
+interface saveResponse {
+  url: string
 }
 
 let save = async () => {
@@ -54,7 +57,7 @@ let save = async () => {
   imageFormData.append('photo', image.value)
 
   try {
-    const response = await $fetch('/api/upload', {
+    const response = await $fetch<saveResponse>('/api/upload', {
       method: 'POST',
       body: imageFormData
     })

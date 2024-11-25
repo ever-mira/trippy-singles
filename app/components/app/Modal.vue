@@ -1,5 +1,5 @@
 <template>
-  <div v-if="modalVisible"
+  <div v-if="visible"
     class="fixed left-0 top-0 bg-opacity-50 bg-gray-800 h-screen w-screen flex items-center justify-center">
     <div class="flex w-auto grow p-2 items-center justify-center">
       <!-- Overlay -->
@@ -14,10 +14,10 @@
         <!-- Content -->
         <div class="p-4">
           <br />
-          <p>{{ modalText }}</p>
+          <p>{{ text }}</p>
           <div class="h-10"></div>
 
-          <Button color="indigo" @click="hideModal" class="mt-1" v-if="!modalYesNo">
+          <Button color="indigo" @click="hideModal" class="mt-1" v-if="!yesNo">
             {{ $t('app.ok') }}
           </Button>
 
@@ -37,13 +37,11 @@
 
 
 <script setup lang="ts">
-import useApp from './../../service/app'
-
-const { hideModal, modalVisible, modalText, modalYesNo, modalCallback } = useApp()
+const { hideModal, visible, text, yesNo, callback } = useModal()
 
 const yesClicked = () => {
-  if (modalCallback.value) {
-    modalCallback.value()
+  if (callback.value) {
+    callback.value()
   }
   hideModal()
 }

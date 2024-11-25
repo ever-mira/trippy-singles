@@ -1,10 +1,13 @@
 <template>
-  <div class="container mx-auto max-w-screen-xl mt-17 mb-60">
-    <h1 class="text-4xl font-bold text-center mb-6">Terms of Service</h1>
+  <Page>
+    <Heading>
+      Terms of Service
+      <template v-slot:subtitle>
+        Last updated: October 12, 2024
+      </template>
+    </Heading>
 
-    <p class="mb-4 text-sm text-sub dark:text-sub-dark">Last updated: October 12, 2024</p>
-
-    <p class="mb-4">
+    <p class="mt-14 mb-4">
       Welcome to Puzzle Social! By accessing or using our services (the "Service"), you agree to be bound by these
       terms. Please read them carefully.
     </p>
@@ -33,7 +36,8 @@
     <h2 class="text-2xl font-semibold mt-6 mb-3">4. Privacy</h2>
     <p class="mb-4">
       Your privacy is important to us. Please review our <RouterLink to="/privacy"
-        class="text-blue-600 hover:underline">Privacy Policy</RouterLink>
+        class="text-blue-600 hover:underline">
+        Privacy Policy</RouterLink>
       to understand how we handle your data.
     </p>
 
@@ -49,18 +53,16 @@
     </p>
 
     <h2 class="text-2xl font-semibold mt-6 mb-3">7. Contact Us</h2>
-    <p class="mb-4">
+    <p class="mb-30">
       If you have any questions about these Terms, please contact us at <a href="mailto:info@puzzle.social"
         class="text-blue-600 hover:underline">info@puzzle.social</a>
     </p>
-  </div>
-
+  </Page>
 </template>
 
 
 <script setup lang="ts">
 
 </script>
-
 
 <style></style>

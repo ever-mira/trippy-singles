@@ -3,7 +3,7 @@
     <Heading v-if="profile">
       {{ profile.displayname }}
       <template v-slot:subtitle>
-        {{ $t('profile.subtitle') }}
+        @{{ profile.username }}
       </template>
     </Heading>
     <Heading v-else>
@@ -14,9 +14,10 @@
       </template>
     </Heading>
 
-    <div class="mt-11" v-if="profile">
-      <img :src="profile.avatar_url || undefined" class="rounded-lg md:max-w-69 mt-10" v-if="profile.avatar_url">
-      <img src="../assets/avatar.jpg" class="rounded-lg md:max-w-69 mt-10" v-else>
+    <div class="mt-9 lg:mt-11" v-if="profile">
+      <img :src="profile.avatar_url || undefined" class="rounded-lg max-w-55 md:max-w-69 mt-10"
+        v-if="profile.avatar_url">
+      <img src="../assets/avatar.jpg" class="rounded-lg max-w-69 md:max-w-69 mt-10" v-else>
       <photo-upload @uploaded="onPhotoUploaded" :change="profile.avatar_url !== null" class="mt-6"
         v-if="isOwnProfile"></photo-upload>
     </div>
@@ -30,9 +31,9 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
 import type { Database } from '../../types/database.types'
 type ProfileData = Database['public']['Tables']['profiles']['Row']
+import { useRoute } from 'vue-router'
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
 
 const { username: ownUsername } = useUser()
@@ -47,7 +48,7 @@ const isOwnProfile = computed(() => {
 })
 
 if (username) {
-  const { data, error, status } = await useFetch<ProfileData>(`/api/users/${username}/profile`, {
+  const { data } = await useFetch<ProfileData>(`/api/users/${username}/profile`, {
     method: 'GET',
     headers: useRequestHeaders(['cookie']),
   })
@@ -66,6 +67,5 @@ const onPhotoUploaded = (fileName: string) => {
 const goBack = () => {
   router.back()
 }
-
 
 </script>

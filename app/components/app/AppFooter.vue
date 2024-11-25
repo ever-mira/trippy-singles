@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <ul class="flex flex-col md:flex-row md:space-x-7 py-2.5">
       <li class="font-medium">
@@ -17,10 +16,8 @@
       </li>
     </ul>
   </div>
-
 </template>
 
 
 <script setup lang="ts">
-
 </script>

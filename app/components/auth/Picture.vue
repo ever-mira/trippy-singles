@@ -23,22 +23,7 @@
 <script setup lang="ts">
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
 
-const supabase = useSupabaseClient()
-
-const credentials = reactive({
-  email: '',
-  password: ''
-})
-
-const message = ref('')
-
 const photoUrl = ref('')
-
-const signIn = async () => {
-  message.value = ''
-  const { error } = await supabase.auth.signInWithPassword(credentials)
-  if (error) message.value = error.message
-}
 
 const onPhotoUploaded = (fileName: string) => {
   photoUrl.value = fileName

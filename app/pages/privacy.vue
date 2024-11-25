@@ -1,10 +1,13 @@
 <template>
-  <div class="container mx-auto max-w-screen-xl mt-17 mb-60">
-    <h1 class="text-4xl font-bold text-center mb-6">Privacy Policy</h1>
+  <Page>
+    <Heading>
+      Privacy Policy
+      <template v-slot:subtitle>
+        Last updated: October 12, 2024
+      </template>
+    </Heading>
 
-    <p class="mb-4 text-sm text-sub dark:text-sub-dark">Last updated: October 12, 2024</p>
-
-    <p class="mb-4">
+    <p class="mt-14 mb-4">
       At Puzzle Social, your privacy is important to us. This Privacy Policy explains how we collect, use, and protect
       your personal data.
     </p>
@@ -14,7 +17,8 @@
       <li><strong>Account Information</strong>: We collect your name, email address, and profile details when you
         register.</li>
       <li><strong>Content</strong>: We collect any content you upload, such as photos and descriptions.</li>
-      <li><strong>Location Data</strong>: If you use location-based features, we may collect your location information.
+      <li><strong>Location Data</strong>: If you use location-based features, we may collect your location
+        information.
       </li>
       <li><strong>Usage Data</strong>: We collect data on how you use our platform, including interactions with other
         users.</li>
@@ -41,18 +45,21 @@
 
     <h2 class="text-2xl font-semibold mt-6 mb-3">4. Security</h2>
     <p class="mb-4">
-      We take reasonable measures to protect your personal data. However, no method of transmission over the internet is
+      We take reasonable measures to protect your personal data. However, no method of transmission over the internet
+      is
       completely secure.
     </p>
 
     <h2 class="text-2xl font-semibold mt-6 mb-3">5. Cookies</h2>
     <p class="mb-4">
-      We use cookies to enhance your experience on Puzzle Social. You can control cookie settings through your browser.
+      We use cookies to enhance your experience on Puzzle Social. You can control cookie settings through your
+      browser.
     </p>
 
     <h2 class="text-2xl font-semibold mt-6 mb-3">6. Your Rights</h2>
     <p class="mb-4">
-      You may update or delete your account information at any time. You can also request to access, correct, or delete
+      You may update or delete your account information at any time. You can also request to access, correct, or
+      delete
       your personal data by contacting us at <a href="mailto:info@puzzle.social"
         class="text-blue-600 hover:underline">info@puzzle.social</a>.
     </p>
@@ -64,12 +71,11 @@
     </p>
 
     <h2 class="text-2xl font-semibold mt-6 mb-3">8. Contact Us</h2>
-    <p class="mb-4">
+    <p class="mb-30">
       If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@puzzle.social"
         class="text-blue-600 hover:underline">info@puzzle.social</a>
     </p>
-  </div>
-
+  </Page>
 
 </template>
 

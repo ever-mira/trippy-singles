@@ -14,14 +14,12 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">
-import useAuth from '../../service/auth'
 import SignupStepLogin from './SignupStepLogin.vue'
 
-const { setStepComponent, displayname } = useAuth()
+const { setStepComponent, displayname } = useSignup()
 
 const next = async () => {
   setStepComponent(SignupStepLogin)

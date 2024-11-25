@@ -6,12 +6,10 @@
   </NuxtLink>
 </template>
 
-
 <script setup lang="ts">
-import useAuth from '../../service/auth'
 import Puzzle from '../auth/Puzzle.vue'
 
-const { setStepComponent, displayname } = useAuth()
+const { setStepComponent } = useSignup()
 const { hideSidebar } = useApp()
 
 const onClick = () => {

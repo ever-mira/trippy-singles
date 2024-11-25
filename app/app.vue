@@ -1,29 +1,26 @@
 <template>
   <div class="relative min-h-screen h-auto overflow-hidden">
     <NuxtLoadingIndicator />
-    <aside class="relative">
+
+    <aside>
       <Sidebar />
     </aside>
+
     <div class="lg:ml-67">
       <header>
-        <nav class="absolute px-4 lg:px-6 py-1.5 z-10 w-full">
-          <AppHeader />
-        </nav>
+        <AppHeader />
       </header>
 
-      <main>
-        <div class="relative h-full w-full">
-          <NuxtPage />
-        </div>
+      <main class="relative h-full w-full">
+        <NuxtPage />
       </main>
 
-      <!-- <footer class="absolute bottom-0 px-4 lg:px-6 py-1">
+      <footer class="hidden lg:block absolute bottom-0 px-4 lg:px-6 py-1">
         <AppFooter />
-      </footer> -->
+      </footer>
     </div>
 
     <Modal />
-
   </div>
 </template>
 
@@ -36,7 +33,6 @@ import Modal from './components/app/Modal.vue'
 useHead({
   title: 'Puzzle Social',
 })
-
 </script>
 
 <style>

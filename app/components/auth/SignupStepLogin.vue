@@ -20,7 +20,6 @@
       </div>
       <div class="mt-7">
         <Button @click="signUp">{{ $t('signup.create_account') }}</button>
-
       </div>
     </div>
   </div>
@@ -28,10 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import useAuth from '../../service/auth'
 import Picture from './Picture.vue'
 
-const { setStepComponent, username, displayname } = useAuth()
+const { setStepComponent, username, displayname } = useSignup()
 const supabase = useSupabaseClient()
 
 const credentials = reactive({

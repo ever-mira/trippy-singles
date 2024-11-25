@@ -9,6 +9,7 @@
     "signup": "Signup",
     "your_profile": "Your Profile",
     "settings": "Settings",
+    "mailbox": "Mailbox",
     "yes": "Yes",
     "no": "No",
     "ok": "Ok",
@@ -54,11 +55,13 @@
     "password": "Password",
     "create_account": "Create Account",
     "logged_in": "You are logged in.",
-    "set_picture_hint": "Set a picture, if you want."
+    "set_picture_hint": "Set a picture, if you want.",
+    "no_new_messages": "You have no new messages.",
+    "mailbox": "Mailbox"
   },
   "profile": {
-    "subtitle": "Profile on Puzzle.",
-    "subtitle_own": "Your Profile.",
+    "subtitle": "Profile on Puzzle",
+    "subtitle_own": "Your Profile",
     "about_me": "About me",
     "social_media": "Social Media",
     "coming_soon": "Coming soon.",

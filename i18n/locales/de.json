@@ -8,6 +8,7 @@
     "register": "Anmelden",
     "signup": "Registrieren",
     "your_profile": "Dein Profil",
+    "mailbox": "Posteingang",
     "settings": "Einstellungen",
     "yes": "Ja",
     "no": "Nein",
@@ -53,12 +54,13 @@
     "email": "E-Mail",
     "password": "Passwort",
     "create_account": "Account erstellen",
-    "logged_in": "Du bist eingeloggt.",
-    "set_picture_hint": "Setze ein Profilbild, wenn du möchtest."
+    "logged_in": "Eingeloggt.",
+    "no_new_messages": "Du hast keine neuen Nachrichten.",
+    "mailbox": "Postfach"
   },
   "profile": {
-    "subtitle": "Profil auf Puzzle.",
-    "subtitle_own": "Dein Profil.",
+    "subtitle": "Profil auf Puzzle",
+    "subtitle_own": "Dein Profil",
     "about_me": "Über mich",
     "social_media": "Social Media",
     "coming_soon": "Coming soon.",

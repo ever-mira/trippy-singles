@@ -31,8 +31,6 @@
 
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue"
-
 const { setLocale, locales, locale } = useI18n()
 
 const selectedLocale = computed(() => {
