@@ -47,7 +47,7 @@
         <i class="fa-solid fa-gear text-sky-600 mr-4"></i>{{ $t('app.settings') }}
       </NavLink>
       <div @click="logout" class="px-4.5 mt-4">
-        <span class="text-blue-7 cursor-pointer">{{ $t('app.logout') }}</span>
+        <span class="text-blue-7 dark:text-blue-6 cursor-pointer">{{ $t('app.logout') }}</span>
       </div>
     </div>
 
@@ -71,8 +71,8 @@ import UserPanel from './UserPanel.vue'
 import NavLink from './NavLink.vue'
 import LanguageDropdown from '../language/LanguageDropdown.vue'
 import ToggleDark from './DarkToggle.vue'
-import Puzzle from "../auth/Puzzle.vue";
-import Login from "../auth/Login.vue";
+import Puzzle from "../steps/Puzzle.vue"
+import Login from "../steps/Login.vue"
 
 const router = useRouter()
 const user: Ref = useSupabaseUser()

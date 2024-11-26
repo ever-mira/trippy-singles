@@ -1,45 +1,45 @@
-import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server";
-import type { Database } from "../../../types/database.types";
-import { fileTypeFromBuffer } from "file-type";
+import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server"
+import type { Database } from "../../../types/database.types"
+import { fileTypeFromBuffer } from "file-type"
 
 export default defineEventHandler(async (event) => {
-  const multipartData = await readMultipartFormData(event);
+  const multipartData = await readMultipartFormData(event)
 
   if (!multipartData) {
-    throw createError({ statusCode: 400, statusMessage: "Keine Formulardaten übermittelt" });
+    throw createError({ statusCode: 400, statusMessage: "Keine Formulardaten übermittelt" })
   }
 
-  const filePart = multipartData.find((part) => part.name === "photo");
+  const filePart = multipartData.find((part) => part.name === "photo")
 
   if (!filePart) {
-    throw createError({ statusCode: 400, statusMessage: "Daten fehlen" });
+    throw createError({ statusCode: 400, statusMessage: "Daten fehlen" })
   }
 
-  const user = await serverSupabaseUser(event);
+  const user = await serverSupabaseUser(event)
 
   if (!user) {
-    throw createError({ statusCode: 401, statusMessage: "Nicht authentifiziert" });
+    throw createError({ statusCode: 401, statusMessage: "Nicht authentifiziert" })
   }
 
-  const userId = user.id;
+  const userId = user.id
 
-  const file = filePart.data;
-  const originalFilename = filePart.filename || "file";
+  const file = filePart.data
+  const originalFilename = filePart.filename || "file"
 
-  const extension = originalFilename.split(".").pop();
+  const extension = originalFilename.split(".").pop()
 
-  const allowedExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
+  const allowedExtensions = ["jpg", "jpeg", "png", "gif", "webp"]
   if (!extension || !allowedExtensions.includes(extension.toLowerCase())) {
-    throw createError({ statusCode: 400, statusMessage: "Ungültiges Dateiformat" });
+    throw createError({ statusCode: 400, statusMessage: "Ungültiges Dateiformat" })
   }
 
-  const fileType = await fileTypeFromBuffer(file).then((result: any) => result?.mime);
+  const fileType = await fileTypeFromBuffer(file).then((result: any) => result?.mime)
 
   const fileName = `user_${userId}/${Date.now()}_${Math.random()
     .toString(36)
-    .slice(2)}.${extension}`;
+    .slice(2)}.${extension}`
 
-  const client = await serverSupabaseClient<Database>(event);
+  const client = await serverSupabaseClient<Database>(event)
 
   const { data: uploadData, error: uploadError } = await client.storage
     .from("avatars")
@@ -47,22 +47,22 @@ export default defineEventHandler(async (event) => {
       cacheControl: "3600",
       upsert: true,
       contentType: fileType,
-    });
+    })
 
   if (uploadError) {
-    throw createError({ statusCode: 500, statusMessage: uploadError.message });
+    throw createError({ statusCode: 500, statusMessage: uploadError.message })
   }
 
-  const publicUrl = client.storage.from("avatars").getPublicUrl(fileName).data.publicUrl;
+  const publicUrl = client.storage.from("avatars").getPublicUrl(fileName).data.publicUrl
 
   const { error: updateError } = await client
     .from("profiles")
     .update({ avatar_url: publicUrl })
-    .eq("id", userId);
+    .eq("id", userId)
 
   if (updateError) {
-    throw createError({ statusCode: 500, statusMessage: updateError.message });
+    throw createError({ statusCode: 500, statusMessage: updateError.message })
   }
 
-  return { url: publicUrl };
-});
+  return { url: publicUrl }
+})

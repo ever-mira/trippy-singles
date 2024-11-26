@@ -1,31 +1,31 @@
-import { serverSupabaseClient } from "#supabase/server";
+import { serverSupabaseClient } from "#supabase/server"
 
 export default defineEventHandler(async (event) => {
-  const username = getRouterParam(event, "username");
+  const username = getRouterParam(event, "username")
 
   if (!username) {
-    throw new Error("No username provided");
+    throw new Error("No username provided")
   }
 
-  const supabase = await serverSupabaseClient(event);
+  const supabase = await serverSupabaseClient(event)
 
   try {
     const { data, error } = await supabase
       .from("profiles")
       .select("username, displayname, website, avatar_url")
-      .eq("username", username);
+      .eq("username", username)
 
-    if (error) throw error;
+    if (error) throw error
 
     if (data.length === 0) {
       throw createError({
         statusCode: 404,
         statusMessage: "Profile not found.",
-      });
+      })
     }
 
-    return data[0];
+    return data[0]
   } catch (error: any) {
-    throw error;
+    throw error
   }
-});
+})

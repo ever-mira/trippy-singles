@@ -12,5 +12,5 @@ export default defineI18nConfig(() => {
       { name: "Italiano", code: "it", file: "@/locales/it.json" },
       { name: "Nederlands", code: "nl", file: "@/locales/nl.json" },
     ],
-  };
-});
+  }
+})

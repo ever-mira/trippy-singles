@@ -19,7 +19,7 @@
           </Button>
         </div>
         <div v-if="user">
-          <Button color="indigo" :to="`/@${username}`" class="!px-6">
+          <Button color="indigo" :to="`/@${username}`" class="!px-5">
             {{ $t('app.your_profile') }}
           </Button>
         </div>
@@ -30,8 +30,8 @@
 </template>
 
 <script setup lang="ts">
-import Login from '../auth/Login.vue'
-import SignupStepUsername from '../auth/SignupStepUsername.vue'
+import Login from '../steps/Login.vue'
+import SignupStepUsername from '../steps/SignupStepUsername.vue'
 
 const user: Ref = useSupabaseUser()
 const { username } = useUser()

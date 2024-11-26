@@ -1,13 +1,13 @@
-import { defineEventHandler, getQuery } from "h3";
-import { serverSupabaseClient } from "#supabase/server";
+import { defineEventHandler, getQuery } from "h3"
+import { serverSupabaseClient } from "#supabase/server"
 
 export default defineEventHandler(async (event) => {
-  const supabase = await serverSupabaseClient(event);
+  const supabase = await serverSupabaseClient(event)
 
-  const { userId } = getQuery(event);
+  const { userId } = getQuery(event)
 
   if (!userId) {
-    throw new Error("No user ID provided");
+    throw new Error("No user ID provided")
   }
 
   try {
@@ -15,12 +15,12 @@ export default defineEventHandler(async (event) => {
       .from("profiles")
       .select("username, website, avatar_url")
       .eq("id", userId)
-      .single();
+      .single()
 
-    if (error) throw error;
+    if (error) throw error
 
-    return data;
+    return data
   } catch (error: any) {
-    throw error;
+    throw error
   }
-});
+})

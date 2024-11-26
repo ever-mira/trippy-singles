@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 mt-3 border-gray-200 border-1.5 dark:border-gray-800 rounded-xl bg-[#f6f6f6] dark:bg-[#0a0a16]">
+  <div class="p-2 mt-3.5 border-gray-200 border-1.5 dark:border-gray-800 rounded-xl bg-[#f6f6f6] dark:bg-[#0a0a16]">
     <NuxtLink :to="`/@${username}`" @click="hideSidebar">
       <div class="flex  gap-2.5">
         <div>

@@ -1,4 +1,4 @@
-import Puzzle from "../components/auth/Puzzle.vue"
+import Puzzle from "../components/steps/Puzzle.vue"
 
 const state = reactive({
   username: "",

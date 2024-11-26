@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import Puzzle from '../auth/Puzzle.vue'
+import Puzzle from '../steps/Puzzle.vue'
 
 const { setStepComponent } = useSignup()
 const { hideSidebar } = useApp()

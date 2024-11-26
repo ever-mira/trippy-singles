@@ -1,10 +1,10 @@
 <template>
   <Page>
-    <div class="flex flex-col lg:flex-row justify-between mt-24 lg:mt-44 md:mx-auto min-h-74">
+    <div class="flex flex-col lg:flex-row justify-between mt-24 lg:mt-35 md:mx-auto min-h-74">
 
       <Entry />
 
-      <div class="md:ml-0 w-87% md:w-60% mt-10 lg:mt-0">
+      <div class="md:ml-0 w-87% md:w-60% lg:w-46% xl:w-60% mt-10 lg:mt-0">
         <transition name="stepChange" mode="out-in">
           <component :is="stepComponent"></component>
         </transition>
