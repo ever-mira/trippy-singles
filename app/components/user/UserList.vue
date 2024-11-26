@@ -5,7 +5,7 @@
       <div v-for="user in users" :key="user.id" class="ml-3">
         <NuxtLink :to="`/@${user.username}`">
           <AvatarRoot>
-            <AvatarImage :src="user.avatar_url || ''" class="w-13 rounded-full" />
+            <AvatarImage :src="user.avatar_url || ''" class="w-13.5 rounded-full" />
             <AvatarFallback>
               <img src="../../assets/avatar.jpg" class="w-13.5 rounded-full" />
             </AvatarFallback>

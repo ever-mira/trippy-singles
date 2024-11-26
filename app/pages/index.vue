@@ -12,7 +12,7 @@
     </div>
 
     <div class="mt-10 lg:mt-20 mx-auto">
-      <UserList class="ml-5 md:ml-7" />
+      <UserList class="ml-6" />
     </div>
 
     </ Page>
