@@ -1,5 +1,5 @@
 body {
-  @apply bg-white dark:bg-[#121212] text-black dark:text-[#f9f9f9];
+  @apply bg-white dark:bg-[#121212] lg:dark:bg-black text-black dark:text-[#f9f9f9] lg:dark:text-[#eee];
   background-image: url("rainbow.avif");
   background-repeat: no-repeat;
 }

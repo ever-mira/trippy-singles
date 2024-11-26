@@ -3,7 +3,7 @@
     <slot></slot>
   </h1>
 
-  <p class="mt-2 text-[1.13rem] leading-8 text-sub dark:text-sub-dark">
+  <p class="mt-2 text-[1.13rem] leading-8 text-gray-800 dark:text-gray-200">
     <slot name="subtitle"></slot>
   </p>
 </template>

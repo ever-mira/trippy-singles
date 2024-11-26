@@ -42,13 +42,13 @@ const sizeClasses = computed(() => {
 const colorClasses = computed(() => {
   switch (props.color) {
     case 'indigo':
-      return 'bg-indigo-200 !text-indigo-800 dark:!text-indigo-200 hover:bg-indigo-300 dark:bg-indigo-800 dark:hover:bg-indigo-700'
+      return 'bg-indigo-200 !text-indigo-800 dark:!text-indigo-100 hover:bg-indigo-300 dark:bg-indigo-800 dark:hover:bg-indigo-700'
     case 'red':
       return 'bg-rose-100 !text-rose-600 dark:!text-red-200 hover:bg-rose-200 dark:bg-red-900 dark:hover:bg-red-800'
     case 'transparent':
       return '!text-gray-800 !dark:text-gray-300'
     default:
-      return 'bg-indigo-200 disabled:bg-gray-200 !text-indigo-800 disabled:!text-gray-600 dark:!text-indigo-200 disabled:dark:!text-gray-400 enabled:hover:bg-indigo-300 dark:bg-indigo-800 disabled:dark:bg-gray-700 enabled:dark:hover:bg-indigo-700'
+      return 'bg-indigo-200 disabled:bg-gray-200 !text-indigo-800 disabled:!text-gray-600 dark:!text-indigo-100 disabled:dark:!text-gray-400 enabled:hover:bg-indigo-300 dark:bg-indigo-800 disabled:dark:bg-gray-700 enabled:dark:hover:bg-indigo-700'
   }
 })
 
