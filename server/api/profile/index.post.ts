@@ -3,7 +3,7 @@ import { serverSupabaseClient } from "#supabase/server"
 import type { Database } from "../../../types/database.types"
 
 export default defineEventHandler(async (event) => {
-  const { id, username, website, avatar_url } = await readBody(event)
+  const { user_id, username, website, avatar_url } = await readBody(event)
 
   try {
     const client = await serverSupabaseClient<Database>(event)
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
     const updated_at = new Date().toISOString()
 
     const { error } = await client.from("profiles").upsert({
-      id,
+      user_id,
       username,
       website,
       avatar_url,

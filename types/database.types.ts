@@ -9,6 +9,63 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      chatmessages: {
+        Row: {
+          chatroom_id: string | null
+          content: string
+          created_at: string | null
+          id: string
+          user_id: string | null
+        }
+        Insert: {
+          chatroom_id?: string | null
+          content: string
+          created_at?: string | null
+          id?: string
+          user_id?: string | null
+        }
+        Update: {
+          chatroom_id?: string | null
+          content?: string
+          created_at?: string | null
+          id?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chatmessages_chatroom_id_fkey"
+            columns: ["chatroom_id"]
+            isOneToOne: false
+            referencedRelation: "chatrooms"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chatmessages_user_id_fkey1"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
+      chatrooms: {
+        Row: {
+          created_at: string | null
+          id: string
+          name: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          name: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
       places: {
         Row: {
           avatar_url: string | null
@@ -47,8 +104,8 @@ export type Database = {
           avatar_url: string | null
           displayname: string | null
           full_name: string | null
-          id: string
           updated_at: string | null
+          user_id: string
           username: string | null
           website: string | null
         }
@@ -56,8 +113,8 @@ export type Database = {
           avatar_url?: string | null
           displayname?: string | null
           full_name?: string | null
-          id: string
           updated_at?: string | null
+          user_id: string
           username?: string | null
           website?: string | null
         }
@@ -65,8 +122,8 @@ export type Database = {
           avatar_url?: string | null
           displayname?: string | null
           full_name?: string | null
-          id?: string
           updated_at?: string | null
+          user_id?: string
           username?: string | null
           website?: string | null
         }

@@ -58,7 +58,7 @@ export default defineEventHandler(async (event) => {
   const { error: updateError } = await client
     .from("profiles")
     .update({ avatar_url: publicUrl })
-    .eq("id", userId)
+    .eq("user_id", userId)
 
   if (updateError) {
     throw createError({ statusCode: 500, statusMessage: updateError.message })

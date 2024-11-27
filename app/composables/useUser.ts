@@ -17,8 +17,8 @@ export function useUser() {
     try {
       const { data, error } = await supabase
         .from("profiles")
-        .select("id, username, displayname, avatar_url")
-        .eq("id", supabaseUser.value.id)
+        .select("user_id, username, displayname, avatar_url")
+        .eq("user_id", supabaseUser.value.id)
         .single()
 
       if (error) throw error

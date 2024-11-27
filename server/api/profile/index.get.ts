@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     const { data, error } = await supabase
       .from("profiles")
       .select("username, website, avatar_url")
-      .eq("id", userId)
+      .eq("user_id", userId)
       .single()
 
     if (error) throw error

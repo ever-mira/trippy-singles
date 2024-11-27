@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
     const { error: profileError } = await supabase
       .from("profiles")
       .update({ username, displayname })
-      .eq("id", userId)
+      .eq("user_id", userId)
 
     if (profileError) {
       throw createError({

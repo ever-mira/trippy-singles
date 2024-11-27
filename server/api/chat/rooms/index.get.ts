@@ -1,16 +1,13 @@
-import { defineEventHandler } from "h3"
 import { serverSupabaseClient } from "#supabase/server"
 
 export default defineEventHandler(async (event) => {
   const supabase = await serverSupabaseClient(event)
 
   try {
-    const { data, error } = await supabase
-      .from("profiles")
-      .select("user_id, username, displayname, avatar_url")
+    const { data, error } = await supabase.from("chatrooms").select("id, name, created_at")
 
     if (error) {
-      throw new Error("Fehler beim Laden der User: " + error.message)
+      throw new Error("Fehler beim Laden der Chatrooms: " + error.message)
     }
 
     return data
