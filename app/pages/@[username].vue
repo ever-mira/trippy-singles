@@ -31,8 +31,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Database } from '../../types/database.types'
-type ProfileData = Database['public']['Tables']['profiles']['Row']
+import type { Tables } from "~~/types/database.types"
+type ProfileData = Tables<'profiles'>
+
 import { useRoute } from 'vue-router'
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
 

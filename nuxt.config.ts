@@ -1,5 +1,5 @@
-import { defineNuxtConfig } from "nuxt/config";
-import { fileURLToPath } from "url";
+import { defineNuxtConfig } from "nuxt/config"
+import { fileURLToPath } from "url"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -60,4 +60,4 @@ export default defineNuxtConfig({
       },
     ],
   },
-});
+})

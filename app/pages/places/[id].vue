@@ -28,8 +28,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Database } from '../../../types/database.types'
-type Place = Database['public']['Tables']['places']['Row']
+import type { Tables } from "~~/types/database.types"
+type Place = Tables<'places'>
+
 import { useRoute } from 'vue-router'
 
 const router = useRouter()

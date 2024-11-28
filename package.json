@@ -8,7 +8,8 @@
     "dev:host": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "generate:types": "npx supabase gen types typescript --project-id cjkohvynpsrunbchpmsv > types/database.types.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.1",

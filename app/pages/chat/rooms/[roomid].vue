@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-[#f6f6f6] dark:bg-[#0b0b19] p-1.5 rounded-xl mt-7 lg:mt-0 mb-17" v-if="room">
-    <div class="p-3 bg-white rounded-xl min-h-100">
+  <div class="bg-highlight dark:bg-highlight-dark p-1.5 rounded-xl mt-7 lg:mt-0 mb-17" v-if="room">
+    <div class="p-3 bg-white dark:bg-black rounded-xl min-h-100">
       <div class="" v-for="message in messages" v-if="messages">
         {{ message.content }}
       </div>
@@ -9,17 +9,17 @@
       </div>
     </div>
     <div class="flex gap-x-2 mt-3">
-      <Textarea type="text" placeholder="Nachricht" v-model="inputText" class="!w-full resize-none"
-        @keydown.enter="sendMessage" />
+      <Textarea type="text" placeholder="Nachricht" v-model="inputText"
+        class="!w-full resize-none dark:bg-black dark:!border-0" @keydown.enter="sendMessage" />
       <Button class="self-start !px-7.5" @click="sendMessage">Senden</Button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Database } from '../../../../types/database.types'
-type Chatroom = Database['public']['Tables']['chatrooms']['Row']
-type Chatmessage = Database['public']['Tables']['chatmessages']['Row']
+import type { Tables } from "~~/types/database.types"
+type Chatroom = Tables<'chatrooms'>
+type Chatmessage = Tables<'chatmessages'>
 
 definePageMeta({
   pageTransition: {

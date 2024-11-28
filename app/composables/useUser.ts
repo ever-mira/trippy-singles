@@ -1,5 +1,3 @@
-import type { Database } from "../../types/database.types"
-
 export function useUser() {
   const username = useState<string | null>("username", () => null)
   const displayname = useState<string | null>("displayname", () => null)

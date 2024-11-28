@@ -1,6 +1,6 @@
 import { defineEventHandler, readBody } from "h3"
 import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server"
-import type { Database } from "../../../types/database.types"
+import type { Database } from "~~/types/database.types"
 
 export default defineEventHandler(async (event) => {
   const { name, description, website } = await readBody(event)
