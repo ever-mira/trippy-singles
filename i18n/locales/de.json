@@ -55,6 +55,7 @@
     "password": "Passwort",
     "create_account": "Account erstellen",
     "logged_in": "Eingeloggt.",
+    "set_picture_hint": "Setze ein Profilbild, wenn du möchtest.",
     "no_new_messages": "Du hast keine neuen Nachrichten.",
     "mailbox": "Postfach"
   },
@@ -121,7 +122,11 @@
     "chat": {
       "title": "Chat",
       "subtitle": "Chat und Räume",
-      "coming_soon": "Coming soon."
+      "chat_rooms": "Chaträume",
+      "no_messages_yet": "Noch keine Nachrichten in diesem Chat",
+      "message": "Nachricht",
+      "send": "Senden",
+      "login_to_chat": "Du musst eingeloggt sein, um Nachrichten senden zu können."
     }
   }
 }

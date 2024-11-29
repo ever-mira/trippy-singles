@@ -5,9 +5,7 @@
       <Entry />
 
       <div class="md:ml-0 w-87% md:w-60% lg:w-46% xl:w-60% mt-10 lg:mt-0">
-        <transition name="stepChange" mode="out-in">
-          <component :is="stepComponent"></component>
-        </transition>
+        <Stepper />
       </div>
     </div>
 
@@ -21,9 +19,8 @@
 
 <script setup lang="ts">
 import Entry from '../components/app/Entry.vue'
+import Stepper from '../components/app/Stepper.vue'
 import UserList from '../components/user/UserList.vue'
-
-const { stepComponent } = useSignup()
 
 definePageMeta({
   auth: false,
@@ -31,22 +28,4 @@ definePageMeta({
 </script>
 
 
-<style>
-.stepChange-leave-active {
-  transition: all 0.2s ease;
-}
-
-.stepChange-enter-active {
-  transition: all 0.2s ease;
-}
-
-.stepChange-leave-to {
-  opacity: 0;
-  transform: translateX(-4px);
-}
-
-.stepChange-enter-from {
-  opacity: 0;
-  transform: translateX(4px);
-}
-</style>
+<style></style>

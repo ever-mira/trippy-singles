@@ -122,7 +122,11 @@
     "chat": {
       "title": "Chat",
       "subtitle": "Chat and rooms",
-      "coming_soon": "Coming soon."
+      "chat_rooms": "Chatrooms",
+      "no_messages_yet": "This room has no messages yet",
+      "message": "Message",
+      "send": "Send",
+      "login_to_chat": "You need to be logged in, to send messages."
     }
   }
 }

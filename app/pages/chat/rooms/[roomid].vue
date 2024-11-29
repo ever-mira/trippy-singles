@@ -5,13 +5,14 @@
         {{ message.content }}
       </div>
       <div class="text-gray-600" v-if="messages && messages.length === 0">
-        Noch keine Nachrichten in diesem Chat
+        {{ $t('pages.chat.no_messages_yet') }}
       </div>
     </div>
     <div class="flex gap-x-2 mt-3">
-      <Textarea type="text" placeholder="Nachricht" v-model="inputText"
+      <Textarea type="text" :placeholder="$t('pages.chat.message')" v-model="inputText"
         class="!w-full resize-none dark:bg-black dark:!border-0" @keydown.enter="sendMessage" />
-      <Button class="self-start !px-7.5" @click="sendMessage">Senden</Button>
+      <Button class="self-start !px-7.5" @click="sendMessage" :disabled="inputText.length < 1">{{ $t('pages.chat.send')
+        }}</Button>
     </div>
   </div>
 </template>
@@ -55,8 +56,13 @@ if (messagesResponse.data.value) {
 
 const inputText = ref('')
 
+const user = useSupabaseUser()
+const { showModal } = useModal()
+const { t } = useI18n()
+
 const sendMessage = async () => {
   if (!inputText.value) return
+  if (!user.value) showModal(t('pages.chat.login_to_chat'))
 
   await $fetch(`/api/chat/rooms/${roomid}/messages`, {
     method: 'POST',
