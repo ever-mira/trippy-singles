@@ -38,12 +38,19 @@ const placeData = reactive({
 })
 
 const message = ref('')
+const user = useUser()
 
 async function save() {
-  try {
+  message.value = ''
 
+  try {
     if (!placeData.name || !placeData.description) {
       message.value = 'Name und Beschreibung sind erforderlich'
+      return
+    }
+
+    if (!user.value) {
+      message.value = 'Du musst eingeloggt sein, um einen Ort erstellen zu können.'
       return
     }
 
