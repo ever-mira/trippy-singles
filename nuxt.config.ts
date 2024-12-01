@@ -36,6 +36,12 @@ export default defineNuxtConfig({
       Figtree: [100, 300, 400, 900],
     },
   },
+  image: {
+    cloudflare: {
+      name: "cloudflare",
+      baseURL: process.env.BASE_URL,
+    },
+  },
   i18n: {
     strategy: "no_prefix",
     defaultLocale: "en",

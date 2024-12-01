@@ -7,12 +7,8 @@
         class="ml-3 hover:bg-gray-50 dark:hover:bg-gray-950 py-1.5 pl-2 pr-5 rounded-xl">
         <NuxtLink :to="`/@${user.username}`">
           <div class="flex">
-            <AvatarRoot>
-              <AvatarImage :src="user.avatar_url || ''" class="w-15 rounded-full" />
-              <AvatarFallback>
-                <img src="../../assets/avatar.jpg" class="w-15 rounded-full" />
-              </AvatarFallback>
-            </AvatarRoot>
+            <NuxtImg :src="user.avatar_url" width="60" height="60" class="w-15 rounded-full" v-if="user.avatar_url" />
+            <img src="../../assets/avatar.jpg" class="w-15 rounded-full" v-else />
             <div class="py-.5 px-3">
               <div>{{ user.displayname }}</div>
               <div class="text-sm text-gray-300">@{{ user.username }}</div>
