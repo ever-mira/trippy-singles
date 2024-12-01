@@ -8,7 +8,15 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  modules: ["@unocss/nuxt", "@nuxtjs/supabase", "radix-vue/nuxt", "@nuxtjs/i18n", "@nuxthub/core"],
+  modules: [
+    "@unocss/nuxt",
+    "@nuxtjs/supabase",
+    "radix-vue/nuxt",
+    "@nuxtjs/i18n",
+    "@nuxthub/core",
+    "@nuxt/image",
+    "@nuxtjs/google-fonts",
+  ],
   app: {
     pageTransition: { name: "page", mode: "default" },
   },
@@ -22,6 +30,11 @@ export default defineNuxtConfig({
   ],
   supabase: {
     redirect: false,
+  },
+  googleFonts: {
+    families: {
+      Figtree: [100, 300, 400, 900],
+    },
   },
   i18n: {
     strategy: "no_prefix",

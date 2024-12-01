@@ -1,9 +1,14 @@
 <template>
   <div class="-ml.5">
-    <img src="../../assets/entry.png" class="dark:hidden w-120 scale-107 lg:scale-100">
-    <img src="../../assets/entry_dark.png" class="hidden dark:block w-120 scale-107 lg:scale-100">
-
     <div class="ml-3 md:ml-7">
+
+      <div class="text-[2.3rem] lg:text-[3rem] gradient-glow-text mt-8" data-text="Puzzle Social">
+        <span class="whitespace-nowrap">Puzzle
+          Social&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </div>
+      <div class="text-[2.3rem] lg:text-[3rem] font-bold font-figtree text-gray-800 dark:text-gray-100 mt-.1">Social
+        Network</div>
+
       <div class="mt-2 text-lg">
         {{ $t('app.subtitle') }}
       </div>
@@ -45,3 +50,47 @@ const loginClick = () => {
   setStepComponent(Login)
 }
 </script>
+
+<style>
+:root {
+  --color-error: rgba(255, 0, 122, 0.5);
+  --color-secondary: rgba(125, 0, 255, 0.5);
+  --color-primary: rgba(0, 170, 255, 0.5);
+  --color-accent: rgba(0, 255, 217, 0.5);
+}
+
+.gradient-glow-text {
+  position: relative;
+  font-weight: 700;
+  color: transparent;
+  line-height: 34px;
+  font-family: 'Figtree'
+}
+
+.gradient-glow-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg,
+      var(--color-error) 0%,
+      var(--color-secondary) 40%,
+      var(--color-primary) 60%,
+      var(--color-accent) 100%);
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.gradient-glow-text span {
+  background: linear-gradient(90deg,
+      rgb(255, 0, 128) 0%,
+      rgba(125, 0, 255, 1) 40%,
+      rgb(0, 140, 255) 60%,
+      rgb(0, 166, 195) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>

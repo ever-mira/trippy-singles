@@ -1,6 +1,7 @@
-import { defineConfig, transformerDirectives } from "unocss"
+import { defineConfig, transformerDirectives, presetUno } from "unocss"
 
 export default defineConfig({
+  presets: [presetUno()],
   transformers: [transformerDirectives()],
   shortcuts: [
     ["text-sub", "text-gray-600"],
@@ -8,4 +9,9 @@ export default defineConfig({
     ["bg-highlight", "bg-[#f6f6f6]"],
     ["bg-highlight-dark", "bg-[#0b0b19]"],
   ],
+  theme: {
+    fontFamily: {
+      figtree: "Figtree",
+    },
+  },
 })
