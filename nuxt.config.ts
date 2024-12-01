@@ -39,7 +39,7 @@ export default defineNuxtConfig({
   image: {
     cloudflare: {
       name: "cloudflare",
-      baseURL: process.env.BASE_URL,
+      baseURL: process.env.NUXT_PUBLIC_IMAGE_BASE_URL,
     },
   },
   i18n: {
