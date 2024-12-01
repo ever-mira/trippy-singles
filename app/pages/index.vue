@@ -4,7 +4,7 @@
 
       <Entry />
 
-      <div class="md:ml-0 w-87% md:w-60% lg:w-46% xl:w-60% mt-10 lg:mt-0">
+      <div class="md:ml-0 w-87% md:w-60% lg:w-46% xl:w-60% mt-2">
         <Stepper />
       </div>
     </div>

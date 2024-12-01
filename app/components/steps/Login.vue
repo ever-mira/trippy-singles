@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-9 relative text-3xl font-bold text-heading">{{ $t('login.title') }}</div>
+    <div class="mt-7 relative text-3xl font-bold text-heading">{{ $t('login.title') }}</div>
     <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">{{ $t('login.subtitle') }}</div>
     <table class="mt-9">
       <tbody>
