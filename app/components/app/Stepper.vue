@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full text-lg -mt-5">
+  <div class="w-full text-lg mt-9 lg:-mt-5 mb-5 lg:mb-0">
     <div class="w-full px-2 md:w-[360px]">
       <transition name="stepChange" mode="out-in">
         <component :is="stepComponent"></component>

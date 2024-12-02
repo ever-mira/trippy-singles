@@ -1,15 +1,12 @@
 <template>
   <Page>
-    <Heading>
-      {{ $t('login.title') }}
-      <template v-slot:subtitle>
-        {{ $t('login.subtitle') }}
-      </template>
-    </Heading>
+    <Login class="md:w-fit md:mx-auto mt-27" />
   </Page>
+
 </template>
 
 <script setup lang="ts">
+import Login from '@/components/steps/Login.vue'
 </script>
 
 <style></style>
