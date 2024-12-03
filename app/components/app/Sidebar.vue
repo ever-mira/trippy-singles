@@ -9,27 +9,27 @@
 
     <div>
       <NavLink to="/" class="mt-6">
-        <i class="fa-solid fa-house text-sky-600 mr-4"></i>{{ $t('menu.start') }}
+        <HomeIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.start') }}
       </NavLink>
 
       <NavLink to="/people">
-        <i class="fa-solid fa-user-group text-sky-600 mr-4"></i>{{ $t('menu.people') }}
+        <UserGroupIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.people') }}
       </NavLink>
 
       <NavLink to="/places">
-        <i class="fa-solid fa-map-location-dot text-sky-600 mr-4"></i>{{ $t('menu.places') }}
+        <MapIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.places') }}
       </NavLink>
 
       <NavLink to="/events">
-        <i class="fa-solid fa-calendar text-sky-600 mr-4"></i>{{ $t('menu.events') }}
+        <CalendarDaysIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.events') }}
       </NavLink>
 
       <NavLink to="/exchange">
-        <i class="fa-solid fa-share-nodes text-sky-600 mr-4"></i>{{ $t('menu.exchange') }}
+        <ShareIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.exchange') }}
       </NavLink>
 
       <NavLink to="/chat">
-        <i class="fa-solid fa-comments text-sky-600 mr-4"></i>{{ $t('menu.chat') }}
+        <ChatBubbleLeftRightIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.chat') }}
       </NavLink>
     </div>
 
@@ -40,11 +40,11 @@
     </div>
 
     <div class="border-t border-gray-200 dark:border-gray-700 mt-7 pt-1.5" v-if="user">
-      <NavLink to="/mailbox">
-        <i class="fa-solid fa-envelope text-sky-600 mr-4"></i>{{ $t('app.mailbox') }}
+      <NavLink to="/conversations">
+        <EnvelopeIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{ $t('app.mailbox') }}
       </NavLink>
       <NavLink to="/settings">
-        <i class="fa-solid fa-gear text-sky-600 mr-4"></i>{{ $t('app.settings') }}
+        <Cog6ToothIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{ $t('app.settings') }}
       </NavLink>
       <div @click="logout" class="px-4.5 mt-4">
         <span class="text-blue-7 dark:text-blue-6 cursor-pointer">{{ $t('app.logout') }}</span>
@@ -73,6 +73,15 @@ import LanguageDropdown from '../language/LanguageDropdown.vue'
 import ToggleDark from './DarkToggle.vue'
 import Puzzle from "../steps/Puzzle.vue"
 import Login from "../steps/Login.vue"
+
+import { HomeIcon } from '@heroicons/vue/24/solid'
+import { UserGroupIcon } from '@heroicons/vue/24/solid'
+import { MapIcon } from '@heroicons/vue/24/outline'
+import { CalendarDaysIcon } from '@heroicons/vue/24/solid'
+import { ShareIcon } from '@heroicons/vue/24/outline'
+import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/solid'
+import { EnvelopeIcon } from '@heroicons/vue/24/solid'
+import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
 
 const router = useRouter()
 const user: Ref = useSupabaseUser()
