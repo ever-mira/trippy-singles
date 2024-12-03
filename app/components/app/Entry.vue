@@ -2,12 +2,13 @@
   <div class="-ml.5">
     <div class="ml-3 md:ml-7">
 
-      <div class="text-[2.3rem] lg:text-[3rem] gradient-glow-text mt-8" data-text="Puzzle Social">
-        <span class="whitespace-nowrap">Puzzle
-          Social&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="text-[2.7rem] lg:text-[3.7rem] gradient-glow-text mt-8 font-medium font-figtree"
+        data-text="Puzzle Social">
+        <span class="whitespace-nowrap">Puzzle Social
+          &nbsp;&nbsp;🛸</span>
       </div>
-      <div class="text-[2.3rem] lg:text-[3rem] font-bold font-figtree text-gray-800 dark:text-gray-100 mt-.1">Social
-        Network</div>
+      <div class="text-[2.2rem] lg:text-[3rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9">Social
+        Network.</div>
 
       <div class="mt-2 text-lg">
         {{ $t('app.subtitle') }}
@@ -63,8 +64,7 @@ const loginClick = () => {
   position: relative;
   font-weight: 700;
   color: transparent;
-  line-height: 34px;
-  font-family: 'Figtree'
+  line-height: 35px;
 }
 
 .gradient-glow-text::before {

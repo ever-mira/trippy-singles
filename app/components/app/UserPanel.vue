@@ -15,10 +15,10 @@
         </div>
         <div class="flex flex-col flex-grow pt-1">
           <div class="font-medium leading-none">
-            {{ displayname }}
+            @{{ username }}
           </div>
           <div class="text-gray-700 dark:text-gray-300 text-sm">
-            @{{ username }}
+
           </div>
         </div>
       </div>
@@ -28,6 +28,6 @@
 
 
 <script setup lang="ts">
-const { username, displayname, avatar_url } = useUser()
+const { username, avatar_url } = useUser()
 const { hideSidebar } = useApp()
 </script>

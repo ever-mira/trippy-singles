@@ -2,7 +2,7 @@ import { serverSupabaseClient } from "#supabase/server"
 import type { Database } from "~~/types/database.types"
 
 export default defineEventHandler(async (event) => {
-  const { email, password, username, displayname } = await readBody(event)
+  const { email, password, username } = await readBody(event)
 
   if (!email || !password || !username) {
     throw createError({
@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
 
     const { error: profileError } = await supabase
       .from("profiles")
-      .update({ username, displayname })
+      .update({ username })
       .eq("user_id", userId)
 
     if (profileError) {

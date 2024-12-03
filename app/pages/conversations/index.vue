@@ -9,12 +9,13 @@
 
     <div class="max-w-3xl mt-14">
       <div class="space-y-4">
+        <div v-if="!conversations || conversations.length < 1" class="text-gray-700">Noch keine Nachrichten.</div>
         <NuxtLink :to="`/conversations/@${conversation.username}`" v-for="conversation in conversations"
           :key="conversation.username"
           class="flex justify-between items-center p-4 bg-white rounded-lg border hover:bg-gray-50 cursor-pointer">
           <div>
             <h2 class="text-lg font-semibold text-gray-800">
-              @ {{ conversation.username }}
+              {{ conversation.username }}
             </h2>
             <p class="text-sm text-gray-500 truncate max-w-md">
               {{ conversation.last_message.content }}

@@ -20,10 +20,13 @@
 
 <script setup lang="ts">
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
+import Loggedin from './Loggedin.vue'
+const { setStepComponent } = useSignup()
 
 const photoUrl = ref('')
 
 const onPhotoUploaded = (fileName: string) => {
   photoUrl.value = fileName
+  setStepComponent(Loggedin)
 }
 </script>

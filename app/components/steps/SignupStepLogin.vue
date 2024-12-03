@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-5 relative text-3xl font-bold text-heading">{{ displayname }}</div>
+    <div class="mt-5 relative text-3xl font-bold text-heading">Zweiter Schritt</div>
 
     <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">{{ $t('signup.last_step_subtitle') }}</div>
 
@@ -27,7 +27,7 @@
 <script setup lang="ts">
 import Picture from './Picture.vue'
 
-const { setStepComponent, username, displayname } = useSignup()
+const { setStepComponent, username } = useSignup()
 const supabase = useSupabaseClient()
 
 const credentials = reactive({
@@ -44,7 +44,6 @@ const signUp = async () => {
     const signupData = {
       ...credentials,
       username: username.value,
-      displayname: displayname.value
     }
 
     const result = await $fetch<{ success: boolean }>('/api/signup', {

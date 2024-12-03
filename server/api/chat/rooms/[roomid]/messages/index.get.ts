@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   try {
     const { data, error } = await supabase
       .from("chatmessages")
-      .select("id, content, created_at, profiles(username, displayname, avatar_url)")
+      .select("id, content, created_at, profiles(username, avatar_url)")
       .eq("chatroom_id", roomid)
 
     if (error) {

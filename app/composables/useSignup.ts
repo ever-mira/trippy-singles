@@ -2,7 +2,6 @@ import Puzzle from "../components/steps/Puzzle.vue"
 
 const state = reactive({
   username: "",
-  displayname: "",
 })
 
 const stepComponent: Component = shallowRef(Puzzle)

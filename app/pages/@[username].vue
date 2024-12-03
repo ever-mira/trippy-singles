@@ -1,7 +1,7 @@
 <template>
   <Page>
     <Heading v-if="profile">
-      {{ profile.displayname }}
+      {{ profile.username }}
       <template v-slot:subtitle>
         @{{ profile.username }}
       </template>

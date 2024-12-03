@@ -39,7 +39,7 @@
   },
   "signup": {
     "title": "Account erstellen",
-    "subtitle": "Wähle einen Benutzernamen",
+    "subtitle": "Wie willst du auf Puzzle heißen?",
     "username_free": "verfügbar",
     "username_taken": "vergeben",
     "second_step_title": "Zweiter Schritt",

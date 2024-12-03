@@ -12,6 +12,7 @@ export default defineConfig({
   theme: {
     fontFamily: {
       figtree: "Figtree",
+      pacifico: "Pacifico",
     },
   },
 })

@@ -1,6 +1,6 @@
 <template>
   <Page>
-    <div class="flex flex-col lg:flex-row justify-between mt-24 lg:mt-35 md:mx-auto min-h-74">
+    <div class="flex flex-col lg:flex-row justify-between mt-24 lg:mt-27 md:mx-auto min-h-74">
 
       <Entry />
 

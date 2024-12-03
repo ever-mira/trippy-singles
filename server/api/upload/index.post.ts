@@ -44,7 +44,7 @@ export default defineEventHandler(async (event) => {
   const { data: uploadData, error: uploadError } = await client.storage
     .from("avatars")
     .upload(fileName, file, {
-      cacheControl: "3600",
+      cacheControl: "31536000, immutable",
       upsert: true,
       contentType: fileType,
     })
