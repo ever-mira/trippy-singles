@@ -6,7 +6,7 @@
     </div>
 
     <div class="mt-7">
-      <Button to="/mailbox" class="!px-7">{{ $t('signup.mailbox') }}</button>
+      <Button to="/conversations" class="!px-7">{{ $t('signup.mailbox') }}</button>
     </div>
   </div>
 </template>

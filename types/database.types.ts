@@ -66,6 +66,33 @@ export type Database = {
         }
         Relationships: []
       }
+      messages: {
+        Row: {
+          content: string
+          created_at: string | null
+          id: string
+          read: boolean | null
+          receiver_id: string
+          sender_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          id?: string
+          read?: boolean | null
+          receiver_id: string
+          sender_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          id?: string
+          read?: boolean | null
+          receiver_id?: string
+          sender_id?: string
+        }
+        Relationships: []
+      }
       places: {
         Row: {
           avatar_url: string | null
@@ -134,7 +161,16 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_conversations: {
+        Args: {
+          for_user_id: string
+        }
+        Returns: {
+          with_user_id: string
+          username: string
+          last_message: Json
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
