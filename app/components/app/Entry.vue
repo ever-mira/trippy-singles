@@ -2,7 +2,7 @@
   <div class="-ml.5">
     <div class="ml-3 md:ml-7">
 
-      <div class="text-[2.7rem] lg:text-[3.7rem] gradient-glow-text mt-8 font-medium font-figtree"
+      <div class="text-[2.7rem] lg:text-[3.6rem] gradient-glow-text mt-8 font-medium font-figtree"
         data-text="Puzzle Social">
         <span class="whitespace-nowrap">Puzzle Social
           &nbsp;&nbsp;🛸</span>

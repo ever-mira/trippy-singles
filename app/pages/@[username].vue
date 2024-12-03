@@ -17,9 +17,9 @@
     <div class="flex flex-col lg:flex-row">
       <div>
         <div class="mt-9 lg:mt-11" v-if="profile">
-          <NuxtImg :src="profile.avatar_url" width="276" height="276" class="rounded-lg max-w-55 md:max-w-69 mt-10"
+          <NuxtImg :src="profile.avatar_url" width="276" height="276" class="rounded-lg max-w-55 md:max-w-60 mt-10"
             v-if="profile.avatar_url" />
-          <img src="../assets/avatar.jpg" class="rounded-lg max-w-55 md:max-w-69 mt-10" v-else>
+          <img src="../assets/avatar.jpg" class="rounded-lg max-w-55 md:max-w-60 mt-10" v-else>
           <photo-upload @uploaded="onPhotoUploaded" :change="profile.avatar_url !== null" class="mt-6"
             v-if="isOwnProfile"></photo-upload>
         </div>
