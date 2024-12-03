@@ -32,7 +32,7 @@
           </Button>
         </div>
         <div class="mt-4">
-          <Button color="transparent" size="small" class="border !font-normal">
+          <Button color="transparent" @click="showModal('Coming soon.')" size="small" class="border !font-normal">
             <UserPlusIcon class="inline w-5.5 text-gray-500 -mt.5" />
             Als Freund hinzufügen
           </Button>
@@ -92,4 +92,5 @@ const goBack = () => {
   router.back()
 }
 
+const { showModal } = useModal()
 </script>

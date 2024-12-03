@@ -8,6 +8,7 @@
     </Heading>
 
     <div class="!w-full xl:min-w-140 max-w-170 mt-9 border rounded-lg p-3">
+      <div class="p-1 text-gray-700" v-if="!messages || messages.length < 1">Noch keine Nachrichten.</div>
       <div class="mt-19">
         <div v-for="message in messages" :key="message.id" class="w-full p-1">
           <div v-if="message.sender_id === user.id">
@@ -45,14 +46,17 @@ type Message = Tables<'messages'>
 const route = useRoute()
 const with_username = route.params.username
 const user: Ref = useSupabaseUser()
+const { showModal } = useModal()
 
 const profile = ref<Profile | null>(null)
 const messages = ref<Message[] | null>(null)
 
-const message = ref<string | null>(null)
+const message = ref<string | null>('')
 
 await fetchProfile()
-await fetchMessages()
+if (user.value) {
+  await fetchMessages()
+}
 
 async function fetchProfile() {
   if (with_username) {
@@ -81,6 +85,13 @@ async function fetchMessages() {
 }
 
 const sendMessage = async () => {
+  if (!user.value) {
+    showModal('Du musst eingeloggt sein, um Nachrichten senden zu können.')
+    return
+  }
+  if (message.value.length < 1) {
+    return
+  }
   const response = await $fetch(`/api/conversations/${profile.value.user_id}`, {
     method: 'POST',
     body: { content: message.value },
