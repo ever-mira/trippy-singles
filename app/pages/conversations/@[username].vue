@@ -1,14 +1,14 @@
 <template>
   <Page>
     <Heading>
-      Mailbox
+      Nachricht
       <template v-slot:subtitle>
-        Unterhaltung mit @{{ profile.username }}
+        Unterhaltung mit @{{ profile?.username }}
       </template>
     </Heading>
 
     <div class="!w-full xl:min-w-140 max-w-170 mt-9 border rounded-lg p-3">
-      <div class="p-1 text-gray-700" v-if="!messages || messages.length < 1">Noch keine Nachrichten.</div>
+      <div class="p-1 text-gray-700" v-if="!messages || messages.length < 1">Schreibe eine Nachricht.</div>
       <div class="mt-19">
         <div v-for="message in messages" :key="message.id" class="w-full p-1">
           <div v-if="message.sender_id === user.id">
@@ -51,7 +51,7 @@ const { showModal } = useModal()
 const profile = ref<Profile | null>(null)
 const messages = ref<Message[] | null>(null)
 
-const message = ref<string | null>('')
+const message = ref<string>('')
 
 await fetchProfile()
 if (user.value) {

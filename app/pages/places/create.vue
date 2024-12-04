@@ -38,7 +38,7 @@ const placeData = reactive({
 })
 
 const message = ref('')
-const user = useUser()
+const user = useSupabaseUser()
 
 async function save() {
   message.value = ''

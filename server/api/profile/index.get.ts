@@ -1,14 +1,15 @@
-import { defineEventHandler, getQuery } from "h3"
-import { serverSupabaseClient } from "#supabase/server"
+import { defineEventHandler } from "h3"
+import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server"
 
 export default defineEventHandler(async (event) => {
   const supabase = await serverSupabaseClient(event)
 
-  const { userId } = getQuery(event)
+  const user = await serverSupabaseUser(event)
 
-  if (!userId) {
-    throw new Error("No user ID provided")
+  if (!user) {
+    throw createError({ statusCode: 401, statusMessage: "Nicht authentifiziert" })
   }
+  const userId = user.id
 
   try {
     const { data, error } = await supabase

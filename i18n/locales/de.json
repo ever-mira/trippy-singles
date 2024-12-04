@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Puzzle.",
-    "subtitle": "Das soziale Netzwerk für eine neue Realität.",
+    "subtitle": "Das Soziale Netzwerk für eine neue Realität.",
     "login": "Login",
     "logout": "Logout",
     "start": "Start",
@@ -14,7 +14,7 @@
     "no": "Nein",
     "ok": "Ok",
     "cancel": "Abbrechen",
-    "new_users": "Mitglieder",
+    "new_users": "- Beings",
     "footer": {
       "copyright": "© 2024 Puzzle Social",
       "terms": "Nutzungsbedingungen",

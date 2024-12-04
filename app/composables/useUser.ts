@@ -1,39 +1,38 @@
-export function useUser() {
-  const username = useState<string | null>("username", () => null)
-  const avatar_url = useState<string | null>("avatar_url", () => null)
+import type { Tables } from "~~/types/database.types"
+type Profile = Tables<"profiles">
 
-  const supabase = useSupabaseClient()
+export function useUser() {
+  const profile = useState<Profile | null>("profile", () => null)
+
   const supabaseUser = useSupabaseUser()
 
-  async function fetchUsername() {
+  async function fetchUserData() {
     if (!supabaseUser.value) {
-      username.value = null
+      profile.value = null
       return
     }
 
     try {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("user_id, username, avatar_url")
-        .eq("user_id", supabaseUser.value.id)
-        .single()
+      const { data } = await useFetch<Profile>(`/api/profile`, {
+        method: "GET",
+        headers: useRequestHeaders(["cookie"]),
+      })
 
-      if (error) throw error
-      username.value = data?.username || null
-      avatar_url.value = data?.avatar_url || null
+      if (data.value) {
+        profile.value = data.value
+      }
     } catch (err) {
-      username.value = null
+      profile.value = null
     }
   }
 
-  function clearUsername() {
-    username.value = null
+  function clearUserData() {
+    profile.value = null
   }
 
   return {
-    username,
-    avatar_url,
-    fetchUsername,
-    clearUsername,
+    profile,
+    fetchUserData,
+    clearUserData,
   }
 }

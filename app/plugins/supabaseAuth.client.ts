@@ -1,7 +1,7 @@
 import { useUser } from "~/composables/useUser"
 
 export default defineNuxtPlugin(() => {
-  const { fetchUsername, clearUsername } = useUser()
+  const { fetchUserData, clearUserData } = useUser()
   const supabase = useSupabaseClient()
 
   let lastUserId: string | null = null
@@ -10,10 +10,10 @@ export default defineNuxtPlugin(() => {
     if (event === "SIGNED_IN" && session?.user) {
       if (session.user.id !== lastUserId) {
         lastUserId = session.user.id
-        await fetchUsername()
+        await fetchUserData()
       }
     } else if (event === "SIGNED_OUT") {
-      clearUsername()
+      clearUserData()
     }
   })
 })
