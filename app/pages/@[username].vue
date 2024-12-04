@@ -17,22 +17,27 @@
     <div class="flex flex-col lg:flex-row">
       <div>
         <div class="mt-9 lg:mt-11" v-if="profile">
-          <NuxtImg :src="profile.avatar_url" width="300" class="rounded-lg max-w-55 md:max-w-64 mt-10"
-            v-if="profile.avatar_url" />
-          <img src="../assets/avatar.jpg" class="rounded-lg max-w-55 md:max-w-64 mt-10" v-else>
+
+          <div class="bg-highlight dark:bg-highlight-dark rounded-lg p-4 mt-10">
+            <NuxtImg :src="profile.avatar_url" width="300" class="rounded-lg max-w-55 md:max-w-64"
+              v-if="profile.avatar_url" />
+            <img src="../assets/avatar.jpg" class="rounded-lg max-w-55 md:max-w-64 mt-10" v-else>
+          </div>
+
           <photo-upload @uploaded="onPhotoUploaded" :change="profile.avatar_url !== null" class="mt-6"
             v-if="isOwnProfile"></photo-upload>
         </div>
 
         <div class="mt-9">
-          <Button color="transparent" size="small" class="border !font-normal"
+          <Button color="transparent" size="small" class="border dark:border-gray-700 !font-normal"
             :to="`/conversations/@${profile?.username}`">
             <PaperAirplaneIcon class="inline w-5.5 text-gray-500 -mt.5 mr-1" />
             Nachricht senden
           </Button>
         </div>
         <div class="mt-4">
-          <Button color="transparent" @click="showModal('Coming soon.')" size="small" class="border !font-normal">
+          <Button color="transparent" @click="showModal('Coming soon.')" size="small"
+            class="border dark:border-gray-700 !font-normal">
             <UserPlusIcon class="inline w-5.5 text-gray-500 -mt.5" />
             Als Freund hinzufügen
           </Button>

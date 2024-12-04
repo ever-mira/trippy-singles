@@ -2784,8 +2784,8 @@ packages:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  h3-nightly@1.13.1-20241129-104109-4fe5086:
-    resolution: {integrity: sha512-eVFg5abgGteP4sT0hzmRwUvJr7c1pZTi79cipvpmL7V0AwG9u++Pt/T4i/x08euOc+YNDDnaI0RiQVvdEa4rBQ==}
+  h3-nightly@1.13.1-20241204-002207-10e98be:
+    resolution: {integrity: sha512-b80/gX5UmAl6b8XPTBOi4BE+p81/a8mqE/bZwlRCwMLstu/liF4UDF9y900RIRJa99VeI2uLFl30KhPNBZHrBA==}
 
   h3-nightly@2.0.0-1718872656.6765a6e:
     resolution: {integrity: sha512-LQ8hHOIzk+agD1p0K7UosByKuzDAKGLTnYsP0syV/XMr9E7pWmoaDSWkGdWjtLR9O3hinNqrXU1NW0kTmhiSag==}
@@ -7905,10 +7905,10 @@ snapshots:
     dependencies:
       duplexer: 0.1.2
 
-  h3-nightly@1.13.1-20241129-104109-4fe5086:
+  h3-nightly@1.13.1-20241204-002207-10e98be:
     dependencies:
       cookie-es: 1.2.2
-      crossws: 0.2.4
+      crossws: 0.3.1
       defu: 6.1.4
       destr: 2.0.3
       iron-webcrypto: 1.2.1
@@ -7917,8 +7917,6 @@ snapshots:
       ufo: 1.5.4
       uncrypto: 0.1.3
       unenv: 1.10.0
-    transitivePeerDependencies:
-      - uWebSockets.js
 
   h3-nightly@2.0.0-1718872656.6765a6e:
     dependencies:
@@ -8501,7 +8499,7 @@ snapshots:
       fs-extra: 11.2.0
       globby: 14.0.2
       gzip-size: 7.0.0
-      h3: h3-nightly@1.13.1-20241129-104109-4fe5086
+      h3: h3-nightly@1.13.1-20241204-002207-10e98be
       hookable: 5.5.3
       httpxy: 0.1.5
       ioredis: 5.4.1
