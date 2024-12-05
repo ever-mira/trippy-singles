@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     families: {
       Figtree: [100, 300, 400, 900],
       Pacifico: true,
+      Inter: true,
     },
   },
   image: {

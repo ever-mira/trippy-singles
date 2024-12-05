@@ -23,7 +23,7 @@
   },
   "menu": {
     "start": "Startpage",
-    "people": "People",
+    "people": "Profiles",
     "places": "Places",
     "events": "Events",
     "exchange": "Exchange",
@@ -100,7 +100,7 @@
   },
   "pages": {
     "people": {
-      "title": "People",
+      "title": "Profiles",
       "subtitle": "Profiles and Visions",
       "coming_soon": "Coming soon."
     },

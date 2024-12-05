@@ -1,6 +1,6 @@
 <template>
   <NuxtLink to="/"
-    class="text-pink-600 lg:text-sky-600 dark:text-orange-300 text-[1.75rem] md:text-[1.7rem] font-semibold leading-none"
+    class="text-pink-600 lg:text-sky-600 dark:text-orange-300 text-[1.75rem] md:text-[1.7rem] lg:text-[1.9rem] font-semibold leading-none"
     @click="onClick">
     {{ $t('app.title') }}
   </NuxtLink>

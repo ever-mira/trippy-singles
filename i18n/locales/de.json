@@ -23,7 +23,7 @@
   },
   "menu": {
     "start": "Startseite",
-    "people": "Menschen",
+    "people": "Profile",
     "places": "Orte",
     "events": "Veranstaltungen",
     "exchange": "Tauschen",
@@ -100,7 +100,7 @@
   },
   "pages": {
     "people": {
-      "title": "Menschen",
+      "title": "Profile",
       "subtitle": "Profile und Visionen",
       "coming_soon": "Coming soon."
     },

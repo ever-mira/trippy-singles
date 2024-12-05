@@ -13,6 +13,7 @@ export default defineConfig({
     fontFamily: {
       figtree: "Figtree",
       pacifico: "Pacifico",
+      inter: "Inter",
     },
   },
 })

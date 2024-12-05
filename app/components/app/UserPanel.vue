@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="p-2 mt-3.5 border-gray-200 border-1.5 dark:border-gray-800 rounded-xl bg-highlight dark:bg-highlight-dark">
+  <div class="p-2 mt-4 border-gray-200 border-1.5 dark:border-gray-800 rounded-xl bg-highlight dark:bg-highlight-dark">
     <NuxtLink :to="`/@${profile.username}`" @click="hideSidebar" v-if="profile">
       <div class="flex  gap-2.5">
         <div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-screen h-auto overflow-hidden">
+  <div class="relative min-h-screen h-auto overflow-hidden max-w-screen-3xl mx-auto">
     <NuxtLoadingIndicator />
 
     <aside>
