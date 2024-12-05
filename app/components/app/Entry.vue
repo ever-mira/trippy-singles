@@ -3,7 +3,7 @@
     <div class="ml-3 md:ml-7">
 
       <div class="text-[2.55rem] lg:text-[3rem] gradient-glow-text mt-8 font-medium font-figtree"
-        data-text="Puzzle Social">
+        data-text="Puzzle Social z-10">
         <span class="whitespace-nowrap">Puzzle Social
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       </div>
@@ -56,10 +56,10 @@ const loginClick = () => {
 
 <style>
 :root {
-  --color-error: rgba(255, 0, 122, 0.5);
-  --color-secondary: rgba(125, 0, 255, 0.5);
-  --color-primary: rgba(0, 170, 255, 0.5);
-  --color-accent: rgba(0, 255, 217, 0.5);
+  --color-error: rgba(255, 0, 122, 0.35);
+  --color-secondary: rgba(125, 0, 255, 0.35);
+  --color-primary: rgba(0, 170, 255, 0.35);
+  --color-accent: rgba(0, 255, 217, 0.35);
 }
 
 .gradient-glow-text {
@@ -81,7 +81,7 @@ const loginClick = () => {
       var(--color-secondary) 40%,
       var(--color-primary) 60%,
       var(--color-accent) 100%);
-  filter: blur(15px);
+  filter: blur(19px);
   z-index: -1;
 }
 

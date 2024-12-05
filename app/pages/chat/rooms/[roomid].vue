@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-highlight dark:bg-highlight-dark p-1.5 rounded-xl mt-7 lg:mt-0 mb-17" v-if="room">
+  <div class="bg-highlight dark:bg-highlight-dark p-1.5 rounded-md mt-7 lg:mt-0 mb-17" v-if="room">
     <div class="p-3 bg-white dark:bg-black rounded-xl min-h-100">
       <div class="" v-for="message in messages" v-if="messages">
         {{ message.content }}

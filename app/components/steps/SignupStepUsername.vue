@@ -5,7 +5,7 @@
 
     <div class="mt-12 relative">
       <Input ref="mailInputRef" placeholder="Universum_123" v-model="username" autofocus
-        class="!w-[230px] md:!w-[220px]" />
+        class="!w-[230px] md:!w-[220px]" @keydown.enter="next" />
       <div class="inline ml-3 text-green-600" v-if="available">{{ $t('signup.username_free') }}</div>
       <div class="inline ml-3 text-red-700" v-if="available === false">{{ $t('signup.username_taken') }}
       </div>
@@ -63,6 +63,7 @@ watch(username, (newVal) => {
   { immediate: true })
 
 const next = async () => {
+  if (!available.value) return
   setStepComponent(SignupStepLogin)
 }
 </script>
