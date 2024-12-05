@@ -7,8 +7,8 @@
       </template>
     </Heading>
 
-    <div class="!w-full xl:min-w-140 max-w-170 mt-9 border rounded-lg p-3">
-      <div class="p-1 text-gray-700" v-if="!messages || messages.length < 1">Schreibe eine Nachricht.</div>
+    <div class="!w-full xl:min-w-140 max-w-170 mt-9 border dark:border-gray-500 rounded-lg p-3">
+      <div class="p-1 text-gray-500" v-if="!messages || messages.length < 1">Noch keine Nachrichten.</div>
       <div class="mt-19">
         <div v-for="message in messages" :key="message.id" class="w-full p-1">
           <div v-if="message.sender_id === user.id">
@@ -92,7 +92,7 @@ const sendMessage = async () => {
   if (message.value.length < 1) {
     return
   }
-  const response = await $fetch(`/api/conversations/${profile.value.user_id}`, {
+  const response = await $fetch(`/api/conversations/${profile.value?.user_id}`, {
     method: 'POST',
     body: { content: message.value },
   });

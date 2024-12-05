@@ -1,6 +1,6 @@
 <template>
   <div v-if="visible"
-    class="fixed left-0 top-0 bg-opacity-50 bg-gray-400 h-screen w-screen flex items-center justify-center">
+    class="fixed left-0 top-0 bg-opacity-30 bg-gray-400 h-screen w-screen flex items-center justify-center z-40">
     <div class="flex w-auto grow p-2 items-center justify-center">
       <!-- Overlay -->
       <div class="bg-white dark:bg-gray-900 -mt-32 md:-mt-55 rounded-md shadow-sm w-full max-w-md grow">

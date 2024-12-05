@@ -14,11 +14,11 @@ const { stepComponent } = useSignup()
 
 <style>
 .stepChange-leave-active {
-  transition: all 0.2s ease;
+  transition: all 0.14s ease;
 }
 
 .stepChange-enter-active {
-  transition: all 0.2s ease;
+  transition: all 0.14s ease;
 }
 
 .stepChange-leave-to {

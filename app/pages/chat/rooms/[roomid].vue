@@ -22,13 +22,6 @@ import type { Tables } from "~~/types/database.types"
 type Chatroom = Tables<'chatrooms'>
 type Chatmessage = Tables<'chatmessages'>
 
-definePageMeta({
-  pageTransition: {
-    name: 'chat',
-    mode: 'out-in',
-  }
-})
-
 const route = useRoute()
 const roomid = route.params.roomid
 
