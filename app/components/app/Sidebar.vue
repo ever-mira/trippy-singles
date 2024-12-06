@@ -60,11 +60,6 @@
       </div>
     </div>
 
-    <div class="mt-44">
-      <NavLink to="/about">
-        <SparklesIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />Über das Projekt
-      </NavLink>
-    </div>
   </div>
 
   <div class="hidden fixed top-0 left-0 h-screen w-screen z-20 cursor-pointer bg-gray-100 dark:bg-gray-900 opacity-30"
