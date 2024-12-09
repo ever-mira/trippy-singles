@@ -10,9 +10,6 @@
       <div class="" v-for="message in messages" v-if="messages">
         <span class="font-medium">{{ message.user.username }}:</span> {{ message.content }}
       </div>
-      <div class="text-gray-600" v-if="connected && messages && messages.length === 0">
-        {{ $t('pages.chat.no_messages_yet') }}
-      </div>
     </div>
     <div class="flex gap-x-2 mt-3">
       <Textarea type="text" :placeholder="$t('pages.chat.message')" v-model="inputText"

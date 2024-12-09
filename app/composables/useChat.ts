@@ -40,7 +40,7 @@ export function useChat() {
 
       socket = new WebSocket(`${socketUrl}${slug}`, encodedAccessToken)
     } else {
-      socket = new WebSocket(socketUrl) // anonymous connection
+      socket = new WebSocket(`${socketUrl}${slug}`) // anonymous connection
     }
     addSocketEvents()
   }
