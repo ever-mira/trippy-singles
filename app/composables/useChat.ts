@@ -22,7 +22,7 @@ export function useChat() {
   const env: number = 1
   let socketUrl = `ws://127.0.0.1:8787/`
   if (env === 1) {
-    socketUrl = `ws://puzzle-chat.to-ee5.workers.dev/`
+    socketUrl = `wss://puzzle-chat.to-ee5.workers.dev/`
   }
 
   onUnmounted(() => {
