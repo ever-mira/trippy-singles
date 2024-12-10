@@ -1,15 +1,19 @@
 <template>
   <input v-bind="$attrs" :value="modelValue" @input="onInput" @focus="onFocus" @blur="onBlur" @keydown="onKeydown"
-    :class="classes" autofocus />
+    :class="classes" ref="inputRef" />
 </template>
 
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 
-defineProps({
+const props = defineProps({
   modelValue: {
     type: String,
-  }
+  },
+  focus: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits(['update:modelValue', 'focus', 'blur', 'keydown'])
@@ -31,7 +35,15 @@ const onKeydown = (event: KeyboardEvent) => {
   emit('keydown', event)
 }
 
-const classes = "px-3 py-1.3 w-full md:w-[200px] border-1.7 border-indigo-200 focus:border-indigo-400 rounded-md outline-none"
+const inputRef = useTemplateRef('inputRef')
+
+onMounted(() => {
+  if (props.focus) {
+    inputRef.value?.focus()
+  }
+})
+
+const classes = "px-3 py-1.3 w-full md:w-[210px] border-1.7 border-gray-300 focus:border-indigo-400 rounded-md outline-none"
 </script>
 
 <style scoped></style>

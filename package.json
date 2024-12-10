@@ -12,7 +12,6 @@
     "generate:types": "npx supabase gen types typescript --project-id cjkohvynpsrunbchpmsv > types/database.types.ts"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.1",
     "@heroicons/vue": "^2.2.0",
     "@nuxt/content": "2.13.4",
     "@nuxt/image": "1.8.1",

@@ -4,13 +4,13 @@
 
       <Entry />
 
-      <div class="md:ml-0 w-87% md:w-60% lg:w-46% xl:w-60% mt-2">
+      <div class="md:w-60% w-87% lg:w-46% xl:w-60% mt-2">
         <Stepper />
       </div>
     </div>
 
-    <div class="mt-10 lg:mt-20 mx-auto">
-      <UserList class="ml-6" />
+    <div class="mt-9 lg:mt-20 mx-auto">
+      <UserList class="ml-3 lg:ml-7" />
     </div>
 
     </ Page>

@@ -1,6 +1,6 @@
 <template>
   <Page>
-    <Login class="md:w-fit md:mx-auto mt-27" />
+    <Login class="w-fit mx-auto mt-27" />
   </Page>
 
 </template>
