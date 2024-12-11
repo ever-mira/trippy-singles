@@ -7,7 +7,7 @@
         class="ml-3 hover:bg-gray-50 dark:hover:bg-gray-950 py-1.5 pl-2 pr-5 rounded-xl">
         <NuxtLink :to="`/@${user.username}`">
           <div class="flex">
-            <NuxtImg :src="user.avatar_url" fit="cover" width="60" height="60" class="w-14 rounded-full"
+            <NuxtImg :src="user.avatar_url" fit="cover" width="60" height="60" class="w-14 rounded-full shadow-mdsm"
               v-if="user.avatar_url" />
             <img src="../../assets/avatar.jpg" class="w-14 rounded-full" v-else />
             <div class="py-.5 px-3">
@@ -16,22 +16,13 @@
             </div>
           </div>
         </NuxtLink>
-
       </div>
     </div>
     <div class="h-80"></div>
   </div>
 </template>
 
-
 <script setup lang="ts">
-import { AvatarImage, AvatarRoot } from 'radix-vue'
-import type { Tables } from "~~/types/database.types"
-type ProfileData = Tables<'profiles'>
-
-const { data: users } = await useFetch<ProfileData[]>(`/api/users/`, {
-  method: 'GET',
-  headers: useRequestHeaders(['cookie']),
-})
-
+const { users, loadUsers } = useUsers()
+await loadUsers()
 </script>

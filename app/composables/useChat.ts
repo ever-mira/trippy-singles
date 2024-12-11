@@ -1,3 +1,5 @@
+import ReconnectingWebSocket from "reconnecting-websocket"
+
 type ChatMessage = {
   type: string
   user: ChatUser
@@ -17,7 +19,7 @@ export function useChat() {
   })
 
   const supabase = useSupabaseClient()
-  let socket: WebSocket
+  let socket: ReconnectingWebSocket
 
   const env: number = 1
   let socketUrl = `ws://127.0.0.1:8787/`
@@ -37,10 +39,9 @@ export function useChat() {
     if (session && session.data.session) {
       const accessToken = session.data.session?.access_token
       const encodedAccessToken = btoa(accessToken || "").replace(/=+$/, "")
-
-      socket = new WebSocket(`${socketUrl}${slug}`, encodedAccessToken)
+      socket = new ReconnectingWebSocket(`${socketUrl}${slug}`, encodedAccessToken)
     } else {
-      socket = new WebSocket(`${socketUrl}${slug}`) // anonymous connection
+      socket = new ReconnectingWebSocket(`${socketUrl}${slug}`) // anonymous connection
     }
     addSocketEvents()
   }

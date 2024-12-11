@@ -43,7 +43,7 @@ onMounted(() => {
   }
 })
 
-const classes = "px-3 py-1.3 w-full md:w-[210px] border-1.7 border-gray-300 focus:border-indigo-400 rounded-md outline-none"
+const classes = "px-3 py-1.3 w-full md:w-[210px] border-1.7 focus:shadow-sm border-gray-300 focus:border-indigo-400 rounded-md outline-none"
 </script>
 
 <style scoped></style>

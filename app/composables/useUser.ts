@@ -2,7 +2,7 @@ import type { Tables } from "~~/types/database.types"
 type Profile = Tables<"profiles">
 
 export function useUser() {
-  const profile = useState<Profile | null>("profile", () => null)
+  const profile = useState<Profile | null>("userProfile", () => null)
 
   const supabaseUser = useSupabaseUser()
 

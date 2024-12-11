@@ -22,7 +22,7 @@
       <span class="text-gray-700">{{ message }}</span>
     </div>
     <div class="mt-7">
-      <Button @click="signIn" class="!px-8">{{ $t('login.button') }}</button>
+      <Button @click="signIn" class="!px-7.5">{{ $t('login.button') }}</button>
     </div>
   </div>
 </template>

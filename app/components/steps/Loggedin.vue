@@ -5,8 +5,8 @@
       {{ $t('signup.no_new_messages') }}
     </div>
 
-    <div class="mt-7">
-      <Button to="/conversations" class="!px-7">{{ $t('signup.mailbox') }}</button>
+    <div class="mt-9">
+      <Button to="/conversations" class="!px-6">{{ $t('signup.mailbox') }}</button>
     </div>
   </div>
 </template>

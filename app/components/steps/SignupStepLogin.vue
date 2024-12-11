@@ -19,7 +19,7 @@
       <span class="text-gray-700">{{ message }}</span>
     </div>
     <div class="mt-7">
-      <Button @click="signUp">{{ $t('signup.create_account') }}</button>
+      <Button @click="signUp" class="!px-5">{{ $t('signup.create_account') }}</button>
     </div>
   </div>
 
