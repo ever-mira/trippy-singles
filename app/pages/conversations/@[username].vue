@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="md:flex gap-x-2 mt-4">
-        <Textarea type="text" placeholder="Nachricht" class="!w-full resize-none dark:bg-black dark:!border-0"
+        <Textarea type="text" placeholder="Nachricht" class="!w-full resize-none dark:bg-black"
           @keydown.enter.prevent="sendMessage" v-model="message" />
         <Button class="self-start !px-7.5" @click="sendMessage">senden</Button>
       </div>

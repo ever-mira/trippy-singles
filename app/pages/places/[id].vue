@@ -16,7 +16,7 @@
 
     <div class="mt-9 lg:mt-11" v-if="place">
       <img :src="place.avatar_url || undefined" class="rounded-lg max-w-55 md:max-w-69 mt-10" v-if="place.avatar_url">
-      <img src="../../assets/place_holder.svg" class="rounded-lg max-w-55 md:max-w-69 mt-10" v-else>
+      <PlaceholderPhoto v-else />
     </div>
 
     <div class="mt-9">

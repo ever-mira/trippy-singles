@@ -31,7 +31,7 @@ const onKeydown = (event: KeyboardEvent) => {
   emit('keydown', event)
 }
 
-const classes = "px-3 py-1.3 w-full md:w-[200px] border-1.7 border-gray-300 focus:border-indigo-400 rounded-md outline-none"
+const classes = "px-3 py-1.3 w-full md:w-[200px] border-1.7 dark:bg-gray-950 border-gray-300 dark:border-gray-700 focus:border-indigo-400 dark:focus:border-gray-500 focus:shadow-sm rounded-md outline-none resize-none"
 </script>
 
 <style scoped></style>

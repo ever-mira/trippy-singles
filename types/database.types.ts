@@ -69,6 +69,42 @@ export type Database = {
         }
         Relationships: []
       }
+      events: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          date: string
+          description: string | null
+          id: string
+          location: string | null
+          name: string
+          user_id: string | null
+          website: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          date: string
+          description?: string | null
+          id?: string
+          location?: string | null
+          name: string
+          user_id?: string | null
+          website?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          date?: string
+          description?: string | null
+          id?: string
+          location?: string | null
+          name?: string
+          user_id?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
       messages: {
         Row: {
           content: string

@@ -1,8 +1,11 @@
 <template>
-  <div class="bg-highlight dark:bg-highlight-dark p-1.5 rounded-md mt-7 lg:mt-0 mb-17">
+  <div class="bg-highlight dark:bg-highlight-dark p-1.5 rounded-xl mt-7 lg:mt-0 mb-17">
     <div class="p-3 bg-white dark:bg-black rounded-xl min-h-100">
       <div class="text-gray-600" v-if="!connected">
         Connecting...
+      </div>
+      <div class="text-gray-600" v-if="connected">
+        [Du bist im Raum: {{ slug }}]
       </div>
       <div class="text-gray-600" v-if="error">
         Fehler beim Herstellen der Verbindung
@@ -13,7 +16,7 @@
     </div>
     <div class="flex gap-x-2 mt-3">
       <Textarea type="text" :placeholder="$t('pages.chat.message')" v-model="inputText"
-        class="!w-full resize-none dark:bg-black dark:!border-0" @keydown.enter.prevent.stop="sendMessage" />
+        class="!w-full resize-none dark:bg-black dark:!border-0 rounded-xl" @keydown.enter.prevent.stop="sendMessage" />
       <Button class="self-start !px-7.5" @click="sendMessage" :disabled="inputText.length < 1">{{ $t('pages.chat.send')
         }}</Button>
     </div>

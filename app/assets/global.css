@@ -5,3 +5,20 @@ body {
 .max-w-screen-3xl {
   max-width: 1600px;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 15px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #657ddb;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #657ddb #f1f1f1;
+}

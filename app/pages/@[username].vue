@@ -20,20 +20,7 @@
           <ProfilePicture />
         </div>
 
-        <div class="mt-9" v-if="!isOwnProfile">
-          <Button color="transparent" size="small" class="border dark:border-gray-700 !font-normal"
-            :to="`/conversations/@${profile?.username}`">
-            <PaperAirplaneIcon class="inline w-5.5 text-gray-500 -mt.5 mr-1" />
-            Nachricht senden
-          </Button>
-        </div>
-        <div class="mt-4" v-if="!isOwnProfile">
-          <Button color="transparent" @click="showModal('Coming soon.')" size="small"
-            class="border dark:border-gray-700 !font-normal">
-            <UserPlusIcon class="inline w-5.5 text-gray-500 -mt.5" />
-            Als Freund hinzufügen
-          </Button>
-        </div>
+        <ProfileActions />
 
         <div class="mt-9">
           <Button @click="goBack" class="!px-7.5">{{ $t('profile.back') }}</Button>
@@ -52,13 +39,12 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import ProfilePicture from '~/components/profile/ProfilePicture.vue'
-import { PaperAirplaneIcon } from '@heroicons/vue/24/outline'
-import { UserPlusIcon } from '@heroicons/vue/24/outline'
+import ProfileActions from '~/components/profile/ProfileActions.vue'
 
 const router = useRouter()
 const route = useRoute()
 
-const { profile, loadProfile, isOwnProfile } = useProfile()
+const { profile, loadProfile } = useProfile()
 
 const username = route.params.username
 
@@ -70,5 +56,5 @@ const goBack = () => {
   router.back()
 }
 
-const { showModal } = useModal()
+
 </script>

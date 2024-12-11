@@ -1,6 +1,7 @@
 <template>
   <div class="absolute top-0 left-0 h-full w-full">
-    <div class="h-screen overflow-y-auto py-17 px-4 md:px-7 lg:px-13 xl:px-19 lg:py-19" ref="scrollContainer">
+    <div class="h-screen overflow-y-auto py-17 px-4 md:px-7 lg:px-13 xl:px-19 lg:py-19 custom-scrollbar"
+      ref="scrollContainer">
       <div class="max-w-340 xl:max-w-350 2xl:max-w-400 mx-auto">
         <slot></slot>
       </div>
@@ -21,10 +22,12 @@ onBeforeRouteLeave((to, from) => {
 })
 
 onMounted(() => {
-  const savedPosition = getScrollPosition(routePath)
+  if (routePath.split('/').length - 1 < 2) {
+    const savedPosition = getScrollPosition(routePath)
 
-  if (savedPosition && scrollContainer.value) {
-    scrollContainer.value.scrollTop = getScrollPosition(routePath) || 0
+    if (savedPosition && scrollContainer.value) {
+      scrollContainer.value.scrollTop = getScrollPosition(routePath) || 0
+    }
   }
 })
 
