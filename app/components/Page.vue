@@ -1,9 +1,13 @@
 <template>
   <div class="absolute top-0 left-0 h-full w-full">
-    <div class="h-screen overflow-y-auto py-17 lg:py-19 px-4 md:px-7 lg:px-13 xl:px-19 custom-scrollbar"
-      ref="scrollContainer">
-      <div class="max-w-340 xl:max-w-350 2xl:max-w-400 mx-auto">
-        <slot></slot>
+    <div class="h-screen overflow-y-auto custom-scrollbar" ref="scrollContainer">
+      <div class="relative min-h-screen h-auto py-17 lg:py-19">
+        <div class="px-4 md:px-7 lg:px-13 xl:px-19">
+          <slot></slot>
+        </div>
+        <footer class="hidden md:block absolute bottom-0 w-full py-1 px-4">
+          <AppFooter />
+        </footer>
       </div>
     </div>
   </div>

@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="relative min-h-screen h-auto overflow-hidden max-w-screen-3xl mx-auto bg-white dark:bg-[#121212] lg:dark:bg-black z-0">
+  <div class="relative overflow-hidden max-w-screen-3xl mx-auto bg-white dark:bg-[#121212] lg:dark:bg-black z-0">
     <NuxtLoadingIndicator />
 
     <aside>
@@ -12,13 +11,9 @@
         <AppHeader />
       </header>
 
-      <main class="relative h-full w-full">
+      <main class="relative h-full w-full min-h-screen">
         <NuxtPage />
       </main>
-
-      <footer class="hidden lg:block absolute bottom-0 px-4 lg:px-6 py-1">
-        <AppFooter />
-      </footer>
     </div>
 
     <Modal />
