@@ -19,4 +19,28 @@ export default defineConfig({
       mdsm: "0 2px 4px rgba(0, 0, 140, 0.1)",
     },
   },
+  rules: [
+    [
+      "animate-pulse",
+      {
+        animation: "pulse 5s ease-in-out infinite",
+      },
+    ],
+  ],
+  preflights: [
+    {
+      getCSS: () => `
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.8;
+          }
+          50% {
+            transform: scale(1.4);
+            opacity: 1;
+          }
+        }
+      `,
+    },
+  ],
 })

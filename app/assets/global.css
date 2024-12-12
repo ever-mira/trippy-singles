@@ -11,7 +11,7 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #657ddb;
+  background-color: #657ddbb2;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -20,5 +20,6 @@ body {
 
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #657ddb #f1f1f1;
+  scrollbar-color: #657ddbb2 #f1f1f1;
 }
+/* 657ddb */

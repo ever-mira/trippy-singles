@@ -13,6 +13,7 @@
 
       <main class="relative h-full w-full min-h-screen">
         <NuxtPage />
+        <FloatingOrbs />
       </main>
     </div>
 
@@ -22,9 +23,9 @@
 
 <script setup lang="ts">
 import AppHeader from './components/app/AppHeader.vue'
-import AppFooter from './components/app/AppFooter.vue'
 import Sidebar from './components/app/Sidebar.vue'
 import Modal from './components/app/Modal.vue'
+import FloatingOrbs from './components/app/FloatingOrbs.vue'
 
 useHead({
   title: 'Puzzle Social',

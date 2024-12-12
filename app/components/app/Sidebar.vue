@@ -5,12 +5,12 @@
 
     <AppTitle />
 
+    <img src="../../assets/puzzles.png" class="hidden lg:block w-81 lg:w-56 mt-3.5 mx-auto pr-2 opacity-20">
+
     <UserPanel v-if="user" />
 
-    <img src="../../assets/puzzles.png" class="hidden lg:block w-81 lg:w-55 mt-3.5 mx-auto pr-2 opacity-10">
-
     <div>
-      <NavLink to="/" class="mt-6 lg:mt-2">
+      <NavLink to="/" class="mt-6">
         <HomeIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.start') }}
       </NavLink>
 
@@ -84,7 +84,6 @@ import { ShareIcon } from '@heroicons/vue/24/outline'
 import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/solid'
 import { EnvelopeIcon } from '@heroicons/vue/24/solid'
 import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
-import { SparklesIcon } from '@heroicons/vue/24/solid'
 
 
 const router = useRouter()
