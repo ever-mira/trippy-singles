@@ -7,8 +7,10 @@
 
     <UserPanel v-if="user" />
 
+    <img src="../../assets/puzzles.png" class="hidden lg:block w-81 lg:w-55 mt-3.5 mx-auto pr-2 opacity-10">
+
     <div>
-      <NavLink to="/" class="mt-6">
+      <NavLink to="/" class="mt-6 lg:mt-2">
         <HomeIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.start') }}
       </NavLink>
 
@@ -33,10 +35,8 @@
       </NavLink>
     </div>
 
-    <div class="hidden mt-5" v-if="!user">
-      <Button color="indigo" @click="login">
-        {{ $t('app.login') }}
-      </Button>
+    <div class="mt-6 mb-9">
+      <LoginPanel v-if="!user" />
     </div>
 
     <div class="border-t border-gray-200 dark:border-gray-700 mt-7 pt-1.5" v-if="user">
@@ -70,11 +70,11 @@
 <script setup lang="ts">
 import AppTitle from './AppTitle.vue'
 import UserPanel from './UserPanel.vue'
+import LoginPanel from './LoginPanel.vue'
 import NavLink from './NavLink.vue'
 import LanguageDropdown from '../language/LanguageDropdown.vue'
 import ToggleDark from './DarkToggle.vue'
 import Puzzle from "../steps/Puzzle.vue"
-import Login from "../steps/Login.vue"
 
 import { HomeIcon } from '@heroicons/vue/24/solid'
 import { UserGroupIcon } from '@heroicons/vue/24/solid'
@@ -101,9 +101,4 @@ const logout = async () => {
   hideSidebar()
 }
 
-const login = async () => {
-  router.push({ path: '/' })
-  setStepComponent(Login)
-  hideSidebar()
-}
 </script>

@@ -14,20 +14,24 @@
       </template>
     </Heading>
 
-    <div class="lg:w-95% xl:w-80% 2xl:w-70%">
+    <div class="lg:w-95% xl:w-85% 2xl:w-75%">
       <div class="flex flex-col lg:flex-row mt-9 lg:mt-11" v-if="event">
         <div class="flex-1">
-          <img :src="event.avatar_url || undefined" class="rounded-lg max-w-55 md:max-w-69 mt-10"
-            v-if="event.avatar_url">
+          <NuxtImg :src="event.avatar_url || undefined" class="rounded-lg md:w-full" width="700"
+            v-if="event.avatar_url" />
           <PlaceholderPhoto v-else />
         </div>
-        <div class="flex flex-1 mt-7 lg:mt-0 lg:justify-end">
+        <div class="flex mt-9 lg:mt-0 lg:justify-end lg:pl-13 xl:pl-17">
           <VCalendar :attributes="calendarAttributes" :isDark="isDark" />
         </div>
       </div>
 
       <div class="mt-13 lg:mt-10 whitespace-pre-wrap font-medium" v-if="event">
         <MapPinIcon class="inline w-6 text-red-700 mr-2.5 -mt-1.3" />{{ event.location }}
+      </div>
+
+      <div class="mt-5 whitespace-pre-wrap font-medium" v-if="event">
+        <CalendarIcon class="inline w-6 text-red-700 mr-2.5 -mt-1.3" />{{ eventDateFormatted }}
       </div>
 
       <div class="mt-9 whitespace-pre-wrap" v-if="event">
@@ -45,6 +49,7 @@
 
 <script setup lang="ts">
 import { MapPinIcon } from '@heroicons/vue/24/solid'
+import { CalendarIcon } from '@heroicons/vue/24/solid'
 import { useRoute } from 'vue-router'
 const router = useRouter()
 const route = useRoute()

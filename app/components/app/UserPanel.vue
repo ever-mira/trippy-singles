@@ -11,8 +11,8 @@
           <div class="font-medium leading-none">
             @{{ profile.username }}
           </div>
-          <div class="text-gray-700 dark:text-gray-300 text-sm">
-
+          <div class="text-gray-400 dark:text-gray-600 text-sm">
+            eingeloggt.
           </div>
         </div>
       </div>

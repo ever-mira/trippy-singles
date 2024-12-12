@@ -22,7 +22,7 @@
             {{ $t('app.start') }}
           </Button>
 
-          <Button color="transparent" @click="loginClick" class="!px-7 ml-1.5">
+          <Button color="white" @click="loginClick" class="!px-7 ml-1.5">
             {{ $t('app.login') }}
           </Button>
         </div>

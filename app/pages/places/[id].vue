@@ -15,7 +15,8 @@
     </Heading>
 
     <div class="mt-9 lg:mt-11" v-if="place">
-      <img :src="place.avatar_url || undefined" class="rounded-lg max-w-55 md:max-w-69 mt-10" v-if="place.avatar_url">
+      <NuxtImg :src="place.avatar_url || undefined" width="700" class="rounded-lg max-w-55 md:max-w-69 mt-10"
+        v-if="place.avatar_url" />
       <PlaceholderPhoto v-else />
     </div>
 

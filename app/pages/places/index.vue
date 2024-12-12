@@ -24,15 +24,15 @@
     </div>
 
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -ml-5 mt-15 gap-x-.5 lg:gap-x-5 gap-y-2 xl:max-w-90% 2xl:max-w-80%"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 -ml-5 mt-15 gap-x-.5 lg:gap-x-5 gap-y-5 lg: gap-y-4 xl:max-w-90% 2xl:max-w-75%"
       v-if="places">
 
       <NuxtLink :to="`places/${place.id}`"
-        class="block ml-3 bg-gray-50 hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-900 border border-gray-200 dark:border-gray-800 py-2 pl-2 pr-5 rounded-xl"
+        class="block ml-3 bg-gray-50 hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-900 border border-gray-200 dark:border-gray-800 py-3 pl-2 pr-5 rounded-xl"
         v-for="place in places" :key="place.id">
 
         <div class="flex">
-          <img :src="place.avatar_url || ''" class="w-15 rounded-full" v-if="place.avatar_url" />
+          <NuxtImg :src="place.avatar_url || ''" class="w-15 rounded-full" height="70" v-if="place.avatar_url" />
           <PlaceholderPhotoSmall v-else />
           <div class="py-.5 px-3">
             <div>{{ place.name }}</div>
