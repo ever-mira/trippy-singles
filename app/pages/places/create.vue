@@ -34,13 +34,15 @@
       </div>
     </div>
 
-    <!-- preload small image version -->
-    <NuxtImg :src="place.avatar_url || ''" class="hidden" height="70" width="70" fit="cover" v-if="place.avatar_url" />
+    <!-- preload CDN images -->
+    <ImagePreload :url="place.avatar_url" v-if="place.avatar_url" />
   </Page>
 </template>
 
 <script setup lang="ts">
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
+import ImagePreload from '~/components/app/ImagePreload.vue'
+
 
 const place = reactive({
   name: '',

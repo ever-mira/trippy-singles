@@ -37,9 +37,8 @@
         </Button>
       </div>
 
-      <!-- preload small image version -->
-      <NuxtImg :src="event.avatar_url || ''" class="hidden" height="70" width="70" fit="cover"
-        v-if="event.avatar_url" />
+      <!-- preload CDN images -->
+      <ImagePreload :url="event.avatar_url" v-if="event.avatar_url" />
     </div>
 
   </Page>
@@ -47,6 +46,7 @@
 
 <script setup lang="ts">
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
+import ImagePreload from '~/components/app/ImagePreload.vue'
 
 const event = reactive({
   name: '',
