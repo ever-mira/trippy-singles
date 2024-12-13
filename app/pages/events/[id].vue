@@ -22,7 +22,7 @@
           <PlaceholderPhoto v-else />
         </div>
         <div class="flex mt-9 lg:mt-0 lg:justify-end lg:pl-13 xl:pl-17">
-          <VCalendar :attributes="calendarAttributes" :isDark="isDark" />
+          <VCalendar :attributes="calendarAttributes" :isDark="isDark" :locale="locale" />
         </div>
       </div>
 
@@ -64,6 +64,7 @@ if (id) {
 }
 
 const { showModal } = useImageModal()
+const { locale } = useI18n()
 
 const calendarAttributes = ref([
   {
