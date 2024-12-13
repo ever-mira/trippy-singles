@@ -89,7 +89,7 @@ import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
 const router = useRouter()
 const user: Ref = useSupabaseUser()
 const supabase = useSupabaseClient()
-const { setStepComponent, reset } = useSignup()
+const { setStepComponent, reset } = useSteps()
 const { isSidebarVisible, hideSidebar } = useApp()
 
 const logout = async () => {

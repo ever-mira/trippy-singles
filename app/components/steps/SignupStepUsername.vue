@@ -31,7 +31,7 @@ import SignupStepLogin from './SignupStepLogin.vue'
 import debounce from 'lodash.debounce'
 import { validateUsername } from '@utils/usernameValidation'
 
-const { setStepComponent, username } = useSignup()
+const { setStepComponent, username } = useSteps()
 
 const message = ref<string>('')
 const available = ref<boolean | null>(null)

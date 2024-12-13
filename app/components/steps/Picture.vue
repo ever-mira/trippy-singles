@@ -17,7 +17,7 @@
 <script setup lang="ts">
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
 import Loggedin from './Loggedin.vue'
-const { setStepComponent } = useSignup()
+const { setStepComponent } = useSteps()
 const { fetchUserData, profile } = useUser()
 const { updateUserList } = useUsers()
 

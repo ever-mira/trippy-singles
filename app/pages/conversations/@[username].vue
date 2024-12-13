@@ -9,7 +9,7 @@
 
     <div class="!w-full xl:min-w-140 max-w-170 mt-9 border dark:border-gray-500 rounded-lg p-3">
       <div class="p-1 text-gray-500" v-if="!messages || messages.length < 1">Noch keine Nachrichten.</div>
-      <div class="mt-19 min-h-50">
+      <div class="mt-19 min-h-10 lg:min-h-40">
         <div v-for="message in messages" :key="message.id" class="w-full p-1">
           <div v-if="message.sender_id === user.id">
             <div class="flex justify-end">

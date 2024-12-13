@@ -14,7 +14,7 @@ const reset = () => {
   state.username = ""
 }
 
-export default function useSignup() {
+export default function useSteps() {
   return {
     ...toRefs(state),
     stepComponent,

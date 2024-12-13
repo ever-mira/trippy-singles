@@ -31,7 +31,7 @@
 <script setup lang="ts">
 import Loggedin from "./Loggedin.vue"
 
-const { setStepComponent } = useSignup()
+const { setStepComponent } = useSteps()
 const supabase = useSupabaseClient()
 const router = useRouter()
 

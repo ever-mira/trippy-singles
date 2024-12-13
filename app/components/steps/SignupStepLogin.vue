@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import Picture from './Picture.vue'
 
-const { setStepComponent, username } = useSignup()
+const { setStepComponent, username } = useSteps()
 const supabase = useSupabaseClient()
 
 const credentials = reactive({

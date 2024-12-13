@@ -17,8 +17,8 @@
     <div class="lg:w-95% xl:w-85% 2xl:w-75%">
       <div class="flex flex-col lg:flex-row mt-9 lg:mt-11" v-if="event">
         <div class="flex-1">
-          <NuxtImg :src="event.avatar_url || undefined" class="rounded-lg md:w-full" width="700"
-            v-if="event.avatar_url" />
+          <NuxtImg :src="event.avatar_url || undefined" class="rounded-lg md:w-full cursor-pointer" width="700"
+            v-if="event.avatar_url" @click="showModal(event.avatar_url)" />
           <PlaceholderPhoto v-else />
         </div>
         <div class="flex mt-9 lg:mt-0 lg:justify-end lg:pl-13 xl:pl-17">
@@ -63,6 +63,7 @@ if (id) {
   await loadEvent(id as string)
 }
 
+const { showModal } = useImageModal()
 
 const calendarAttributes = ref([
   {

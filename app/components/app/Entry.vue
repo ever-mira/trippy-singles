@@ -43,7 +43,7 @@ import SignupStepUsername from '../steps/SignupStepUsername.vue'
 
 const user: Ref = useSupabaseUser()
 const { profile } = useUser()
-const { setStepComponent } = useSignup()
+const { setStepComponent } = useSteps()
 
 const startClick = () => {
   setStepComponent(SignupStepUsername)

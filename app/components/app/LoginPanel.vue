@@ -15,7 +15,7 @@ import Login from "../steps/Login.vue"
 import SignupStepUsername from "../steps/SignupStepUsername.vue"
 
 const router = useRouter()
-const { setStepComponent } = useSignup()
+const { setStepComponent } = useSteps()
 
 const login = async () => {
   router.push({ path: '/' })

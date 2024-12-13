@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import Puzzle from '../steps/Puzzle.vue'
 
-const { setStepComponent } = useSignup()
+const { setStepComponent } = useSteps()
 const { hideSidebar } = useApp()
 
 const onClick = () => {

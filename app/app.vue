@@ -19,6 +19,7 @@
     </div>
 
     <Modal />
+    <ImageModal />
   </div>
 </template>
 
@@ -26,6 +27,7 @@
 import AppHeader from './components/app/AppHeader.vue'
 import Sidebar from './components/app/Sidebar.vue'
 import Modal from './components/app/Modal.vue'
+import ImageModal from './components/app/ImageModal.vue'
 import FloatingOrbs from './components/app/FloatingOrbs.vue'
 
 useHead({
