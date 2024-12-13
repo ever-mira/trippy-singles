@@ -1,6 +1,6 @@
 <template>
-  <div class="hidden md:absolute right-0 top-0 w-full h-screen overflow-hidden opacity-40 -z-10">
-    <div class="absolute inset-0 animate-pulse opacity-70">
+  <div class="hidden md:block absolute right-0 top-0 w-full h-screen overflow-hidden opacity-20 -z-10">
+    <div class="absolute inset-0 animate-pulse">
       <div
         class="rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 blur-2xl opacity-50 w-72 h-72 top-1/3 left-1/4 absolute">
       </div>

@@ -5,7 +5,7 @@
     <img src="../../assets/avatar.jpg" class="rounded-lg max-w-55 md:max-w-65 mt-10" v-else>
   </div>
 
-  <photo-upload @uploaded="onPhotoUploaded" :change="profile.avatar_url !== null" class="mt-6"
+  <photo-upload @uploaded="onPhotoUploaded" :change="profile.avatar_url !== null" category="avatar" class="mt-6"
     v-if="profile && isOwnProfile"></photo-upload>
 </template>
 

@@ -3,7 +3,7 @@ import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server"
 import type { Database } from "~~/types/database.types"
 
 export default defineEventHandler(async (event) => {
-  const { name, description, website, date, location } = await readBody(event)
+  const { name, description, website, date, location, avatar_url } = await readBody(event)
 
   try {
     const client = await serverSupabaseClient<Database>(event)
@@ -22,6 +22,7 @@ export default defineEventHandler(async (event) => {
         website,
         date,
         location,
+        avatar_url,
         user_id: userId,
       })
       .select("*")

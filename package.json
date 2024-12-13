@@ -21,6 +21,8 @@
     "@nuxtjs/supabase": "^1.4.3",
     "@popperjs/core": "^2.11.8",
     "@supabase/supabase-js": "^2.46.2",
+    "@uppy/core": "^4.3.0",
+    "@uppy/xhr-upload": "^4.2.3",
     "date-fns": "^4.1.0",
     "file-type": "^19.6.0",
     "github-markdown-css": "^5.8.1",

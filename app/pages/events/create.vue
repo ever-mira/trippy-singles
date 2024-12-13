@@ -8,6 +8,9 @@
     </Heading>
 
     <div class="mt-11 w-100">
+      <div class="mb-7">
+        <photo-upload @uploaded="onPhotoUploaded" category="event" :preview="true" class="mt-6"></photo-upload>
+      </div>
       <div class="mb-3">
         <Input type="text" placeholder="Name der Veranstaltung" v-model="event.name" autofocus class="!w-full" />
       </div>
@@ -25,30 +28,38 @@
         {{ message }}
       </div>
 
-      <div class="mt-10">
-        <Button color="indigo" @click="save" class="!px-5.5">
-          Speichern
-        </Button>
-        <Button color="red" to="/events" class="ml-4 !px-5.5">
+      <div class="mt-10 mb-50">
+        <Button color="red" to="/places" class="!px-5.5">
           Abbrechen
         </Button>
+        <Button color="indigo" @click="save" class="ml-4 !px-5.5">
+          Speichern
+        </Button>
       </div>
+
+      <!-- preload small image version -->
+      <NuxtImg :src="event.avatar_url || ''" class="hidden" height="70" width="70" fit="cover"
+        v-if="event.avatar_url" />
     </div>
 
   </Page>
 </template>
 
 <script setup lang="ts">
+import PhotoUpload from '~/components/user/PhotoUpload.vue'
+
 const event = reactive({
   name: '',
   description: '',
   website: '',
   location: '',
+  avatar_url: '',
   date: new Date()
 })
 
 const message = ref('')
 const user = useSupabaseUser()
+const router = useRouter()
 
 async function save() {
   message.value = ''
@@ -70,11 +81,15 @@ async function save() {
       headers: useRequestHeaders(['cookie'])
     })
 
-    message.value = 'Veranstaltung wurde erstellt.'
+    router.push('/events')
 
   } catch (error: any) {
     message.value = error.message
   }
+}
+
+const onPhotoUploaded = (url: string) => {
+  event.avatar_url = url
 }
 
 const { isDark } = useApp()

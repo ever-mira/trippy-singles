@@ -1,7 +1,9 @@
 <template>
   <div class="text-left">
-    <label class="mt-9 py-2 px-4 bg-gray-100 text-md dark:bg-gray-900 cursor-pointer text-center rounded-md">
-      <input id="file-input" ref="fileInput" class="hidden" type="file" @change="imageSelected($event)" />
+
+    <label for="file-input"
+      class="mt-9 py-2 px-4 bg-gray-100 text-md dark:bg-gray-900 cursor-pointer text-center rounded-md"
+      v-if="!props.preview">
 
       <svg id="spinner" class="inline w-5 h-5 -mt-1 -ml-1 mr-2 animate-spin text-gray-500"
         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" v-if="uploading">
@@ -19,6 +21,17 @@
         saving...&nbsp;
       </span>
     </label>
+
+    <label for="file-input" v-if="props.preview" class="cursor-pointer">
+      <img :src="previewImage" class="rounded-lg mx-auto" v-if="previewImage" />
+      <div v-else class="rounded-lg border dark:border-gray-800 ">
+        <img src="/assets/placeholder.png" class="dark:hidden w-60% mx-auto" />
+        <img src="/assets/placeholder_dark.png" class="hidden dark:block w-60% mx-auto" />
+      </div>
+
+    </label>
+
+    <input id="file-input" ref="fileInput" class="hidden" type="file" @change="onImageSelected($event)" />
     <span class="block mt-4" v-if="message">{{ message }}</span>
   </div>
 </template>
@@ -26,66 +39,72 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import Uppy from '@uppy/core'
+import XHRUpload from '@uppy/xhr-upload'
 
-let image = ref()
-let fileInput = ref(null)
+let uppy: any = null
 let message = ref('')
 let uploading = ref(false)
+let previewImage = ref<string | null>(null)
 
 const props = defineProps({
+  category: { type: String, required: true },
   change: { type: Boolean, default: false },
+  preview: { type: Boolean, default: false },
 })
 
 const emit = defineEmits(['uploaded'])
 
-let imageSelected = (event: any) => {
-  message.value = ''
+onMounted(() => {
+  uppy = new Uppy({
+    autoProceed: true,
+  })
 
+  uppy.use(XHRUpload, {
+    endpoint: `/api/upload/${props.category}`,
+    fieldName: 'photo',
+  })
+
+  uppy.on('file-added', (file: any) => {
+    const fileReader = new FileReader()
+    fileReader.onload = () => {
+      previewImage.value = fileReader.result as string
+    }
+    fileReader.readAsDataURL(file.data)
+  })
+
+  uppy.on('upload-success', (file: any, response: any) => {
+    if (response && response.body.url) {
+      emit('uploaded', response.body.url)
+
+      setTimeout(() => {
+        uploading.value = false
+      }, 1100)
+    } else {
+      throw new Error('Keine URL im Server-Response enthalten.')
+    }
+  })
+
+  uppy.on('upload-error', (file: any, error: any, response: any) => {
+    console.error('Upload fehlgeschlagen:', error.message || error)
+  })
+})
+
+let onImageSelected = (event: any) => {
+  message.value = ''
   if (event.target.files.length > 0) {
     const file = event.target.files[0]
 
     if (file.size / 1000000 > 2) {
       message.value = 'Bild zu groß. (maximal 2mb)'
     } else {
-      image.value = file
-      const reader = new FileReader()
-      reader.readAsDataURL(image.value)
-      reader.onload = e => {
-        save()
-      }
+      uploading.value = true
+      uppy.addFile({
+        name: file.name,
+        type: file.type,
+        data: file,
+      })
     }
-  }
-}
-
-interface saveResponse {
-  url: string
-}
-
-let save = async () => {
-  if (!image.value) return
-
-  const imageFormData = new FormData()
-  imageFormData.append('photo', image.value)
-
-  try {
-    uploading.value = true
-    const response = await $fetch<saveResponse>('/api/upload', {
-      method: 'POST',
-      body: imageFormData
-    })
-    setTimeout(() => {
-      uploading.value = false
-    }, 1100)
-
-    if (response && response.url) {
-      emit('uploaded', response.url)
-    } else {
-      throw new Error('Keine URL im Server-Response enthalten.')
-    }
-  } catch (error: any) {
-    console.error('Upload fehlgeschlagen:', error.message || error)
-    uploading.value = false
-    throw new Error('Upload fehlgeschlagen.')
   }
 }
 </script>

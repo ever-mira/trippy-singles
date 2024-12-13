@@ -8,6 +8,9 @@
     </Heading>
 
     <div class="mt-11 w-100">
+      <div class="mb-7">
+        <photo-upload @uploaded="onPhotoUploaded" category="place" :preview="true" class="mt-6"></photo-upload>
+      </div>
       <div class="mb-3">
         <Input type="text" placeholder="Name des Ortes" v-model="place.name" autofocus class="!w-full" />
       </div>
@@ -21,28 +24,34 @@
         {{ message }}
       </div>
 
-      <div class="mt-10">
-        <Button color="indigo" @click="save" class="!px-5.5">
-          Speichern
-        </Button>
-        <Button color="red" to="/places" class="ml-4 !px-5.5">
+      <div class="mt-10 mb-50">
+        <Button color="red" to="/places" class="!px-5.5">
           Abbrechen
+        </Button>
+        <Button color="indigo" @click="save" class="ml-4 !px-5.5">
+          Speichern
         </Button>
       </div>
     </div>
 
+    <!-- preload small image version -->
+    <NuxtImg :src="place.avatar_url || ''" class="hidden" height="70" width="70" fit="cover" v-if="place.avatar_url" />
   </Page>
 </template>
 
 <script setup lang="ts">
+import PhotoUpload from '~/components/user/PhotoUpload.vue'
+
 const place = reactive({
   name: '',
   description: '',
-  website: ''
+  website: '',
+  avatar_url: ''
 })
 
 const message = ref('')
 const user = useSupabaseUser()
+const router = useRouter()
 
 async function save() {
   message.value = ''
@@ -64,11 +73,15 @@ async function save() {
       headers: useRequestHeaders(['cookie'])
     })
 
-    message.value = 'Ort wurde erstellt.'
+    router.push('/places')
 
   } catch (error: any) {
     message.value = error.message
   }
+}
+
+const onPhotoUploaded = (url: string) => {
+  place.avatar_url = url
 }
 </script>
 

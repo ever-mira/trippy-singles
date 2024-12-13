@@ -15,6 +15,13 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: "Daten fehlen" })
   }
 
+  const category = getRouterParam(event, "category")
+  const validCategories = ["avatar", "event", "place"]
+
+  if (!category || !validCategories.includes(category)) {
+    throw createError({ statusCode: 400, statusMessage: "invalid category" })
+  }
+
   const user = await serverSupabaseUser(event)
 
   if (!user) {
@@ -41,8 +48,10 @@ export default defineEventHandler(async (event) => {
 
   const client = await serverSupabaseClient<Database>(event)
 
+  const bucketName = category === "avatar" ? "avatars" : `${category}_photos`
+
   const { data: uploadData, error: uploadError } = await client.storage
-    .from("avatars")
+    .from(bucketName)
     .upload(fileName, file, {
       cacheControl: "31536000, immutable",
       upsert: true,
@@ -53,15 +62,17 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 500, statusMessage: uploadError.message })
   }
 
-  const publicUrl = client.storage.from("avatars").getPublicUrl(fileName).data.publicUrl
+  const publicUrl = client.storage.from(bucketName).getPublicUrl(fileName).data.publicUrl
 
-  const { error: updateError } = await client
-    .from("profiles")
-    .update({ avatar_url: publicUrl })
-    .eq("user_id", userId)
+  if (category === "avatar") {
+    const { error: updateError } = await client
+      .from("profiles")
+      .update({ avatar_url: publicUrl })
+      .eq("user_id", userId)
 
-  if (updateError) {
-    throw createError({ statusCode: 500, statusMessage: updateError.message })
+    if (updateError) {
+      throw createError({ statusCode: 500, statusMessage: updateError.message })
+    }
   }
 
   return { url: publicUrl }
