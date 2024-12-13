@@ -9,18 +9,18 @@
 
     <div class="!w-full xl:min-w-140 max-w-170 mt-9 border dark:border-gray-500 rounded-lg p-3">
       <div class="p-1 text-gray-500" v-if="!messages || messages.length < 1">Noch keine Nachrichten.</div>
-      <div class="mt-19">
+      <div class="mt-19 min-h-50">
         <div v-for="message in messages" :key="message.id" class="w-full p-1">
           <div v-if="message.sender_id === user.id">
             <div class="flex justify-end">
-              <div class="bg-gray-100 p-3 rounded-lg">
+              <div class="bg-gray-100 dark:bg-gray-900 p-3 rounded-lg">
                 {{ message.content }}
               </div>
             </div>
           </div>
           <div v-else>
             <div class="flex justify-start">
-              <div class="bg-gray-100 p-3 rounded-lg">
+              <div class="bg-gray-100 dark:bg-gray-900 p-3 rounded-lg">
                 {{ message.content }}
               </div>
             </div>
@@ -33,7 +33,9 @@
         <Button class="self-start !px-7.5 mt-2 md:mt-0" @click="sendMessage">senden</Button>
       </div>
     </div>
-
+    <div class="mt-7">
+      <Button @click="goBack" class="!px-8">Zurück</Button>
+    </div>
     <div class="h-60"></div>
   </Page>
 </template>
@@ -44,6 +46,7 @@ type Profile = Tables<'profiles'>
 type Message = Tables<'messages'>
 
 const route = useRoute()
+const router = useRouter()
 const with_username = route.params.username
 const user: Ref = useSupabaseUser()
 const { showModal } = useModal()
@@ -98,6 +101,10 @@ const sendMessage = async () => {
   });
   message.value = ''
   fetchMessages()
+}
+
+const goBack = () => {
+  router.back()
 }
 
 </script>
