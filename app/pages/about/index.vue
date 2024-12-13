@@ -2,6 +2,9 @@
     <main class="p-20">
         <h1 class="text-2xl">Über das Projekt</h1>
         <br>
+        <h2 class="text-xl">Technical documentation at:</h2>
+        <a href="https://puzzle.codes" target="_blank" class="text-blue-600">https://puzzle.codes</a>
+        <br><br>
         <h2 class="text-xl">built with Nuxt</h2>
         A meta-framework based on Vue.js
         <h2 class="text-xl">built with Supabase</h2>
