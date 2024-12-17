@@ -28,7 +28,7 @@
       v-if="places">
 
       <NuxtLink :to="`/places/${place.id}`"
-        class="block ml-3 bg-red-50 hover:bg-red-100 dark:bg-gray-950 dark:hover:bg-gray-900 bg-opacity-40 hover:bg-opacity-40 border border-gray-200 dark:border-gray-800 py-3 pl-2 pr-5 rounded-xl"
+        class="block ml-3 bg-red-50 hover:bg-red-100 dark:bg-gray-950 dark:hover:bg-gray-900 bg-opacity-40 hover:bg-opacity-40 border border-gray-100 dark:border-gray-900 py-3 pl-2 pr-5 rounded-xl"
         v-for="place in places" :key="place.id">
 
         <div class="flex">

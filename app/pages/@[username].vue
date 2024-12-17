@@ -20,14 +20,15 @@
           <ProfilePicture />
         </div>
 
+        <ProfileLocation class="mt-7" />
+
         <ProfileActions />
 
-        <div class="mt-9">
+        <div class="mt-29">
           <Button @click="goBack" class="!px-7.5">{{ $t('profile.back') }}</Button>
         </div>
       </div>
-      <div class="w-full">
-        <NuxtPage class="w-full lg:px-19 mt-13 lg:mt-0" />
+      <div class="flex-1">
       </div>
     </div>
 
@@ -40,6 +41,7 @@
 import { useRoute } from 'vue-router'
 import ProfilePicture from '~/components/profile/ProfilePicture.vue'
 import ProfileActions from '~/components/profile/ProfileActions.vue'
+import ProfileLocation from '~/components/profile/ProfileLocation.vue'
 
 const router = useRouter()
 const route = useRoute()

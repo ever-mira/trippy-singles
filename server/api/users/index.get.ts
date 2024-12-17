@@ -1,17 +1,35 @@
 import { defineEventHandler } from "h3"
 import { serverSupabaseClient } from "#supabase/server"
+import type { Database } from "~~/types/database.types"
 
 export default defineEventHandler(async (event) => {
-  const supabase = await serverSupabaseClient(event)
+  const supabase = await serverSupabaseClient<Database>(event)
+
+  const { lon, lat } = await getQuery(event)
 
   try {
-    const { data, error } = await supabase.from("profiles").select("user_id, username, avatar_url")
+    if (lat && lon) {
+      const { data, error } = await supabase.rpc("get_profiles_with_distance", {
+        lon: Number(lon),
+        lat: Number(lat),
+      })
 
-    if (error) {
-      throw new Error("Fehler beim Laden der User: " + error.message)
+      if (error) {
+        throw new Error("Fehler beim Laden der User: " + error.message)
+      }
+
+      return data
+    } else {
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("user_id, username, avatar_url, location_label")
+
+      if (error) {
+        throw new Error("Fehler beim Laden der User: " + error.message)
+      }
+
+      return data
     }
-
-    return data
   } catch (error: any) {
     throw error
   }

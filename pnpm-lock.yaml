@@ -41,6 +41,9 @@ importers:
       '@uppy/xhr-upload':
         specifier: ^4.2.3
         version: 4.2.3(@uppy/core@4.3.0)
+      countries-list:
+        specifier: ^3.1.1
+        version: 3.1.1
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -2330,6 +2333,9 @@ packages:
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
+  countries-list@3.1.1:
+    resolution: {integrity: sha512-nPklKJ5qtmY5MdBKw1NiBAoyx5Sa7p2yPpljZyQ7gyCN1m+eMFs9I6CT37Mxt8zvR5L3VzD3DJBE4WQzX3WF4A==}
+
   crc-32@1.2.2:
     resolution: {integrity: sha512-ROmzCKrTnOwybPcJApAA6WBWij23HVfGVNKqqrZpuyZOHqK2CwHSvpGuyt/UNNvaIjEd8X5IFGp4Mh+Ie1IHJQ==}
     engines: {node: '>=0.8'}
@@ -3808,8 +3814,8 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
-  nuxi-nightly@3.16.1-20241213-153640-0245c91:
-    resolution: {integrity: sha512-2rbkxWWdnvv/gZdBGQavaI6+PtvFIizZQsFl8sujqXdQBCF771LCZ5jP+9/ypp/V9iyvGqq3NSHs1desHeYJRA==}
+  nuxi-nightly@3.16.1-20241213-222828-0245c91:
+    resolution: {integrity: sha512-FKjMDCgwlWx6VpuErz0yD3z3SSEe8O+SwOovpRUkddaXFKMiD/dxJ+XI9l0JzfoQoJdliVF+1+/yYYvx3eENJw==}
     engines: {node: ^16.10.0 || >=18.0.0}
     hasBin: true
 
@@ -8032,6 +8038,8 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
+  countries-list@3.1.1: {}
+
   crc-32@1.2.2: {}
 
   crc32-stream@6.0.0:
@@ -9913,7 +9921,7 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  nuxi-nightly@3.16.1-20241213-153640-0245c91: {}
+  nuxi-nightly@3.16.1-20241213-222828-0245c91: {}
 
   nuxt-nightly@4.0.0-28885933.8c7d24de(@parcel/watcher@2.5.0)(@types/node@22.10.1)(eslint@9.15.0(jiti@2.4.1))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.28.0)(terser@5.36.0)(tsx@4.19.2)(typescript@5.7.2)(vite@6.0.2(@types/node@22.10.1)(jiti@2.4.1)(terser@5.36.0)(tsx@4.19.2)(yaml@2.6.1))(yaml@2.6.1):
     dependencies:
@@ -9953,7 +9961,7 @@ snapshots:
       mlly: 1.7.3
       nanotar: 0.1.1
       nitro: nitro-nightly@3.0.0-beta-28796231.359af68d(typescript@5.7.2)
-      nuxi: nuxi-nightly@3.16.1-20241213-153640-0245c91
+      nuxi: nuxi-nightly@3.16.1-20241213-222828-0245c91
       nypm: 0.4.1
       ofetch: 1.4.1
       ohash: 1.1.4

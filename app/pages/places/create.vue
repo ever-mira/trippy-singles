@@ -7,7 +7,7 @@
       </template>
     </Heading>
 
-    <div class="mt-11 w-100">
+    <div class="mt-11 w-120">
       <div class="mb-7">
         <photo-upload @uploaded="onPhotoUploaded" category="place" :preview="true" class="mt-6"></photo-upload>
       </div>
@@ -17,8 +17,8 @@
       <div class="mb-3">
         <Textarea type="text" placeholder="Beschreibung" v-model="place.description" class="!w-full h-35 resize-none" />
       </div>
-      <div class="mb-7">
-        <Input type="text" placeholder="Website" v-model="place.website" class="!w-full" />
+      <div class="mb-3">
+        <LocationDropdown />
       </div>
       <div class="mb-7" v-if="message">
         {{ message }}

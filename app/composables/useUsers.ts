@@ -1,10 +1,17 @@
 import type { Tables } from "~~/types/database.types"
 type Profile = Tables<"profiles">
 
+type ProfileWithDistance = Profile & {
+  distance?: number
+}
+
+const selectedLocation = ref()
+
 export function useUsers() {
-  const users = useState<Profile[] | null>("users", () => null)
+  const users = useState<ProfileWithDistance[] | null>("users", () => null)
 
   async function loadUsers() {
+    selectedLocation.value = null
     const { data } = await useFetch<Profile[]>(`/api/users/`, {
       method: "GET",
       headers: useRequestHeaders(["cookie"]),
@@ -12,9 +19,15 @@ export function useUsers() {
     if (data.value) users.value = data.value
   }
 
-  async function updateUserList() {
+  async function updateUserList(location?: Array<number>) {
+    let url = "/api/users/"
+    if (location && location.length === 2) {
+      const lon = location[0]
+      const lat = location[1]
+      url += `?lon=${lon}&lat=${lat}`
+    }
     try {
-      const newUsers = await $fetch<Profile[]>("/api/users/")
+      const newUsers = await $fetch<ProfileWithDistance[]>(url)
       users.value = newUsers
     } catch (error) {
       console.error(error)
@@ -25,5 +38,6 @@ export function useUsers() {
     users,
     loadUsers,
     updateUserList,
+    selectedLocation,
   }
 }

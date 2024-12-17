@@ -49,6 +49,8 @@ const colorClasses = computed(() => {
       return '!text-gray-800 !dark:text-gray-300 dark:hover:bg-gray-900 !shadow-none'
     case 'white':
       return '!text-gray-800 bg-white dark:bg-black !dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900'
+    case 'gray':
+      return '!text-gray-800 !dark:text-gray-300 bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800'
     default:
       return 'bg-indigo-200 disabled:bg-gray-200 !text-indigo-800 disabled:!text-gray-600 dark:!text-indigo-100 disabled:dark:!text-gray-400 enabled:hover:bg-indigo-300 dark:bg-indigo-800 disabled:dark:bg-gray-700 enabled:dark:hover:bg-indigo-700'
   }

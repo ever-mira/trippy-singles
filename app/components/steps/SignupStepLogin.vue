@@ -6,12 +6,13 @@
 
     <div class="mt-8 relative">
       <span class="hidden md:inline">{{ $t('signup.email') }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      <Input type="email" ref="mailInputRef" :placeholder="$t('signup.email')" v-model="credentials.email" focus />
+      <Input type="email" ref="mailInputRef" :placeholder="$t('signup.email')" v-model="credentials.email"
+        class="md:w-[210px]" focus />
     </div>
 
     <div class="mt-3.5 relative">
       <span class="hidden md:inline">{{ $t('signup.password') }}&nbsp;&nbsp;</span>
-      <Input type="password" :placeholder="$t('signup.password')" v-model="credentials.password" autofocus
+      <Input type="password" :placeholder="$t('signup.password')" v-model="credentials.password" class="md:w-[210px]"
         @keydown.enter="signUp" />
     </div>
 

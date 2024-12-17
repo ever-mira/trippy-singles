@@ -8,7 +8,7 @@
     <div class="mt-7" v-if="profile">
       <NuxtImg :src="profile.avatar_url" width="300" class="rounded-lg max-w-40 mt-10" v-if="profile.avatar_url" />
       <img src="../../assets/avatar.jpg" class="rounded-full max-w-40 mt-10" v-else>
-      <photo-upload @uploaded="onPhotoUploaded" class="mt-6.5"></photo-upload>
+      <photo-upload @uploaded="onPhotoUploaded" category="avatar" class="mt-6.5"></photo-upload>
     </div>
   </div>
 </template>

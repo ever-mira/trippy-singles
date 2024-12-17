@@ -31,10 +31,17 @@ export default function useProfile() {
     }
   }
 
+  const setLocationLabel = async (label: string) => {
+    if (profile.value) {
+      profile.value.location_label = label
+    }
+  }
+
   return {
     profile,
     loadProfile,
     isOwnProfile,
     setAvatarUrl,
+    setLocationLabel,
   }
 }

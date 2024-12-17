@@ -95,7 +95,7 @@ let onImageSelected = (event: any) => {
   if (event.target.files.length > 0) {
     const file = event.target.files[0]
 
-    if (file.size / 1000000 > 2) {
+    if (file.size / 1000000 > 4) {
       message.value = 'Bild zu groß. (maximal 2mb)'
     } else {
       uploading.value = true
