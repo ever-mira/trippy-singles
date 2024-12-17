@@ -22,7 +22,7 @@
 
         <ProfileLocation class="mt-7" />
 
-        <ProfileActions />
+        <ProfileActions class="mt-11" />
 
         <div class="mt-29">
           <Button @click="goBack" class="!px-7.5">{{ $t('profile.back') }}</Button>

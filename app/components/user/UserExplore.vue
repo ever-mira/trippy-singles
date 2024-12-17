@@ -6,7 +6,7 @@
       <div v-for="user in users" :key="user.user_id"
         class="ml-3 bg-red-50 hover:bg-red-100 dark:bg-gray-950 dark:hover:bg-gray-900 bg-opacity-40 hover:bg-opacity-40 py-1.5 pl-2 pr-5 rounded-xl">
         <NuxtLink :to="`/@${user.username}`" class="flex flex-row">
-          <div class="flex flex-1">
+          <div class="flex">
             <NuxtImg :src="user.avatar_url" fit="cover" width="60" height="60"
               class="w-14 h-14 rounded-full shadow-mdsm" v-if="user.avatar_url" />
             <img src="../../assets/avatar.jpg" class="w-14 rounded-full" v-else />
@@ -18,7 +18,7 @@
           <div class="flex flex-1 flex-col text-gray-800 dark:text-gray-200">
             <div v-if="user.distance || user.distance === 0" class="text-right">
               <div class="text-sm" v-if="user.distance === 0">0 km</div>
-              <div class="text-sm" v-if="user.distance > 0 && user.distance < 10">{{ user.distance.toFixed(2) }} km
+              <div class="text-sm" v-if="user.distance > 0 && user.distance < 10">{{ user.distance.toFixed(1) }} km
               </div>
               <div class="text-sm" v-if="user.distance > 10">{{ user.distance.toFixed(0) }} km</div>
             </div>
@@ -31,6 +31,8 @@
 </template>
 
 <script setup lang="ts">
+import AutocompleteLocation from '~/components/location/AutocompleteLocation.vue'
+
 const { users, loadUsers, updateUserList, selectedLocation } = useUsers()
 if (!selectedLocation.value) {
   await loadUsers()

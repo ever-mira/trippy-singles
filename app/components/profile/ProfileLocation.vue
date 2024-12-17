@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-lg">
-      <MapPinIcon class="inline w-5 -mt-1" /> Standort
+      <MapPinIcon class="inline w-5 -mt-1" /> Wohnort
       <div class="inline mt-2 ml-5" v-if="isOwnProfile">
 
         <Button color="gray" size="small" @click="editMode = true" v-if="!editMode && isOwnProfile"
@@ -39,6 +39,7 @@
 </template>
 
 <script setup lang="ts">
+import AutocompleteLocation from '~/components/location/AutocompleteLocation.vue'
 import { MapPinIcon } from '@heroicons/vue/24/outline'
 
 const { profile, isOwnProfile, setLocationLabel } = useProfile()
