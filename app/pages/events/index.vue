@@ -27,7 +27,7 @@
       v-if="events">
 
       <NuxtLink :to="`/events/${event.id}`"
-        class="block ml-3 bg-red-50 hover:bg-red-100 dark:bg-gray-950 dark:hover:bg-gray-900 border bg-opacity-40 hover:bg-opacity-40 border-gray-200 dark:border-gray-800 py-3.5 pl-2 pr-5 rounded-xl"
+        class="block ml-3 bg-gray-50 hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-900 bg-opacity-70 hover:bg-opacity-70 py-3 pl-2 pr-5 rounded-xl"
         v-for="event in events" :key="event.id">
 
         <div class="flex">

@@ -1,7 +1,7 @@
 <template>
   <div class="md:w-85">
     <Input v-model="searchQuery" placeholder="Standort eingeben" @focus="onFocused" @blur="onBlur" :loading="isLoading"
-      :focus="!initialLoad" />
+      :focus="!initialLoad && !ismobile()" />
     <div class="relative">
       <div id="dropdown_list"
         class="absolute hidden h-auto w-full max-h-100 overflow-y-scroll rounded-md shadow-lg bg-white dark:bg-black ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-7"
@@ -21,6 +21,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 import debounce from 'lodash.debounce'
+import ismobile from 'is-mobile'
 
 const props = defineProps({
   modelValue: {

@@ -16,7 +16,7 @@
 
     <div class="flex flex-col lg:flex-row">
       <div>
-        <div class="mt-9 lg:mt-11" v-if="profile">
+        <div class="mt-9" v-if="profile">
           <ProfilePicture />
         </div>
 
@@ -24,7 +24,7 @@
 
         <ProfileActions class="mt-11" />
 
-        <div class="mt-29">
+        <div class="mt-23 lg:mt-27">
           <Button @click="goBack" class="!px-7.5">{{ $t('profile.back') }}</Button>
         </div>
       </div>

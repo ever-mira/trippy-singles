@@ -14,7 +14,7 @@
 
       <main class="relative h-full w-full min-h-screen">
         <NuxtPage />
-        <FloatingOrbs />
+        <!-- <FloatingOrbs /> -->
       </main>
     </div>
 
