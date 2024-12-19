@@ -6,9 +6,9 @@ body {
   max-width: 1600px;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
+/* .custom-scrollbar::-webkit-scrollbar {
   width: 15px;
-}
+} */
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #9ea8d4b2;
