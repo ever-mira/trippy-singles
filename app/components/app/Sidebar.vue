@@ -5,7 +5,9 @@
 
     <AppTitle />
 
-    <img src="../../assets/puzzles.png" class="hidden lg:block w-81 lg:w-56 mt-3.5 mx-auto pr-2 opacity-20">
+    <!-- <img src="../../assets/puzzles.png" class="hidden lg:block w-81 lg:w-56 mt-3.5 mx-auto pr-2 opacity-0"> -->
+    <div class="h-11"></div>
+
 
     <UserPanel v-if="user" />
 

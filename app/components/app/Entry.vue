@@ -2,15 +2,13 @@
   <div class="-ml.5">
     <div class="ml-3 md:ml-7">
 
-      <div class="text-[2.55rem] lg:text-[3rem] gradient-glow-text mt-8 font-medium font-figtree"
-        data-text="Puzzle Social z-10">
-        <span class="whitespace-nowrap">Puzzle Social
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="text-[2.55rem] lg:text-[3.2rem] gradient-glow-text mt-8 font-figtree" data-text="Puzzle Social z-10">
+        <span class="whitespace-nowrap">Puzzle.
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       </div>
       <div
         class="text-[2.2rem] lg:text-[3rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
-        Social
-        Network.</div>
+        Find your Tribe.</div>
 
       <div class="mt-2 text-lg">
         {{ $t('app.subtitle') }}
@@ -18,7 +16,7 @@
 
       <div class="mt-8 lg:mt-9">
         <div v-if="!user">
-          <Button color="red" @click="startClick" class="!px-8">
+          <Button color="blue" @click="startClick" class="!px-8">
             {{ $t('app.start') }}
           </Button>
 
@@ -64,12 +62,12 @@ const loginClick = () => {
 
 .gradient-glow-text {
   position: relative;
-  font-weight: 700;
+  font-weight: 600;
   color: transparent;
   line-height: 35px;
 }
 
-.gradient-glow-text::before {
+/* .gradient-glow-text::before {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -83,7 +81,7 @@ const loginClick = () => {
       var(--color-accent) 100%);
   filter: blur(19px);
   z-index: -1;
-}
+} */
 
 .gradient-glow-text span {
   background: linear-gradient(90deg,

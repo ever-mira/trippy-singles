@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative overflow-hidden max-h-screen max-w-screen-3xl mx-auto bg-white dark:bg-[#121212] lg:dark:bg-black z-0">
+    class="relative overflow-hidden max-h-screen 2xl:max-w-80vw mx-auto bg-white dark:bg-[#121212] lg:dark:bg-black z-0">
     <NuxtLoadingIndicator />
 
     <aside>
@@ -14,7 +14,7 @@
 
       <main class="relative h-full w-full min-h-screen">
         <NuxtPage />
-        <FloatingOrbs />
+        <!-- <FloatingOrbs /> -->
       </main>
     </div>
 

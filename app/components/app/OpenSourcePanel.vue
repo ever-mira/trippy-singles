@@ -11,7 +11,7 @@
       Built by the community
     </div>
     <div class="text-xl">
-      Built by you.
+      Help building
       <CursorArrowRippleIcon class="inline w-7 mt-1" />
     </div>
     <div class="text-sm">

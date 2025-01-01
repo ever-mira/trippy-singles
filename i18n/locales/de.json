@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Puzzle.",
-    "subtitle": "Das Soziale Netzwerk für eine neue Realität.",
+    "subtitle": "Das Soziale Netzwerk für erwachsende Kinder.",
     "login": "Login",
     "logout": "Logout",
     "start": "Start",
@@ -99,7 +99,7 @@
   "pages": {
     "people": {
       "title": "Profile",
-      "subtitle": "Profile und Visionen",
+      "subtitle": "Ein Ort um sich zu finden.",
       "coming_soon": "Coming soon."
     },
     "events": {
