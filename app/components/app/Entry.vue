@@ -67,7 +67,7 @@ const loginClick = () => {
   line-height: 35px;
 }
 
-/* .gradient-glow-text::before {
+.gradient-glow-text::before {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -81,7 +81,7 @@ const loginClick = () => {
       var(--color-accent) 100%);
   filter: blur(19px);
   z-index: -1;
-} */
+}
 
 .gradient-glow-text span {
   background: linear-gradient(90deg,
