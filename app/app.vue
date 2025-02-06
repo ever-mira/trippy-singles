@@ -41,7 +41,7 @@ useHead({
   position: absolute;
   height: 100%;
   width: 100%;
-  transition: opacity 0.0s ease;
+  transition: opacity 0.23s ease;
 }
 
 .page-enter-from {
