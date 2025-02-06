@@ -1,17 +1,11 @@
 # Overview
 
-New version of Puzzle Social, temporarily hosted at:<br>
-https://puzzle.codes/
-
-Serverless architecture, hosted "on the edge" with Cloudflare.
-
-Database and authentication with: https://supabase.com/
-
-More or less chaotic work in progress. Thinking about recreating the repository, when a stable version is reached.
+Trippy Singles - dating platform for psychonauts.<br>
+https://trippy.singles/
 
 # Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Look at the [Nuxt Documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
