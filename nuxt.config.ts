@@ -18,6 +18,11 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/content",
   ],
+  runtimeConfig: {
+    public: {
+      trippyVariant: process.env.TRIPPY_VARIANT || "social",
+    },
+  },
   app: {
     pageTransition: { name: "page", mode: "default" },
   },

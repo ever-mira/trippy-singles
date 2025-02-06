@@ -31,7 +31,7 @@ import ImageModal from './components/app/ImageModal.vue'
 import FloatingOrbs from './components/app/FloatingOrbs.vue'
 
 useHead({
-  title: 'Puzzle Social',
+  title: 'Trippy',
 })
 </script>
 

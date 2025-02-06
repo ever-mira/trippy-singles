@@ -3,14 +3,22 @@
     <div class="ml-3 md:ml-7">
 
       <div class="text-[2.55rem] lg:text-[3.2rem] gradient-glow-text mt-8 font-figtree" data-text="Puzzle Social z-10">
-        <span class="whitespace-nowrap">Trippy. Singles.
+        <span class="whitespace-nowrap">{{ entryTitle }}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       </div>
-      <div
+
+      <div v-if="config.public.trippyVariant === 'social'"
+        class="text-[2.2rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
+        Psychedelic Network.</div>
+
+      <div v-else
         class="text-[2.2rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
         Findet euch.</div>
 
-      <div class="mt-2 text-lg">
+      <div class="mt-2 text-lg" v-if="config.public.trippyVariant === 'social'">
+        Das Soziale Netzwerk für Psychonauten.
+      </div>
+      <div class="mt-2 text-lg" v-else>
         {{ $t('app.subtitle') }}
       </div>
 
@@ -42,6 +50,12 @@ import SignupStepUsername from '../steps/SignupStepUsername.vue'
 const user: Ref = useSupabaseUser()
 const { profile } = useUser()
 const { setStepComponent } = useSteps()
+
+const config = useRuntimeConfig()
+
+const entryTitle = computed(() => {
+  return config.public.trippyVariant === 'social' ? 'Trippy.' : 'Trippy. Singles.'
+})
 
 const startClick = () => {
   setStepComponent(SignupStepUsername)
