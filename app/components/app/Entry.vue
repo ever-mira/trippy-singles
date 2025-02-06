@@ -7,7 +7,7 @@
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       </div>
 
-      <div v-if="config.public.trippyVariant === 'social'"
+      <div v-if="isTrippySocial"
         class="text-[2.2rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
         Psychedelic Network.</div>
 
@@ -15,7 +15,7 @@
         class="text-[2.2rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
         Findet euch.</div>
 
-      <div class="mt-2 text-lg" v-if="config.public.trippyVariant === 'social'">
+      <div class="mt-2 text-lg" v-if="isTrippySocial">
         Das Soziale Netzwerk für Psychonauten.
       </div>
       <div class="mt-2 text-lg" v-else>
@@ -51,10 +51,11 @@ const user: Ref = useSupabaseUser()
 const { profile } = useUser()
 const { setStepComponent } = useSteps()
 
-const config = useRuntimeConfig()
+const url = useRequestURL()
+const isTrippySocial = url.hostname === 'trippy.social'
 
 const entryTitle = computed(() => {
-  return config.public.trippyVariant === 'social' ? 'Trippy.' : 'Trippy. Singles.'
+  return isTrippySocial ? 'Trippy.' : 'Trippy. Singles.'
 })
 
 const startClick = () => {
