@@ -5,7 +5,7 @@
     <img src="../../assets/avatar.jpg" class="rounded-lg max-w-55 md:max-w-65 mt-10" v-else>
 
     <!-- preload big image -->
-    <NuxtImg :src="profile.avatar_url" width="910" class="hidden" v-if="profile && profile.avatar_url" />
+    <NuxtImg :src="profile.avatar_url" height="910" class="hidden" v-if="profile && profile.avatar_url" />
   </div>
 
   <photo-upload @uploaded="onPhotoUploaded" :change="profile.avatar_url !== null" category="avatar" class="mt-6"
