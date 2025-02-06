@@ -20,7 +20,7 @@
         <UserGroupIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.people') }}
       </NavLink>
 
-      <NavLink to="/places">
+      <!-- <NavLink to="/places">
         <MapIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.places') }}
       </NavLink>
 
@@ -30,6 +30,10 @@
 
       <NavLink to="/exchange">
         <ShareIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.exchange') }}
+      </NavLink> -->
+
+      <NavLink to="/reports">
+        <BeakerIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />Trip-Berichte
       </NavLink>
 
       <NavLink to="/chat">
@@ -86,6 +90,7 @@ import { ShareIcon } from '@heroicons/vue/24/outline'
 import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/solid'
 import { EnvelopeIcon } from '@heroicons/vue/24/solid'
 import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
+import { BeakerIcon } from '@heroicons/vue/24/solid'
 
 
 const router = useRouter()

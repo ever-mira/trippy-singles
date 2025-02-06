@@ -3,12 +3,12 @@
     <div class="ml-3 md:ml-7">
 
       <div class="text-[2.55rem] lg:text-[3.2rem] gradient-glow-text mt-8 font-figtree" data-text="Puzzle Social z-10">
-        <span class="whitespace-nowrap">Puzzle.
+        <span class="whitespace-nowrap">Trippy. Singles.
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       </div>
       <div
-        class="text-[2.2rem] lg:text-[3rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
-        Find your Tribe.</div>
+        class="text-[2.2rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
+        Findet euch.</div>
 
       <div class="mt-2 text-lg">
         {{ $t('app.subtitle') }}

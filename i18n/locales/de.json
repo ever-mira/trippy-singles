@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Puzzle.",
-    "subtitle": "Das Soziale Netzwerk für eine neue Realität.",
+    "title": "Trippy.",
+    "subtitle": "Das Dating-Portal für Psychonauten.",
     "login": "Login",
     "logout": "Logout",
     "start": "Start",
@@ -16,7 +16,7 @@
     "cancel": "Abbrechen",
     "new_users": "- Beings",
     "footer": {
-      "copyright": "© 2024 Puzzle Social",
+      "copyright": "© 2025 Trippy Singles",
       "terms": "Nutzungsbedingungen",
       "privacy": "Datenschutzerklärung"
     }
@@ -31,7 +31,7 @@
   },
   "login": {
     "title": "Login",
-    "subtitle": "Puzzle",
+    "subtitle": "Trippy",
     "email": "E-Mail",
     "password": "Passwort",
     "button": "Login",
@@ -39,10 +39,10 @@
   },
   "signup": {
     "title": "Account erstellen",
-    "subtitle": "Wie willst du auf Puzzle heißen?",
+    "subtitle": "Wähle einen Benutzernamen.",
     "username_free": "frei",
     "username_taken": "vergeben",
-    "second_step_title": "Zweiter Schritt",
+    "second_step_title": "Letzter Schritt",
     "second_step_subtitle": "Login-Daten festlegen",
     "displayname": "Dein Anzeigename",
     "next": "Weiter",
