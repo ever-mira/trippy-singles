@@ -25,8 +25,8 @@
     <label for="file-input" v-if="props.preview" class="cursor-pointer">
       <img :src="previewImage" class="rounded-lg mx-auto" v-if="previewImage" />
       <div v-else class="rounded-lg border dark:border-gray-800 ">
-        <img src="/assets/placeholder.png" class="dark:hidden w-60% mx-auto" />
-        <img src="/assets/placeholder_dark.png" class="hidden dark:block w-60% mx-auto" />
+        <img src="/assets/placeholder.png" class="dark:hidden w-50% lg:w-42% mx-auto" />
+        <img src="/assets/placeholder_dark.png" class="hidden dark:block w-50% lg:w-42% mx-auto" />
       </div>
 
     </label>
