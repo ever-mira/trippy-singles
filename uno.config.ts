@@ -3,6 +3,13 @@ import { defineConfig, transformerDirectives, presetUno } from "unocss"
 export default defineConfig({
   presets: [presetUno()],
   transformers: [transformerDirectives()],
+  extendTheme: (theme) => ({
+    ...theme,
+    breakpoints: {
+      ...theme.breakpoints,
+      "3xl": "1720px",
+    },
+  }),
   shortcuts: [
     ["text-sub", "text-gray-600"],
     ["text-sub-dark", "text-gray-400"],
