@@ -187,6 +187,7 @@ export type Database = {
         Row: {
           avatar_url: string | null
           coordinates: Json | null
+          created_at: string | null
           full_name: string | null
           location: unknown | null
           location_label: string | null
@@ -199,6 +200,7 @@ export type Database = {
         Insert: {
           avatar_url?: string | null
           coordinates?: Json | null
+          created_at?: string | null
           full_name?: string | null
           location?: unknown | null
           location_label?: string | null
@@ -211,6 +213,7 @@ export type Database = {
         Update: {
           avatar_url?: string | null
           coordinates?: Json | null
+          created_at?: string | null
           full_name?: string | null
           location?: unknown | null
           location_label?: string | null

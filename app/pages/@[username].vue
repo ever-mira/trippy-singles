@@ -20,18 +20,25 @@
           <ProfilePicture />
         </div>
 
-        <ProfileLocation class="mt-7" />
+        <div class="flex flex-col md:flex-row">
+          <ProfileLocation class="mt-7 w-90" />
+        </div>
 
         <ProfileActions class="mt-11" />
 
-        <div class="mt-23 lg:mt-27">
+        <div class="hidden lg:block mt-21 lg:mt-27">
           <Button @click="goBack" class="!px-7.5">{{ $t('profile.back') }}</Button>
         </div>
       </div>
-      <div class="flex-1">
+      <div class="flex-1 pt-13 lg:pt-5 lg:ml-11">
+        <ProfileSocialMedia />
+        <ProfileTimeline :registerDate="profile.created_at" :userId="profile.user_id" class="mt-15 lg:mt-52" />
       </div>
     </div>
 
+    <div class="lg:hidden mt-21 lg:mt-27">
+      <Button @click="goBack" class="!px-7.5">{{ $t('profile.back') }}</Button>
+    </div>
 
     <div class="h-60"></div>
   </Page>
@@ -42,6 +49,8 @@ import { useRoute } from 'vue-router'
 import ProfilePicture from '~/components/profile/ProfilePicture.vue'
 import ProfileActions from '~/components/profile/ProfileActions.vue'
 import ProfileLocation from '~/components/profile/ProfileLocation.vue'
+import ProfileSocialMedia from '~/components/profile/ProfileSocialMedia.vue'
+import ProfileTimeline from '~/components/profile/ProfileTimeline.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -57,6 +66,5 @@ if (username) {
 const goBack = () => {
   router.back()
 }
-
 
 </script>
