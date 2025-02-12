@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1 class="text-gray-500 dark:text-gray-300 text-xl">
-      <PuzzlePieceIcon class="inline w-5" /> {{ $t('app.new_users') }}
+      Mitglieder
     </h1>
-    <div class="flex flex-wrap -ml-3 mt-7 gap-x-.5 lg:gap-x-0 gap-y-3 xl:max-w-90% 2xl:max-w-80%" v-if="users">
+    <div class="flex flex-wrap -ml-3 mt-4 gap-x-.5 lg:gap-x-0 gap-y-3 xl:max-w-90% 2xl:max-w-80%" v-if="users">
       <div v-for="user in users" :key="user.user_id" class="ml-3">
         <NuxtLink :to="`/@${user.username}`" class="">
           <NuxtImg :src="user.avatar_url" fit="cover" width="60" height="60"
@@ -14,12 +14,11 @@
         </NuxtLink>
       </div>
     </div>
-    <div class="h-80"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { PuzzlePieceIcon } from '@heroicons/vue/24/outline'
+import { RocketLaunchIcon } from '@heroicons/vue/24/outline'
 const { users, loadUsers } = useUsers()
 await loadUsers()
 </script>

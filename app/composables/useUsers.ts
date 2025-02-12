@@ -20,14 +20,17 @@ export function useUsers() {
   }
 
   async function updateUserList(location?: Array<number>) {
-    let url = "/api/users/"
+    const params = new URLSearchParams()
     if (location && location.length === 2) {
       const lon = location[0]
       const lat = location[1]
-      url += `?lon=${lon}&lat=${lat}`
+      if (lon && lat) {
+        params.append("lon", lon.toString())
+        params.append("lat", lat.toString())
+      }
     }
     try {
-      const newUsers = await $fetch<ProfileWithDistance[]>(url)
+      const newUsers = await $fetch<ProfileWithDistance[]>("/api/users/?" + params.toString())
       users.value = newUsers
     } catch (error) {
       console.error(error)

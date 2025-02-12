@@ -13,7 +13,7 @@
         {{ $t('signup.username_taken') }}
       </div>
 
-      <p class="mt-3.5 text-gray-500 dark:text-gray-300">https://trippy.singles/@{{ username }}</p>
+      <p class="mt-3.5 text-gray-500 dark:text-gray-300">https://trippy.social/@{{ username }}</p>
     </div>
 
     <div class="mt-6 h-8" v-if="message">

@@ -7,19 +7,21 @@
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       </div>
 
-      <div v-if="isTrippySocial"
-        class="text-[2.2rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
-        Psychedelic Network.</div>
-
-      <div v-else
-        class="text-[2.2rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
+      <div v-if="isTrippySingles"
+        class="text-[1.9rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
         Findet euch.</div>
 
-      <div class="mt-2 text-lg" v-if="isTrippySocial">
-        Das Soziale Netzwerk für Psychonauten.
-      </div>
-      <div class="mt-2 text-lg" v-else>
+      <div v-else
+        class="text-[1.9rem] lg:text-[2.07rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
+        Psychedelic Network.</div>
+
+
+      <div class="mt-2 text-lg" v-if="isTrippySingles">
         {{ $t('app.subtitle') }}
+      </div>
+
+      <div class="mt-2 text-lg" v-else>
+        Das Soziale Netzwerk für Psychonauten.
       </div>
 
       <div class="mt-8 lg:mt-9">
@@ -38,7 +40,14 @@
           </Button>
         </div>
 
+        <h3 class="text-2xl mt-20">Trip-Berichte schreiben.</h3>
+
+        <span class="block text-lg mt-.5">Magische Momente, die wir erlebt, und schon längst wieder vergessen
+          haben.</span><br>
+        <NuxtLink to="/reports" class="text-blue-700 hover:text-blue-600  text-lg">Trip-Berichte →</NuxtLink>
+
       </div>
+
     </div>
   </div>
 </template>
@@ -53,9 +62,10 @@ const { setStepComponent } = useSteps()
 
 const url = useRequestURL()
 const isTrippySocial = url.hostname === 'trippy.social'
+const isTrippySingles = url.hostname === 'trippy.singles'
 
 const entryTitle = computed(() => {
-  return isTrippySocial ? 'Trippy.' : 'Trippy. Singles.'
+  return isTrippySingles ? 'Trippy. Singles.' : 'Trippy.'
 })
 
 const startClick = () => {

@@ -1,6 +1,6 @@
 <template>
     <Page>
-        <h1 class="text-2xl">Über das Projekt</h1>
+        <h1 class="text-3xl">Über das Projekt</h1>
         <br>
 
         <h2 class="text-xl">Das Netzwerk soll gebaut werden von den Menschen, die es nutzen wollen.</h2>
@@ -44,7 +44,7 @@
 
         Oft vergessen wir zu schnell, welche unglaublichen Erlebnisse wir hatten. Diese Erfahrungen ans Licht zu
         holen,
-        erhöht unser Bewusstsein, und erschafft eine Vision von einer Realität in der Magie real ist.
+        erhöht unser Bewusstsein, und erschafft eine Vision von einer Realität, in der Magie real ist.
 
 
         <br><br>
