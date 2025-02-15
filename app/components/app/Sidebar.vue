@@ -20,7 +20,7 @@
         <UserGroupIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.people') }}
       </NavLink>
 
-      <!-- <NavLink to="/places">
+      <NavLink to="/places">
         <MapIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.places') }}
       </NavLink>
 
@@ -30,7 +30,7 @@
 
       <NavLink to="/exchange">
         <ShareIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.exchange') }}
-      </NavLink> -->
+      </NavLink>
 
       <NavLink to="/reports">
         <BeakerIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />Trip-Berichte
@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="flex mt-6 pt-5 border-t border-gray-200 dark:border-gray-700 ">
+    <div class="flex mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 ">
       <div class="">
         <LanguageDropdown />
       </div>

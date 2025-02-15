@@ -12,7 +12,7 @@
         Findet euch.</div>
 
       <div v-else
-        class="text-[1.9rem] lg:text-[2.07rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
+        class="text-[1.9rem] lg:text-[2.2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
         Psychedelic Network.</div>
 
 
@@ -42,8 +42,8 @@
 
         <h3 class="text-2xl mt-20">Trip-Berichte schreiben.</h3>
 
-        <span class="block text-lg mt-.5">Magische Momente, die wir erlebt, und schon längst wieder vergessen
-          haben.</span><br>
+        <span class="block text-lg mt-.5">Magische Momente, die wir erlebt, aber schon längst wieder vergessen
+          hatten.</span><br>
         <NuxtLink to="/reports" class="text-blue-700 hover:text-blue-600  text-lg">Trip-Berichte →</NuxtLink>
 
       </div>

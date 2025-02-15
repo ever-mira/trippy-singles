@@ -95,5 +95,8 @@
     </Page>
 </template>
 
-<script>
+<script setup lang="ts">
+useHead({
+    title: 'Trippy About',
+})
 </script>
