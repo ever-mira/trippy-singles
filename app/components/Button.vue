@@ -33,9 +33,9 @@ const sizeClasses = computed(() => {
     case 'small':
       return 'px-3.75 py-2 text-sm'
     case 'large':
-      return 'py-2.3 px-9 text-sm'
+      return 'py-2.2 px-9 text-sm'
     default:
-      return 'py-2.3 px-9 text-sm'
+      return 'py-2.2 px-9 text-sm'
   }
 })
 

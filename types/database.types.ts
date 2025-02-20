@@ -123,6 +123,62 @@ export type Database = {
         }
         Relationships: []
       }
+      exchange_categories: {
+        Row: {
+          created_at: string
+          id: number
+          name: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          name?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          name?: string | null
+        }
+        Relationships: []
+      }
+      exchange_items: {
+        Row: {
+          avatar_url: string | null
+          category_id: number
+          created_at: string
+          id: number
+          text: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          category_id: number
+          created_at?: string
+          id?: number
+          text: string
+          title: string
+          user_id?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          category_id?: number
+          created_at?: string
+          id?: number
+          text?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "exchange_items_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "exchange_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       messages: {
         Row: {
           content: string
@@ -189,6 +245,7 @@ export type Database = {
           coordinates: Json | null
           created_at: string | null
           full_name: string | null
+          hide: boolean | null
           location: unknown | null
           location_label: string | null
           osm_properties: Json | null
@@ -202,6 +259,7 @@ export type Database = {
           coordinates?: Json | null
           created_at?: string | null
           full_name?: string | null
+          hide?: boolean | null
           location?: unknown | null
           location_label?: string | null
           osm_properties?: Json | null
@@ -215,6 +273,7 @@ export type Database = {
           coordinates?: Json | null
           created_at?: string | null
           full_name?: string | null
+          hide?: boolean | null
           location?: unknown | null
           location_label?: string | null
           osm_properties?: Json | null

@@ -1,32 +1,32 @@
 <template>
 
-  <div class="mt-22 ml-3 lg:ml-7">
+  <div class="mt-21 ml-3 lg:ml-7">
     <span class="text-3xl">Erinnern.</span><br>
   </div>
 
-  <div class="mt-19 lg:mt-22 ml-3 lg:ml-7">
-    <span class="text-xl">Die vergessenen Erfahrungen ans Licht zu holen,
+  <div class="mt-1 ml-3 lg:ml-7">
+    <span class="text-xl">Die vergessenen Trips ans Licht zu holen,
       erhöht unser Bewusstsein, und erschafft eine Realität, in der Magie real ist.
     </span><br>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-3 mt-19 gap-4 w-full xl:w-90% 2xl:w-80% 3xl:w-75%">
     <FeatureBox>
-      Visionen erschaffen
+      Visionen erschaffen.
       <template v-slot:content>
         Realitäten wahr werden lassen.
       </template>
     </FeatureBox>
 
     <FeatureBox>
-      Erkenntnisse teilen
+      Erkenntnisse teilen.
       <template v-slot:content>
         Erfahrungen und Wissen tauschen.
       </template>
     </FeatureBox>
 
     <FeatureBox>
-      Freunde finden
+      Freunde finden.
       <template v-slot:content>
         Wer hat ähnliches erlebt?
       </template>
@@ -34,9 +34,11 @@
   </div>
 
   <div class="mt-19">
-    <h2 class="text-2xl">Sich gegenseitig erinnern.</h2>
-    <span class="text-lg text-gray-700 dark:text-gray-400">An die Momente, die wir erlebt haben, aber die im Alltag
-      verlorgen gegangen sind.</span>
+    <h2 class="text-2xl">Gegenseitig erinnern.</h2>
+    <span class="text-lg text-gray-700 dark:text-gray-400">Gegenseitig erinnern, an die Momente, die wir erlebt, und
+      schon längst wieder vergessen hatten.
+      (how is this even
+      possible?!)</span>
   </div>
 
   <div class="mt-19 text-xl lg:w-70% xl:w-60% 2xl:w-50% 3xl:w-47%">
@@ -45,7 +47,8 @@
 
   <div class="mt-19 mb-11">
     <h2 class="text-2xl">Was hast du schon alles erlebt, und längst wieder vergessen?</h2>
-    <span class="text-lg text-gray-700 dark:text-gray-400">Deine verrücktesten Erfahrungen mit Psychedelica.</span>
+    <span class="text-lg text-gray-700 dark:text-gray-400">Teile deine verrücktesten Erfahrungen mit
+      Psychedelica.</span>
   </div>
 
   <Button color="indigo" to="/reports" class="!px-8">

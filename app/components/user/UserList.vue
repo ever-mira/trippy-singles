@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="text-gray-500 dark:text-gray-300 text-xl">
-      Mitglieder
+      Trippies
     </h1>
     <div class="flex flex-wrap -ml-3 mt-4 gap-x-.5 lg:gap-x-0 gap-y-3 xl:max-w-90% 2xl:max-w-80%" v-if="users">
       <div v-for="user in users" :key="user.user_id" class="ml-3">

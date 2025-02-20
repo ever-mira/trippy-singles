@@ -2,7 +2,7 @@
   <div class="-ml.5">
     <div class="ml-3 md:ml-7">
 
-      <div class="text-[2.55rem] lg:text-[3.2rem] gradient-glow-text mt-8 font-figtree" data-text="Puzzle Social z-10">
+      <div class="text-[2.55rem] lg:text-[3.3rem] gradient-glow-text mt-8 font-figtree" data-text="Puzzle Social z-10">
         <span class="whitespace-nowrap">{{ entryTitle }}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       </div>
@@ -12,7 +12,7 @@
         Findet euch.</div>
 
       <div v-else
-        class="text-[1.9rem] lg:text-[2.2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
+        class="text-[1.9rem] lg:text-[2.24rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.4 whitespace-nowrap">
         Psychedelic Network.</div>
 
 
@@ -40,11 +40,18 @@
           </Button>
         </div>
 
-        <h3 class="text-2xl mt-20">Trip-Berichte schreiben.</h3>
+        <div class="flex gap-x-4 mt-20">
+          <div>
 
-        <span class="block text-lg mt-.5">Magische Momente, die wir erlebt, aber schon längst wieder vergessen
-          hatten.</span><br>
-        <NuxtLink to="/reports" class="text-blue-700 hover:text-blue-600  text-lg">Trip-Berichte →</NuxtLink>
+            <h3 class="text-2xl">
+              <BeakerIcon class="inline w-7.5 text-blue-600 -mt-1.4 mr-4" />Trip-Berichte.
+            </h3>
+
+            <span class="block text-lg mt-.5">Kannst du dich noch an deine besten Trips erinnern? Wie schnell wir
+              vergessen.</span><br>
+            <NuxtLink to="/reports" class="text-blue-700 hover:text-blue-600  text-lg">Trip-Berichte →</NuxtLink>
+          </div>
+        </div>
 
       </div>
 
@@ -55,6 +62,7 @@
 <script setup lang="ts">
 import Login from '../steps/Login.vue'
 import SignupStepUsername from '../steps/SignupStepUsername.vue'
+import { BeakerIcon } from '@heroicons/vue/24/solid'
 
 const user: Ref = useSupabaseUser()
 const { profile } = useUser()
@@ -89,7 +97,7 @@ const loginClick = () => {
   position: relative;
   font-weight: 600;
   color: transparent;
-  line-height: 35px;
+  line-height: 50px;
 }
 
 .gradient-glow-text::before {

@@ -18,6 +18,9 @@
         <Textarea type="text" placeholder="Beschreibung" v-model="place.description" class="!w-full h-35 resize-none" />
       </div>
       <div class="mb-3">
+        <Input type="text" placeholder="Website" v-model="place.website" autofocus class="!w-full" />
+      </div>
+      <div class="mb-3">
         <LocationDropdown />
       </div>
       <div class="mb-7" v-if="message">

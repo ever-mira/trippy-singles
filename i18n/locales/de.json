@@ -31,7 +31,7 @@
   },
   "login": {
     "title": "Login",
-    "subtitle": "Trippy",
+    "subtitle": "Trippy?!",
     "email": "E-Mail",
     "password": "Passwort",
     "button": "Login",
@@ -104,7 +104,7 @@
     },
     "events": {
       "title": "Events",
-      "subtitle": "Tanz-Parties und Grillabende",
+      "subtitle": "Tanz-Parties und Festivals",
       "coming_soon": "Coming soon."
     },
     "places": {

@@ -7,7 +7,8 @@ export default defineConfig({
     ...theme,
     breakpoints: {
       ...theme.breakpoints,
-      "3xl": "1720px",
+      "3xl": "2000px",
+      "4xl": "2200px",
     },
   }),
   shortcuts: [

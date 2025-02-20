@@ -20,17 +20,17 @@
         <UserGroupIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.people') }}
       </NavLink>
 
-      <NavLink to="/places">
+      <!-- <NavLink to="/places">
         <MapIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.places') }}
-      </NavLink>
+      </NavLink> -->
 
-      <NavLink to="/events">
+      <!-- <NavLink to="/events">
         <CalendarDaysIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.events') }}
-      </NavLink>
+      </NavLink> -->
 
-      <NavLink to="/exchange">
+      <!-- <NavLink to="/exchange">
         <ShareIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.exchange') }}
-      </NavLink>
+      </NavLink> -->
 
       <NavLink to="/reports">
         <BeakerIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />Trip-Berichte
