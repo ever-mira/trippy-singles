@@ -1,12 +1,12 @@
 <template>
   <div class="border-l border-gray-3 pl-3">
     <div class="text-xl">
-      <SparklesIcon class="inline w-5 -mt-1 mr-2" />Action
+      <SparklesIcon class="inline w-5.5 text-gray-900 dark:text-gray-200 -mt-1 mr-2" />Action
     </div>
 
     <div class="lg:text-lg">
       <div class="mt-6 lg:mt-7">
-        <div class="grow  font-medium">{{ formatDate(props.registerDate) }}</div>
+        <div class="grow font-medium">{{ formatDate(props.registerDate) }}</div>
         <div class="grow mt-2">
           <CakeIcon class="inline w-5 -mt-1 mr-2" />Bei Trippy angemeldet
         </div>

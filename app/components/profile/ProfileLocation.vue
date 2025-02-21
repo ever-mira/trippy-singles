@@ -1,15 +1,12 @@
 <template>
-  <div>
-    <div class="text-lg">
-      <MapPinIcon class="inline w-5 -mt-1" /> Wohnort
+  <div class="w-full md:w-90 lg:w-full">
+    <div class="text-xl">
+      <MapPinIcon class="inline w-5.8 -mt-1" /> Wohnort
       <div class="inline mt-2 ml-5" v-if="isOwnProfile">
 
         <Button color="gray" size="small" @click="editMode = true" v-if="!editMode && isOwnProfile"
-          class="!py-1.5 !px-4">
-          <span v-if="!profile?.location_label">
-            setzen
-          </span>
-          <span v-else>
+          class="!py-1.5 !px-4.5">
+          <span>
             ändern
           </span>
         </Button>

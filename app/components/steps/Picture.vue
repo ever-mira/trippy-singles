@@ -7,7 +7,7 @@
 
     <div class="mt-7" v-if="profile">
       <NuxtImg :src="profile.avatar_url" width="300" class="rounded-lg max-w-40 mt-10" v-if="profile.avatar_url" />
-      <img src="../../assets/avatar.jpg" class="rounded-full max-w-40 mt-10" v-else>
+      <img src="../../assets/avatar.jpg" class="rounded-full max-w-35 mt-10" v-else>
       <photo-upload @uploaded="onPhotoUploaded" category="avatar" class="mt-6.5"></photo-upload>
     </div>
   </div>
@@ -17,15 +17,17 @@
 <script setup lang="ts">
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
 import Loggedin from './Loggedin.vue'
+import { routerKey } from 'vue-router'
 const { setStepComponent } = useSteps()
 const { fetchUserData, profile } = useUser()
 const { updateUserList } = useUsers()
+const router = useRouter()
 
-
-const onPhotoUploaded = (supabaseUrl: string) => {
+const onPhotoUploaded = async (supabaseUrl: string) => {
   preloadImages(supabaseUrl)
-  fetchUserData()
-  updateUserList()
+  await fetchUserData()
+  router.push({ path: '/@' + profile.value?.username })
+  // updateUserList()
 }
 
 function preloadImages(supabaseUrl: string): void {

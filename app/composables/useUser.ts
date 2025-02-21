@@ -30,9 +30,18 @@ export function useUser() {
     profile.value = null
   }
 
+  function saveProfile() {
+    return useFetch<Profile>(`/api/profile`, {
+      method: "POST",
+      headers: useRequestHeaders(["cookie"]),
+      body: JSON.stringify(profile.value),
+    })
+  }
+
   return {
     profile,
     fetchUserData,
     clearUserData,
+    saveProfile,
   }
 }

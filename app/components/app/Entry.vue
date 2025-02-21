@@ -44,12 +44,14 @@
           <div>
 
             <h3 class="text-2xl">
-              <BeakerIcon class="inline w-7.5 text-blue-600 -mt-1.4 mr-4" />Trip-Berichte.
+              <BeakerIcon class="inline w-7.4 text-blue-500 dark:text-blue-600 -mt-1.7 mr-3" />Trip-Berichte.
             </h3>
 
-            <span class="block text-lg mt-.5">Kannst du dich noch an deine besten Trips erinnern? Wie schnell wir
-              vergessen.</span><br>
-            <NuxtLink to="/reports" class="text-blue-700 hover:text-blue-600  text-lg">Trip-Berichte →</NuxtLink>
+            <span class="block text-lg mt-.5">Kannst du dich noch an deine ersten Trips erinnern?</span><br>
+            <NuxtLink to="/reports"
+              class="block text-blue-700 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-400 text-lg -mt-1">
+              Trip-Berichte →
+            </NuxtLink>
           </div>
         </div>
 

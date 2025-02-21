@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <img src="../../assets/puzzles.png" class="w-97 lg:w-74.5 mt-4 -ml-2">
-    <span>Real Magic.</span>
+  <div class="w-80 lg:w-74.5 mt-4 -ml-2">
+    <img src="../../assets/puzzles.png">
+    <div class="">Finde Mich. Finde Dich.</div>
   </div>
 </template>
 

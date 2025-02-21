@@ -33,6 +33,13 @@ import FloatingOrbs from './components/app/FloatingOrbs.vue'
 useHead({
   title: 'Trippy',
 })
+
+const router = useRouter()
+const { showHeader } = useApp()
+
+router.afterEach((to, from, next) => {
+  showHeader()
+})
 </script>
 
 <style>

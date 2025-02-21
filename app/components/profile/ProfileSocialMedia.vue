@@ -1,7 +1,9 @@
 <template>
   <div class="text-left lg:text-right">
-    <div class="text-xl mb-1 font-medium">Social Media</div>
-    <div class="">Instagram</div>
+    <LinkIcon class="inline w-5.5 text-gray-800 dark:text-gray-200 -mt-1 mr-2" />
+    <div class="inline text-xl">Social Media</div>
+
+    <div class="mt-2">Instagram</div>
     <!-- <div class="text-blue-700">https://www.instagram.com/test123/</div> -->
 
     <div class="">Youtube</div>
@@ -12,5 +14,5 @@
 </template>
 
 <script setup lang="ts">
-
+import { LinkIcon } from '@heroicons/vue/24/outline'
 </script>

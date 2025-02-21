@@ -26,7 +26,7 @@ const props = defineProps<Props>()
 const emit = defineEmits<{ (e: 'click'): void }>()
 
 
-const baseClasses = 'text-white focus:outline-none rounded-xl !text-[.9rem] font-medium disabled:cursor-default cursor-pointer text-center shadow-sm transition-all duration-100'
+const baseClasses = 'text-white focus:outline-none rounded-xl !text-[.9rem] font-medium disabled:cursor-default cursor-pointer text-center shadow-sm transition-all duration-100 select-none'
 
 const sizeClasses = computed(() => {
   switch (props.size) {

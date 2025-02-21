@@ -1,6 +1,6 @@
 <template>
-  <div class="md:w-85">
-    <Input v-model="searchQuery" placeholder="Standort eingeben" @focus="onFocused" @blur="onBlur" :loading="isLoading"
+  <div class="w-full">
+    <Input v-model="searchQuery" placeholder="Stadt eingeben" @focus="onFocused" @blur="onBlur" :loading="isLoading"
       :focus="!initialLoad && !ismobile()" />
     <div class="relative">
       <div id="dropdown_list"

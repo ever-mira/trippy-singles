@@ -14,7 +14,8 @@
       Built by us.
       <CursorArrowRippleIcon class="inline w-7 mt-1" />
     </div>
-    <div class="text-sm">
+    <div class="text-sm text-gray-500">
+      Help us
     </div>
   </NuxtLink>
 </template>

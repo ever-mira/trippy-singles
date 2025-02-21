@@ -177,6 +177,13 @@ export type Database = {
             referencedRelation: "exchange_categories"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "exchange_items_user_id_fkey1"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
         ]
       }
       messages: {
@@ -241,10 +248,13 @@ export type Database = {
       }
       profiles: {
         Row: {
+          about_question: string | null
           avatar_url: string | null
           coordinates: Json | null
           created_at: string | null
+          festival_question: string | null
           full_name: string | null
+          future_question: string | null
           hide: boolean | null
           location: unknown | null
           location_label: string | null
@@ -255,10 +265,13 @@ export type Database = {
           website: string | null
         }
         Insert: {
+          about_question?: string | null
           avatar_url?: string | null
           coordinates?: Json | null
           created_at?: string | null
+          festival_question?: string | null
           full_name?: string | null
+          future_question?: string | null
           hide?: boolean | null
           location?: unknown | null
           location_label?: string | null
@@ -269,10 +282,13 @@ export type Database = {
           website?: string | null
         }
         Update: {
+          about_question?: string | null
           avatar_url?: string | null
           coordinates?: Json | null
           created_at?: string | null
+          festival_question?: string | null
           full_name?: string | null
+          future_question?: string | null
           hide?: boolean | null
           location?: unknown | null
           location_label?: string | null
