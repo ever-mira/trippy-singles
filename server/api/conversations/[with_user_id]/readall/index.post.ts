@@ -2,11 +2,9 @@ import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server"
 import type { Database } from "~~/types/database.types"
 
 export default defineEventHandler(async (event) => {
-  const receiver_id = getRouterParam(event, "with_user_id")
+  const withUserId = getRouterParam(event, "with_user_id")
 
-  const { content } = await readBody(event)
-
-  if (!receiver_id || !content) {
+  if (!withUserId) {
     throw new Error("Missing required fields")
   }
 
@@ -16,18 +14,15 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 401, statusMessage: "Nicht authentifiziert" })
   }
 
-  const sender_id = user.id
-
   const client = await serverSupabaseClient<Database>(event)
-
-  const { data, error } = await client
+  const { error } = await client
     .from("messages")
-    .insert([{ sender_id, receiver_id, content }])
-    .select("*")
+    .update({ read: true })
+    .eq("receiver_id", user.id)
+    .eq("sender_id", withUserId)
+    .eq("read", false)
 
   if (error) {
     throw new Error(error.message)
   }
-
-  return { success: true, data }
 })

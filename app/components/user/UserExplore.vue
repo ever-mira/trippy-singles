@@ -3,7 +3,7 @@
     <div class="mt-7 mb-2 text-gray-800 dark:text-gray-200">Umkreissuche:</div>
     <AutocompleteLocation v-model="selectedLocation" class="w-full md:!w-90" />
     <div
-      class="grid grid-cols-1 md:grid-cols-2 -ml-5 mt-15 gap-x-.5 lg:gap-x-5 gap-y-2 xl:max-w-90% 2xl:max-w-85% 2xl:max-w-75%"
+      class="grid grid-cols-1 md:grid-cols-2 -ml-5 mt-17 gap-x-.5 lg:gap-x-5 gap-y-2 xl:max-w-90% 2xl:max-w-85% 2xl:max-w-75%"
       v-if="users">
       <div v-for="user in users" :key="user.user_id"
         class="ml-3 bg-blue-50 hover:bg-blue-100 dark:bg-gray-950 dark:hover:bg-gray-900 bg-opacity-40 hover:bg-opacity-40 py-1.5 pl-2 pr-5 rounded-xl">

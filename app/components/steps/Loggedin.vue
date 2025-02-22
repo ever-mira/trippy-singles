@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-9 relative text-3xl font-bold text-heading">{{ $t('signup.logged_in') }}</div>
+    <div class="mt-12 relative text-3xl font-bold text-heading">{{ $t('signup.logged_in') }}</div>
     <div class="mt-9 relative">
       {{ $t('signup.no_new_messages') }}
     </div>

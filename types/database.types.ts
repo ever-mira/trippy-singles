@@ -191,6 +191,7 @@ export type Database = {
           content: string
           created_at: string | null
           id: string
+          is_read: boolean
           read: boolean | null
           receiver_id: string
           sender_id: string
@@ -199,6 +200,7 @@ export type Database = {
           content: string
           created_at?: string | null
           id?: string
+          is_read?: boolean
           read?: boolean | null
           receiver_id: string
           sender_id: string
@@ -207,6 +209,7 @@ export type Database = {
           content?: string
           created_at?: string | null
           id?: string
+          is_read?: boolean
           read?: boolean | null
           receiver_id?: string
           sender_id?: string
@@ -786,6 +789,12 @@ export type Database = {
             }
             Returns: string
           }
+      count_unread_conversations: {
+        Args: {
+          user_id: string
+        }
+        Returns: number
+      }
       disablelongtransactions: {
         Args: Record<PropertyKey, never>
         Returns: string

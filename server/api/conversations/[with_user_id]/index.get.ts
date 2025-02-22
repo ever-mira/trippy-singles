@@ -1,4 +1,5 @@
 import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server"
+import type { Database } from "~~/types/database.types"
 
 export default defineEventHandler(async (event) => {
   const withUserId = getRouterParam(event, "with_user_id")
@@ -15,7 +16,7 @@ export default defineEventHandler(async (event) => {
 
   const userId = user.id
 
-  const supabase = await serverSupabaseClient(event)
+  const supabase = await serverSupabaseClient<Database>(event)
 
   const { data, error } = await supabase
     .from("messages")
@@ -23,11 +24,23 @@ export default defineEventHandler(async (event) => {
     .or(
       `and(sender_id.eq.${userId},receiver_id.eq.${withUserId}),and(sender_id.eq.${withUserId},receiver_id.eq.${userId})`
     )
-    .order("created_at", { ascending: true })
+    .order("created_at", { ascending: false })
+    .limit(50)
 
   if (error) {
     throw new Error(error.message)
   }
 
-  return data
+  const { error: updateReadError } = await supabase
+    .from("messages")
+    .update({ read: true })
+    .eq("receiver_id", userId)
+    .eq("sender_id", withUserId)
+    .eq("read", false)
+
+  if (updateReadError) {
+    throw new Error(updateReadError.message)
+  }
+
+  return data.reverse()
 })
