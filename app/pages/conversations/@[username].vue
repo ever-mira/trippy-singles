@@ -10,9 +10,9 @@
       </template>
     </Heading>
 
-    <MessageWindow :userId="profile.user_id" v-if="profile?.user_id" />
+    <MessageWindow :profile="profile" v-if="profile" />
 
-    <div class="mt-7">
+    <div class="mt-13">
       <Button @click="goBack" class="!px-8">Zurück</Button>
     </div>
     <div class="h-60"></div>

@@ -1269,6 +1269,7 @@ export type Database = {
         Returns: {
           with_user_id: string
           username: string
+          avatar_url: string
           last_message: Json
         }[]
       }

@@ -49,9 +49,10 @@
       <NavLink to="/conversations">
         <EnvelopeIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{
           $t('app.mailbox') }}
-        <div class="inline-block w-4 h-4 ml-1 text-center rounded-full text-md">{{
-          unreadConversationCount
-        }}</div>
+        <div class="inline-block w-4 h-4 ml-1.5 text-center rounded-full text-xs bg-blue-6 text-white"
+          v-if="unreadConversationCount">
+          {{ unreadConversationCount }}
+        </div>
       </NavLink>
       <NavLink to="/settings">
         <Cog6ToothIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{ $t('app.settings') }}

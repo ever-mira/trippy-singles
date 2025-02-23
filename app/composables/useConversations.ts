@@ -5,7 +5,7 @@ const currentConversation = ref<ReturnType<typeof useMessages> | null>(null)
 
 export default function useConversations() {
   const conversations = useState<Conversation>("userConversations", () => [])
-  const unreadConversationCount = useState<number>("unreadConversationCount", () => 0)
+  const unreadConversationCount = useState<number>("unreadConversationCountField", () => 0)
 
   const fetchConversations = async () => {
     const { data } = await useFetch(`/api/conversations/`, {
@@ -22,7 +22,7 @@ export default function useConversations() {
       headers: useRequestHeaders(["cookie"]),
     })
 
-    if (data.value) unreadConversationCount.value = Number(data.value)
+    unreadConversationCount.value = Number(data.value)
   }
 
   const setCurrentConversation = (conversation: ReturnType<typeof useMessages> | null) => {
