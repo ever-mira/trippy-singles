@@ -9,6 +9,7 @@
         </NuxtLink>
       </template>
     </Heading>
+
     <Heading v-else>
       Report not found
       <template v-slot:subtitle>
@@ -24,7 +25,7 @@
       <PlaceholderPhoto v-else />
 
       <div class="flex mt-9">
-        <div class="grow">
+        <div class="grow border-l border-gray-3 pl-3">
           <div class="font-bold">Droge:</div>
           {{ report.drugs.name }}
         </div>
@@ -34,11 +35,11 @@
         </div>
       </div>
 
-      <div class="mt-9">
+      <div class="mt-9 border-l border-gray-3 pl-3">
         <div class="font-bold">Set:</div>
         {{ report.set }}
       </div>
-      <div class="mt-9">
+      <div class="mt-9 border-l border-gray-3 pl-3">
         <div class="font-bold">Setting:</div>
         {{ report.setting }}
       </div>
@@ -48,40 +49,25 @@
           {{ report.text }}
         </div>
       </div>
-
     </div>
 
+    <BackButton />
 
-    <div class="mt-20 lg:mt-24">
-      <Button @click="goBack" class="!px-8">Zurück</Button>
-    </div>
-
-    <div class="h-60"></div>
   </Page>
 </template>
 
 <script setup lang="ts">
-import type { Tables } from "~~/types/database.types"
-type Report = Tables<'trip_reports'>
 import { useRoute } from 'vue-router'
 import { format } from "date-fns"
 import { de } from "date-fns/locale"
 
-const router = useRouter()
 const route = useRoute()
+const { report, loadReport } = useReports()
+
 const id = route.params.id
 
-const report = ref<Report | null>(null)
-
 if (id) {
-  const { data } = await useFetch<Report>(`/api/reports/${id}`, {
-    method: 'GET',
-    headers: useRequestHeaders(['cookie']),
-  })
-
-  if (data.value) {
-    report.value = data.value
-  }
+  await loadReport(id as string)
 }
 
 const { showModal } = useImageModal()
@@ -91,9 +77,5 @@ const formattedDate = computed(() => {
     return format(new Date(report.value.created_at), "d. MMMM yyyy HH:mm", { locale: de })
   }
 })
-
-const goBack = () => {
-  router.back()
-}
 
 </script>

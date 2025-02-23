@@ -1,16 +1,16 @@
-import type { Tables } from "~~/types/database.types"
-type Report = Tables<"trip_reports">
+import type { ExtendedReport } from "~~/types/extended.types"
 
 const filter_drug_id = ref(null)
 
 export function useReports() {
-  const reports = useState<Report[] | null>("reports", () => null)
+  const reports = useState<ExtendedReport[] | null>("TripReports", () => [])
+  const report = useState<ExtendedReport | null>("LoadedReport", () => null)
 
   async function loadReports() {
     let url = "/api/reports/"
     if (filter_drug_id.value) url += `?drug_id=${filter_drug_id.value}`
 
-    const { data } = await useFetch<Report[]>(url, {
+    const { data } = await useFetch<ExtendedReport[]>(url, {
       method: "GET",
       headers: useRequestHeaders(["cookie"]),
     })
@@ -21,10 +21,20 @@ export function useReports() {
     filter_drug_id.value = null
   }
 
+  async function loadReport(id: string) {
+    const { data } = await useFetch<ExtendedReport>(`/api/reports/${id}`, {
+      method: "GET",
+      headers: useRequestHeaders(["cookie"]),
+    })
+    if (data.value) report.value = data.value
+  }
+
   return {
     reports,
     loadReports,
     filter_drug_id,
     reset_drug_filter,
+    loadReport,
+    report,
   }
 }

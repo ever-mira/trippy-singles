@@ -12,10 +12,8 @@
 
     <MessageWindow :profile="profile" v-if="profile" />
 
-    <div class="mt-13">
-      <Button @click="goBack" class="!px-8">Zurück</Button>
-    </div>
-    <div class="h-60"></div>
+    <BackButton />
+
   </Page>
 </template>
 
@@ -25,7 +23,6 @@ type Profile = Tables<'profiles'>
 import MessageWindow from '~/components/messaging/MessageWindow.vue'
 
 const route = useRoute()
-const router = useRouter()
 const user: Ref = useSupabaseUser()
 
 const with_username = route.params.username
@@ -47,9 +44,4 @@ async function fetchProfile() {
     }
   }
 }
-
-const goBack = () => {
-  router.back()
-}
-
 </script>

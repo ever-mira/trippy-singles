@@ -58,8 +58,6 @@
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
 import ImagePreload from '~/components/app/ImagePreload.vue'
 
-let country: any = null
-
 const report = reactive({
   drug_id: 1,
   title: '',
@@ -93,7 +91,7 @@ async function save() {
       return
     }
 
-    const result = await $fetch('/api/reports', {
+    await $fetch('/api/reports', {
       method: 'POST',
       body: toRaw(report),
       headers: useRequestHeaders(['cookie'])

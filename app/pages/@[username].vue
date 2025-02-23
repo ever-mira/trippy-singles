@@ -14,9 +14,9 @@
       </template>
     </Heading>
 
-    <div class="flex flex-col lg:flex-row shrink">
+    <div class="flex flex-col lg:flex-row shrink" v-if="profile">
       <div id="left_column">
-        <div class="mt-9" v-if="profile">
+        <div class="mt-9">
           <ProfilePicture />
         </div>
 
@@ -26,8 +26,8 @@
 
         <ProfileActions class="mt-12" />
 
-        <div class="hidden lg:block mt-21 lg:mt-27">
-          <Button @click="goBack" class="!px-7.5">{{ $t('profile.back') }}</Button>
+        <div class="hidden lg:block">
+          <BackButton />
         </div>
       </div>
 
@@ -58,15 +58,14 @@
           </template>
         </ProfileQuestion>
 
-        <ProfileTimeline :registerDate="profile.created_at" :userId="profile.user_id" class="mt-17" />
+        <ProfileTimeline class="mt-17" />
       </div>
     </div>
 
-    <div class="lg:hidden mt-21 lg:mt-27">
-      <Button @click="goBack" class="!px-7.5">{{ $t('profile.back') }}</Button>
+    <div class="lg:hidden">
+      <BackButton />
     </div>
 
-    <div class="h-60"></div>
   </Page>
 </template>
 
@@ -82,7 +81,6 @@ import { HeartIcon } from '@heroicons/vue/24/outline';
 import { PhotoIcon } from '@heroicons/vue/24/outline';
 import { RocketLaunchIcon } from '@heroicons/vue/24/outline';
 
-const router = useRouter()
 const route = useRoute()
 
 const { profile, loadProfile } = useProfile()
@@ -93,8 +91,6 @@ if (username) {
   await loadProfile(username as string)
 }
 
-const goBack = () => {
-  router.back()
-}
+
 
 </script>

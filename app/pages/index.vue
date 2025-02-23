@@ -17,7 +17,6 @@
     <FeatureSection />
 
     <div class="h-50"></div>
-
     </ Page>
 </template>
 

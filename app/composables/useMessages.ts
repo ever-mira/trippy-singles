@@ -23,25 +23,25 @@ export default function useMessages(userId: string) {
     await fetchUnreadConversationCount()
   }
 
-  async function listenToNewMessages() {
-    const channel = supabase.channel("messages")
-    channel
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "messages" },
-        async (payload) => {
-          if (payload.new.sender_id === userId && messages.value) {
-            messages.value.push(payload.new as Message)
-            await markAsReadAll()
-            await fetchUnreadConversationCount()
-          }
-        }
-      )
-      .subscribe()
-    onBeforeUnmount(() => {
-      supabase.removeChannel(channel)
-    })
-  }
+  // async function listenToNewMessages() {
+  //   const channel = supabase.channel("messages")
+  //   channel
+  //     .on(
+  //       "postgres_changes",
+  //       { event: "INSERT", schema: "public", table: "messages" },
+  //       async (payload) => {
+  //         if (payload.new.sender_id === userId && messages.value) {
+  //           messages.value.push(payload.new as Message)
+  //           await markAsReadAll()
+  //           await fetchUnreadConversationCount()
+  //         }
+  //       }
+  //     )
+  //     .subscribe()
+  //   onBeforeUnmount(() => {
+  //     supabase.removeChannel(channel)
+  //   })
+  // }
 
   const sendMessage = async () => {
     if (!user.value) {
@@ -76,7 +76,6 @@ export default function useMessages(userId: string) {
   return {
     messages,
     fetchMessages,
-    listenToNewMessages,
     sendMessage,
     message,
     addMessage,
