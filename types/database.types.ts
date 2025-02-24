@@ -329,23 +329,23 @@ export type Database = {
       }
       trip_report_comments: {
         Row: {
-          comment_text: string
           created_at: string | null
           id: number
+          text: string
           trip_report_id: number | null
           user_id: string | null
         }
         Insert: {
-          comment_text: string
           created_at?: string | null
           id?: number
+          text: string
           trip_report_id?: number | null
           user_id?: string | null
         }
         Update: {
-          comment_text?: string
           created_at?: string | null
           id?: number
+          text?: string
           trip_report_id?: number | null
           user_id?: string | null
         }

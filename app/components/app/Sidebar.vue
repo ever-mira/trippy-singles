@@ -47,11 +47,14 @@
 
     <div class="border-t border-gray-200 dark:border-gray-700 mt-7 pt-1.5" v-if="user">
       <NavLink to="/conversations">
-        <EnvelopeIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{
-          $t('app.mailbox') }}
-        <div class="inline-block w-4 h-4 ml-1.5 text-center rounded-full text-xs bg-blue-6 text-white"
-          v-if="unreadConversationCount">
-          {{ unreadConversationCount }}
+        <div class="relative">
+          <EnvelopeIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{
+            $t('app.mailbox') }}
+          <div
+            class="inline-flex h-4.8 w-4.8 ml-2 items-center justify-center rounded-full bg-blue-600 text-white text-sm leading-none"
+            v-if="unreadConversationCount">
+            <div class="ml.23 -mt.6 font-normal">{{ unreadConversationCount }}</div>
+          </div>
         </div>
       </NavLink>
       <NavLink to="/settings">

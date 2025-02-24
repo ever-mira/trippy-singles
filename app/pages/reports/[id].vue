@@ -24,31 +24,39 @@
         @click="showModal(report.avatar_url)" />
       <PlaceholderPhoto v-else />
 
-      <div class="flex mt-9">
-        <div class="grow border-l border-gray-3 pl-3">
-          <div class="font-bold">Droge:</div>
-          {{ report.drugs.name }}
+      <div class="flex flex-col">
+        <div class="border-r pr-3">
+          <div class="flex mt-9">
+            <div class="grow border-l border-gray-3 pl-3">
+              <div class="font-bold">Droge:</div>
+              {{ report.drugs.name }}
+            </div>
+            <div>
+              <div class="font-bold text-right">Datum</div>
+              {{ formattedDate }}
+            </div>
+          </div>
+          <div class="mt-9 border-l border-gray-3 pl-3">
+            <div class="font-bold">Set:</div>
+            {{ report.set }}
+          </div>
+          <div class="mt-9 border-l border-gray-3 pl-3">
+            <div class="font-bold">Setting:</div>
+            {{ report.setting }}
+          </div>
+
+          <div class="mt-9">
+            <div class="font-bold mb-2">Trip-Bericht:</div>
+            <div class="whitespace-pre-wrap">
+              {{ report.text }}
+            </div>
+          </div>
         </div>
-        <div>
-          <div class="font-bold text-right">Datum:</div>
-          {{ formattedDate }}
+        <div class="py-4 lg:pl-8 xl:pl-10 mt-17 2xl:mt-19 md:w-3/4 xl:w-1/2 w-full">
+          <ReportComments />
         </div>
       </div>
 
-      <div class="mt-9 border-l border-gray-3 pl-3">
-        <div class="font-bold">Set:</div>
-        {{ report.set }}
-      </div>
-      <div class="mt-9 border-l border-gray-3 pl-3">
-        <div class="font-bold">Setting:</div>
-        {{ report.setting }}
-      </div>
-      <div class="mt-9">
-        <div class="font-bold mb-2">Trip-Bericht:</div>
-        <div class="whitespace-pre-wrap">
-          {{ report.text }}
-        </div>
-      </div>
     </div>
 
     <BackButton />
@@ -60,6 +68,7 @@
 import { useRoute } from 'vue-router'
 import { format } from "date-fns"
 import { de } from "date-fns/locale"
+import ReportComments from "~/components/reports/ReportComments.vue"
 
 const route = useRoute()
 const { report, loadReport } = useReports()

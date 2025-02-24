@@ -1,10 +1,13 @@
 import type { Database } from "~~/types/database.types"
-type Conversation = Database["public"]["Functions"]["get_conversations"]["Returns"]
+type ConversationItem = Database["public"]["Functions"]["get_conversations"]["Returns"][number]
 
 const currentConversation = ref<ReturnType<typeof useMessages> | null>(null)
 
 export default function useConversations() {
-  const conversations = useState<Conversation>("userConversations", () => [])
+  const conversations = useState<Array<ConversationItem>>(
+    "Conversations",
+    () => new Array<ConversationItem>()
+  )
   const unreadConversationCount = useState<number>("unreadConversationCountField", () => 0)
 
   const fetchConversations = async () => {

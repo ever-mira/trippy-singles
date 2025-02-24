@@ -39,9 +39,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") {
-      console.log("Tab wieder sichtbar. Überprüfe Verbindung...", new Date().toISOString())
       if (channel.state !== "joined") {
-        console.log("reconnect")
         reconnectChannel()
         fetchUnreadConversationCount()
       }
@@ -52,8 +50,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     try {
       await channel.unsubscribe()
       await supabase.removeChannel(channel)
-      connectChannel()
-      console.log("Erneut verbunden")
+      await connectChannel()
     } catch (error) {
       console.error("Fehler beim Reconnect:", error)
     }

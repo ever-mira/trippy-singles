@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     throw new Error("No report id provided")
   }
 
-  const { comment_text } = await readBody(event)
+  const { text } = await readBody(event)
 
   try {
     const client = await serverSupabaseClient<Database>(event)
@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
 
     const { data, error } = await client.from("trip_report_comments").insert({
       trip_report_id: Number(report_id),
-      comment_text: comment_text,
+      text,
       user_id: userId,
     })
 

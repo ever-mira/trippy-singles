@@ -47,7 +47,8 @@
               <BeakerIcon class="inline w-7.4 text-blue-500 dark:text-blue-600 -mt-1.7 mr-3" />Trip-Berichte.
             </h3>
 
-            <span class="block text-lg mt-.5">Kannst du dich noch an deine ersten Trips erinnern?</span><br>
+            <span class="block text-lg mt-.5">Ich versuche, mich an meine ersten Trips zu erinnern. Vergessene
+              Magie? Teile deine Erfahrungen, und lass dich finden.</span><br>
             <NuxtLink to="/reports"
               class="block text-blue-700 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-400 text-lg -mt-1">
               Trip-Berichte →

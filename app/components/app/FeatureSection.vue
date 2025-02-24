@@ -41,7 +41,7 @@
       possible?!)</span>
   </div>
 
-  <div class="mt-19 text-xl lg:w-70% xl:w-60% 2xl:w-50% 3xl:w-47%">
+  <div class="mt-19 text-xl lg:w-70% xl:w-60% 2xl:w-47% 3xl:w-40%">
     <img src="/assets/wordcloud.png">
   </div>
 
