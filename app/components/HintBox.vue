@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { CubeTransparentIcon } from '@heroicons/vue/24/outline'
+import { CubeTransparentIcon } from "@heroicons/vue/24/outline"
 
 const router = useRouter()
 

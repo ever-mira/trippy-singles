@@ -24,14 +24,14 @@
 </template>
 
 <script setup lang="ts">
-import AppHeader from './components/app/AppHeader.vue'
-import Sidebar from './components/app/Sidebar.vue'
-import Modal from './components/app/Modal.vue'
-import ImageModal from './components/app/ImageModal.vue'
-import FloatingOrbs from './components/app/FloatingOrbs.vue'
+import AppHeader from "./components/app/AppHeader.vue"
+import Sidebar from "./components/app/Sidebar.vue"
+import Modal from "./components/app/Modal.vue"
+import ImageModal from "./components/app/ImageModal.vue"
+import FloatingOrbs from "./components/app/FloatingOrbs.vue"
 
 useHead({
-  title: 'Trippy',
+  title: "Trippy",
 })
 
 const router = useRouter()

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row gap-x-2 !w-full mt-9 md:mx-auto rounded-xl" v-if="user">
+  <div class="flex flex-row gap-x-2 !w-full mt-9 md:mx-auto rounded-xl">
     <div class="hidden xl:flex mb-22 pr-3">
       <NuxtLink :to="`/@${profile?.username}`" class="mt-auto">
         <NuxtImg :src="profile.avatar_url || ''" class="w-15 rounded-full" height="70" width="70" fit="cover"
@@ -8,9 +8,10 @@
       </NuxtLink>
     </div>
     <div class="grow xl:min-w-140 max-w-170">
-      <div class="p-1 text-gray-500" v-if="!messages || messages.length < 1">Noch keine Nachrichten.</div>
-      <div class="min-h-10 lg:min-h-70 max-h-90  overscroll-x-none overflow-y-scroll no-scrollbar"
-        ref="scrollContainer">
+      <div class="p-1 text-gray-500" v-if="!messages || messages.length < 1">
+        Noch keine Nachrichten.
+      </div>
+      <div class="min-h-10 lg:min-h-70 max-h-92 overscroll-x-none overflow-y-scroll no-scrollbar" ref="scrollContainer">
         <div v-for="message in messages" :key="message.id" class="w-full p-1">
           <div v-if="message.sender_id === user.id">
             <div class="flex justify-end">
@@ -53,12 +54,12 @@
 import type { Tables } from "~~/types/database.types"
 type Profile = Tables<"profiles">
 
-import { PaperAirplaneIcon } from '@heroicons/vue/24/solid'
+import { PaperAirplaneIcon } from "@heroicons/vue/24/solid"
 
 const props = defineProps({
   profile: {
     type: Object as PropType<Profile>,
-    required: true
+    required: true,
   },
 })
 
@@ -72,18 +73,23 @@ const { messages, fetchMessages, message, sendMessage } = messagesComposable
 
 setCurrentConversation(messagesComposable)
 
-const scrollContainer = useTemplateRef('scrollContainer')
+const scrollContainer = useTemplateRef("scrollContainer")
 
 onMounted(() => {
   scrollToBottom()
 })
 
-watch(() => messages.value.length, async () => {
-  await nextTick()
-  scrollToBottom()
-})
+watch(
+  () => messages.value.length,
+  async () => {
+    await nextTick()
+    scrollToBottom()
+  }
+)
 
-await fetchMessages()
+if (user.value) {
+  await fetchMessages()
+}
 
 function scrollToBottom() {
   scrollContainer.value?.scrollTo(0, scrollContainer.value.scrollHeight)

@@ -18,3 +18,9 @@ export type ExtendedReportComment = ReportComment & {
     avatar_url: string
   }
 }
+
+type Profile = Tables<"profiles">
+
+export type ProfileWithDistance = Profile & {
+  distance?: number
+}

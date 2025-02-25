@@ -26,7 +26,7 @@ onBeforeRouteLeave((to, from) => {
 })
 
 onMounted(() => {
-  if (routePath.split('/').length - 1 < 2) {
+  if (routePath.split("/").length - 1 < 2) {
     const savedPosition = getScrollPosition(routePath)
 
     if (savedPosition && scrollContainer.value) {
@@ -52,10 +52,10 @@ const handleScroll = () => {
 }
 
 onMounted(() => {
-  scrollContainer.value?.addEventListener('scroll', handleScroll)
+  scrollContainer.value?.addEventListener("scroll", handleScroll)
 })
 
 onUnmounted(() => {
-  scrollContainer.value?.removeEventListener('scroll', handleScroll)
+  scrollContainer.value?.removeEventListener("scroll", handleScroll)
 })
 </script>

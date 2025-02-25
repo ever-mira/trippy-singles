@@ -31,11 +31,11 @@ const baseClasses = 'text-white focus:outline-none rounded-xl !text-[.9rem] font
 const sizeClasses = computed(() => {
   switch (props.size) {
     case 'small':
-      return 'px-3.75 py-2 text-sm'
+      return 'px-3.5 py-2 text-sm'
     case 'large':
-      return 'py-2.2 px-9 text-sm'
+      return 'py-2.1 px-9 text-sm'
     default:
-      return 'py-2.2 px-9 text-sm'
+      return 'py-2.1 px-9 text-sm'
   }
 })
 

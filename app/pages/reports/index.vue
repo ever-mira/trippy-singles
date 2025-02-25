@@ -1,13 +1,10 @@
 <template>
   <Page>
-
     <div class="flex flex-col lg:flex-row w-full">
       <div class="flex-1">
         <Heading>
           Trip-Berichte
-          <template v-slot:subtitle>
-            Teile deine Erfahrungen
-          </template>
+          <template v-slot:subtitle> Teile deine Erfahrungen </template>
         </Heading>
       </div>
 
@@ -19,8 +16,7 @@
         </div>
       </div>
 
-      <div class="flex-1">
-      </div>
+      <div class="flex-1"></div>
     </div>
 
     <ReportFilter />
@@ -33,14 +29,15 @@
       Noch keine Berichte zu dieser Droge.
     </div>
 
+    <HintBox class="mt-19"> Jeder sollte einen Trip-Bericht geschrieben haben. </HintBox>
   </Page>
 </template>
 
 <script setup lang="ts">
-import { PlusIcon } from '@heroicons/vue/24/solid'
-import ReportTile from '~/components/reports/ReportTile.vue'
-import ReportFilter from '~/components/reports/ReportFilter.vue'
-import ReportGrid from '~/components/reports/ReportGrid.vue'
+import { PlusIcon } from "@heroicons/vue/24/solid"
+import ReportTile from "~/components/reports/ReportTile.vue"
+import ReportFilter from "~/components/reports/ReportFilter.vue"
+import ReportGrid from "~/components/reports/ReportGrid.vue"
 
 const { reports, loadReports, filter_drug_id } = useReports()
 
@@ -49,7 +46,6 @@ loadReports()
 watch(filter_drug_id, (newValue) => {
   loadReports()
 })
-
 </script>
 
 <style></style>

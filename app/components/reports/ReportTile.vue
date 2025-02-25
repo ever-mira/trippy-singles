@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="`/reports/${report.id}`"
-    class="block ml-3 bg-blue-50 hover:bg-blue-100 dark:bg-gray-950 dark:hover:bg-gray-900 bg-opacity-40 hover:bg-opacity-40 py-3 pl-2 pr-5 rounded-xl">
+    class="block ml-3 bg-blue-50 hover:bg-blue-100 dark:bg-black dark:hover:bg-gray-900 bg-opacity-40 hover:bg-opacity-40 py-3 pl-2 pr-5 rounded-xl">
     <div class="flex">
       <div class="flex grow">
         <NuxtImg :src="report.avatar_url" class="w-15 rounded-full" height="70" width="70" fit="cover"

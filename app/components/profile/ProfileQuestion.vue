@@ -7,9 +7,7 @@
       <div class="ml-5" v-if="isOwnProfile">
         <Button color="gray" size="small" @click="editMode = true" v-if="!editMode && isOwnProfile"
           class="!py-1.4 !px-4">
-          <span>
-            bearbeiten
-          </span>
+          <span> bearbeiten </span>
         </Button>
 
         <Button color="white" size="small" @click="cancel" v-if="editMode" class="!py-1.5 !px-4">
@@ -21,12 +19,11 @@
     <div class="flex flex-col mt-3">
       <div v-if="ownProfile && editMode">
         <span class="text-gray-700 text-md">
-          <slot name="subtitle">
-          </slot>
+          <slot name="subtitle"> </slot>
         </span>
         <Textarea class="w-full mt-1.1 h-40" v-model="answer"></Textarea>
       </div>
-      <span class="" v-else>{{ answer ? answer : '-' }}</span>
+      <span class="" v-else>{{ answer ? answer : "-" }}</span>
     </div>
 
     <div class="mt-5" v-if="editMode">
@@ -34,7 +31,6 @@
         speichern
       </Button>
     </div>
-
   </div>
 </template>
 
@@ -50,7 +46,7 @@ const props = defineProps<Props>()
 const { profile: ownProfile, saveProfile } = useUser()
 const { profile, isOwnProfile } = useProfile()
 
-const answer = ref('')
+const answer = ref("")
 const editMode = ref(false)
 
 if (profile.value) {
@@ -58,10 +54,8 @@ if (profile.value) {
 }
 
 function setFieldInProfile<K extends keyof Profile>(key: K, value: Profile[K]) {
-  if (profile.value)
-    profile.value[key] = value
-  if (ownProfile.value)
-    ownProfile.value[key] = value
+  if (profile.value) profile.value[key] = value
+  if (ownProfile.value) ownProfile.value[key] = value
 }
 
 const save = () => {
@@ -71,7 +65,7 @@ const save = () => {
 }
 
 const cancel = () => {
-  answer.value = profile.value ? profile.value[props.field_name] as string : ''
+  answer.value = profile.value ? (profile.value[props.field_name] as string) : ""
   editMode.value = false
 }
 </script>

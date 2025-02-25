@@ -39,11 +39,11 @@
   },
   "signup": {
     "title": "Account erstellen",
-    "subtitle": "Wähle einen Benutzernamen.",
+    "subtitle": "Wie willst du auf Trippy heißen?",
     "username_free": "frei",
     "username_taken": "vergeben",
     "second_step_title": "Fast geschafft",
-    "second_step_subtitle": "Login-Daten festlegen",
+    "second_step_subtitle": "Login-Daten festlegen.",
     "displayname": "Dein Anzeigename",
     "next": "Weiter",
     "name": "Name",

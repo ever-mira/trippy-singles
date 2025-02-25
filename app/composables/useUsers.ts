@@ -1,9 +1,6 @@
 import type { Tables } from "~~/types/database.types"
 type Profile = Tables<"profiles">
-
-type ProfileWithDistance = Profile & {
-  distance?: number
-}
+import type { ProfileWithDistance } from "~~/types/extended.types"
 
 const selectedLocation = ref()
 
