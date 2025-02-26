@@ -46,23 +46,23 @@
     </div>
 
     <div class="border-t border-gray-200 dark:border-gray-700 mt-7 pt-1.5" v-if="user">
+
       <NavLink to="/conversations">
         <div class="relative">
           <EnvelopeIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{
             $t('app.mailbox') }}
-          <div
-            class="inline-flex h-4.8 w-4.8 ml-2 items-center justify-center rounded-full bg-blue-600 text-white text-sm leading-none"
-            v-if="unreadConversationCount">
-            <div class="ml.23 -mt.6 font-normal">{{ unreadConversationCount }}</div>
-          </div>
+          <UnreadBadge />
         </div>
       </NavLink>
+
       <NavLink to="/settings">
         <Cog6ToothIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{ $t('app.settings') }}
       </NavLink>
+
       <div @click="logout" class="px-4.5 mt-4">
         <span class="text-blue-7 dark:text-blue-6 cursor-pointer">{{ $t('app.logout') }}</span>
       </div>
+
     </div>
 
     <div class="flex mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 ">
@@ -89,12 +89,10 @@ import NavLink from './NavLink.vue'
 import LanguageDropdown from '../language/LanguageDropdown.vue'
 import ToggleDark from './DarkToggle.vue'
 import Puzzle from "../steps/Puzzle.vue"
+import UnreadBadge from "../app/UnreadBadge.vue"
 
 import { HomeIcon } from '@heroicons/vue/24/solid'
 import { UserGroupIcon } from '@heroicons/vue/24/solid'
-import { MapIcon } from '@heroicons/vue/24/outline'
-import { CalendarDaysIcon } from '@heroicons/vue/24/solid'
-import { ShareIcon } from '@heroicons/vue/24/outline'
 import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/solid'
 import { EnvelopeIcon } from '@heroicons/vue/24/solid'
 import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
@@ -102,13 +100,11 @@ import { BeakerIcon } from '@heroicons/vue/24/solid'
 
 
 const router = useRouter()
-const user: Ref = useSupabaseUser()
+const user = useSupabaseUser()
 const supabase = useSupabaseClient()
 const { setStepComponent, reset } = useSteps()
 const { isSidebarVisible, hideSidebar } = useApp()
-const { unreadConversationCount, fetchUnreadConversationCount } = useConversations()
 
-await fetchUnreadConversationCount()
 
 const logout = async () => {
   await supabase.auth.signOut()

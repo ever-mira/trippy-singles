@@ -1,8 +1,8 @@
 <template>
   <Page>
-    <div class="ml-3 md:ml-7 mt-24 lg:mt-29">
+    <div class="ml-1 xl:ml-4 3xl:ml-7 mt-24 lg:mt-29">
       <div class="flex flex-col md:flex-row min-h-74">
-        <Entry class="md:w-55% lg:w-60% xl:w-54% 2xl:w-47% 3xl:w-40%" />
+        <Entry class="md:w-55% lg:w-55% xl:w-57% 2xl:w-47% 3xl:w-40%" />
         <Stepper />
       </div>
 

@@ -4,9 +4,12 @@
         <br>
 
         <h2 class="text-xl">Das Netzwerk soll gebaut werden von den Menschen, die es nutzen wollen.</h2>
-        <br><br>
+        <br>
+        <br>
         <h2 class="text-xl">Welche Features wollen wir? Wenn alles möglich wäre?</h2>
 
+        <br>
+        <span class="text-3xl">🎨</span>
         <br><br>
         <h2 class="text-xl">Folgende Aufgabenbereiche könnte es geben:</h2><br>
         <ul class="list-disc list-inside">

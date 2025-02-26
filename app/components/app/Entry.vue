@@ -5,12 +5,12 @@
     </div>
 
     <div v-if="isTrippySingles"
-      class="text-[1.9rem] lg:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
+      class="text-[1.9rem] xl:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
       Findet euch.
     </div>
 
     <div v-else
-      class="text-[1.9rem] lg:text-[2.24rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.4 whitespace-nowrap">
+      class="text-[1.9rem] xl:text-[2.2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.4 whitespace-nowrap">
       Psychedelic Network.
     </div>
 
