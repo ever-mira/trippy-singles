@@ -186,6 +186,38 @@ export type Database = {
           },
         ]
       }
+      hint_comments: {
+        Row: {
+          created_at: string
+          hint_name: string | null
+          id: number
+          text: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          hint_name?: string | null
+          id?: number
+          text: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          hint_name?: string | null
+          id?: number
+          text?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hint_comments_user_id_fkey1"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       messages: {
         Row: {
           content: string

@@ -29,7 +29,7 @@
     <h2 class="text-2xl">Gegenseitig</h2>
     <span class="text-lg text-gray-700 dark:text-gray-400">Durch das Trip-Berichte schreiben, können wir uns gegenseitig
       an die Momente erinnern, die
-      wir erlebt hatten.
+      wir erlebt haben.
       <br />
       <br />
       Real Magic.

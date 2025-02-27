@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-row gap-x-2 !w-full mt-9 md:mx-auto rounded-xl">
-    <div class="hidden xl:flex mb-22 pr-3">
+    <div class="hidden xl:flex mb-22 pr-2">
       <NuxtLink :to="`/@${profile?.username}`" class="mt-auto">
         <NuxtImg :src="profile.avatar_url || ''" class="w-15 rounded-full" height="70" width="70" fit="cover"
           v-if="profile.avatar_url" />
@@ -16,7 +16,7 @@
           <div v-if="message.sender_id === user.id">
             <div class="flex justify-end">
               <div
-                class="bg-white dark:bg-gray-900 p-3 rounded-tl-xl rounded-tr-xl rounded-bl-xl shadow-mdsm max-w-80% md:max-w-60% lg:max-w-50%">
+                class="bg-white dark:bg-gray-900 py-3.9 px-3 leading-none rounded-tl-xl rounded-tr-xl rounded-bl-xl shadow-mdsm max-w-80% md:max-w-60% lg:max-w-50%">
                 {{ message.content }}
               </div>
             </div>
@@ -24,7 +24,7 @@
           <div v-else>
             <div class="flex justify-start">
               <div
-                class="bg-white dark:bg-gray-900 p-3 rounded-tl-xl rounded-tr-xl rounded-br-xl shadow-mdsm max-w-80% md:max-w-60% lg:max-w-50%">
+                class="bg-white dark:bg-gray-900 py-3.9 px-3 leading-none rounded-tl-xl rounded-tr-xl rounded-br-xl shadow-mdsm max-w-80% md:max-w-60% lg:max-w-50%">
                 {{ message.content }}
               </div>
             </div>
@@ -40,7 +40,7 @@
         </Button>
       </div>
     </div>
-    <div class="hidden xl:flex flex-col ml-3 pb-22" v-if="ownProfile">
+    <div class="hidden xl:flex flex-col ml-2 pb-22" v-if="ownProfile">
       <NuxtLink :to="`/@${ownProfile?.username}`" class="mt-auto">
         <NuxtImg :src="ownProfile.avatar_url || ''" class="w-15 rounded-full" height="70" width="70" fit="cover"
           v-if="ownProfile.avatar_url" />

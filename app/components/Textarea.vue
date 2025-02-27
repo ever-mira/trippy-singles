@@ -1,6 +1,6 @@
 <template>
   <textarea v-bind="$attrs" :value="modelValue" @input="onInput" @focus="onFocus" @blur="onBlur" @keydown="onKeydown"
-    :class="classes" autofocus ref="textAreaRef" />
+    :class="classes" ref="textAreaRef" />
 </template>
 
 <script setup lang="ts">

@@ -19,11 +19,12 @@
     </Heading>
 
     <div class="mt-9 lg:mt-11" v-if="report">
-      <NuxtImg :src="report.avatar_url || undefined" width="700"
-        class="rounded-lg max-w-65 md:max-w-77 mt-10 cursor-pointer" v-if="report.avatar_url"
-        @click="showModal(report.avatar_url)" />
-      <PlaceholderPhoto v-else />
-
+      <div class="md:bg-highlight md:dark:bg-highlight-dark rounded-lg md:p-3 w-fit mt-10">
+        <NuxtImg :src="report.avatar_url || undefined" width="700"
+          class="rounded-lg max-w-65 md:max-w-77 cursor-pointer" v-if="report.avatar_url"
+          @click="showModal(report.avatar_url)" />
+        <PlaceholderPhoto v-else />
+      </div>
       <div class="flex flex-col gap-y-9 border-r pr-3 mt-7">
         <div class="flex flex-row">
           <div class="grow border-l border-gray-3 pl-3">
@@ -44,15 +45,20 @@
           {{ report.setting }}
         </div>
 
-        <div class="">
+        <div class="mt-2">
           <div class="font-bold mb-2">Trip-Bericht:</div>
           <div class="whitespace-pre-wrap">
             {{ report.text }}
           </div>
         </div>
       </div>
-      <div class="py-4 lg:pl-8 xl:pl-10 mt-17 2xl:mt-18 md:w-3/4 xl:w-1/2 w-full">
-        <ReportComments />
+
+      <div class="py-4 lg:pl-8 xl:pl-10 mt-17 md:w-3/4 xl:w-1/2 w-full">
+        <Comments category="reports" :resourceId="reportId">
+          <template v-slot:hint>
+            (ähnliches erlebt? Her damit.)
+          </template>
+        </Comments>
       </div>
     </div>
 
@@ -64,15 +70,15 @@
 import { useRoute } from "vue-router"
 import { format } from "date-fns"
 import { de } from "date-fns/locale"
-import ReportComments from "~/components/reports/ReportComments.vue"
+import Comments from "~/components/shared/Comments.vue"
 
 const route = useRoute()
 const { report, loadReport } = useReports()
 
-const id = route.params.id
+const reportId = route.params.id as string
 
-if (id) {
-  await loadReport(id as string)
+if (reportId) {
+  await loadReport(reportId)
 }
 
 const { showModal } = useImageModal()

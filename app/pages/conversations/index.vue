@@ -17,11 +17,15 @@
       </div>
     </div>
 
-    <HintBox class="mt-19">
-      Experiment: neue Menschen mit einem
-      Zufalls-Satz
-      anschreiben. In der Improvisation (Schreiben bevor man denken kann) liegt eine merkwürdige
-      Magie.
+    <HintBox name="conversations_improvisation_magic" class="mt-19">
+      Experiment: neue Menschen mit einem 
+      Zufalls-Satz 
+      anschreiben?
+      <template v-slot:addition>
+        <p class="text-lg font-medium">Theorie</p>
+        In der Improvisation (Schreiben bevor man denken kann) liegt eine merkwürdige
+      Magie.<br><br>
+      </template>
     </HintBox>
 
   </Page>

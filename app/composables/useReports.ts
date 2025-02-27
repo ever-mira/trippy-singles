@@ -28,24 +28,6 @@ export function useReports() {
       headers: useRequestHeaders(["cookie"]),
     })
     if (data.value) report.value = data.value
-    await loadComments(id)
-  }
-
-  async function loadComments(id: string) {
-    const { data } = await useFetch<Array<ExtendedReportComment>>(`/api/reports/${id}/comments`, {
-      method: "GET",
-      headers: useRequestHeaders(["cookie"]),
-    })
-    if (data.value) reportComments.value = data.value
-  }
-
-  async function saveComment(report_id: string, text: string) {
-    await useFetch(`/api/reports/${report_id}/comments`, {
-      method: "POST",
-      headers: useRequestHeaders(["cookie"]),
-      body: JSON.stringify({ text }),
-    })
-    await loadComments(report_id)
   }
 
   return {
@@ -55,8 +37,6 @@ export function useReports() {
     reset_drug_filter,
     loadReport,
     report,
-    loadComments,
-    saveComment,
     reportComments,
   }
 }

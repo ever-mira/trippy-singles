@@ -2,7 +2,8 @@
   <div>
     <div class="mt-12 relative text-3xl font-bold text-heading">{{ $t('signup.logged_in') }}</div>
     <div class="mt-9 relative">
-      {{ $t('signup.no_new_messages') }}
+      <span v-if="!unreadConversationCount">Du hast keine neuen Nachrichten.</span>
+      <span v-else>Du hast {{ unreadConversationCount }} neue Nachrichten.</span>
     </div>
 
     <div class="mt-9">
@@ -12,4 +13,6 @@
 </template>
 
 <script setup lang="ts">
+const { fetchUnreadConversationCount, unreadConversationCount } = useConversations()
+await fetchUnreadConversationCount()
 </script>

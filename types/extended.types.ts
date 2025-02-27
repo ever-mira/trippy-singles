@@ -12,7 +12,7 @@ export type ExtendedReport = Report & {
   formattedDate: string
 }
 
-export type ExtendedReportComment = ReportComment & {
+export type ExtendedComment = ReportComment & {
   profiles: {
     username: string
     avatar_url: string

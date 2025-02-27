@@ -29,7 +29,7 @@
       Noch keine Berichte zu dieser Droge.
     </div>
 
-    <HintBox class="mt-19"> Jeder sollte einen Trip-Bericht geschrieben haben. </HintBox>
+    <HintBox class="mt-19" name="every_should_trip_reports"> Jeder sollte einen Trip-Bericht geschrieben haben.</HintBox>
   </Page>
 </template>
 

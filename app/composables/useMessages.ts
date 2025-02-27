@@ -4,11 +4,12 @@ type Message = Tables<"messages">
 
 export default function useMessages(userId: string) {
   const messages = useState<Message[]>("conversationMessages", () => new Array<Message>())
+  const message = useState<string>(`conversation${userId}Message`, () => "")
+
   const { fetchUnreadConversationCount } = useConversations()
   const supabase = useSupabaseClient()
   const user: Ref = useSupabaseUser()
   const { showModal } = useModal()
-  const message = ref<string>("")
 
   async function fetchMessages() {
     const { data } = await useFetch<Message[]>(`/api/conversations/${userId}`, {

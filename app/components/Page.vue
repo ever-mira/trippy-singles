@@ -1,6 +1,6 @@
 <template>
   <div class="absolute top-0 left-0 h-full w-full">
-    <div class="h-screen overflow-y-auto" ref="scrollContainer">
+    <div class="h-screen overflow-y-scroll" ref="scrollContainer">
       <div class="relative min-h-screen h-auto py-17 lg:py-14">
         <div class="px-4 md:px-7 lg:pl-10 xl:pl-13 2xl:pl-19 pb-50">
           <slot></slot>

@@ -60,7 +60,7 @@ const checkAvailability = debounce(async (name: string) => {
   } catch (error: any) {
     message.value = error.statusMessage || "Es gab ein Problem mit der Anfrage"
   }
-}, 300)
+}, 250)
 
 watch(
   username,
