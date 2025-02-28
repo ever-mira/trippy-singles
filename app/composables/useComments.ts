@@ -20,7 +20,7 @@ export async function useComments(category: string, resourceId: string) {
 
   async function saveComment() {
     if (!user.value) {
-      showModal("Du musst eingeloggt sein, um Nachrichten senden zu können.")
+      showModal("Du musst eingeloggt sein, um Kommentare erstellen zu können.")
       return
     }
 

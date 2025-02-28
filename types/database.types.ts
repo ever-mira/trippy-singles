@@ -398,6 +398,42 @@ export type Database = {
           },
         ]
       }
+      trip_report_likes: {
+        Row: {
+          created_at: string
+          id: number
+          trip_report_id: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          trip_report_id: number
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          trip_report_id?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trip_report_likes_trip_report_id_fkey"
+            columns: ["trip_report_id"]
+            isOneToOne: false
+            referencedRelation: "trip_reports"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trip_report_likes_user_id_fkey1"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       trip_reports: {
         Row: {
           avatar_url: string | null

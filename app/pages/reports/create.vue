@@ -35,6 +35,8 @@
           <Textarea type="text" placeholder="Setting" v-model="report.setting" class="!w-full h-20 resize-none" />
         </div>
       </div>
+      <HintBox class="mt-3" name="every_report_little_magic" :icon="SparklesIcon" triggerRight>
+        Jeder Trip-Bericht ist ein klenes Stück Zauberei.</HintBox>
       <div class="mb-3">
       </div>
       <div class="md:hidden mb-3">
@@ -66,6 +68,7 @@
 <script setup lang="ts">
 import PhotoUpload from '~/components/user/PhotoUpload.vue'
 import ImagePreload from '~/components/app/ImagePreload.vue'
+import { SparklesIcon } from "@heroicons/vue/24/outline"
 
 const report = reactive({
   drug_id: null,

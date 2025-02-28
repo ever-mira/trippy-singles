@@ -59,6 +59,10 @@
         <Cog6ToothIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{ $t('app.settings') }}
       </NavLink>
 
+      <NavLink to="/likes">
+        <HeartIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />Likes
+      </NavLink>
+
       <div @click="logout" class="px-4.5 mt-4">
         <span class="text-blue-7 dark:text-blue-6 cursor-pointer">{{ $t('app.logout') }}</span>
       </div>
@@ -91,13 +95,7 @@ import ToggleDark from './DarkToggle.vue'
 import Puzzle from "../steps/Puzzle.vue"
 import UnreadBadge from "../app/UnreadBadge.vue"
 
-import { HomeIcon } from '@heroicons/vue/24/solid'
-import { UserGroupIcon } from '@heroicons/vue/24/solid'
-import { ChatBubbleLeftRightIcon } from '@heroicons/vue/24/solid'
-import { EnvelopeIcon } from '@heroicons/vue/24/solid'
-import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
-import { BeakerIcon } from '@heroicons/vue/24/solid'
-
+import { HomeIcon, UserGroupIcon, ChatBubbleLeftRightIcon, EnvelopeIcon, Cog6ToothIcon, BeakerIcon, HeartIcon } from '@heroicons/vue/24/solid'
 
 const router = useRouter()
 const user = useSupabaseUser()

@@ -9,7 +9,7 @@
 
     <p class="text-gray-700 mt-3" v-if="comments?.length === 0">noch keine.</p>
 
-    <Comment v-for="comment in comments" :key="comment.id" :comment="comment" class="flex gap-x-3 mt-7 mb-9" />
+    <Comment v-for="comment in comments" :key="comment.id" :comment="comment" class="flex gap-x-3 mb-9" />
 
     <div class="mt-10">
       <span class="text-lg">Kommentar hinzufügen</span>&nbsp;

@@ -7,9 +7,9 @@
         <Component :is="icon" class="inline w-6 text-blue-700 mr-1.5 -ml-2.2 -mt-.8 text-blue-900 dark:text-blue-200">
         </Component>
       </div>
-      <div>
+      <div class="flex w-full">
         <slot></slot>
-        <div class="inline font-medium ml-7">
+        <div class="font-medium ml-7.5 text-right" :class="{ 'grow': triggerRight }">
           <span class="mr-1">mehr</span>
           <ChevronDownIcon class="inline w-4 -mt-0.7" v-if="!isOpen" />
           <ChevronUpIcon class="inline w-4 -mt-0.7" v-else />
@@ -31,8 +31,9 @@ import { ChevronDownIcon } from "@heroicons/vue/24/solid"
 import { ChevronUpIcon } from "@heroicons/vue/24/solid"
 
 interface Props {
-  name: 'every_should_trip_reports' | "conversations_improvisation_magic",
-  icon: Component
+  name: 'every_should_trip_reports' | "conversations_improvisation_magic" | "every_report_little_magic",
+  icon: Component,
+  triggerRight?: false
 }
 
 const props = defineProps<Props>()

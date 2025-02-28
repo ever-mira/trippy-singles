@@ -1,6 +1,7 @@
 import type { Tables } from "~~/types/database.types"
 type Report = Tables<"trip_reports">
 type ReportComment = Tables<"trip_report_comments">
+type ReportLikes = Tables<"trip_report_likes">
 
 export type ExtendedReport = Report & {
   profiles: {
@@ -13,6 +14,13 @@ export type ExtendedReport = Report & {
 }
 
 export type ExtendedComment = ReportComment & {
+  profiles: {
+    username: string
+    avatar_url: string
+  }
+}
+
+export type ExtendedLike = ReportLikes & {
   profiles: {
     username: string
     avatar_url: string

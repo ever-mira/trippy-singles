@@ -25,7 +25,7 @@
           @click="showModal(report.avatar_url)" />
         <PlaceholderPhoto v-else />
       </div>
-      <div class="flex flex-col gap-y-8 border-r pr-3 mt-7">
+      <div class="flex flex-col gap-y-8 border-r pr-3 mt-7 2xl:w-85% 3xl:w-80%">
         <div class="flex flex-row">
           <div class="grow border-l border-gray-3 pl-3">
             <div class="font-bold">Droge:</div>
@@ -61,6 +61,7 @@
           <div class="whitespace-pre-wrap">
             {{ report.text }}
           </div>
+          <ReportLikes :reportId="reportId" />
         </div>
       </div>
 
@@ -82,6 +83,7 @@ import { useRoute } from "vue-router"
 import { format } from "date-fns"
 import { de } from "date-fns/locale"
 import Comments from "~/components/shared/Comments.vue"
+import ReportLikes from "~/components/reports/ReportLikes.vue"
 
 const route = useRoute()
 const { report, loadReport } = useReports()
