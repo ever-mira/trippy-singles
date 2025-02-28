@@ -9,7 +9,7 @@
       </div>
       <div class="flex w-full">
         <slot></slot>
-        <div class="font-medium ml-7.5 text-right" :class="{ 'grow': triggerRight }">
+        <div class="font-medium ml-8.5 text-right" :class="{ 'grow': triggerRight }">
           <span class="mr-1">mehr</span>
           <ChevronDownIcon class="inline w-4 -mt-0.7" v-if="!isOpen" />
           <ChevronUpIcon class="inline w-4 -mt-0.7" v-else />
@@ -33,7 +33,7 @@ import { ChevronUpIcon } from "@heroicons/vue/24/solid"
 interface Props {
   name: 'every_should_trip_reports' | "conversations_improvisation_magic" | "every_report_little_magic",
   icon: Component,
-  triggerRight?: false
+  triggerRight?: boolean
 }
 
 const props = defineProps<Props>()

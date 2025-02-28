@@ -50,7 +50,7 @@
         {{ message }}
       </div>
 
-      <div class="mt-10 mb-50">
+      <div class="mt-5 mb-50">
         <Button color="red" to="/reports" class="!px-5.5">
           Abbrechen
         </Button>

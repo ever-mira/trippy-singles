@@ -45,7 +45,7 @@
 
   <div class="mt-19 mb-11">
     <h2 class="text-2xl">Ein besonderer Mensch.</h2>
-    <span class="text-lg text-gray-700 dark:text-gray-400">Menschen können sich finden, die wir in der Zukunft bereits
+    <span class="text-lg text-gray-700 dark:text-gray-400">Wir können Menschen finden, die wir in der Zukunft bereits
       getroffen haben.</span>
   </div>
 

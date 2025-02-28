@@ -56,7 +56,7 @@
           </div>
         </template>
 
-        <div class="mt-2">
+        <div class="mt-7">
           <div class="font-bold mb-2">Trip-Bericht:</div>
           <div class="whitespace-pre-wrap">
             {{ report.text }}
@@ -68,7 +68,7 @@
       <div class="py-4 lg:pl-8 xl:pl-10 mt-17 md:w-3/4 xl:w-1/2 w-full">
         <Comments category="reports" :resourceId="reportId">
           <template v-slot:hint>
-            (ähnliches erlebt? Ergänze deine Erfahrungen.)
+            (ähnliches erlebt? Ergänze deine Erfahrungen)
           </template>
         </Comments>
       </div>

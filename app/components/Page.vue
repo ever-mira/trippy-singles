@@ -26,13 +26,13 @@ onBeforeRouteLeave((to, from) => {
 })
 
 onMounted(() => {
-  if (routePath.split("/").length - 1 < 2) {
+  // if (routePath.split("/").length - 1 < 2) {
     const savedPosition = getScrollPosition(routePath)
 
     if (savedPosition && scrollContainer.value) {
       scrollContainer.value.scrollTop = getScrollPosition(routePath) || 0
     }
-  }
+  // }
 })
 
 const lastScrollY = ref(0)

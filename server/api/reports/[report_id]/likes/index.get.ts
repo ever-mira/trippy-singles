@@ -14,6 +14,7 @@ export default defineEventHandler(async (event) => {
       .from("trip_report_likes")
       .select("id, created_at, user_id, profiles(username, avatar_url)")
       .eq("trip_report_id", report_id)
+      .order("created_at", { ascending: false })
 
     if (error) {
       throw createError({
