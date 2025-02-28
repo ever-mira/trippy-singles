@@ -1,6 +1,6 @@
 <template>
   <input v-bind="$attrs" :value="modelValue" @input="onInput" @focus="onFocus" @blur="onBlur" @keydown="onKeydown"
-    :class="classes" focus ref="inputRef" />
+    :class="classes" ref="inputRef" />
   <div class="inline -ml-6.5" v-if="props.loading">
     <svg id="spinner" class="inline w-5 h-5 -mt-1 -ml-1 mr-2 animate-spin text-gray-500"
       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">

@@ -24,6 +24,7 @@ export default defineEventHandler(async (event) => {
         avatar_url,
         user_id,
         created_at,
+        long_term,
         profiles (
           username
         )

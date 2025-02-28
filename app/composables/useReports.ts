@@ -1,25 +1,28 @@
-import type { ExtendedReport, ExtendedReportComment } from "~~/types/extended.types"
+import type { ExtendedReport } from "~~/types/extended.types"
 
-const filter_drug_id = ref(null)
+const drugFilter = ref(null)
+const longTermFilter = ref("with")
 
 export function useReports() {
   const reports = useState<ExtendedReport[] | null>("TripReports", () => [])
   const report = useState<ExtendedReport | null>("LoadedReport", () => null)
-  const reportComments = useState<Array<ExtendedReportComment> | null>("ReportComments", () => [])
 
   async function loadReports() {
-    let url = "/api/reports/"
-    if (filter_drug_id.value) url += `?drug_id=${filter_drug_id.value}`
+    const params = new URLSearchParams({
+      long_term: longTermFilter.value,
+    })
 
-    const { data } = await useFetch<ExtendedReport[]>(url, {
+    if (drugFilter.value) params.append("drug_id", drugFilter.value)
+
+    const { data } = await useFetch<ExtendedReport[]>("/api/reports/?" + params.toString(), {
       method: "GET",
       headers: useRequestHeaders(["cookie"]),
     })
     if (data.value) reports.value = data.value
   }
 
-  function reset_drug_filter() {
-    filter_drug_id.value = null
+  function resetDrugFilter() {
+    drugFilter.value = null
   }
 
   async function loadReport(id: string) {
@@ -33,10 +36,10 @@ export function useReports() {
   return {
     reports,
     loadReports,
-    filter_drug_id,
-    reset_drug_filter,
+    drugFilter,
+    resetDrugFilter,
+    longTermFilter,
     loadReport,
     report,
-    reportComments,
   }
 }

@@ -18,14 +18,14 @@
       </template>
     </Heading>
 
-    <div class="mt-9 lg:mt-11" v-if="report">
-      <div class="md:bg-highlight md:dark:bg-highlight-dark rounded-lg md:p-3 w-fit mt-10">
+    <div class="mt-9" v-if="report">
+      <div class="md:bg-highlight md:dark:bg-highlight-dark rounded-lg md:p-3 w-fit">
         <NuxtImg :src="report.avatar_url || undefined" width="700"
           class="rounded-lg max-w-65 md:max-w-77 cursor-pointer" v-if="report.avatar_url"
           @click="showModal(report.avatar_url)" />
         <PlaceholderPhoto v-else />
       </div>
-      <div class="flex flex-col gap-y-9 border-r pr-3 mt-7">
+      <div class="flex flex-col gap-y-8 border-r pr-3 mt-7">
         <div class="flex flex-row">
           <div class="grow border-l border-gray-3 pl-3">
             <div class="font-bold">Droge:</div>
@@ -36,14 +36,25 @@
             {{ formattedDate }}
           </div>
         </div>
-        <div class="border-l border-gray-3 pl-3">
-          <div class="font-bold">Set:</div>
-          {{ report.set }}
+
+        <div v-if="report.long_term">
+          <div class="border-l border-gray-3 pl-3">
+            <div class="font-bold">Langzeit-Bericht:</div>
+            Ja
+          </div>
         </div>
-        <div class="border-l border-gray-3 pl-3">
-          <div class="font-bold">Setting:</div>
-          {{ report.setting }}
-        </div>
+        <template v-else>
+          <div class="border-l border-gray-3 pl-3">
+            <div class="font-bold">Set:</div>
+            <span v-if="report.set">{{ report.set }}</span>
+            <span v-else>-</span>
+          </div>
+          <div class="border-l border-gray-3 pl-3">
+            <div class="font-bold">Setting:</div>
+            <span v-if="report.setting">{{ report.setting }}</span>
+            <span v-else>-</span>
+          </div>
+        </template>
 
         <div class="mt-2">
           <div class="font-bold mb-2">Trip-Bericht:</div>
@@ -56,7 +67,7 @@
       <div class="py-4 lg:pl-8 xl:pl-10 mt-17 md:w-3/4 xl:w-1/2 w-full">
         <Comments category="reports" :resourceId="reportId">
           <template v-slot:hint>
-            (ähnliches erlebt? Her damit.)
+            (ähnliches erlebt? Ergänze deine Erfahrungen.)
           </template>
         </Comments>
       </div>

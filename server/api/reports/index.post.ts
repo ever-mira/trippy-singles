@@ -3,7 +3,7 @@ import { serverSupabaseClient, serverSupabaseUser } from "#supabase/server"
 import type { Database } from "~~/types/database.types"
 
 export default defineEventHandler(async (event) => {
-  const { title, drug_id, set, setting, text, avatar_url } = await readBody(event)
+  const { title, drug_id, set, setting, text, avatar_url, long_term } = await readBody(event)
 
   try {
     const client = await serverSupabaseClient<Database>(event)
@@ -11,6 +11,9 @@ export default defineEventHandler(async (event) => {
 
     if (!user) {
       throw createError({ statusCode: 401, statusMessage: "Nicht authentifiziert" })
+    }
+    if (!title || !text || !drug_id || !long_term) {
+      throw createError({ statusCode: 401, statusMessage: "Daten unvollständig" })
     }
     const userId = user.id
 
@@ -23,6 +26,7 @@ export default defineEventHandler(async (event) => {
         setting,
         text,
         avatar_url,
+        long_term,
         user_id: userId,
       })
       .select("*")

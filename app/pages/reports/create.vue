@@ -1,7 +1,7 @@
 <template>
   <Page>
     <Heading>
-      Neuer Trip-Bericht
+      Trip-Bericht schreiben
       <template v-slot:subtitle>
         Beschreibe deine Erfahrungen
       </template>
@@ -11,21 +11,29 @@
       <div class="mb-7">
         <photo-upload @uploaded="onPhotoUploaded" category="report" :preview="true" class="mt-6"></photo-upload>
       </div>
-      <div class="mb-3">
+      <div class="flex gap-x-3 mb-3">
         <select v-model="report.drug_id"
           class="w-full rounded-lg border border-gray-300 dark:border-gray-800 shadow-sm pl-2 pr-4 py-2 bg-white dark:bg-black text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
+          <option :value="null" selected>Droge auswählen</option>
           <option v-for="drug in drugs" :value="drug.id">{{ drug.name }}</option>
         </select>
+        <select v-model="report.long_term"
+          class="w-full rounded-lg border border-gray-300 dark:border-gray-800 shadow-sm pl-2 pr-4 py-2 bg-white dark:bg-black text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
+          <option :value="false" selected>Normaler Bericht</option>
+          <option :value="true">Langzeitbericht</option>
+        </select>
       </div>
-      <div class="mb-3">
+      <div class="mb-5">
         <Input type="text" placeholder="Titel" v-model="report.title" autofocus class="!w-full" />
       </div>
-      <div class="mb-3">
-        Beschreibe Set und Setting:
-      </div>
-      <div class="flex flex-col md:flex-row gap-3 mb-3">
-        <Textarea type="text" placeholder="Set" v-model="report.set" class="!w-full h-20 resize-none" />
-        <Textarea type="text" placeholder="Setting" v-model="report.setting" class="!w-full h-20 resize-none" />
+      <div v-if="report.long_term === false">
+        <div class="mb-3">
+          Beschreibe Set und Setting:
+        </div>
+        <div class="flex flex-col md:flex-row gap-3 mb-3">
+          <Textarea type="text" placeholder="Set" v-model="report.set" class="!w-full h-20 resize-none" />
+          <Textarea type="text" placeholder="Setting" v-model="report.setting" class="!w-full h-20 resize-none" />
+        </div>
       </div>
       <div class="mb-3">
       </div>
@@ -33,7 +41,8 @@
         Beschreibe Deinen Trip:
       </div>
       <div class="mb-3">
-        <Textarea type="text" placeholder="Dein Tripbericht" v-model="report.text" class="!w-full h-90 resize-none" />
+        <Textarea type="text" placeholder="Beschreibe deine Erfahrungen" v-model="report.text"
+          class="!w-full h-90 resize-none" />
       </div>
       <div class="mb-7" v-if="message">
         {{ message }}
@@ -59,18 +68,19 @@ import PhotoUpload from '~/components/user/PhotoUpload.vue'
 import ImagePreload from '~/components/app/ImagePreload.vue'
 
 const report = reactive({
-  drug_id: 1,
+  drug_id: null,
   title: '',
   set: '',
   setting: '',
   text: '',
-  avatar_url: ''
+  avatar_url: '',
+  long_term: false
 })
 
 const message = ref('')
 const user = useSupabaseUser()
 const router = useRouter()
-const { reset_drug_filter } = useReports()
+const { resetDrugFilter } = useReports()
 
 const drugs = await $fetch('/api/drugs', {
   method: 'GET',
@@ -81,6 +91,11 @@ async function save() {
   message.value = ''
 
   try {
+    if (!report.drug_id) {
+      message.value = 'Wähle eine Droge aus.'
+      return
+    }
+
     if (!report.title || !report.text) {
       message.value = 'Titel und Text sind erforderlich.'
       return
@@ -97,7 +112,7 @@ async function save() {
       headers: useRequestHeaders(['cookie'])
     })
 
-    reset_drug_filter()
+    resetDrugFilter()
     router.push('/reports')
 
   } catch (error: any) {

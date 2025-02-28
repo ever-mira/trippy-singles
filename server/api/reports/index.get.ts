@@ -3,7 +3,7 @@ import { serverSupabaseClient } from "#supabase/server"
 
 export default defineEventHandler(async (event) => {
   const supabase = await serverSupabaseClient(event)
-  const { drug_id, user_id } = getQuery(event)
+  const { drug_id, user_id, long_term } = getQuery(event)
 
   try {
     const query = supabase.from("trip_reports").select(
@@ -18,6 +18,7 @@ export default defineEventHandler(async (event) => {
       avatar_url,
       user_id,
       created_at,
+      long_term,
       profiles (
         username
       )
@@ -26,6 +27,8 @@ export default defineEventHandler(async (event) => {
 
     if (drug_id) query.eq("drug_id", drug_id)
     if (user_id) query.eq("user_id", user_id)
+    if (long_term && long_term === "only") query.eq("long_term", true)
+    if (long_term && long_term === "without") query.eq("long_term", false)
 
     query.order("created_at")
 

@@ -17,10 +17,10 @@
       </div>
     </div>
 
-    <HintBox name="conversations_improvisation_magic" class="mt-19">
+    <HintBox name="conversations_improvisation_magic" :icon="CubeTransparentIcon" class="mt-19">
       Experiment: neue Menschen mit einem 
       Zufalls-Satz 
-      anschreiben?
+      anschreiben.
       <template v-slot:addition>
         <p class="text-lg font-medium">Theorie</p>
         In der Improvisation (Schreiben bevor man denken kann) liegt eine merkwürdige
@@ -34,6 +34,7 @@
 <script setup lang="ts">
 import ConversationTile
   from '~/components/conversation/ConversationTile.vue';
+import { CubeTransparentIcon } from "@heroicons/vue/24/outline"
 const { conversations, fetchConversations } = useConversations()
 
 await fetchConversations()

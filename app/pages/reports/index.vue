@@ -4,14 +4,17 @@
       <div class="flex-1">
         <Heading>
           Trip-Berichte
-          <template v-slot:subtitle> Teile deine Erfahrungen </template>
+          <template v-slot:subtitle> Teile deine Erfahrung </template>
         </Heading>
       </div>
 
       <div class="flex-1">
         <div class="mt-11 lg:mt-4">
           <Button color="indigo" to="/reports/create" class="!px-5">
-            <PlusIcon class="inline w-4.5 mr-2 -mt.5" />Trip-Bericht erstellen
+            <PlusIcon class="inline w-5 mr-1 -mt.5" />
+
+            <PencilIcon class="inline w-4 lg:mr-2 -mt.5" />
+            <span class="hidden md:inline">Trip-Bericht</span>
           </Button>
         </div>
       </div>
@@ -29,21 +32,27 @@
       Noch keine Berichte zu dieser Droge.
     </div>
 
-    <HintBox class="mt-19" name="every_should_trip_reports"> Jeder sollte einen Trip-Bericht geschrieben haben.</HintBox>
+    <HintBox class="mt-19 lg:mt-22" name="every_should_trip_reports" :icon="RocketLaunchIcon">
+      Jeder sollte einen Trip-Bericht geschrieben haben.</HintBox>
   </Page>
 </template>
 
 <script setup lang="ts">
 import { PlusIcon } from "@heroicons/vue/24/solid"
+import { PencilIcon } from "@heroicons/vue/24/solid"
+import { RocketLaunchIcon } from "@heroicons/vue/24/outline"
 import ReportTile from "~/components/reports/ReportTile.vue"
 import ReportFilter from "~/components/reports/ReportFilter.vue"
 import ReportGrid from "~/components/reports/ReportGrid.vue"
 
-const { reports, loadReports, filter_drug_id } = useReports()
+const { reports, loadReports, drugFilter, longTermFilter } = useReports()
 
 loadReports()
 
-watch(filter_drug_id, (newValue) => {
+watch(drugFilter, () => {
+  loadReports()
+})
+watch(longTermFilter, () => {
   loadReports()
 })
 </script>

@@ -6,7 +6,8 @@
     </div>
 
     <div class="mt-8 md:mt-12 relative">
-      <Input placeholder="Username" v-model="username" focus class="w-[255px] md:w-[220px]" @keydown.enter="next" />
+      <Input placeholder="Username" v-model="username" :focus="!ismobile()" class="w-[255px] md:w-[220px]"
+        @keydown.enter="next" />
       <div
         class="block absolute md:relative top-0 md:top-auto right-3 md:right-auto clear-none md:inline ml.5 md:ml-3 mt-2 md:mt-0 text-green-600">
         <span class="text-green-600" v-if="available">
@@ -33,6 +34,7 @@
 import SignupStepLogin from "./SignupStepLogin.vue"
 import debounce from "lodash.debounce"
 import { validateUsername } from "@utils/usernameValidation"
+import ismobile from 'is-mobile'
 
 const { setStepComponent, username } = useSteps()
 

@@ -7,7 +7,7 @@
         <tr>
           <td>
             <Input type="email" ref="mailInputRef" :placeholder="$t('signup.email')" v-model="credentials.email"
-              focus />
+              :focus="!ismobile()" />
           </td>
         </tr>
         <tr>
@@ -30,6 +30,7 @@
 
 <script setup lang="ts">
 import Loggedin from "./Loggedin.vue"
+import ismobile from 'is-mobile'
 
 const { setStepComponent } = useSteps()
 const supabase = useSupabaseClient()

@@ -404,6 +404,7 @@ export type Database = {
           created_at: string
           drug_id: number
           id: number
+          long_term: boolean
           set: string | null
           setting: string | null
           text: string
@@ -415,6 +416,7 @@ export type Database = {
           created_at?: string
           drug_id: number
           id?: number
+          long_term?: boolean
           set?: string | null
           setting?: string | null
           text: string
@@ -426,6 +428,7 @@ export type Database = {
           created_at?: string
           drug_id?: number
           id?: number
+          long_term?: boolean
           set?: string | null
           setting?: string | null
           text?: string

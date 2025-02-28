@@ -9,7 +9,7 @@
     <div class="mt-8 relative">
       <span class="hidden md:inline">{{ $t("signup.email") }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       <Input type="email" ref="mailInputRef" :placeholder="$t('signup.email')" v-model="credentials.email"
-        class="md:w-[210px]" focus />
+        class="md:w-[210px]" :focus="!ismobile()" />
     </div>
 
     <div class="mt-3.5 relative">
@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import Picture from "./Picture.vue"
+import ismobile from 'is-mobile'
 
 const { setStepComponent, username } = useSteps()
 const supabase = useSupabaseClient()
