@@ -3,7 +3,7 @@
     <button class="flex w-fit pl-1.25 pr-3 py-2 items-center cursor-pointer" @click="toggleLike" :disabled="pending">
       <HeartIconSolid class="inline w-7 mr-2 -mt.2 text-red-700 hover:text-red-600" v-if="liked" />
       <HeartIcon class="inline w-7 mr-2 -mt.2 text-red-700 hover:text-red-600" v-else />
-      <span class="font-medium">
+      <span class="font-semibold">
         {{ likesCount }}</span>&nbsp;<span v-if="likesCount === 1">like</span><span v-else>likes</span>
     </button>
 

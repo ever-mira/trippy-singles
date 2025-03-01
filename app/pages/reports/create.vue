@@ -13,12 +13,12 @@
       </div>
       <div class="flex gap-x-3 mb-3">
         <select v-model="report.drug_id"
-          class="w-full rounded-lg border border-gray-300 dark:border-gray-800 shadow-sm pl-2 pr-4 py-2 bg-white dark:bg-black text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
+          class="w-full rounded-lg border border-gray-300 dark:border-gray-800 shadow-sm pl-2 pr-4 py-2 bg-white dark:bg-black text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
           <option :value="null" selected>Droge auswählen</option>
           <option v-for="drug in drugs" :value="drug.id">{{ drug.name }}</option>
         </select>
         <select v-model="report.long_term"
-          class="w-full rounded-lg border border-gray-300 dark:border-gray-800 shadow-sm pl-2 pr-4 py-2 bg-white dark:bg-black text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
+          class="w-full rounded-lg border border-gray-300 dark:border-gray-800 shadow-sm pl-2 pr-4 py-2 bg-white dark:bg-black text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
           <option :value="false" selected>Normaler Bericht</option>
           <option :value="true">Langzeitbericht</option>
         </select>
@@ -37,10 +37,8 @@
             maxlength="500" />
         </div>
       </div>
-      <HintBox class="mt-3" name="every_report_little_magic" :icon="SparklesIcon" triggerRight>
+      <HintBox class="my-3" name="every_report_little_magic" :icon="SparklesIcon" triggerRight>
         Jeder Trip-Bericht ist ein klenes Stück Zauberei.</HintBox>
-      <div class="mb-3">
-      </div>
       <div class="md:hidden mb-3">
         Beschreibe Deinen Trip:
       </div>

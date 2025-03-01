@@ -18,7 +18,7 @@
 
     <div class="flex flex-col mt-3">
       <div v-if="ownProfile && editMode">
-        <span class="text-gray-700 text-md">
+        <span class="text-gray-700 dark:text-gray-400 text-md">
           <slot name="subtitle"> </slot>
         </span>
         <Textarea class="w-full mt-1.1 h-40" v-model="answer" maxlength="1400"></Textarea>

@@ -26,11 +26,11 @@
         </div>
       </div>
 
-      <div class="mt-13 lg:mt-10 whitespace-pre-wrap font-medium" v-if="event">
+      <div class="mt-13 lg:mt-10 whitespace-pre-wrap font-semibold" v-if="event">
         <MapPinIcon class="inline w-6 text-red-700 mr-2.5 -mt-1.3" />{{ event.location }}
       </div>
 
-      <div class="mt-5 whitespace-pre-wrap font-medium" v-if="event">
+      <div class="mt-5 whitespace-pre-wrap font-semibold" v-if="event">
         <CalendarIcon class="inline w-6 text-red-700 mr-2.5 -mt-1.3" />{{ eventDateFormatted }}
       </div>
 

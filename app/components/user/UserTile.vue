@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ml-3 bg-blue-50 hover:bg-blue-100 dark:border-gray-900 dark:bg-gray-950 dark:hover:bg-gray-900 bg-opacity-40 hover:bg-opacity-40 py-1.7 pl-2 pr-5 rounded-xl">
+    class="ml-3 bg-blue-50 hover:bg-blue-100 dark:border-gray-900 dark:bg-black dark:hover:bg-gray-900 bg-opacity-40 hover:bg-opacity-40 py-1.7 pl-2 pr-5 rounded-xl">
     <NuxtLink :to="`/@${user.username}`" class="flex flex-row">
       <div class="flex">
         <NuxtImg :src="user.avatar_url" fit="cover" width="60" height="60" class="w-15 h-15 rounded-full shadow-mdsm"

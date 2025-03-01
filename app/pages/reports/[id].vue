@@ -19,42 +19,9 @@
     </Heading>
 
     <div class="mt-9" v-if="report">
-      <div class="md:bg-highlight md:dark:bg-highlight-dark rounded-lg md:p-3 w-fit">
-        <NuxtImg :src="report.avatar_url || undefined" width="700"
-          class="rounded-lg max-w-65 md:max-w-77 cursor-pointer" v-if="report.avatar_url"
-          @click="showModal(report.avatar_url)" />
-        <PlaceholderPhoto v-else />
-      </div>
+      <ReportPicture :report="report" />
       <div class="flex flex-col gap-y-8 border-r pr-3 mt-7 2xl:w-85% 3xl:w-80%">
-        <div class="flex flex-row">
-          <div class="grow border-l border-gray-3 pl-3">
-            <div class="font-bold">Droge:</div>
-            {{ report.drugs.name }}
-          </div>
-          <div>
-            <div class="font-bold text-right">Datum</div>
-            {{ formattedDate }}
-          </div>
-        </div>
-
-        <div v-if="report.long_term">
-          <div class="border-l border-gray-3 pl-3">
-            <div class="font-bold">Langzeit-Bericht:</div>
-            Ja
-          </div>
-        </div>
-        <template v-else>
-          <div class="border-l border-gray-3 pl-3">
-            <div class="font-bold">Set:</div>
-            <span v-if="report.set">{{ report.set }}</span>
-            <span v-else>-</span>
-          </div>
-          <div class="border-l border-gray-3 pl-3">
-            <div class="font-bold">Setting:</div>
-            <span v-if="report.setting">{{ report.setting }}</span>
-            <span v-else>-</span>
-          </div>
-        </template>
+        <ReportMeta :report="report" />
 
         <div class="mt-5">
           <div class="font-bold mb-2">Trip-Bericht:</div>
@@ -65,7 +32,7 @@
         </div>
       </div>
 
-      <div class="py-4 lg:pl-8 xl:pl-10 mt-17 md:w-3/4 xl:w-1/2 w-full">
+      <div class="mt-17 lg:pl-8 xl:pl-10 w-full md:w-3/4 xl:w-1/2">
         <Comments category="reports" :resourceId="reportId">
           <template v-slot:hint>
             (ähnliches erlebt? Ergänze deine Erfahrungen)
@@ -80,10 +47,10 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router"
-import { format } from "date-fns"
-import { de } from "date-fns/locale"
-import Comments from "~/components/shared/Comments.vue"
+import ReportPicture from "~/components/reports/ReportPicture.vue"
+import ReportMeta from "~/components/reports/ReportMeta.vue"
 import ReportLikes from "~/components/reports/ReportLikes.vue"
+import Comments from "~/components/shared/Comments.vue"
 
 const route = useRoute()
 const { report, loadReport } = useReports()
@@ -93,12 +60,4 @@ const reportId = route.params.id as string
 if (reportId) {
   await loadReport(reportId)
 }
-
-const { showModal } = useImageModal()
-
-const formattedDate = computed(() => {
-  if (report.value) {
-    return format(new Date(report.value.created_at), "d. MMMM yyyy HH:mm", { locale: de })
-  }
-})
 </script>

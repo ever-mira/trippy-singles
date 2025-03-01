@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-12 relative text-3xl font-bold text-heading">Hey ;P</div>
+    <div class="mt-12 relative text-3xl font-bold text-heading">Hallo ;P</div>
     <div class="mt-9 relative">
       <span v-if="!unreadConversationCount">Du hast keine neuen Nachrichten.</span>
       <span v-else>Du hast {{ unreadConversationCount }} neue Nachrichten.</span>

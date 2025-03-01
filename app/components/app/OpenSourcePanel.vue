@@ -1,6 +1,6 @@
 <template>
   <NuxtLink to="/about"
-    class="lg:absolute flex flex-col right-0 top-18% xl:top-17% text-right pr-4 text-gray-900 dark:text-gray-200 mt-4 lg:mt-0">
+    class="lg:absolute flex flex-col right-0 top-18% xl:top-15.5% text-right pr-4 text-gray-900 dark:text-gray-200 mt-4 lg:mt-0">
     <div class="text-xl">
       <SparklesIcon class="inline w-7" />
     </div>

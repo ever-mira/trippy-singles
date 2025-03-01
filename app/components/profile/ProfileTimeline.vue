@@ -6,18 +6,18 @@
 
     <div class="lg:text-lg" v-if="profile">
       <div class="mt-6 lg:mt-7" v-if="profile.created_at">
-        <div class="grow font-medium">{{ formatDate(profile.created_at) }}</div>
+        <div class="grow font-semibold">{{ formatDate(profile.created_at) }}</div>
         <div class="grow mt-2">
           <CakeIcon class="inline w-5 -mt-1 mr-2" />Bei Trippy angemeldet
         </div>
       </div>
 
       <div class="mt-3 lg:mt-4" v-for="report in reports" :class="{ 'mt-6 lg:mt-7': report.formattedDate }">
-        <div class="grow font-medium">{{ report.formattedDate }}</div>
+        <div class="grow font-semibold">{{ report.formattedDate }}</div>
         <div class="grow mt-2">
           <NuxtLink :to="`/reports/${report.id}`">
             <PencilIcon class="inline w-5 -mt-1 mr-2" /><span class="underline">Trip-Bericht</span> über <span
-              class="font-medium">{{ report.drugs.name
+              class="font-semibold">{{ report.drugs.name
               }}</span>: "<span class="font-italic">{{ report.title }}</span>"
           </NuxtLink>
         </div>

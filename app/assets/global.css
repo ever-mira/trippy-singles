@@ -1,5 +1,5 @@
 body {
-  @apply bg-white dark:bg-black text-black dark:text-[#f9f9f9] lg:dark:text-[#eee];
+  @apply bg-white dark:bg-[#121212] lg:dark:bg-black text-black dark:text-[#f9f9f9] lg:dark:text-[#ddd];
 }
 
 .max-w-screen-3xl {

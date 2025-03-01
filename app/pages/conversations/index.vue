@@ -18,13 +18,13 @@
     </div>
 
     <HintBox name="conversations_improvisation_magic" :icon="CubeTransparentIcon" class="mt-19">
-      Experiment: neue Menschen mit einem 
-      Zufalls-Satz 
+      Experiment: neue Menschen mit einem
+      Zufalls-Satz
       anschreiben.
       <template v-slot:addition>
-        <p class="text-lg font-medium">Theorie</p>
+        <p class="text-lg font-semibold">Theorie</p>
         In der Improvisation (Schreiben bevor man denken kann) liegt eine merkwürdige
-      Magie.<br><br>
+        Magie.<br><br>
       </template>
     </HintBox>
 

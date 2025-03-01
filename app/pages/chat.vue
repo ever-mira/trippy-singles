@@ -8,7 +8,7 @@
     </Heading>
     <div class="flex flex-col lg:flex-row gap-x-5 mt-6 lg:mt-8">
 
-      <ChatRoomList />
+      <ChatRoomList class="mt-6 lg:mt-8" />
 
       <div class="relative w-full">
         <NuxtPage class="w-full" />

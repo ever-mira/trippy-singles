@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-[2.2rem] md:text-[2.4rem] font-medium tracking-tight">
+  <h1 class="text-[2.2rem] md:text-[2.4rem] font-semibold tracking-tight">
     <slot></slot>
   </h1>
 

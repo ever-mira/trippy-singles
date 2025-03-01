@@ -12,12 +12,11 @@
         </div>
       </div>
       <div class="flex flex-col">
-        <div class="text-right font-medium">{{ report.drugs.name }}</div>
+        <div class="text-right font-semibold">{{ report.drugs.name }}</div>
         <div class="py-.5 text-right text-sm text-gray-500 h-full" v-if="report.long_term">
           Langzeitbericht
         </div>
       </div>
-
     </div>
   </NuxtLink>
 </template>

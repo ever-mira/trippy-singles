@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="flex flex-col md:flex-row md:space-x-7 py-2">
-      <li class="font-medium">
+      <li class="font-semibold">
         {{ $t('app.footer.copyright') }}
       </li>
       <li>

@@ -9,7 +9,7 @@
       </div>
       <div class="flex w-full">
         <slot></slot>
-        <div class="font-medium ml-8.5 text-right" :class="{ 'grow': triggerRight }">
+        <div class="font-semibold ml-8.5 text-right" :class="{ 'grow': triggerRight }">
           <span class="mr-1">mehr</span>
           <ChevronDownIcon class="inline w-4 -mt-0.7" v-if="!isOpen" />
           <ChevronUpIcon class="inline w-4 -mt-0.7" v-else />

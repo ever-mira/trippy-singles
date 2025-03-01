@@ -4,7 +4,7 @@
     <div class="flex-1 grow">
       <div>
         <UsernameLink :userName="comment.profiles.username" />
-        <span class="text-gray-700 ml-2">{{ formatDate(comment.created_at) }}</span>
+        <span class="text-gray-700 dark:text-gray-400 ml-2">{{ formatDate(comment.created_at) }}</span>
       </div>
       <div class="mt-1">{{ comment.text }}</div>
     </div>

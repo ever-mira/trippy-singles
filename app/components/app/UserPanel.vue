@@ -8,7 +8,7 @@
           <img src="../../assets/avatar.jpg" class="w-14 rounded-full" v-else />
         </div>
         <div class="flex flex-col flex-grow pt-1">
-          <div class="font-medium leading-none">
+          <div class="font-semibold leading-none">
             @{{ profile.username }}
           </div>
           <div class="text-gray-400 dark:text-gray-600 text-sm">

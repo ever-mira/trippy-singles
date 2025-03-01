@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="relative overflow-hidden max-h-screen 3xl:max-w-90vw 4xl:max-w-82vw mx-auto bg-white dark:bg-[#121212] lg:dark:bg-black z-0">
+  <div class="relative overflow-hidden max-h-screen 3xl:max-w-90vw 4xl:max-w-82vw mx-auto z-0">
     <NuxtLoadingIndicator />
 
     <aside>

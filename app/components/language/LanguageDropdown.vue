@@ -2,7 +2,7 @@
 
   <div class="relative inline-block text-left mr-0 md:mr-1">
     <button type="button"
-      class="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-gray-800 shadow-sm pl-5 pr-4 py-2 bg-white dark:bg-black text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500"
+      class="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-gray-800 shadow-sm pl-5 pr-4 py-2 bg-white dark:bg-black text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500"
       id="language-menu" aria-expanded="true" aria-haspopup="true" @click.stop="menuClicked">
 
       <span>{{ selectedLocale.name }}</span>
