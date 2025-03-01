@@ -24,15 +24,17 @@
         </select>
       </div>
       <div class="mb-5">
-        <Input type="text" placeholder="Titel" v-model="report.title" autofocus class="!w-full" />
+        <Input type="text" placeholder="Titel" v-model="report.title" autofocus class="!w-full" maxlength="50" />
       </div>
       <div v-if="report.long_term === false">
         <div class="mb-3">
           Beschreibe Set und Setting:
         </div>
         <div class="flex flex-col md:flex-row gap-3 mb-3">
-          <Textarea type="text" placeholder="Set" v-model="report.set" class="!w-full h-20 resize-none" />
-          <Textarea type="text" placeholder="Setting" v-model="report.setting" class="!w-full h-20 resize-none" />
+          <Textarea type="text" placeholder="Set" v-model="report.set" class="!w-full h-20 resize-none"
+            maxlength="500" />
+          <Textarea type="text" placeholder="Setting" v-model="report.setting" class="!w-full h-20 resize-none"
+            maxlength="500" />
         </div>
       </div>
       <HintBox class="mt-3" name="every_report_little_magic" :icon="SparklesIcon" triggerRight>
@@ -44,7 +46,7 @@
       </div>
       <div class="mb-3">
         <Textarea type="text" placeholder="Beschreibe deine Erfahrungen" v-model="report.text"
-          class="!w-full h-90 resize-none" />
+          class="!w-full h-90 resize-none" maxlength="50000" />
       </div>
       <div class="mb-7" v-if="message">
         {{ message }}

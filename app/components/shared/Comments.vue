@@ -13,7 +13,7 @@
 
     <div class="mt-10">
       <span class="text-lg">Kommentar hinzufügen</span>&nbsp;
-      <Textarea class="w-full mt-1.6 h-17" v-model="newComment"></Textarea>
+      <Textarea class="w-full mt-1.6 h-17" v-model="newComment" maxlength="500"></Textarea>
       <Button class="!px-5 mt-1.8" @click="saveComment">Abschicken</Button>
     </div>
   </div>

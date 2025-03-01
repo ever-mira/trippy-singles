@@ -26,13 +26,15 @@ export async function useComments(category: string, resourceId: string) {
 
     if (newComment.value.length < 1) return
 
-    await useFetch(`/api/${category}/${resourceId}/comments`, {
-      method: "POST",
-      headers: useRequestHeaders(["cookie"]),
-      body: JSON.stringify({ text: newComment.value }),
-    })
-    newComment.value = ""
-    await loadComments()
+    try {
+      await $fetch(`/api/${category}/${resourceId}/comments`, {
+        method: "POST",
+        headers: useRequestHeaders(["cookie"]),
+        body: JSON.stringify({ text: newComment.value }),
+      })
+      newComment.value = ""
+      await loadComments()
+    } catch (error: any) {}
   }
 
   await loadComments()

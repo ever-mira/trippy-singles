@@ -20,6 +20,10 @@ export default defineEventHandler(async (event) => {
     }
     const userId = user.id
 
+    if (text.length > 500) {
+      throw createError({ statusCode: 400, statusMessage: "Kommentar zu lang" })
+    }
+
     const { data, error } = await client.from("trip_report_comments").insert({
       trip_report_id: Number(report_id),
       text,

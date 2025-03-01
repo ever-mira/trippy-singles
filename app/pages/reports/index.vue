@@ -11,7 +11,7 @@
       <div class="flex-1">
         <div class="mt-11 lg:mt-4">
           <Button color="indigo" to="/reports/create" class="!px-5">
-            <PlusIcon class="inline w-5 mr-1 -mt.5" />
+            <PlusIcon class="inline w-5 mr-1.5 lg:mr-1 -mt.5" />
 
             <PencilIcon class="inline w-4 lg:mr-2 -mt.5" />
             <span class="hidden md:inline">Trip-Bericht</span>

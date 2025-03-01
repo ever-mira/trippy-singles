@@ -56,7 +56,7 @@
           </div>
         </template>
 
-        <div class="mt-7">
+        <div class="mt-5">
           <div class="font-bold mb-2">Trip-Bericht:</div>
           <div class="whitespace-pre-wrap">
             {{ report.text }}

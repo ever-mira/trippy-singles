@@ -7,7 +7,7 @@
       <div v-for="user in users" :key="user.user_id" class="ml-3">
         <NuxtLink :to="`/@${user.username}`" class="">
           <NuxtImg :src="user.avatar_url" fit="cover" width="60" height="60"
-            class="w-15 h-15 lg:w-14 lg:h-14 rounded-full shadow-mdsm hover:scale-97 border-white dark:border-black"
+            class="w-15 h-15 lg:w-13 lg:h-13 rounded-full shadow-mdsm hover:scale-97 border-white dark:border-black"
             v-if="user.avatar_url" />
           <img src="../../assets/avatar.jpg" class="w-13.5 rounded-full hover:border-1 border-white dark:border-black"
             v-else />

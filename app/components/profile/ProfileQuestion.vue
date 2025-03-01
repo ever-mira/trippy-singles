@@ -21,9 +21,9 @@
         <span class="text-gray-700 text-md">
           <slot name="subtitle"> </slot>
         </span>
-        <Textarea class="w-full mt-1.1 h-40" v-model="answer"></Textarea>
+        <Textarea class="w-full mt-1.1 h-40" v-model="answer" maxlength="1400"></Textarea>
       </div>
-      <span class="" v-else>{{ answer ? answer : "-" }}</span>
+      <span class="whitespace-pre-wrap" v-else>{{ answer ? answer : "-" }}</span>
     </div>
 
     <div class="mt-5" v-if="editMode">

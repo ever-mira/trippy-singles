@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
     if (!user) {
       throw createError({ statusCode: 401, statusMessage: "Nicht authentifiziert" })
     }
-    if (!title || !text || !drug_id || !long_term) {
+    if (!title || !text || !drug_id) {
       throw createError({ statusCode: 401, statusMessage: "Daten unvollständig" })
     }
     const userId = user.id

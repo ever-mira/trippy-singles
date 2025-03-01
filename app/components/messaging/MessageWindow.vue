@@ -34,7 +34,7 @@
       </div>
       <div class="md:flex gap-x-3 pt-1">
         <Textarea type="text" placeholder="Nachricht" class="!w-full resize-none dark:bg-black !rounded-xl h-22 lg:h-18"
-          @keydown.enter.prevent="sendMessage" v-model="message" ref="textArea" focus />
+          @keydown.enter.prevent="sendMessage" v-model="message" ref="textArea" focus maxlength="500" />
         <Button color="indigo_dark" class="self-start !px-6.5 !py-2 mt-2 md:mt-0" @click="sendMessage">
           <PaperAirplaneIcon class="inline w-5.5 text-white -mt.5" />
         </Button>
