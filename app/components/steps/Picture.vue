@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="mt-9 relative text-3xl font-bold text-heading">{{ $t('signup.logged_in') }}</div>
+    <div class="mt-9 relative text-3xl font-bold text-heading">{{ t('logged_in') }}</div>
     <div class="mt-9 relative">
-      {{ $t('signup.set_picture_hint') }}
+      {{ t('set_picture_hint') }}
     </div>
 
     <div class="mt-7" v-if="profile">
@@ -41,4 +41,17 @@ function preloadImages(supabaseUrl: string): void {
   const imgB = new Image()
   imgB.src = cloudflareUrlBig
 }
+const { t } = useI18n()
 </script>
+
+
+<i18n lang="json">{
+  "de": {
+    "logged_in": "Eingeloggt.",
+    "set_picture_hint": "Setze ein Profilbild, wenn du möchtest."
+  },
+  "en": {
+    "logged_in": "Loggedin.",
+    "set_picture_hint": "Set a profile picture, if you want."
+  }
+}</i18n>

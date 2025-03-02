@@ -1,9 +1,9 @@
 <template>
   <Page>
     <Heading>
-      Trip-Bericht schreiben
+      {{ t("title") }}
       <template v-slot:subtitle>
-        Beschreibe deine Erfahrungen
+        {{ t("subtitle") }}
       </template>
     </Heading>
 
@@ -14,36 +14,37 @@
       <div class="flex gap-x-3 mb-3">
         <select v-model="report.drug_id"
           class="w-full rounded-lg border border-gray-300 dark:border-gray-800 shadow-sm pl-2 pr-4 py-2 bg-white dark:bg-black text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
-          <option :value="null" selected>Droge auswählen</option>
+          <option :value="null" selected>{{ t("select_drug") }}</option>
           <option v-for="drug in drugs" :value="drug.id">{{ drug.name }}</option>
         </select>
         <select v-model="report.long_term"
           class="w-full rounded-lg border border-gray-300 dark:border-gray-800 shadow-sm pl-2 pr-4 py-2 bg-white dark:bg-black text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
-          <option :value="false" selected>Normaler Bericht</option>
-          <option :value="true">Langzeitbericht</option>
+          <option :value="false" selected>{{ t("normal_report") }}</option>
+          <option :value="true">{{ t("long_term_report") }}</option>
         </select>
       </div>
       <div class="mb-5">
-        <Input type="text" placeholder="Titel" v-model="report.title" autofocus class="!w-full" maxlength="50" />
+        <Input type="text" :placeholder="t('report_title')" v-model="report.title" autofocus class="!w-full"
+          maxlength="50" />
       </div>
       <div v-if="report.long_term === false">
         <div class="mb-3">
-          Beschreibe Set und Setting:
+          {{ t("describe_set_and_setting") }}
         </div>
         <div class="flex flex-col md:flex-row gap-3 mb-3">
-          <Textarea type="text" placeholder="Set" v-model="report.set" class="!w-full h-20 resize-none"
+          <Textarea type="text" :placeholder="t('set')" v-model="report.set" class="!w-full h-20 resize-none"
             maxlength="500" />
-          <Textarea type="text" placeholder="Setting" v-model="report.setting" class="!w-full h-20 resize-none"
+          <Textarea type="text" :placeholder="t('setting')" v-model="report.setting" class="!w-full h-20 resize-none"
             maxlength="500" />
         </div>
       </div>
       <HintBox class="my-3" name="every_report_little_magic" :icon="SparklesIcon" triggerRight>
-        Jeder Trip-Bericht ist ein klenes Stück Zauberei.</HintBox>
+        {{ t("every_report_little_magic") }}</HintBox>
       <div class="md:hidden mb-3">
-        Beschreibe Deinen Trip:
+        {{ t("describe_your_trip") }}
       </div>
       <div class="mb-3">
-        <Textarea type="text" placeholder="Beschreibe deine Erfahrungen" v-model="report.text"
+        <Textarea type="text" :placeholder="t('describe_your_experiences')" v-model="report.text"
           class="!w-full h-90 resize-none" maxlength="50000" />
       </div>
       <div class="mb-7" v-if="message">
@@ -52,10 +53,10 @@
 
       <div class="mt-5 mb-50">
         <Button color="red" to="/reports" class="!px-5.5">
-          Abbrechen
+          {{ t("cancel") }}
         </Button>
         <Button color="indigo" @click="save" class="ml-4 !px-5.5">
-          Speichern
+          {{ t("save") }}
         </Button>
       </div>
     </div>
@@ -126,6 +127,45 @@ async function save() {
 const onPhotoUploaded = (url: string) => {
   report.avatar_url = url
 }
+
+const { t } = useI18n()
 </script>
 
+
 <style></style>
+
+
+<i18n lang="json">{
+  "de": {
+    "title": "Neuer Trip-Bericht",
+    "subtitle": "Beschreibe deine Erlebnisse",
+    "select_drug": "Droge auswählen",
+    "normal_report": "Normaler Bericht",
+    "long_term_report": "Langzeitbericht",
+    "report_title": "Titel",
+    "describe_set_and_setting": "Beschreibe Set und Setting:",
+    "set": "Set",
+    "setting": "Setting",
+    "every_report_little_magic": "Jeder Trip-Bericht ist ein klenes Stück Zauberei.",
+    "describe_your_trip": "Beschreibe Deinen Trip:",
+    "describe_your_experiences": "Beschreibe deine Erlebnisse",
+    "cancel": "Abbrechen",
+    "save": "Speichern"
+  },
+  "en": {
+    "title": "New Trip Report",
+    "subtitle": "Describe your Experiences",
+    "select_drug": "Select Drug",
+    "normal_report": "Normal Report",
+    "long_term_report": "Long-Term Report",
+    "report_title": "Title",
+    "describe_set_and_setting": "Describe Set and Setting:",
+    "set": "Set",
+    "setting": "Setting",
+    "every_report_little_magic": "Every Trip-Report is a little piece of magic.",
+    "describe_your_trip": "Describe your Trip:",
+    "describe_your_experiences": "Describe your Experiences",
+    "cancel": "Cancel",
+    "save": "Save"
+  }
+}</i18n>

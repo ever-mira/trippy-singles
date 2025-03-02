@@ -3,18 +3,18 @@
     <div class="mt-7 relative text-3xl font-bold">{{ username }}</div>
 
     <div class="mt-1 relative text-lg text-gray-600 dark:text-gray-400">
-      {{ $t("signup.second_step_subtitle") }}
+      {{ t("subtitle") }}
     </div>
 
     <div class="mt-8 relative">
-      <span class="hidden md:inline">{{ $t("signup.email") }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      <Input type="email" ref="mailInputRef" :placeholder="$t('signup.email')" v-model="credentials.email"
-        class="md:w-[210px]" :focus="!ismobile()" />
+      <span class="hidden md:inline">{{ t("email") }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <Input type="email" ref="mailInputRef" :placeholder="t('email')" v-model="credentials.email" class="md:w-[210px]"
+        :focus="!ismobile()" />
     </div>
 
     <div class="mt-3.5 relative">
-      <span class="hidden md:inline">{{ $t("signup.password") }}&nbsp;&nbsp;</span>
-      <Input type="password" :placeholder="$t('signup.password')" v-model="credentials.password" class="md:w-[210px]"
+      <span class="hidden md:inline">{{ t("password") }}&nbsp;&nbsp;</span>
+      <Input type="password" :placeholder="t('password')" v-model="credentials.password" class="md:w-[210px]"
         @keydown.enter="signUp" />
     </div>
 
@@ -22,7 +22,7 @@
       <span class="text-gray-700">{{ message }}</span>
     </div>
     <div class="mt-7">
-      <Button @click="signUp" class="!px-5.5">{{ $t("signup.create_account") }}</Button>
+      <Button @click="signUp" class="!px-5.5">{{ t("create_account") }}</Button>
     </div>
   </div>
 </template>
@@ -64,4 +64,21 @@ const signUp = async () => {
     message.value = error.statusMessage
   }
 }
+const { t } = useI18n()
 </script>
+
+
+<i18n lang="json">{
+  "de": {
+    "subtitle": "Email und Passwort festlegen.",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "create_account": "Account erstellen"
+  },
+  "en": {
+    "subtitle": "set login data",
+    "email": "Email",
+    "password": "Password",
+    "create_account": "Create Account"
+  }
+}</i18n>

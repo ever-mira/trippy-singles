@@ -1,38 +1,42 @@
 <template>
   <div>
-    <div class="text-[2.65rem] lg:text-[3.3rem] gradient-glow-text mt-8 font-figtree" data-text="Puzzle Social z-10">
-      <span class="whitespace-nowrap">{{ entryTitle }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <div class="text-[2.65rem] lg:text-[3.3rem] gradient-glow-text mt-8 font-figtree" data-text="Trippy">
+      <span class="whitespace-nowrap" v-if="isTrippySingles">{{ t("trippy_singles")
+      }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span class="whitespace-nowrap" v-else>{{ t("trippy") }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
 
     <div v-if="isTrippySingles"
       class="text-[1.9rem] xl:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
-      Findet euch.
+      {{ t("find_each_other") }}
     </div>
 
     <div v-else
       class="text-[1.9rem] xl:text-[2.2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.4 whitespace-nowrap">
-      Psychedelic Network.
+      {{ t("psychedelic_network") }}
     </div>
 
     <div class="mt-2 text-lg" v-if="isTrippySingles">
-      {{ $t("app.subtitle") }}
+      {{ t("dating_platform_for_psychonauts") }}
     </div>
 
-    <div class="mt-2 text-lg" v-else>Das Soziale Netzwerk für Psychonauten.</div>
+    <div class="mt-2 text-lg" v-else>
+      {{ t("social_network_for_psychonauts") }}
+    </div>
 
     <div class="mt-8 lg:mt-9">
       <div v-if="!user">
         <Button color="blue" @click="startClick" class="!px-8.45">
-          {{ $t("app.start") }}
+          {{ t("start") }}
         </Button>
 
         <Button color="white" @click="loginClick" class="!px-7.45 ml-1.5">
-          {{ $t("app.login") }}
+          {{ t("login") }}
         </Button>
       </div>
       <div v-if="user">
         <Button color="indigo" :to="`/@${profile?.username}`" class="!px-5">
-          {{ $t("app.your_profile") }}
+          {{ t("your_profile") }}
         </Button>
       </div>
     </div>
@@ -51,10 +55,6 @@ const url = useRequestURL()
 const isTrippySocial = url.hostname === "trippy.social"
 const isTrippySingles = url.hostname === "trippy.singles"
 
-const entryTitle = computed(() => {
-  return isTrippySingles ? "Trippy. Singles." : "Trippy."
-})
-
 const startClick = () => {
   setStepComponent(SignupStepUsername)
 }
@@ -62,7 +62,36 @@ const startClick = () => {
 const loginClick = () => {
   setStepComponent(Login)
 }
+
+const { t } = useI18n()
 </script>
+
+
+<i18n lang="json">{
+  "de": {
+    "trippy": "Trippy.",
+    "trippy_singles": "Trippy. Singles.",
+    "find_each_other": "Findet euch.",
+    "psychedelic_network": "Psychedelic Network.",
+    "dating_platform_for_psychonauts": "Das Dating-Portal für Psychonauten.",
+    "social_network_for_psychonauts": "Das Soziale Netzwerk für Psychonauten.",
+    "start": "Start",
+    "login": "Login",
+    "your_profile": "Dein Profil",
+  },
+  "en": {
+    "trippy": "Trippy.",
+    "trippy_singles": "Trippy. Singles.",
+    "find_each_other": "Connect & Find Love.",
+    "psychedelic_network": "Psychedelic Network.",
+    "dating_platform_for_psychonauts": "Dating-Portal for Psychonauts.",
+    "social_network_for_psychonauts": "Social Network for Psychonauts.",
+    "start": "Start",
+    "login": "Login",
+    "your_profile": "Your Profile",
+  }
+}</i18n>
+
 
 <style>
 :root {
@@ -85,6 +114,7 @@ const loginClick = () => {
   top: 0;
   left: 0;
   right: 0;
+  opacity: 0.7;
   bottom: 0;
   background: linear-gradient(90deg,
       var(--color-error) 0%,

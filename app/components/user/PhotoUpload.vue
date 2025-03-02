@@ -12,10 +12,10 @@
       </svg>
 
       <span v-if="props.change && !uploading">
-        {{ $t('profile.change_image') }}
+        {{ t('change_image') }}
       </span>
       <span v-if="!props.change && !uploading">
-        {{ $t('profile.select_image') }}
+        {{ t('select_image') }}
       </span>
       <span v-if="uploading">
         saving...&nbsp;
@@ -107,4 +107,17 @@ let onImageSelected = (event: any) => {
     }
   }
 }
+
+const { t } = useI18n()
 </script>
+
+<i18n lang="json">{
+  "de": {
+    "change_image": "Bild ändern",
+    "select_image": "Bild auswählen"
+  },
+  "en": {
+    "change_image": "Change Picture",
+    "select_image": "Select Picture"
+  }
+}</i18n>

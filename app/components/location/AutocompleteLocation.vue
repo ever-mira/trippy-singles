@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <Input v-model="searchQuery" placeholder="Stadt eingeben" @focus="onFocused" @blur="onBlur" :loading="isLoading"
+    <Input v-model="searchQuery" :placeholder="t('enter_city')" @focus="onFocused" @blur="onBlur" :loading="isLoading"
       :autofocus="!initialLoad && !ismobile()" />
     <div class="relative">
       <div id="dropdown_list"
@@ -217,6 +217,16 @@ const getLabel = (properties: any) => {
   return label
 }
 
+const { t } = useI18n()
 </script>
+
+<i18n lang="json">{
+  "de": {
+    "enter_city": "Stadt eingeben"
+  },
+  "en": {
+    "enter_city": "Enter City"
+  }
+}</i18n>
 
 <style scoped></style>

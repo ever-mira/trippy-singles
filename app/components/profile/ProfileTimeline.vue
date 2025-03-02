@@ -1,14 +1,14 @@
 <template>
   <div class="border-l border-gray-3 pl-3">
     <div class="text-xl">
-      <SparklesIcon class="inline w-5.5 text-gray-900 dark:text-gray-200 -mt-1 mr-2" />Action
+      <SparklesIcon class="inline w-5.5 text-gray-900 dark:text-gray-200 -mt-1 mr-2" />{{ t('action') }}
     </div>
 
     <div class="lg:text-lg" v-if="profile">
       <div class="mt-6 lg:mt-7" v-if="profile.created_at">
         <div class="grow font-semibold">{{ formatDate(profile.created_at) }}</div>
         <div class="grow mt-2">
-          <CakeIcon class="inline w-5 -mt-1 mr-2" />Bei Trippy angemeldet
+          <CakeIcon class="inline w-5 -mt-1 mr-2" />{{ t('registered_at_trippy') }}
         </div>
       </div>
 
@@ -16,9 +16,10 @@
         <div class="grow font-semibold">{{ report.formattedDate }}</div>
         <div class="grow mt-2">
           <NuxtLink :to="`/reports/${report.id}`">
-            <PencilIcon class="inline w-5 -mt-1 mr-2" /><span class="underline">Trip-Bericht</span> über <span
-              class="font-semibold">{{ report.drugs.name
-              }}</span>: "<span class="font-italic">{{ report.title }}</span>"
+            <PencilIcon class="inline w-5 -mt-1 mr-2" /><span class="underline">{{ t('trip_report')
+            }}</span> {{ t('about')
+              }} <span class="font-semibold">{{ report.drugs.name
+            }}</span>: "<span class="font-italic">{{ report.title }}</span>"
           </NuxtLink>
         </div>
       </div>
@@ -58,4 +59,20 @@ function formatDate(dateString: string) {
   return formattedDate
 }
 
+const { t } = useI18n()
 </script>
+
+<i18n lang="json">{
+  "de": {
+    "action": "Action",
+    "registered_at_trippy": "Bei Trippy angemeldet",
+    "trip_report": "Trip-Bericht",
+    "about": "über"
+  },
+  "en": {
+    "action": "Action",
+    "registered_at_trippy": "Registered at Trippy",
+    "trip_report": "Trip-Report",
+    "about": "about"
+  }
+}</i18n>

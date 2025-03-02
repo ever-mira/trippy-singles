@@ -29,8 +29,13 @@ import Modal from "./components/app/Modal.vue"
 import ImageModal from "./components/app/ImageModal.vue"
 import FloatingOrbs from "./components/app/FloatingOrbs.vue"
 
+const { isDark } = useApp()
+
 useHead({
   title: "Trippy",
+  htmlAttrs: {
+    class: isDark.value ? 'dark' : ''
+  }
 })
 
 const router = useRouter()

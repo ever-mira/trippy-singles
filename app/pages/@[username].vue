@@ -36,25 +36,25 @@
 
         <ProfileQuestion class="lg:mt-7" field_name="about_question">
           <HeartIcon class="inline w-5.4 text-gray-900 dark:text-gray-200 -mt-1 mr-0.8" />
-          Über mich
+          {{ t('about_me') }}
           <template v-slot:subtitle>
-            Über Dich, Psychedelica, Realität und Erkenntnisse
+            {{ t('about_me_hint') }}
           </template>
         </ProfileQuestion>
 
         <ProfileQuestion field_name="festival_question">
           <RocketLaunchIcon class="inline w-5.5 text-gray-900 dark:text-gray-200 -mt-1 mr-1" />
-          Festivals
+          {{ t('festivals') }}
           <template v-slot:subtitle>
-            Auf welchen Festivals warst du? Was waren deine Eindrücke?
+            {{ t('festivals_hint') }}
           </template>
         </ProfileQuestion>
 
         <ProfileQuestion field_name="future_question">
           <PhotoIcon class="inline w-5.5 text-gray-900 dark:text-gray-200 -mt-1 mr-1" />
-          Vision of the Future
+          {{ t('vision') }}
           <template v-slot:subtitle>
-            Wie siehst du die Zukunft? Was sind deine größten Visionen?
+            {{ t('vision_hint') }}
           </template>
         </ProfileQuestion>
 
@@ -91,6 +91,24 @@ if (username) {
   await loadProfile(username as string)
 }
 
-
-
+const { t } = useI18n()
 </script>
+
+<i18n lang="json">{
+  "de": {
+    "about_me": "Über mich",
+    "about_me_hint": "Über Dich, Psychedelica, Realität und Erkenntnisse",
+    "festivals": "Festivals",
+    "festivals_hint": "Auf welchen Festivals warst du? Was waren deine Eindrücke?",
+    "vision": "Vision of the Future",
+    "vision_hint": "Wie siehst du die Zukunft? Was sind deine größten Visionen?"
+  },
+  "en": {
+    "about_me": "About Me",
+    "about_me_hint": "About you, psychedelics, reality, and insights",
+    "festivals": "Festivals",
+    "festivals_hint": "Which festivals have you attended? What were your impressions?",
+    "vision": "Vision of the Future",
+    "vision_hint": "How do you see the future? What are your biggest visions?"
+  }
+}</i18n>

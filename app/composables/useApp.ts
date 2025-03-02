@@ -40,13 +40,12 @@ export function useApp() {
 
   const initializeDark = () => {
     loadDark()
-    applyDark()
   }
 
+  const isDarkCookie = useCookie<boolean>("is-dark")
+
   const loadDark = () => {
-    if (localStorage.getItem("isDark")) {
-      state.isDark = JSON.parse(localStorage.getItem("isDark") || state.isDark.toString())
-    }
+    state.isDark = isDarkCookie.value
   }
 
   const toggleDark = () => {
@@ -56,14 +55,12 @@ export function useApp() {
   }
 
   const saveDark = () => {
-    localStorage.setItem("isDark", state.isDark.toString())
+    isDarkCookie.value = state.isDark
   }
 
   const applyDark = () => {
-    if (state.isDark) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
+    if (typeof document !== "undefined") {
+      document.documentElement.classList.toggle("dark", state.isDark)
     }
   }
 

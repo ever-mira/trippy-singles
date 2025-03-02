@@ -3,8 +3,8 @@
     <div class="flex flex-col lg:flex-row w-full">
       <div class="flex-1">
         <Heading>
-          Trip-Berichte
-          <template v-slot:subtitle> Teile deine Erfahrung </template>
+          {{ t("title") }}
+          <template v-slot:subtitle>{{ t("subtitle") }}</template>
         </Heading>
       </div>
 
@@ -14,7 +14,7 @@
             <PlusIcon class="inline w-5 mr-1.5 lg:mr-1 -mt.5" />
 
             <PencilIcon class="inline w-4 lg:mr-2 -mt.5" />
-            <span class="hidden md:inline">Trip-Bericht</span>
+            <span class="hidden md:inline">{{ t("create_button") }}</span>
           </Button>
         </div>
       </div>
@@ -29,11 +29,11 @@
     </ReportGrid>
 
     <div v-if="reports && reports.length === 0" class="text-gray-700">
-      Noch keine Berichte zu dieser Droge.
+      {{ t("no_reports_yet") }}
     </div>
 
     <HintBox class="mt-19 lg:mt-22" name="every_should_trip_reports" :icon="RocketLaunchIcon">
-      Jeder sollte einen Trip-Bericht geschrieben haben.</HintBox>
+      {{ t("everybody_should_have_written") }}</HintBox>
   </Page>
 </template>
 
@@ -55,6 +55,27 @@ watch(drugFilter, () => {
 watch(longTermFilter, () => {
   loadReports()
 })
+
+const { t } = useI18n()
 </script>
 
+
 <style></style>
+
+
+<i18n lang="json">{
+  "de": {
+    "title": "Trip-Berichte",
+    "subtitle": "Teile deine Erlebnisse",
+    "create_button": "Trip-Bericht",
+    "no_reports_yet": "Noch keine Berichte zu dieser Droge.",
+    "everybody_should_have_written": "Jeder sollte einen Trip-Bericht geschrieben haben."
+  },
+  "en": {
+    "title": "Trip Reports",
+    "subtitle": "Share your Experiences",
+    "create_button": "Trip Report",
+    "no_reports_yet": "No reports on this drug yet.",
+    "everybody_should_have_written": "Everyone should have written a trip report."
+  }
+}</i18n>

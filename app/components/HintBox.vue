@@ -10,7 +10,7 @@
       <div class="flex w-full">
         <slot></slot>
         <div class="font-semibold ml-8.5 text-right" :class="{ 'grow': triggerRight }">
-          <span class="mr-1">mehr</span>
+          <span class="mr-1">{{ t("more") }}</span>
           <ChevronDownIcon class="inline w-4 -mt-0.7" v-if="!isOpen" />
           <ChevronUpIcon class="inline w-4 -mt-0.7" v-else />
         </div>
@@ -40,6 +40,16 @@ const props = defineProps<Props>()
 
 const isOpen = ref(false)
 
+const { t } = useI18n()
 </script>
+
+<i18n lang="json">{
+  "de": {
+    "more": "mehr"
+  },
+  "en": {
+    "more": "more"
+  }
+}</i18n>
 
 <style scoped></style>

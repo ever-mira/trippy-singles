@@ -56,26 +56,6 @@ export default defineNuxtConfig({
         code: "en",
         file: "en.json",
       },
-      {
-        name: "Français",
-        code: "fr",
-        file: "fr.json",
-      },
-      {
-        name: "Español",
-        code: "es",
-        file: "es.json",
-      },
-      {
-        name: "Italiano",
-        code: "it",
-        file: "it.json",
-      },
-      {
-        name: "Nederlands",
-        code: "nl",
-        file: "nl.json",
-      },
     ],
   },
 })

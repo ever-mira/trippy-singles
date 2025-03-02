@@ -7,11 +7,11 @@
       <div class="ml-5" v-if="isOwnProfile">
         <Button color="gray" size="small" @click="editMode = true" v-if="!editMode && isOwnProfile"
           class="!py-1.4 !px-4">
-          <span> bearbeiten </span>
+          <span> {{ t("edit") }} </span>
         </Button>
 
         <Button color="white" size="small" @click="cancel" v-if="editMode" class="!py-1.5 !px-4">
-          abbrechen
+          {{ t("cancel") }}
         </Button>
       </div>
     </div>
@@ -28,7 +28,7 @@
 
     <div class="mt-5" v-if="editMode">
       <Button color="indigo" size="small" @click="save" v-if="editMode" class="!py-2 !px-4">
-        speichern
+        {{ t("save") }}
       </Button>
     </div>
   </div>
@@ -68,4 +68,21 @@ const cancel = () => {
   answer.value = profile.value ? (profile.value[props.field_name] as string) : ""
   editMode.value = false
 }
+
+const { t } = useI18n()
 </script>
+
+<style scoped></style>
+
+<i18n lang="json">{
+  "de": {
+    "edit": "bearbeiten",
+    "cancel": "abbrechen",
+    "save": "speichern"
+  },
+  "en": {
+    "edit": "edit",
+    "cancel": "cancel",
+    "save": "save"
+  }
+}</i18n>

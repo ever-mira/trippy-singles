@@ -13,11 +13,11 @@
 
     <div>
       <NavLink to="/" class="mt-6">
-        <HomeIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.start') }}
+        <HomeIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ t('start_page') }}
       </NavLink>
 
       <NavLink to="/people">
-        <UserGroupIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.people') }}
+        <UserGroupIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ t('people') }}
       </NavLink>
 
       <!-- <NavLink to="/places">
@@ -33,11 +33,11 @@
       </NavLink> -->
 
       <NavLink to="/reports">
-        <BeakerIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />Trip-Berichte
+        <BeakerIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ t('trip_reports') }}
       </NavLink>
 
       <NavLink to="/chat">
-        <ChatBubbleLeftRightIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ $t('menu.chat') }}
+        <ChatBubbleLeftRightIcon class="inline w-6 text-sky-600 -mt.5 mr-4" />{{ t('chat') }}
       </NavLink>
     </div>
 
@@ -50,21 +50,21 @@
       <NavLink to="/conversations">
         <div class="relative">
           <EnvelopeIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{
-            $t('app.mailbox') }}
+            t('mailbox') }}
           <UnreadBadge />
         </div>
       </NavLink>
 
       <NavLink to="/settings">
-        <Cog6ToothIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{ $t('app.settings') }}
+        <Cog6ToothIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{ t('settings') }}
       </NavLink>
 
       <NavLink to="/likes">
-        <HeartIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />Likes
+        <HeartIcon class="inline w-5.5 text-sky-600 -mt.5 mr-4" />{{ t('likes') }}
       </NavLink>
 
       <div @click="logout" class="px-4.5 mt-4">
-        <span class="text-blue-7 dark:text-blue-6 cursor-pointer">{{ $t('app.logout') }}</span>
+        <span class="text-blue-7 dark:text-blue-6 cursor-pointer">{{ t('logout') }}</span>
       </div>
 
     </div>
@@ -112,6 +112,29 @@ const logout = async () => {
   hideSidebar()
 }
 
-
-
+const { t } = useI18n()
 </script>
+
+
+<i18n lang="json">{
+  "de": {
+    "start_page": "Startseite",
+    "people": "Profile",
+    "trip_reports": "Trip-Berichte",
+    "chat": "Chat",
+    "mailbox": "Postfach",
+    "settings": "Einstellungen",
+    "likes": "Likes",
+    "logout": "ausloggen"
+  },
+  "en": {
+    "start_page": "Startpage",
+    "people": "Profiles",
+    "trip_reports": "Trip Reports",
+    "chat": "Chat",
+    "mailbox": "Mailbox",
+    "settings": "Settings",
+    "likes": "Likes",
+    "logout": "logout"
+  }
+}</i18n>
