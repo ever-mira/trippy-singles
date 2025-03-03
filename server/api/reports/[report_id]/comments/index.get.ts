@@ -12,7 +12,9 @@ export default defineEventHandler(async (event) => {
   try {
     const { data, error } = await supabase
       .from("trip_report_comments")
-      .select("id, text, created_at, profiles(username, avatar_url)")
+      .select(
+        "id, text, created_at, user_id, profiles(username, avatar_url), liked_by:trip_report_comment_likes(user_id, profiles(username))"
+      )
       .eq("trip_report_id", report_id)
 
     if (error) {

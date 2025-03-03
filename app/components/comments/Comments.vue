@@ -9,7 +9,8 @@
 
     <p class="text-gray-700 mt-3" v-if="comments?.length === 0">{{ t('no_comments_yet') }}</p>
 
-    <Comment v-for="comment in comments" :key="comment.id" :comment="comment" class="flex gap-x-3 mb-9" />
+    <Comment v-for="comment in comments" :key="comment.id" :comment="comment" :category="props.category"
+      class="flex gap-x-3 mb-9" @deleteClicked="onDeleteClicked(comment.id)" />
 
     <div class="mt-10">
       <span class="text-lg">{{ t('add_comment') }}</span>&nbsp;
@@ -25,7 +26,7 @@
 
 <script setup lang="ts">
 import { PaperAirplaneIcon } from "@heroicons/vue/24/solid"
-import Comment from "~~/app/components/shared/Comment.vue"
+import Comment from "~~/app/components/comments/Comment.vue"
 
 interface Props {
   category: 'reports' | 'hints'
@@ -34,7 +35,17 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { comments, newComment, saveComment } = await useComments(props.category, props.resourceId)
+const { comments, newComment, saveComment, deleteComment } = await useComments(props.category, props.resourceId)
+
+const { showModal } = useModal()
+
+const onDeleteClicked = (commentId: number) => {
+  showModal(t('really_delete_comment'), true, () => yesDeleteClicked(commentId))
+}
+
+const yesDeleteClicked = (commentId: number) => {
+  deleteComment(commentId)
+}
 
 const { t } = useI18n()
 </script>
@@ -46,11 +57,13 @@ const { t } = useI18n()
   "de": {
     "comments": "Kommentare",
     "no_comments_yet": "noch keine.",
-    "add_comment": "Kommentar hinzufügen"
+    "add_comment": "Kommentar hinzufügen",
+    "really_delete_comment": "Kommentar wirklich löschen?"
   },
   "en": {
     "comments": "Comments",
     "no_comments_yet": "no comments yet",
-    "add_comment": "Add Comment"
+    "add_comment": "Add Comment",
+    "really_delete_comment": "Really delete comment?"
   }
 }</i18n>

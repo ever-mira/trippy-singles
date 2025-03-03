@@ -1,6 +1,6 @@
 import type { ExtendedComment } from "~~/types/extended.types"
 
-export async function useComments(category: string, resourceId: string) {
+export async function useComments(category: string | null, resourceId: string) {
   const comments = useState<Array<ExtendedComment> | null>(`${category}Comments`, () => [])
   const newComment = useState<string>(`${category}${resourceId}NewComment`, () => "")
 
@@ -37,6 +37,16 @@ export async function useComments(category: string, resourceId: string) {
     } catch (error: any) {}
   }
 
+  async function deleteComment(commentId: number) {
+    try {
+      await $fetch(`/api/${category}/${resourceId}/comments/${commentId}`, {
+        method: "DELETE",
+        headers: useRequestHeaders(["cookie"]),
+      })
+      await loadComments()
+    } catch (error: any) {}
+  }
+
   await loadComments()
 
   return {
@@ -44,5 +54,6 @@ export async function useComments(category: string, resourceId: string) {
     saveComment,
     comments,
     newComment,
+    deleteComment,
   }
 }

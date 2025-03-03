@@ -93,7 +93,7 @@ const { t } = useI18n()
   },
   "en": {
     "join_trippy": "Join Trippy",
-    "subtitle": "Choose a username on Puzzle",
+    "subtitle": "Choose a username on Trippy",
     "username_free": "free",
     "username_taken": "taken",
     "next": "Next"

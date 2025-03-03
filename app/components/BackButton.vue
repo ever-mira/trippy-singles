@@ -8,7 +8,7 @@
 import { ArrowLeftIcon } from "@heroicons/vue/24/solid"
 
 const router = useRouter()
-const hasHistory = ref(false)
+const hasHistory = ref(true)
 
 watchEffect(() => {
   if (window !== undefined) {

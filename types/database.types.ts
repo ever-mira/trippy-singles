@@ -186,6 +186,56 @@ export type Database = {
           },
         ]
       }
+      hint_comment_likes: {
+        Row: {
+          comment_id: number
+          created_at: string
+          id: number
+          user_id: string
+        }
+        Insert: {
+          comment_id: number
+          created_at?: string
+          id?: number
+          user_id?: string
+        }
+        Update: {
+          comment_id?: number
+          created_at?: string
+          id?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hint_comment_likes_comment_id_fkey"
+            columns: ["comment_id"]
+            isOneToOne: false
+            referencedRelation: "trip_report_comments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "hint_comment_likes_comment_id_fkey1"
+            columns: ["comment_id"]
+            isOneToOne: false
+            referencedRelation: "hint_comments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "hint_comment_likes_user_id_fkey1"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "hint_comment_likes_user_id_fkey3"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       hint_comments: {
         Row: {
           created_at: string
@@ -359,6 +409,42 @@ export type Database = {
         }
         Relationships: []
       }
+      trip_report_comment_likes: {
+        Row: {
+          comment_id: number
+          created_at: string
+          id: number
+          user_id: string
+        }
+        Insert: {
+          comment_id: number
+          created_at?: string
+          id?: number
+          user_id?: string
+        }
+        Update: {
+          comment_id?: number
+          created_at?: string
+          id?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trip_report_comment_likes_comment_id_fkey"
+            columns: ["comment_id"]
+            isOneToOne: false
+            referencedRelation: "trip_report_comments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trip_report_comment_likes_user_id_fkey1"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       trip_report_comments: {
         Row: {
           created_at: string | null
@@ -428,7 +514,7 @@ export type Database = {
           {
             foreignKeyName: "trip_report_likes_user_id_fkey1"
             columns: ["user_id"]
-            isOneToOne: true
+            isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["user_id"]
           },

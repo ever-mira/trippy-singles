@@ -2,11 +2,13 @@
   <Page>
     <Heading v-if="report">
       {{ report.title }}
+      <ReportMenu :report="report" />
       <template v-slot:subtitle>
         {{ report.drugs.name }} -
         <NuxtLink :to="`/@${report.profiles.username}`" class="text-blue-600 hover:text-blue-500">{{
           report.profiles.username }}
         </NuxtLink>
+
       </template>
     </Heading>
 
@@ -19,6 +21,7 @@
     </Heading>
 
     <div class="mt-9" v-if="report">
+
       <ReportPicture :report="report" />
       <div class="flex flex-col gap-y-8 border-r pr-3 mt-7 2xl:w-85% 3xl:w-80%">
         <ReportMeta :report="report" />
@@ -51,7 +54,8 @@ import { useRoute } from "vue-router"
 import ReportPicture from "~/components/reports/ReportPicture.vue"
 import ReportMeta from "~/components/reports/ReportMeta.vue"
 import ReportLikes from "~/components/reports/ReportLikes.vue"
-import Comments from "~/components/shared/Comments.vue"
+import Comments from "~/components/comments/Comments.vue"
+import ReportMenu from "~/components/reports/ReportMenu.vue"
 
 const route = useRoute()
 const { report, loadReport } = useReports()
@@ -70,7 +74,7 @@ const { t } = useI18n()
   "de": {
     "report_not_found": "Bericht nicht gefunden",
     "trip_report": "Trip-Bericht:",
-    "comment_hint": "(ähnliches erlebt? Ergänze deine Erfahrungen)"
+    "comment_hint": "(ähnliches erlebt? Ergänze deine Erlebnisse)"
   },
   "en": {
     "report_not_found": "Report not found",

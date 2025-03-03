@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import Comments from "~/components/shared/Comments.vue"
+import Comments from "~/components/comments/Comments.vue"
 import { ChevronDownIcon } from "@heroicons/vue/24/solid"
 import { ChevronUpIcon } from "@heroicons/vue/24/solid"
 

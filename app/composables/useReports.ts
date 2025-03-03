@@ -33,6 +33,15 @@ export function useReports() {
     if (data.value) report.value = data.value
   }
 
+  async function deleteReport(reportId: number) {
+    try {
+      await $fetch(`/api/reports/${reportId}`, {
+        method: "DELETE",
+        headers: useRequestHeaders(["cookie"]),
+      })
+    } catch (error: any) {}
+  }
+
   return {
     reports,
     loadReports,
@@ -41,5 +50,6 @@ export function useReports() {
     longTermFilter,
     loadReport,
     report,
+    deleteReport,
   }
 }
