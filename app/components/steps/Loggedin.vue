@@ -21,14 +21,14 @@ const { t } = useI18n()
 
 <i18n lang="json">{
   "de": {
-    "title": "Hallo ;P",
+    "title": "Hallo.",
     "no_new_messages": "Du hast keine neuen Nachrichten.",
     "you_have": "Du hast",
     "new_messages": "neue Nachrichten.",
     "mailbox": "Posteingang"
   },
   "en": {
-    "title": "Hello ;P",
+    "title": "Hello.",
     "no_new_messages": "You have no new messages.",
     "you_have": "You have",
     "new_messages": "new messages.",

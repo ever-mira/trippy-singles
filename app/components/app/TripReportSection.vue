@@ -23,7 +23,7 @@ const { t } = useI18n()
 <i18n lang="json">{
   "de": {
     "title": "Trip-Berichte",
-    "description": "Sich an seine ersten Trips erinnern. Vergessene Magie? Hier kann man seine Erlebnisse beschreiben. Und wir finden uns.",
+    "description": "Sich an seine ersten Trips erinnern. Vergessene Magie? Hier kann man seine Erlebnisse beschreiben. Und sich finden.",
     "link": "Trip Berichte"
   },
   "en": {

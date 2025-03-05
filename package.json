@@ -23,6 +23,7 @@
     "@supabase/supabase-js": "^2.46.2",
     "@uppy/core": "^4.3.0",
     "@uppy/xhr-upload": "^4.2.3",
+    "@vueuse/core": "^12.8.1",
     "countries-list": "^3.1.1",
     "date-fns": "^4.1.0",
     "file-type": "^19.6.0",

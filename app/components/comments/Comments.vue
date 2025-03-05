@@ -56,7 +56,7 @@ const { t } = useI18n()
 <i18n lang="json">{
   "de": {
     "comments": "Kommentare",
-    "no_comments_yet": "noch keine.",
+    "no_comments_yet": "noch keine",
     "add_comment": "Kommentar hinzufügen",
     "really_delete_comment": "Kommentar wirklich löschen?"
   },

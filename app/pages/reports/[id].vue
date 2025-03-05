@@ -26,7 +26,7 @@
       <div class="flex flex-col gap-y-8 border-r pr-3 mt-7 2xl:w-85% 3xl:w-80%">
         <ReportMeta :report="report" />
 
-        <div class="mt-4">
+        <div class="mt-3">
           <div class="font-bold mb-2">{{ t("trip_report") }}</div>
           <div class="whitespace-pre-wrap">
             {{ report.text }}

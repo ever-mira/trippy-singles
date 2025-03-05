@@ -6,14 +6,10 @@
       <span class="whitespace-nowrap" v-else>{{ t("trippy") }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
 
-    <div v-if="isTrippySingles"
+    <div
       class="text-[1.9rem] xl:text-[2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.9 whitespace-nowrap">
-      {{ t("find_each_other") }}
-    </div>
-
-    <div v-else
-      class="text-[1.9rem] xl:text-[2.2rem] font-bold font-figtree text-gray-800 dark:text-gray-100 md:mt-.4 whitespace-nowrap">
-      {{ t("psychedelic_network") }}
+      <span v-if="isTrippySingles">{{ t("find_each_other") }}</span>
+      <span v-else>{{ t("psychedelic_network") }}</span>
     </div>
 
     <div class="mt-2 text-lg" v-if="isTrippySingles">
@@ -69,7 +65,7 @@ const { t } = useI18n()
 
 <i18n lang="json">{
   "de": {
-    "trippy": "Trippy.",
+    "trippy": "Trippy. Social.",
     "trippy_singles": "Trippy. Singles.",
     "find_each_other": "Findet euch.",
     "psychedelic_network": "Psychedelic Network.",
@@ -77,10 +73,10 @@ const { t } = useI18n()
     "social_network_for_psychonauts": "Das Soziale Netzwerk für Psychonauten.",
     "start": "Start",
     "login": "Login",
-    "your_profile": "Dein Profil",
+    "your_profile": "Dein Profil"
   },
   "en": {
-    "trippy": "Trippy.",
+    "trippy": "Trippy. Social.",
     "trippy_singles": "Trippy. Singles.",
     "find_each_other": "Connect & Find Love.",
     "psychedelic_network": "Psychedelic Network.",
@@ -88,7 +84,7 @@ const { t } = useI18n()
     "social_network_for_psychonauts": "Social Network for Psychonauts.",
     "start": "Start",
     "login": "Login",
-    "your_profile": "Your Profile",
+    "your_profile": "Your Profile"
   }
 }</i18n>
 
