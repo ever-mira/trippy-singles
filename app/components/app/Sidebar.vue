@@ -125,7 +125,7 @@ const { t } = useI18n()
     "mailbox": "Postfach",
     "settings": "Einstellungen",
     "likes": "Likes",
-    "logout": "ausloggen"
+    "logout": "logout"
   },
   "en": {
     "start_page": "Startpage",

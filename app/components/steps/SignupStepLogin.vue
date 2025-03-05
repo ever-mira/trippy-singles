@@ -6,13 +6,10 @@
       {{ t("subtitle") }}
     </div>
 
-    <div class="mt-8 relative">
+    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-y-3.5 relative items-center mt-8">
       <span class="hidden md:inline">{{ t("email") }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       <Input type="email" ref="mailInputRef" :placeholder="t('email')" v-model="credentials.email" class="md:w-[210px]"
         :focus="!ismobile()" />
-    </div>
-
-    <div class="mt-3.5 relative">
       <span class="hidden md:inline">{{ t("password") }}&nbsp;&nbsp;</span>
       <Input type="password" :placeholder="t('password')" v-model="credentials.password" class="md:w-[210px]"
         @keydown.enter="signUp" />
