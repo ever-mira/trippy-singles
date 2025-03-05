@@ -16,7 +16,6 @@ export default defineNuxtConfig({
     "@nuxthub/core",
     "@nuxt/image",
     "@nuxtjs/google-fonts",
-    "@nuxt/content",
   ],
   app: {
     pageTransition: { name: "page", mode: "default" },
