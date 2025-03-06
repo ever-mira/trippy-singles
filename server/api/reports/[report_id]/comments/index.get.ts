@@ -13,9 +13,19 @@ export default defineEventHandler(async (event) => {
     const { data, error } = await supabase
       .from("trip_report_comments")
       .select(
-        "id, text, created_at, user_id, profiles(username, avatar_url), liked_by:trip_report_comment_likes(user_id, profiles(username))"
+        `
+      id, 
+      text, 
+      created_at, 
+      user_id, 
+      profiles(username, avatar_url), 
+      liked_by:trip_report_comment_likes(user_id, profiles(username)), 
+      replies:trip_report_comments(id, text, created_at, user_id, profiles(username, avatar_url), liked_by:trip_report_comment_likes(user_id, profiles(username)))
+    `
       )
       .eq("trip_report_id", report_id)
+      .is("parent_id", null)
+      .order("created_at", { ascending: true })
 
     if (error) {
       throw createError({

@@ -45,6 +45,12 @@ import ReportTile from "~/components/reports/ReportTile.vue"
 import ReportFilter from "~/components/reports/ReportFilter.vue"
 import ReportGrid from "~/components/reports/ReportGrid.vue"
 
+useHead({
+  meta: [
+    { property: 'og:image', content: 'https://trippy.social/psychedelics.png' },
+  ]
+})
+
 const { reports, loadReports, drugFilter, longTermFilter } = useReports()
 
 loadReports()

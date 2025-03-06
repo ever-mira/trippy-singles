@@ -210,25 +210,11 @@ export type Database = {
             foreignKeyName: "hint_comment_likes_comment_id_fkey"
             columns: ["comment_id"]
             isOneToOne: false
-            referencedRelation: "trip_report_comments"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "hint_comment_likes_comment_id_fkey1"
-            columns: ["comment_id"]
-            isOneToOne: false
             referencedRelation: "hint_comments"
             referencedColumns: ["id"]
           },
           {
             foreignKeyName: "hint_comment_likes_user_id_fkey1"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["user_id"]
-          },
-          {
-            foreignKeyName: "hint_comment_likes_user_id_fkey3"
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "profiles"
@@ -241,6 +227,7 @@ export type Database = {
           created_at: string
           hint_name: string | null
           id: number
+          parent_id: number | null
           text: string
           user_id: string
         }
@@ -248,6 +235,7 @@ export type Database = {
           created_at?: string
           hint_name?: string | null
           id?: number
+          parent_id?: number | null
           text: string
           user_id: string
         }
@@ -255,10 +243,18 @@ export type Database = {
           created_at?: string
           hint_name?: string | null
           id?: number
+          parent_id?: number | null
           text?: string
           user_id?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "hint_comments_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "hint_comments"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "hint_comments_user_id_fkey1"
             columns: ["user_id"]
@@ -449,6 +445,7 @@ export type Database = {
         Row: {
           created_at: string | null
           id: number
+          parent_id: number | null
           text: string
           trip_report_id: number | null
           user_id: string | null
@@ -456,6 +453,7 @@ export type Database = {
         Insert: {
           created_at?: string | null
           id?: number
+          parent_id?: number | null
           text: string
           trip_report_id?: number | null
           user_id?: string | null
@@ -463,11 +461,19 @@ export type Database = {
         Update: {
           created_at?: string | null
           id?: number
+          parent_id?: number | null
           text?: string
           trip_report_id?: number | null
           user_id?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "trip_report_comments_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "trip_report_comments"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "trip_report_comments_trip_report_id_fkey"
             columns: ["trip_report_id"]
@@ -513,6 +519,42 @@ export type Database = {
           },
           {
             foreignKeyName: "trip_report_likes_user_id_fkey1"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
+      trip_report_reads: {
+        Row: {
+          created_at: string
+          id: number
+          trip_report_id: number
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          trip_report_id: number
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          trip_report_id?: number
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trip_report_reads_trip_report_id_fkey"
+            columns: ["trip_report_id"]
+            isOneToOne: false
+            referencedRelation: "trip_reports"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trip_report_reads_user_id_fkey1"
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "profiles"

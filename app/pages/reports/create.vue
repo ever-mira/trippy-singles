@@ -146,7 +146,7 @@ const { t } = useI18n()
     "describe_set_and_setting": "Beschreibe Set und Setting:",
     "set": "Set",
     "setting": "Setting",
-    "every_report_little_magic": "Jeder Trip-Bericht ist ein klenes Stück Zauberei.",
+    "every_report_little_magic": "Jeder Trip-Bericht ist ein kleines Stück Zauberei.",
     "describe_your_trip": "Beschreibe Deinen Trip:",
     "describe_your_experiences": "Beschreibe deine Erlebnisse",
     "cancel": "Abbrechen",

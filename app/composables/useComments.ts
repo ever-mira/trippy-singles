@@ -18,7 +18,7 @@ export async function useComments(category: string | null, resourceId: string) {
     if (data.value) comments.value = data.value
   }
 
-  async function saveComment() {
+  async function saveComment(parent_id?: number) {
     if (!user.value) {
       showModal("Du musst eingeloggt sein, um Kommentare erstellen zu können.")
       return
@@ -30,7 +30,10 @@ export async function useComments(category: string | null, resourceId: string) {
       await $fetch(`/api/${category}/${resourceId}/comments`, {
         method: "POST",
         headers: useRequestHeaders(["cookie"]),
-        body: JSON.stringify({ text: newComment.value }),
+        body: JSON.stringify({
+          text: newComment.value,
+          parent_id: parent_id,
+        }),
       })
       newComment.value = ""
       await loadComments()

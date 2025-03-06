@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     throw new Error("No report id provided")
   }
 
-  const { text } = await readBody(event)
+  const { text, parent_id } = await readBody(event)
 
   try {
     const client = await serverSupabaseClient<Database>(event)
@@ -28,6 +28,7 @@ export default defineEventHandler(async (event) => {
       trip_report_id: Number(report_id),
       text,
       user_id: userId,
+      parent_id: parent_id || null,
     })
 
     if (error) {

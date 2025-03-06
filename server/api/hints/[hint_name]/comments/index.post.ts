@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     throw new Error("No hint name provided")
   }
 
-  const { text } = await readBody(event)
+  const { text, parent_id } = await readBody(event)
 
   try {
     const client = await serverSupabaseClient<Database>(event)
@@ -28,6 +28,7 @@ export default defineEventHandler(async (event) => {
       hint_name: hint_name,
       text,
       user_id: userId,
+      parent_id: parent_id || null,
     })
 
     if (error) {
